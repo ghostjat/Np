@@ -1,0 +1,34 @@
+{
+    "name": "ghost/numphp",
+    "description": "numphp is numerical library with low memory footprint for php language. Suitable for large scale computing. php7.4+ 64 bit is required!",
+    "type": "library",
+    "keywords": [
+        "arithmetic", "computation", "computing", "decomposition", "engineering",
+        "linear algebra", "math", "matrix", "norms", "php","blas",
+        "random number generation", "rng", "reduction", "scientific computing", "statistics",
+        "tensor", "vector", "trigonometry","statstics","numphp"
+    ],
+    "homepage": "https://github.com/ghostjat/numphp",
+    "license": "MIT License",
+    "authors": [
+        {
+            "name": "Shubham Chaudhary",
+            "email": "ghost.jat@gmail.com",
+            "role": "dev"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/ghostjat/numphp/issues?state=open",
+        "source": "https://github.com/ghostjat/numphp"
+    },
+    "autoload": {
+        "psr-4": {
+            "numphp\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.4.0",
+        "ext-ffi": "*"
+    },
+    "config":{"optimize-autoloader":true}
+}
