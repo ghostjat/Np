@@ -11,7 +11,7 @@ if (!extension_loaded('FFI')) {
     die('FFI extension required');
 }
 
-/** A fast lite memory effiecent Scientific Computing in php
+/** A fast lite memory efficient Scientific Computing in php
  * 
  * @category Scientific Computing
  * @package numphp/tensor
@@ -31,24 +31,6 @@ class tensor {
     public $tp, $row, $col, $view, $type;
     public static $ffi_blas = null, $_time = null, $_mem = null;
 
-    protected function __construct(int $row, int $col=null) {
-        if ($row < 1) {
-            throw new InvalidArgumentException(' * To create Numphp/tensor row must be greater than 0!, Op Failed! * ');
-        }
-        if(is_null($col)) {
-            $this->type = 1;
-            $this->row = $row;
-            $this->tp = self::c_Vector($this->row);
-        }
-        else {
-            $this->type = 0;
-            $this->row = $row;
-            $this->col = $col;
-            $this->tp = self::c_Matrix($this->row, $this->col);
-        }
-        return $this;
-    }
-    
     /**
      * create empty vector/2d matrix
      * @param int $row
@@ -426,6 +408,114 @@ class tensor {
             }
         }
         return $ar;
+    }
+    
+    public function copyTensor() : tensor {
+        return clone $this;
+    }
+    
+    public function shape(): object {
+        return (object) ['m' => $this->row, 'n' => $this->col];
+    }
+    
+    public static function time() {
+        if(is_null(self::$_time)) {
+            self::$_time = microtime(true);
+        }else {
+            echo 'Time-Consumed:- ' . (microtime(true) - self::$_time) .  PHP_EOL;
+        }
+    }
+
+    public static function getMemory() {
+        if(is_null(self::$_mem)){
+            self::$_mem = memory_get_usage();
+        }
+        else {
+            $memory = memory_get_usage() - self::$_mem;
+            $unit = ['b', 'kb', 'mb', 'gb', 'tb', 'pb'];
+            echo round($memory / pow(1024, ($i = floor(log($memory, 1024)))), 2) . $unit[$i] . PHP_EOL;    
+        }
+    }
+    
+    public function printTensor() {
+        echo __CLASS__ . PHP_EOL;
+        if ($this->type == 0) {
+            for ($i = 0; $i < $this->row; ++$i) {
+                for ($j = 0; $j < $this->col; ++$j) {
+                    printf('%lf  ', $this->tp[$i * $this->col + $j]);
+                }
+                echo PHP_EOL;
+            }
+        } elseif($this->type == 1) {
+            for ($j = 0; $j < $this->col; ++$j) {
+                printf('%lf  ', $this->tp[$j]);
+            }
+            echo PHP_EOL;
+        }
+    }
+    
+    public function __toString() {
+        return (string) $this->printTensor();
+    }
+    
+    /**
+     * c double* matrix
+     * @param int $row
+     * @param int $col
+     * @return type
+     */
+    protected static function c_Matrix(int $row, int $col) {
+        return \FFI::cast('double *', FFI::new("double[$row][$col]"));
+    }
+    
+    protected static function c_Vector(int $col) {
+        return \FFI::cast('double *', FFI::new("double[$col]"));
+    }
+    
+    protected static function castDouble($cdata) {
+        return \FFI::cast('double *', $cdata);
+    }
+    
+    protected static function castInt($cdata) {
+        return FFI::cast('int*', $cdata);
+    }
+
+    protected static function castFloat($cdata) {
+        return FFI::cast('float*', $cdata);
+    }
+    
+    protected function free(FFI\CData $ptr) {
+        return FFI::free($ptr);
+    }
+    
+    protected function __construct(int $row, int $col=null) {
+        if ($row < 1) {
+            throw new InvalidArgumentException(' * To create Numphp/tensor row must be greater than 0!, Op Failed! * ');
+        }
+        if(is_null($col)) {
+            $this->type = 1;
+            $this->row = $row;
+            $this->tp = self::c_Vector($this->row);
+        }
+        else {
+            $this->type = 0;
+            $this->row = $row;
+            $this->col = $col;
+            $this->tp = self::c_Matrix($this->row, $this->col);
+        }
+        return $this;
+    }
+    
+    protected function _init() {
+        if (is_null(self::$ffi_blas)) {
+            self::$ffi_blas = \FFI::load(__DIR__ . '/cblas.h');
+        }
+        return self::$ffi_blas;
+    }
+    
+    
+    private static function _err($msg) {
+        throw new \Exception($msg);
     }
     
 }
