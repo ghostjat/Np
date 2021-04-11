@@ -1,5 +1,5 @@
 {
-    "name": "ghost/numphp",
+    "name": "ghostjat/numphp",
     "description": "numphp is numerical library with low memory footprint for php language. Suitable for large scale computing. php7.4+ 64 bit is required!",
     "type": "library",
     "keywords": [
