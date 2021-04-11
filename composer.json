@@ -9,7 +9,7 @@
         "tensor", "vector", "trigonometry","statstics","numphp"
     ],
     "homepage": "https://github.com/ghostjat/numphp",
-    "license": "MIT License",
+    "license": "MIT",
     "authors": [
         {
             "name": "Shubham Chaudhary",
