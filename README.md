@@ -1,4 +1,4 @@
-![numphp logo] (numphp.png)
+![numphp logo](numphp.png)
 a lite &amp; memory efficient  php library for scientific computing
 
 numphp is a library that provides objects for computing large sets of numbers in [PHP](https://php.net).
