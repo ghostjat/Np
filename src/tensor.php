@@ -37,10 +37,10 @@ class tensor {
      * @param int $col
      * @return \numphp\tensor
      */
-    public static function factory(int $row,int $col = null): tensor {
-        return new self($row,$col);
+    public static function factory(int $row, int $col = null): tensor {
+        return new self($row, $col);
     }
-    
+
     /**
      * create vector/2d matrix using php array
      * @param array $data
@@ -53,13 +53,13 @@ class tensor {
         } else {
             $row = count($data);
             $ar = self::factory($row, null);
-            for ($i =0; $i < $row; ++$i) {
+            for ($i = 0; $i < $row; ++$i) {
                 $ar->tp[$i] = $data[$i];
             }
         }
         return $ar;
     }
-    
+
     /**
      * Return Tensor with random values
      * @param int $row
@@ -77,20 +77,21 @@ class tensor {
         }
         return $ar;
     }
+
     /**
      * Return vector with random values
      * @param int $row
      * @return \numphp\tensor
      */
-    public static function randnVector(int $row) : tensor {
+    public static function randnVector(int $row): tensor {
         $ar = self::factory($row);
         $max = getrandmax();
-        for($i = 0; $i < $ar->row; ++$i) {
-            $ar->tp[$i] = rand()/$max;
+        for ($i = 0; $i < $ar->row; ++$i) {
+            $ar->tp[$i] = rand() / $max;
         }
         return $ar;
     }
-    
+
     /**
      * create a 2d uniform matrix
      * @param int $row
@@ -107,7 +108,7 @@ class tensor {
         }
         return $ar;
     }
-    
+
     /**
      * cretae zero like 2d matrix
      * @param int $row
@@ -123,7 +124,7 @@ class tensor {
         }
         return $ar;
     }
-    
+
     /**
      * create one like 2d matrix
      * @param int $row
@@ -155,7 +156,7 @@ class tensor {
         }
         return $ar;
     }
-    
+
     /**
      * create a 2d matrix with given scalar value
      * @param int $row
@@ -172,24 +173,24 @@ class tensor {
         }
         return $ar;
     }
-    
+
     /**
      * 
      * @param array $elements
      * @return \numphp\tensor
      */
-    public static function diagonal(array $elements) : tensor {
+    public static function diagonal(array $elements): tensor {
         $n = count($elements);
         $ar = self::factory($n, $n);
         for ($i = 0; $i < $n; ++$i) {
             for ($j = 0; $j < $n; ++$j) {
-                $ar->tp[$i * $n +$j] = $i === $j ? $elements[$i] : 0;
+                $ar->tp[$i * $n + $j] = $i === $j ? $elements[$i] : 0;
             }
         }
 
         return $ar;
     }
-    
+
     /**
      * 
      * @param int $row
@@ -197,7 +198,7 @@ class tensor {
      * @param float $lambda
      * @return \numphp\tensor
      */
-    public static function poisson(int $row, int $col, float $lambda = 1.0) : tensor {
+    public static function poisson(int $row, int $col, float $lambda = 1.0): tensor {
         $max = getrandmax();
         $l = exp(-$lambda);
         $a = [];
@@ -218,7 +219,7 @@ class tensor {
 
         return self::ar($a);
     }
-    
+
     /**
      * 
      * @param int $row
@@ -254,7 +255,7 @@ class tensor {
 
         return self::ar($a);
     }
-    
+
     /**
      * 
      * @param int $n
@@ -265,22 +266,52 @@ class tensor {
         if ($n < 1) {
             throw new InvalidArgumentException('Dimensionality must be greater than 0 on all axes.');
         }
-        
+
         $ar = self::factory($n, $n);
-        for($i = 0; $i < $n; ++$i) {
-            for($j = 0; $j < $n; ++$j) {
-                $ar->tp[$i * $n +$j] = $i ===$j ? 1 :0;
+        for ($i = 0; $i < $n; ++$i) {
+            for ($j = 0; $j < $n; ++$j) {
+                $ar->tp[$i * $n + $j] = $i === $j ? 1 : 0;
             }
         }
         return $ar;
     }
-    
+
+    public function setData($data) {
+        if (!is_null($data)) {
+            if ($this->type == 0) {
+                if (is_array($data) && is_array($data[0]) && $this->type == 0) {
+                    for ($i = 0; $i < $this->row; ++$i) {
+                        for ($j = 0; $j < $this->col; ++$j) {
+                            $this->tp[$i * $this->col + $j] = $data[$i][$j];
+                        }
+                    }
+                } elseif (is_numeric($data)) {
+                    for ($i = 0; $i < $this->row; ++$i) {
+                        for ($j = 0; $j < $this->col; ++$j) {
+                            $this->tp[$i * $this->col + $j] = $data[$i][$j];
+                        }
+                    }
+                }
+            } elseif ($this->type == 1) {
+                if (is_array($data)) {
+                    for ($i = 0; $i < $this->col; ++$i) {
+                        $this->tp[$i] = $data[$i];
+                    }
+                } elseif (is_numeric($data)) {
+                    for ($i = 0; $i < $this->col; ++$i) {
+                        $this->tp[$i] = $data;
+                    }
+                }
+            }
+        }
+    }
+
     /**
-     * 
+     * matrix dot product
      * @param \numphp\tensor $matrix
      * @return \numphp\tensor
      */
-    public function dotMatrix(\numphp\tensor $matrix) :tensor {
+    public function dotMatrix(\numphp\tensor $matrix): tensor {
         $ar = self::factory($this->row, $this->col);
         $this->_init();
         self::$ffi_blas->cblas_dgemm(self::CblasRowMajor, self::CblasNoTrans,
@@ -288,11 +319,11 @@ class tensor {
                 $this->col, 1.0, $this->tp,
                 $this->col, $matrix->tp, $this->row,
                 0.0, $ar->tp, $this->row);
-         return $ar;
+        return $ar;
     }
-    
+
     /**
-     * 
+     * Matrix vector multiplication
      * @param \numphp\tensor $vecotr
      * @return \numphp\tensor
      */
@@ -300,77 +331,91 @@ class tensor {
         $this->_init();
         $ar = self::factory($this->row, null);
         self::$ffi_blas->cblas_dgemv(self::CblasRowMajor,
-        self::CblasNoTrans, $this->row, $this->col,
-                 0.5, $this->tp, $this->row,
-                 $vecotr->tp, 1, 1.0,
-                 $ar->tp, 1);
-         return $ar;
+                self::CblasNoTrans, $this->row, $this->col,
+                0.5, $this->tp, $this->row,
+                $vecotr->tp, 1, 1.0,
+                $ar->tp, 1);
+        return $ar;
     }
-    
-    public function mul_MatrixScalar($scalar) {
-        if (!is_int($scalar) and !is_float($scalar)) {
+
+    /**
+     * Matrix Scalar multiplication
+     * @param int|float $scalar
+     * @return \numphp\tensor
+     */
+    public function mul_MatrixScalar($scalar): tensor {
+        if (!is_int($scalar) and!is_float($scalar)) {
             $this->_err('Scalar must be an integer or float, ' . gettype($scalar) . ' found.');
         }
-        
+
         if ($scalar == 0) {
             return self::zeros($this->row, $this->col);
         }
-        
+
         $ar = self::factory($this->row, $this->col);
-        for($i = 0; $i < $this->row; ++$i) {
-            for($j = 0; $j < $this->col; ++$j) {
-                $ar->tp[$i* $this->col + $j] = $this->tp[$i* $this->col + $j] * $scalar;
+        for ($i = 0; $i < $this->row; ++$i) {
+            for ($j = 0; $j < $this->col; ++$j) {
+                $ar->tp[$i * $this->col + $j] = $this->tp[$i * $this->col + $j] * $scalar;
             }
         }
 
         return $ar;
     }
-    
+
     /**
-     * 
+     * sum given matrix 
      * @param \numphp\tensor $matrix
      * @return \numphp\tensor
      */
-    public function add_Matrix(\numphp\tensor $matrix) :tensor {
-        if($this->row != $matrix->row || $this->col != $matrix->col) {
+    public function sum_Matrix(\numphp\tensor $matrix): tensor {
+        if ($this->row != $matrix->row || $this->col != $matrix->col) {
             $this->_err('Inavlid matrix size');
         }
         $ar = self::factory($this->row, $this->col);
-        for($i = 0; $i < $this->row; ++$i) {
-            for($j = 0; $j < $this->col; ++$j) {
-                $ar->tp[$i * $this->col + $j] = $this->tp[$i * $this->col + $j] + $matrix->tp[$i * $this->col + $j]; 
+        for ($i = 0; $i < $this->row; ++$i) {
+            for ($j = 0; $j < $this->col; ++$j) {
+                $ar->tp[$i * $this->col + $j] = $this->tp[$i * $this->col + $j] + $matrix->tp[$i * $this->col + $j];
             }
         }
         return $ar;
     }
-    
-    public function subtract_Matrix(\numphp\tensor $matrix) :tensor {
-        if($this->row != $matrix->row || $this->col != $matrix->col) {
-            $this->_err('Inavlid matrix size');
-        }
-        $ar = self::factory($this->row, $this->col);
-        for($i = 0; $i < $this->row; ++$i) {
-            for($j = 0; $j < $this->col; ++$j) {
-                $ar->tp[$i * $this->col + $j] = $this->tp[$i * $this->col + $j] - $matrix->tp[$i * $this->col + $j]; 
-            }
-        }
-        return $ar;
-        
-    }
-    
+
     /**
-     * 
+     * subtract given matrix
+     * @param \numphp\tensor $matrix
+     * @return \numphp\tensor
+     */
+    public function subtract_Matrix(\numphp\tensor $matrix): tensor {
+        if ($this->row != $matrix->row || $this->col != $matrix->col) {
+            $this->_err('Inavlid matrix size');
+        }
+        $ar = self::factory($this->row, $this->col);
+        for ($i = 0; $i < $this->row; ++$i) {
+            for ($j = 0; $j < $this->col; ++$j) {
+                $ar->tp[$i * $this->col + $j] = $this->tp[$i * $this->col + $j] - $matrix->tp[$i * $this->col + $j];
+            }
+        }
+        return $ar;
+    }
+
+    /**
+     * vector-vector dot product
      * @param \numphp\tensor $vector
      * @param int $incX
      * @param int $incY
      * @return type
      */
-    public function ddot(\numphp\tensor $vector,int $incX =1, int $incY=1) {
+    public function dot_vector(\numphp\tensor $vector, int $incX = 1, int $incY = 1) {
         $this->_init();
-       return self::$ffi_blas->cblas_ddot($this->col, $this->tp, $incX,
-                  $vector->tp, $incY);
+        return self::$ffi_blas->cblas_ddot($this->col, $this->tp, $incX,
+                        $vector->tp, $incY);
     }
-    
+
+    /**
+     * 
+     * @param int $cols
+     * @return \numphp\tensor
+     */
     public function diminish_left(int $cols): tensor {
         $ar = self::factory($this->row, $cols);
         for ($i = 0; $i < $ar->row; ++$i) {
@@ -381,6 +426,11 @@ class tensor {
         return $ar;
     }
 
+    /**
+     * 
+     * @param int $cols
+     * @return \numphp\tensor
+     */
     public function diminish_right(int $cols): tensor {
         $ar = self::factory($this->row, $cols);
         for ($i = 0; $i < $ar->row; ++$i) {
@@ -390,53 +440,112 @@ class tensor {
         }
         return $ar;
     }
-    
-    public function is_rowZero(int $row):bool{
-        for($i=0;$i<$this->col;++$i){
-            if($this->tp[$row * $this->col +$i] !=0){
+
+    /**
+     *  is row zero
+     * @param int $row
+     * @return bool
+     */
+    public function is_rowZero(int $row): bool {
+        for ($i = 0; $i < $this->col; ++$i) {
+            if ($this->tp[$row * $this->col + $i] != 0) {
                 return false;
             }
         }
         return true;
     }
-    
+
+    /**
+     * transpose the matrix
+     * @return \numphp\tensor
+     */
     public function transpose(): tensor {
         $ar = self::factory($this->col, $this->row);
-        for($i = 0; $i < $ar->row; ++$i) {
-            for($j = 0; $j < $ar->col; ++$j) {
+        for ($i = 0; $i < $ar->row; ++$i) {
+            for ($j = 0; $j < $ar->col; ++$j) {
                 $ar->tp[$i * $ar->col + $j] = $this->tp[$j * $ar->col + $i];
             }
         }
         return $ar;
     }
     
-    public function copyTensor() : tensor {
+    /**
+     * swap specific values in tensor
+     * @param int $index1
+     * @param int $index2
+     */
+    public function swapValue(int $index1, int $index2){
+        $tmp = $this->tp[$index1];
+        $this->tp[$index1] = $this->tp[$index2];
+        $this->tp[$index2] = $tmp;
+    }
+    
+    /**
+     * 
+     * @param float $c
+     * @return \numphp\tensor
+     */
+    public function scale(float $c) :tensor {
+        $ar = $this->copyTensor();
+        for($i = 0; $i < $ar->row; ++$i) {
+            for($j = 0; $j < $ar->col; ++$j) {
+                $ar->tp[$i * $ar->col + $j] *= $c;
+            }
+        }
+        return $ar;
+    }
+
+    /**
+     * make copy the tensor
+     * @return \numphp\tensor
+     */
+    public function copyTensor(): tensor {
         return clone $this;
     }
-    
-    public function shape(): object {
+
+    /**
+     * get the shape of tensor
+     * @return object
+     */
+    public function getShape(): object {
         return (object) ['m' => $this->row, 'n' => $this->col];
     }
-    
+
+    /**
+     * get the type of tensor
+     * @return int
+     */
+    public function getType(): int {
+        return $this->type;
+    }
+
+    /**
+     * set Timer, get total time 
+     */
     public static function time() {
-        if(is_null(self::$_time)) {
+        if (is_null(self::$_time)) {
             self::$_time = microtime(true);
-        }else {
-            echo 'Time-Consumed:- ' . (microtime(true) - self::$_time) .  PHP_EOL;
+        } else {
+            echo 'Time-Consumed:- ' . (microtime(true) - self::$_time) . PHP_EOL;
         }
     }
 
+    /**
+     * set memory dog, get total memory
+     */
     public static function getMemory() {
-        if(is_null(self::$_mem)){
+        if (is_null(self::$_mem)) {
             self::$_mem = memory_get_usage();
-        }
-        else {
+        } else {
             $memory = memory_get_usage() - self::$_mem;
             $unit = ['b', 'kb', 'mb', 'gb', 'tb', 'pb'];
-            echo round($memory / pow(1024, ($i = floor(log($memory, 1024)))), 2) . $unit[$i] . PHP_EOL;    
+            echo round($memory / pow(1024, ($i = floor(log($memory, 1024)))), 2) . $unit[$i] . PHP_EOL;
         }
     }
-    
+
+    /**
+     * print the tensor in consol
+     */
     public function printTensor() {
         echo __CLASS__ . PHP_EOL;
         if ($this->type == 0) {
@@ -446,36 +555,41 @@ class tensor {
                 }
                 echo PHP_EOL;
             }
-        } elseif($this->type == 1) {
+        } elseif ($this->type == 1) {
             for ($j = 0; $j < $this->col; ++$j) {
                 printf('%lf  ', $this->tp[$j]);
             }
             echo PHP_EOL;
         }
     }
-    
+
     public function __toString() {
         return (string) $this->printTensor();
     }
-    
+
     /**
      * c double* matrix
      * @param int $row
      * @param int $col
-     * @return type
+     * @return \ffi\cdata
      */
     protected static function c_Matrix(int $row, int $col) {
         return \FFI::cast('double *', FFI::new("double[$row][$col]"));
     }
-    
+
+    /**
+     * c double* vector
+     * @param int $col
+     * @return \ffi\cdata
+     */
     protected static function c_Vector(int $col) {
         return \FFI::cast('double *', FFI::new("double[$col]"));
     }
-    
+
     protected static function castDouble($cdata) {
         return \FFI::cast('double *', $cdata);
     }
-    
+
     protected static function castInt($cdata) {
         return FFI::cast('int*', $cdata);
     }
@@ -483,21 +597,20 @@ class tensor {
     protected static function castFloat($cdata) {
         return FFI::cast('float*', $cdata);
     }
-    
+
     protected function free(FFI\CData $ptr) {
         return FFI::free($ptr);
     }
-    
-    protected function __construct(int $row, int $col=null) {
+
+    protected function __construct(int $row, int $col = null) {
         if ($row < 1) {
             throw new InvalidArgumentException(' * To create Numphp/tensor row must be greater than 0!, Op Failed! * ');
         }
-        if(is_null($col)) {
+        if (is_null($col)) {
             $this->type = 1;
             $this->row = $row;
             $this->tp = self::c_Vector($this->row);
-        }
-        else {
+        } else {
             $this->type = 0;
             $this->row = $row;
             $this->col = $col;
@@ -505,17 +618,16 @@ class tensor {
         }
         return $this;
     }
-    
+
     protected function _init() {
         if (is_null(self::$ffi_blas)) {
-            self::$ffi_blas = \FFI::load(__DIR__ . '/cblas.h');
+            self::$ffi_blas = \FFI::load(__DIR__ . '/blas.h');
         }
         return self::$ffi_blas;
     }
-    
-    
+
     private static function _err($msg) {
         throw new \Exception($msg);
     }
-    
+
 }

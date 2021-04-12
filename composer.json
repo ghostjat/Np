@@ -19,7 +19,8 @@
     ],
     "support": {
         "issues": "https://github.com/ghostjat/numphp/issues?state=open",
-        "source": "https://github.com/ghostjat/numphp"
+        "source": "https://github.com/ghostjat/numphp",
+        "email":"ghost.jat@gmail.com"
     },
     "autoload": {
         "psr-4": {
