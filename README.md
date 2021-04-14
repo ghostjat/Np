@@ -43,6 +43,24 @@ The interface is not final and may change in the future.
 Make sure you have all the necessary tools installed such as libblas,ffi.
 
 ## Performance
+PhpBench @git_tag@. Running benchmarks.
+Using configuration file: /home/ghost/projects/git/numphp/phpbench.json
+
+\numphp\benchmarks\lineAlgb\dotMatrixBench (#0 dotMatrix)
+
+#0  0.046 0.046 0.046 0.049 0.046 (s) [μ Mo]/r: 0.046 0.046 μRSD/r: 2.67%
+
+1 subjects, 5 iterations, 1 revs, 0 rejects, 0 failures, 0 warnings
+(best [mean mode] worst) = 0.046 [0.046 0.046] 0.049 (s)
+⅀T: 0.232s μSD/r 0.001s μRSD/r: 2.672%
+suite: 13462ee50fa758e45d873b58a32184e5a5f9a052, date: 2021-04-14, stime: 12:00:47
++----------------+-----------+-----+------+-----+-------------+--------+--------+--------+--------+--------+--------+-------+
+| benchmark      | subject   | set | revs | its | mem_peak    | best   | mean   | mode   | worst  | stdev  | rstdev | diff  |
++----------------+-----------+-----+------+-----+-------------+--------+--------+--------+--------+--------+--------+-------+
+| dotMatrixBench | dotMatrix | 0   | 1    | 5   | 79,603,120b | 0.046s | 0.046s | 0.046s | 0.049s | 0.001s | 2.67%  | 1.00x |
++----------------+-----------+-----+------+-----+-------------+--------+--------+--------+--------+--------+--------+-------+
+
+
 
 ## License
 The code is licensed [MIT](LICENSE) and the documentation is licensed [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
