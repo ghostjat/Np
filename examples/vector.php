@@ -2,12 +2,16 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use numphp\matrix;
+use numphp\{vector,matrix};
 
 matrix::time();
 matrix::getMemory();
-$ta = matrix::ar([[21,12,32],[432,322,112,],[22,342,21]]); // to genrate random 2d tensor
-$c = $ta->multiply(\numphp\vector::ar([2,2,2]));          // do a dot opreation on given tensor
+$ta = vector::randn(3);        // to genrate random vector
+$tb = matrix::randn(3,3);
+$c = $ta->mulVectorMatrix($tb);            // do a dot opreation on given tensor
+echo $c;
+unset($c);
+$c = $ta->multiplyMatrix($tb);
 echo $c;
 matrix::getMemory();           // get memory use
 matrix::time();               // get time
