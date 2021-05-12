@@ -16,7 +16,7 @@ namespace numphp;
 class matrix {
 
     const TWO_PI = 2. * M_PI, EPSILON = 1e-8;
-    const FLOAT = 1, DOUBLE = 2;
+    const FLOAT = 1, DOUBLE = 2, INT = 3;
     protected $l,$u,$p;
     public $data, $row, $col, $dtype;
     public static $_time = null, $_mem = null;
@@ -669,7 +669,7 @@ class matrix {
         $ar = self::factory($this->row, $cols, $this->dtype);
         for ($i = 0; $i < $ar->row; ++$i) {
             for ($j = 0; $j < $ar->col; ++$j) {
-                $ar->data[$i * $ar->col + $j] = $this->data[$i * $this->cols - $cols + $j];
+                $ar->data[$i * $ar->col + $j] = $this->data[$i * $this->col - $cols + $j];
             }
         }
         return $ar;
@@ -816,22 +816,26 @@ class matrix {
     }
 
     /**
-     * Compute the inverse of the matrix.
+     * Compute the multiplicative inverse of the matrix.
      * @return \numphp\matrix
      */
-    public function inverse() : matrix{
+    public function inverse():matrix|null {
         if(!$this->isSquare()){
             self::_err('Error::invalid Size of matrix!');
         }
-        $id = self::identity($this->row);
-        $aug = $this->augment($id);
-        $flipped = $aug->rref();
-        #$left = $flipped->diminish_left($this->row);
-        $right = $flipped->diminish_right($this->row);
-        unset($id);
-        unset($aug);
-        unset($flipped);
-        return $right;
+        $imat = $this->copyMatrix();
+        $ipiv = vector::factory($this->row, vector::INT);
+        $lp = core\lapack::sgetrf($imat, $ipiv);
+        if($lp != 0) {
+            return null;
+        }
+        $lp = core\lapack::sgetri($imat, $ipiv);
+        if($lp != 0) {
+            return null;
+        }
+        unset($ipiv);
+        unset($lp);
+        return $imat;
     }
     
     
@@ -935,7 +939,11 @@ class matrix {
     protected static function c_DoubleMatrix(int $row, int $col) {
         return \FFI::cast('double *', \FFI::new("double[$row][$col]"));
     }
-
+    
+    protected static function c_IntMatrix(int $row, int $col) {
+        return \FFI::cast('int *', \FFI::new("int[$row][$col]"));
+    }
+    
     protected function __construct(int $row, int $col, int $dtype = self::Float) {
         if ($row < 1 || $col < 1) {
             $this->_invalidArgument('* To create Numphp/Matrix row & col must be greater than 0!, Op Failed! * ');
@@ -949,6 +957,9 @@ class matrix {
                 break;
             case self::DOUBLE:
                 $this->data = self::c_DoubleMatrix($this->row, $this->col);
+                break;
+            case self::INT:
+                $this->data = self::c_IntMatrix($this->row, $this->col);
                 break;
             default :
                 $this->_invalidArgument('given dtype is not supported by numphp');
