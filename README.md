@@ -50,14 +50,15 @@ Make sure you have all the necessary tools installed such as FFI, libblas, libla
 
 Performance
 -----------
+System-Conf:- 
+CPU:- Intel(R) Core(TM) i3-2370M CPU @ 2.40GHz 64bit
+MEM:- 8GB
 PhpBench @git_tag@. Running benchmarks.
 Using configuration file: /home/ghost/projects/git/numphp/phpbench.json
-+---------------------------+-----------+-----+------+-----+----------+---------+----------+
+
 | benchmark                 | subject   | set | revs | its | mem_peak | mode    | rstdev   |
-+---------------------------+-----------+-----+------+-----+----------+---------+----------+
-| LUBench                   | lu        | 0   | 1    | 5   | ERR      | ERR     | ±0.00%   |
+|---------------------------|-----------|-----|------|-----|----------|---------|----------|
 | eignBench                 | eign      | 0   | 1    | 5   | 2.699mb  | 0.309s  | ±4.51%   |
-| choleskyBench             | cholesky  | 0   | 1    | 5   | ERR      | ERR     | ±0.00%   |
 | svdBench                  | svd       | 0   | 1    | 5   | 3.604mb  | 0.148s  | ±3.60%   |
 | poissonMatrixBench        | poisson   | 0   | 1    | 5   | 11.738mb | 0.105s  | ±7.07%   |
 | gaussianMatrixBench       | gaussian  | 0   | 1    | 5   | 11.738mb | 0.112s  | ±17.12%  |
@@ -67,11 +68,10 @@ Using configuration file: /home/ghost/projects/git/numphp/phpbench.json
 | rrefBench                 | rref      | 0   | 1    | 5   | 1.501mb  | 28.513s | ±1.90%   |
 | refBench                  | ref       | 0   | 1    | 5   | 1.731mb  | 0.023s  | ±7.24%   |
 | sumMatrixBench            | sum       | 0   | 1    | 5   | 2.434mb  | 0.051s  | ±3.59%   |
-| matrixScalarMultiplyBench | multiply  | 0   | 1    | 5   | ERR      | ERR     | ±0.00%   |
 | matrixPseudoInverseBench  | inverse   | 0   | 1    | 5   | 4.775mb  | 0.222s  | ±13.76%  |
 | matrixInverseBench        | inverse   | 0   | 1    | 5   | 1.731mb  | 0.032s  | ±127.50% |
 | dotMatrixBench            | dotMatrix | 0   | 1    | 5   | 3.656mb  | 0.013s  | ±27.94%  |
-+---------------------------+-----------+-----+------+-----+----------+---------+----------+
+
 
 License
 -------
