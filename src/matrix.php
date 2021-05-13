@@ -911,8 +911,9 @@ class matrix {
     /**
      * Compute the eigen decomposition of a general matrix.
      * return the eigenvalues and eigenvectors as object
+     * @return object (eignVal,eignVec)
      */
-    public function eign(bool $symmetric = false) {
+    public function eign() {
         if(!$this->isSquare()) {
             self::_err('A Non Square Matrix is given!');
         }

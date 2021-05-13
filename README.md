@@ -52,24 +52,26 @@ Performance
 -----------
 PhpBench @git_tag@. Running benchmarks.
 Using configuration file: /home/ghost/projects/git/numphp/phpbench.json
-
-\numphp\benchmarks\lineAlgb\dotMatrixBench (#0 dotMatrix)
-
-#0  0.046 0.046 0.046 0.049 0.046 (s) [μ Mo]/r: 0.046 0.046 μRSD/r: 2.67%
------------------------------------------------------------------------
-1 subjects, 5 iterations, 1 revs, 0 rejects, 0 failures, 0 warnings
-
-(best [mean mode] worst) = 0.046 [0.046 0.046] 0.049 (s)
---------------------------------------------------------
-⅀
-T: 0.232s μSD/r 0.001s μRSD/r: 2.672%
-
-suite: 13462ee50fa758e45d873b58a32184e5a5f9a052, date: 2021-04-14, stime: 12:00:47
-
-| benchmark      | subject   | set | revs | its | mem_peak    | best   | mean   | mode   | worst  | stdev  | rstdev | diff  |
-|----------------|-----------|-----|------|-----|-------------|--------|--------|--------|--------|--------|--------|-------|
-| dotMatrixBench | dotMatrix | 0   | 1    | 5   | 79,603,120b | 0.046s | 0.046s | 0.046s | 0.049s | 0.001s | 2.67%  | 1.00x |
-
++---------------------------+-----------+-----+------+-----+----------+---------+----------+
+| benchmark                 | subject   | set | revs | its | mem_peak | mode    | rstdev   |
++---------------------------+-----------+-----+------+-----+----------+---------+----------+
+| LUBench                   | lu        | 0   | 1    | 5   | ERR      | ERR     | ±0.00%   |
+| eignBench                 | eign      | 0   | 1    | 5   | 2.699mb  | 0.309s  | ±4.51%   |
+| choleskyBench             | cholesky  | 0   | 1    | 5   | ERR      | ERR     | ±0.00%   |
+| svdBench                  | svd       | 0   | 1    | 5   | 3.604mb  | 0.148s  | ±3.60%   |
+| poissonMatrixBench        | poisson   | 0   | 1    | 5   | 11.738mb | 0.105s  | ±7.07%   |
+| gaussianMatrixBench       | gaussian  | 0   | 1    | 5   | 11.738mb | 0.112s  | ±17.12%  |
+| randMatrixBench           | randn     | 0   | 1    | 5   | 1.429mb  | 0.048s  | ±2.37%   |
+| uniformMatrixBench        | uniform   | 0   | 1    | 5   | 1.429mb  | 0.063s  | ±8.16%   |
+| matrixTransposeBench      | transpose | 0   | 1    | 5   | 8.431mb  | 0.120s  | ±1.32%   |
+| rrefBench                 | rref      | 0   | 1    | 5   | 1.501mb  | 28.513s | ±1.90%   |
+| refBench                  | ref       | 0   | 1    | 5   | 1.731mb  | 0.023s  | ±7.24%   |
+| sumMatrixBench            | sum       | 0   | 1    | 5   | 2.434mb  | 0.051s  | ±3.59%   |
+| matrixScalarMultiplyBench | multiply  | 0   | 1    | 5   | ERR      | ERR     | ±0.00%   |
+| matrixPseudoInverseBench  | inverse   | 0   | 1    | 5   | 4.775mb  | 0.222s  | ±13.76%  |
+| matrixInverseBench        | inverse   | 0   | 1    | 5   | 1.731mb  | 0.032s  | ±127.50% |
+| dotMatrixBench            | dotMatrix | 0   | 1    | 5   | 3.656mb  | 0.013s  | ±27.94%  |
++---------------------------+-----------+-----+------+-----+----------+---------+----------+
 
 License
 -------

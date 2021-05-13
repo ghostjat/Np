@@ -11,7 +11,7 @@ use numphp\matrix;
 class svdBench
 {
     /**
-     * @var \Tensor\Matrix
+     * @var \numphp\matrix
      */
     protected $a;
 

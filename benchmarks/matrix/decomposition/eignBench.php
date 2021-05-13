@@ -10,7 +10,7 @@ use numphp\matrix;
 class eignBench
 {
     /**
-     * @var \Tensor\Matrix
+     * @var \numphp\matrix
      */
     protected $a;
 
