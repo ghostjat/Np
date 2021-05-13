@@ -44,9 +44,9 @@ The interface is not final and may change in the future.
 
 Requirements
 ------------
-- [PHP](https://php.net) 7.4+ with ffi & blas
+- [PHP](https://php.net) 7.4+ with ffi & #libblas, #liblapacke   
 
-Make sure you have all the necessary tools installed such as libblas,ffi.
+Make sure you have all the necessary tools installed such as FFI, libblas, liblapacke.
 
 Performance
 -----------
