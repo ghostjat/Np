@@ -1,9 +1,24 @@
 {
-    "bootstrap": "vendor/autoload.php",
-    "path": "benchmarks",
-    "time_unit": "seconds",
-    "progress": "blinken",
-    "php_config": {
+    "runner.bootstrap": "vendor/autoload.php",
+    "runner.path": "benchmarks/",
+    "runner.time_unit": "seconds",
+    "runner.progress": "blinken",
+    "report.outputs":{
+        "numphp_benchmark":{
+            "extends":"delimited",
+            "delimiter":","
+        }
+    },
+    "report.generators":{
+        "numphp":{
+            "extends":"aggregate",
+            "title":"Numphp",
+            "description":"Benchmark for numphp",
+            "break":["benchmark"],
+            "cols":["benchmark","subject","set","revs","its","mem_peak","mode","rstdev"]
+        }
+    },
+    "runner.php_config": {
         "memory_limit": "-1"
     }
 }

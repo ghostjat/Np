@@ -45,6 +45,7 @@ class matrix {
         } else {
             self::_err('data must be of same dimensions');
         }
+        unset($data);
         return $ar;
     }
 
@@ -337,8 +338,8 @@ class matrix {
         } else if ($value instanceof vector) {
             return $value->mulVectorMatrix($this);
         } else {
-            if (!is_int($value) || !is_float($value)) {
-                self::_err('Scalar must be an integer or float, ' . gettype($value) . ' found.');
+            if (!is_int($value) || !is_float($value) || !is_double($value)) {
+                self::_err('Scalar must be an integer/float/double, ' . gettype($value) . ' found.');
             }
 
             if ($value == 0) {
@@ -357,12 +358,12 @@ class matrix {
     }
 
     /**
-     * Add another matrix or a scalar to current matrix
+     * Sum of two matrix or a scalar to current matrix
      * 
      * @param mixed(scalar,\numphp\matrix) $value matrix|$scalar to add this matrix
      * @return \numphp\matrix
      */
-    public function add($value): matrix {
+    public function sum($value): matrix {
         if ($value instanceof self) {
             if ($this->row != $value->row || $this->col != $value->col) {
                 self::_err('Inavlid matrix size');
@@ -565,7 +566,29 @@ class matrix {
         }
         return $ar;
     }
-
+    
+    public function ref() {
+        $ipiv = vector::factory(min($this->row, $this->col), vector::INT);
+        $ar = $this->copyMatrix();
+        $lp = core\lapack::sgetrf($ar, $ipiv);
+        if($lp !=0 ) {
+            return null;
+        }
+        
+        unset($ipiv);
+        unset($lp);
+        return $ar;
+    }
+    
+    public function cholesky() {
+        $ar = $this->copyMatrix();
+        $lp = core\lapack::spotrf($ar);
+        if($lp != 0) {
+            return null;
+        }
+        unset($lp);
+        return $ar;
+    }
     /**
      * RREF
      * The reduced row echelon form (RREF) of a matrix.
@@ -838,6 +861,71 @@ class matrix {
         return $imat;
     }
     
+    public function pseudoInverse() {
+        $k = min($this->row, $this->col);
+        $s = vector::factory($k);
+        $u = self::factory($this->row , $this->row);
+        $vt = self::factory($this->col , $this->col);
+        $imat = $this->copyMatrix();
+        $mr = self::factory($this->col, $this->row);
+        $lp = core\lapack::sgesdd($imat, $s, $u, $vt);
+        if($lp != 0) {
+            return null;
+        }
+        
+        for($i = 0; $i < $k; ++$i) {
+            core\blas::sscal(1.0/$s->data[$i], $vt->rowAsVector($i));
+        }
+        core\blas::sgemm($vt, $u, $mr);
+        unset($s);
+        unset($u);
+        unset($vt);
+        unset($imat);
+        unset($k);
+        unset($lp);
+        return $mr;
+    }
+    
+    /**
+     * Compute the singular value decomposition of a matrix and 
+     * return an object of the singular values and unitary matrices
+     *
+     * @return object (u,s,v)
+     */
+    public function svd() {
+        $k = min($this->row, $this->col);
+        $ar = $this->copyMatrix();
+        $s = vector::factory($k);
+        $u = self::factory($this->row, $this->row);
+        $vt = self::factory($this->col, $this->col);
+        $lp = core\lapack::sgesdd($ar, $s, $u, $vt);
+        if($lp !=0) {
+            return null;
+        }
+        unset($ar);
+        unset($k);
+        unset($lp);
+        return (object)['u'=>$u,'s'=>$s,'v'=>$vt];
+        
+    }
+    /**
+     * Compute the eigen decomposition of a general matrix.
+     * return the eigenvalues and eigenvectors as object
+     */
+    public function eign(bool $symmetric = false) {
+        if(!$this->isSquare()) {
+            self::_err('A Non Square Matrix is given!');
+        }
+        $wr = vector::factory($this->col);
+        $wi = vector::factory($this->col);
+        $ar = $this->copyMatrix();
+        $vr = self::factory($this->col, $this->col);
+        $lp = core\lapack::sgeev($ar, $wr, $wi, $vr);
+        if($lp != 0) {
+            return null;
+        }
+        return (object)['eignVal'=>$wr,'eignVec'=>$vr];
+    }
     
     public function determinate() {
         if(!$this->isSquare()) {

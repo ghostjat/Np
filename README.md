@@ -1,3 +1,8 @@
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ghostjat/numphp/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/ghostjat/numphp/?branch=main)
+[![Minimum PHP version: 7.4.0](https://img.shields.io/badge/php-7.4.0%2B-blue.svg)](https://php.net)
+[![Build Status](https://scrutinizer-ci.com/g/ghostjat/numphp/badges/build.png?b=main)](https://scrutinizer-ci.com/g/ghostjat/numphp/build-status/main)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/ghostjat/numphp/badges/code-intelligence.svg?b=main)](https://scrutinizer-ci.com/code-intelligence)
+
 <p align="center">
   <img src="https://github.com/ghostjat/numphp/blob/main/numphp.png">
 </p>

@@ -4,7 +4,7 @@
     "type": "library",
     "keywords": [
         "arithmetic", "computation", "computing", "decomposition", "engineering",
-        "linear algebra", "math", "matrix", "norms", "php","blas",
+        "linear algebra", "math", "matrix", "norms", "php","blas","lapack",
         "random number generation", "rng", "reduction", "scientific computing", "statistics",
         "tensor", "vector", "trigonometry","statstics","numphp"
     ],
@@ -28,8 +28,14 @@
         }
     },
     "require": {
-        "php": ">=7.4.0",
+        "php": ">=8.0",
         "ext-ffi": "*"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "numphp\\tests\\": "tests/",
+            "numphp\\benchmarks\\": "benchmarks/"
+        }
     },
     "config":{"optimize-autoloader":true}
 }
