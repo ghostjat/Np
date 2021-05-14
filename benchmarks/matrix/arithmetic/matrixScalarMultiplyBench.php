@@ -18,7 +18,7 @@ class matrixScalarMultiplyBench
     /**
      * @var float
      */
-    protected $b = M_E;
+    protected $b = 3.14;
 
     public function setUp() : void
     {

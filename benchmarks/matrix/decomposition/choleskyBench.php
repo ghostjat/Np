@@ -17,7 +17,7 @@ class choleskyBench
 
     public function setUp() : void
     {
-        $this->a = matrix::rand(500, 500);
+        $this->a = matrix::randn(500, 500);
     }
 
     /**

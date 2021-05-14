@@ -3,6 +3,9 @@
     "runner.path": "benchmarks/",
     "runner.time_unit": "seconds",
     "runner.progress": "blinken",
+    "runner.retry_threshold":5,
+    "runner.warmup":2,
+    "console.ansi":true,
     "report.outputs":{
         "numphp_benchmark":{
             "extends":"delimited",
@@ -12,13 +15,22 @@
     "report.generators":{
         "numphp":{
             "extends":"aggregate",
+            "generator":"expression",
             "title":"Numphp",
             "description":"Benchmark for numphp",
             "break":["benchmark"],
-            "cols":["benchmark","subject","set","revs","its","mem_peak","mode","rstdev"]
+            "cols":["benchmark","subject","set","revs","its","mem_peak","mean","mode","best","worst","stdev","rstdev"]
         }
     },
-    "runner.php_config": {
-        "memory_limit": "-1"
+    "core.profiles":{
+        "jit":{
+            "runner.php_config": {
+                "memory_limit": "-1",
+                "opcache.enable":1,
+                "opcache.enable_cli": 1,
+                "opcache.jit": 1255,
+                "opcache.jit_buffer_zie": "256M"
+            }
+        }
     }
 }

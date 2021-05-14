@@ -8,7 +8,7 @@ use numphp\matrix;
  * @Groups({"Decompositions"})
  * @BeforeMethods({"setUp"})
  */
-class svdBench
+class luBench
 {
     /**
      * @var \numphp\matrix
@@ -26,8 +26,8 @@ class svdBench
      * @Iterations(10)
      * @OutputTimeUnit("seconds", precision=3)
      */
-    public function svd() : void
+    public function lu() : void
     {
-        $this->a->svd();
+        $this->a->lu();
     }
 }

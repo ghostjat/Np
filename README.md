@@ -1,8 +1,14 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ghostjat/numphp/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/ghostjat/numphp/?branch=main)
-[![Minimum PHP version: 7.4.0](https://img.shields.io/badge/php-7.4.0%2B-blue.svg)](https://php.net)
+![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/ghostjat/numphp)(https://php.net)
 [![Build Status](https://scrutinizer-ci.com/g/ghostjat/numphp/badges/build.png?b=main)](https://scrutinizer-ci.com/g/ghostjat/numphp/build-status/main)
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/ghostjat/numphp/badges/code-intelligence.svg?b=main)](https://scrutinizer-ci.com/code-intelligence)
-
+![GitHub contributors](https://img.shields.io/github/contributors/ghostjat/numphp)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ghostjat/numphp)
+![GitHub last commit](https://img.shields.io/github/last-commit/ghostjat/numphp)
+![Packagist Version](https://img.shields.io/packagist/v/ghostjat/numphp)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ghostjat/numphp)
+![Lines of code](https://img.shields.io/tokei/lines/github/ghostjat/numphp)
+![GitHub top language](https://img.shields.io/github/languages/top/ghostjat/numphp)
 <p align="center">
   <img src="https://github.com/ghostjat/numphp/blob/main/numphp.png">
 </p>

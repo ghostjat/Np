@@ -17,7 +17,8 @@ class matrix {
 
     const TWO_PI = 2. * M_PI, EPSILON = 1e-8;
     const FLOAT = 1, DOUBLE = 2, INT = 3;
-    protected $l,$u,$p;
+
+    protected $l, $u, $p;
     public $data, $row, $col, $dtype;
     public static $_time = null, $_mem = null;
 
@@ -158,7 +159,7 @@ class matrix {
      */
     public static function diagonal(array $elements, int $dtype = self::FLOAT): matrix {
         $n = count($elements);
-        $ar = self::factory($n, $n,$dtype);
+        $ar = self::factory($n, $n, $dtype);
         for ($i = 0; $i < $n; ++$i) {
             $ar->data[$i * $n + $i] = $elements[$i]; #for ($j = 0; $j < $n; ++$j) {$i === $j ? $elements[$i] : 0;#} 
         }
@@ -371,12 +372,11 @@ class matrix {
             $ar = $this->copyMatrix();
             for ($i = 0; $i < $this->row; ++$i) {
                 for ($j = 0; $j < $this->col; ++$j) {
-                    $ar->data[$i * $this->col + $j] +=  $value->data[$i * $this->col + $j];
+                    $ar->data[$i * $this->col + $j] += $value->data[$i * $this->col + $j];
                 }
             }
             return $ar;
-        }
-        else {
+        } else {
             $ar = $this->copyMatrix();
             for ($i = 0; $i < $this->row; ++$i) {
                 for ($j = 0; $j < $this->col; ++$j) {
@@ -404,8 +404,7 @@ class matrix {
                 }
             }
             return $ar;
-        }
-        else{
+        } else {
             $ar = $this->copyMatrix();
             for ($i = 0; $i < $this->row; ++$i) {
                 for ($j = 0; $j < $this->col; ++$j) {
@@ -415,14 +414,14 @@ class matrix {
             return $ar;
         }
     }
-    
+
     /**
      * 
      * @param int|float $d
      * @return bool
      */
     public static function is_zero($d): bool {
-        if(abs($d) < self::EPSILON){
+        if (abs($d) < self::EPSILON) {
             return true;
         }
         return false;
@@ -492,7 +491,6 @@ class matrix {
             $this->data[$r2 * $this->col + $i] = $tmp;
         }
     }
-    
 
     /**
      * swap specific cols in tensor
@@ -566,29 +564,30 @@ class matrix {
         }
         return $ar;
     }
-    
+
     public function ref() {
         $ipiv = vector::factory(min($this->row, $this->col), vector::INT);
         $ar = $this->copyMatrix();
         $lp = core\lapack::sgetrf($ar, $ipiv);
-        if($lp !=0 ) {
+        if ($lp != 0) {
             return null;
         }
-        
+
         unset($ipiv);
         unset($lp);
         return $ar;
     }
-    
+
     public function cholesky() {
         $ar = $this->copyMatrix();
         $lp = core\lapack::spotrf($ar);
-        if($lp != 0) {
+        if ($lp != 0) {
             return null;
         }
         unset($lp);
         return $ar;
     }
+
     /**
      * RREF
      * The reduced row echelon form (RREF) of a matrix.
@@ -599,8 +598,7 @@ class matrix {
         $ar = $this->copyMatrix();
         for ($r = 0; $r < $ar->row; ++$r) {
             if ($lead >= $ar->col)
-                break;
-            {
+                break; {
                 $i = $r;
                 while ($ar->data[$i * $ar->col + $lead] == 0) {
                     $i++;
@@ -613,9 +611,8 @@ class matrix {
                     }
                 }
                 $ar->swapRows($r, $i);
-            }
-            {
-                $lv = $ar->data[$r * $ar->col +$lead];
+            } {
+                $lv = $ar->data[$r * $ar->col + $lead];
                 for ($j = 0; $j < $ar->col; ++$j) {
                     $ar->data[$r * $ar->col + $j] = $ar->data[$r * $ar->col + $j] / $lv;
                 }
@@ -634,23 +631,23 @@ class matrix {
     }
 
     public function determinant() {
-        if(!$this->isSquare()) {
+        if (!$this->isSquare()) {
             self::_err('Error:: Determinant of non-square matrix!');
-        }
-        elseif ($this->row == 1) {
+        } elseif ($this->row == 1) {
             return $this->data[0];
         }
-        $smaller = array_fill(0, ($this->row -1) * ($this->col -1), null);
+        $smaller = array_fill(0, ($this->row - 1) * ($this->col - 1), null);
         $b = self::factory($this->row - 1, $this->col - 1);
-        $det = 0.0; $sign = 1;
-        for($col = 0; $col < $this->col ; ++$col)  {
-            $n =0;
-            for($i = 0; $i < $this->row; ++$i) {
-                for($j = 0; $j < $this->col; ++$j) {
-                    if($j == $i) {
+        $det = 0.0;
+        $sign = 1;
+        for ($col = 0; $col < $this->col; ++$col) {
+            $n = 0;
+            for ($i = 0; $i < $this->row; ++$i) {
+                for ($j = 0; $j < $this->col; ++$j) {
+                    if ($j == $i) {
                         continue;
                     }
-                    $smaller[$n] = $this->data[$i * $this->col +$j];
+                    $smaller[$n] = $this->data[$i * $this->col + $j];
                     ++$n;
                 }
             }
@@ -666,7 +663,6 @@ class matrix {
     public function copyMatrix(): matrix {
         return clone $this;
     }
-    
 
     /**
      * 
@@ -704,13 +700,12 @@ class matrix {
      */
     public function argMax(): vector {
         $v = vector::factory($this->row, vector::INT);
-        if($this->dtype === self::DOUBLE ){
-            for($i = 0; $i < $this->row; ++$i) {
+        if ($this->dtype === self::DOUBLE) {
+            for ($i = 0; $i < $this->row; ++$i) {
                 $v->data[$i] = core\blas::dmax($this->rowAsVector($i));
             }
-        }
-        elseif($this->dtype === self::FLOAT) {
-            for($i = 0; $i < $this->row; ++$i) {
+        } elseif ($this->dtype === self::FLOAT) {
+            for ($i = 0; $i < $this->row; ++$i) {
                 $v->data[$i] = core\blas::smax($this->rowAsVector($i));
             }
         }
@@ -723,13 +718,12 @@ class matrix {
      */
     public function argMin(): vector {
         $v = vector::factory($this->row, vector::INT);
-        if($this->dtype === self::DOUBLE ){
-            for($i = 0; $i < $this->row; ++$i) {
+        if ($this->dtype === self::DOUBLE) {
+            for ($i = 0; $i < $this->row; ++$i) {
                 $v->data[$i] = core\blas::dmin($this->rowAsVector($i));
             }
-        }
-        elseif($this->dtype === self::FLOAT) {
-            for($i = 0; $i < $this->row; ++$i) {
+        } elseif ($this->dtype === self::FLOAT) {
+            for ($i = 0; $i < $this->row; ++$i) {
                 $v->data[$i] = core\blas::smin($this->rowAsVector($i));
             }
         }
@@ -740,7 +734,7 @@ class matrix {
      * set data to matrix
      * @param type $data
      */
-    public function setData($data,$dignoal=false) {
+    public function setData($data, $dignoal = false) {
         if (!is_null($data) && $dignoal == false) {
             if (is_array($data) && is_array($data[0])) {
                 for ($i = 0; $i < $this->row; ++$i) {
@@ -754,8 +748,7 @@ class matrix {
                         $this->data[$i * $this->col + $j] = $data;
                     }
                 }
-            }
-            elseif(is_numeric($data) && $dignoal == true) {
+            } elseif (is_numeric($data) && $dignoal == true) {
                 for ($i = 0; $i < $this->row; ++$i) {
                     $this->data[$i * $this->col * $i] = $data;
                 }
@@ -798,15 +791,15 @@ class matrix {
         }
         return $vr;
     }
-    
+
     /**
      * Return a col as vector from the matrix.
      * @param int $index
      * @return \numphp\vector
      */
-    public function colAsVector(int $index) : vector {
+    public function colAsVector(int $index): vector {
         $vr = vector::factory($this->row, $this->dtype);
-        for($i = 0; $i< $this->row; ++$i) {
+        for ($i = 0; $i < $this->row; ++$i) {
             $vr->data[$i] = $this->data[$i * $this->row + $index];
         }
         return $vr;
@@ -822,18 +815,18 @@ class matrix {
         }
         $vr = vector::factory($this->row, $this->dtype);
         for ($i = 0; $i < $this->row; ++$i) {
-            $vr->data[$i] = $this->getDiagonalVal($i);    
+            $vr->data[$i] = $this->getDiagonalVal($i);
         }
         return $vr;
     }
-    
+
     /**
      * get a diagonal value from matrix
      * @param int $i
      * @return type
      */
     public function getDiagonalVal(int $i) {
-        if($this->isSquare()){
+        if ($this->isSquare()) {
             return $this->data[$i * $this->row + $i];
         }
     }
@@ -842,39 +835,39 @@ class matrix {
      * Compute the multiplicative inverse of the matrix.
      * @return \numphp\matrix
      */
-    public function inverse():matrix|null {
-        if(!$this->isSquare()){
+    public function inverse(): matrix|null {
+        if (!$this->isSquare()) {
             self::_err('Error::invalid Size of matrix!');
         }
         $imat = $this->copyMatrix();
         $ipiv = vector::factory($this->row, vector::INT);
         $lp = core\lapack::sgetrf($imat, $ipiv);
-        if($lp != 0) {
+        if ($lp != 0) {
             return null;
         }
         $lp = core\lapack::sgetri($imat, $ipiv);
-        if($lp != 0) {
+        if ($lp != 0) {
             return null;
         }
         unset($ipiv);
         unset($lp);
         return $imat;
     }
-    
+
     public function pseudoInverse() {
         $k = min($this->row, $this->col);
         $s = vector::factory($k);
-        $u = self::factory($this->row , $this->row);
-        $vt = self::factory($this->col , $this->col);
+        $u = self::factory($this->row, $this->row);
+        $vt = self::factory($this->col, $this->col);
         $imat = $this->copyMatrix();
         $mr = self::factory($this->col, $this->row);
         $lp = core\lapack::sgesdd($imat, $s, $u, $vt);
-        if($lp != 0) {
+        if ($lp != 0) {
             return null;
         }
-        
-        for($i = 0; $i < $k; ++$i) {
-            core\blas::sscal(1.0/$s->data[$i], $vt->rowAsVector($i));
+
+        for ($i = 0; $i < $k; ++$i) {
+            core\blas::sscal(1.0 / $s->data[$i], $vt->rowAsVector($i));
         }
         core\blas::sgemm($vt, $u, $mr);
         unset($s);
@@ -885,7 +878,7 @@ class matrix {
         unset($lp);
         return $mr;
     }
-    
+
     /**
      * Compute the singular value decomposition of a matrix and 
      * return an object of the singular values and unitary matrices
@@ -899,72 +892,126 @@ class matrix {
         $u = self::factory($this->row, $this->row);
         $vt = self::factory($this->col, $this->col);
         $lp = core\lapack::sgesdd($ar, $s, $u, $vt);
-        if($lp !=0) {
+        if ($lp != 0) {
             return null;
         }
         unset($ar);
         unset($k);
         unset($lp);
-        return (object)['u'=>$u,'s'=>$s,'v'=>$vt];
-        
+        return (object) ['u' => $u, 's' => $s, 'v' => $vt];
     }
+
     /**
      * Compute the eigen decomposition of a general matrix.
      * return the eigenvalues and eigenvectors as object
+     * @param bool $symmetric
      * @return object (eignVal,eignVec)
      */
-    public function eign() {
-        if(!$this->isSquare()) {
+    public function eign(bool $symmetric = false) {
+        if (!$this->isSquare()) {
             self::_err('A Non Square Matrix is given!');
         }
         $wr = vector::factory($this->col);
-        $wi = vector::factory($this->col);
         $ar = $this->copyMatrix();
-        $vr = self::factory($this->col, $this->col);
-        $lp = core\lapack::sgeev($ar, $wr, $wi, $vr);
-        if($lp != 0) {
+        if ($symmetric) {
+            $lp = core\lapack::ssyev($ar, $wr);
+            if ($lp != 0) {
+                return null;
+            }
+            return (object) ['eignVal' => $wr, 'eignVec' => $ar];
+        } else {
+            $wi = vector::factory($this->col);
+            $vr = self::factory($this->col, $this->col);
+            $lp = core\lapack::sgeev($ar, $wr, $wi, $vr);
+            if ($lp != 0) {
+                return null;
+            }
+            return (object) ['eignVal' => $wr, 'eignVec' => $vr];
+        }
+    }
+
+    /**
+     * Compute the LU factorization of matrix.
+     * return lower, upper, and permutation matrices as object.
+     * @return object (l,u,p)
+     */
+    public function lu() {
+        $ipiv = vector::factory($this->col, vector::INT);
+        $ar = $this->copyMatrix();
+        $lp = core\lapack::sgetrf($ar, $ipiv);
+        if ($lp != 0) {
             return null;
         }
-        return (object)['eignVal'=>$wr,'eignVec'=>$vr];
+        $l = self::factory($this->col, $this->col);
+        $u = self::factory($this->col, $this->col);
+        $p = self::factory($this->col, $this->col);
+        for ($i = 0; $i < $this->col; ++$i) {
+            for ($j = 0; $j < $i; ++$j) {
+                $l->data[$i * $this->col + $j] = $ar->data[$i * $this->col + $j];
+            }
+            $l->data[$i * $this->col + $i] = 1.0;
+            for ($j = $i + 1; $j < $this->col; ++$j) {
+                $l->data[$i * $this->col + $j] = 0.0;
+            }
+        }
+        for ($i = 0; $i < $this->col; ++$i) {
+            for ($j = 0; $j < $i; ++$j) {
+                $u->data[$i * $this->col + $j] = 0.0;
+            }
+            for ($j = $i; $j < $this->col; ++$j) {
+                $u->data[$i * $this->col + $j] = $ar->data[$i * $this->col + $j];
+            }
+        }
+        for ($i = 0; $i < $this->col; ++$i) {
+            for ($j = 0; $j < $this->col; ++$j) {
+                if ($j == $ipiv->data[$i] - 1) {
+                    $p->data[$i * $this->col + $j] = 1;
+                } else {
+                    $p->data[$i * $this->col + $j] = 0;
+                }
+            }
+        }
+        unset($ar);
+        unset($ipiv);
+        return (object) ['l' => $l, 'u' => $u, 'p' => $p];
     }
-    
+
     public function determinate() {
-        if(!$this->isSquare()) {
+        if (!$this->isSquare()) {
             self::_err('determinant is undefined for a non square matrix');
         }
     }
-    
-    
+
     /**
-     *Run a function over all of the elements in the matrix. 
+     * Run a function over all of the elements in the matrix. 
      * @param callable $func
      * @return \numphp\matrix
      */
-    public function map(callable $func) : matrix {
-        if($func instanceof \Closure) {
+    public function map(callable $func): matrix {
+        if ($func instanceof \Closure) {
             $ar = self::factory($this->row, $this->col, $this->dtype);
-            for($i=0;$i<$this->row;++$i) {
-                for($j=0;$j<$this->col;++$j) {
-                    $ar->data[$i * $this->col + $j] = $func($this->data[$i * $this->col + $j]); 
+            for ($i = 0; $i < $this->row; ++$i) {
+                for ($j = 0; $j < $this->col; ++$j) {
+                    $ar->data[$i * $this->col + $j] = $func($this->data[$i * $this->col + $j]);
                 }
             }
             return $ar;
         }
     }
-    
-     /**
+
+    /**
      * Is the matrix symmetric i.e. is it equal to its own transpose?
      *
      * @return bool
      */
-    public function isSymmetric() : bool {
-        if(!$this->isSquare()){
+    public function isSymmetric(): bool {
+        if (!$this->isSquare()) {
             return false;
         }
         $ar = $this->transpose();
-        for($i = 0; $i < $this->row; ++$i) {
-            for($j = 0 ; $j < $this->col; ++ $j) {
-                if($ar->data[$i * $this->col + $j] != $this->data[$i * $this->col +$j]) {
+        for ($i = 0; $i < $this->row; ++$i) {
+            for ($j = 0; $j < $this->col; ++$j) {
+                if ($ar->data[$i * $this->col + $j] != $this->data[$i * $this->col + $j]) {
                     unset($ar);
                     return false;
                 }
@@ -974,17 +1021,16 @@ class matrix {
         return true;
     }
 
-
     /**
      * Flatten i.e unravel the matrix into a vector.
      *
      * @return \numphp\vector
      */
-    public function flatten():vector {
+    public function flatten(): vector {
         $vr = vector::factory($this->row * $this->col, $this->dtype);
-        for($i = 0; $i< $this->row; ++$i) {
-            for($j = 0; $j < $this->col; ++$j) {
-                $vr->data[$i* $this->col + $j] = $this->data[$i * $this->col +$j];
+        for ($i = 0; $i < $this->row; ++$i) {
+            for ($j = 0; $j < $this->col; ++$j) {
+                $vr->data[$i * $this->col + $j] = $this->data[$i * $this->col + $j];
             }
         }
         return $vr;
@@ -1028,11 +1074,11 @@ class matrix {
     protected static function c_DoubleMatrix(int $row, int $col) {
         return \FFI::cast('double *', \FFI::new("double[$row][$col]"));
     }
-    
+
     protected static function c_IntMatrix(int $row, int $col) {
         return \FFI::cast('int *', \FFI::new("int[$row][$col]"));
     }
-    
+
     protected function __construct(int $row, int $col, int $dtype = self::Float) {
         if ($row < 1 || $col < 1) {
             $this->_invalidArgument('* To create Numphp/Matrix row & col must be greater than 0!, Op Failed! * ');
@@ -1056,7 +1102,6 @@ class matrix {
         }
         return $this;
     }
-    
 
     private static function _err($msg): \Exception {
         throw new \Exception($msg);
