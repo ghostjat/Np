@@ -64,7 +64,7 @@ class lapack {
     /**
      * 
      * @param \numphp\matrix $mat
-     * @param type $uplo
+     * @param string $uplo
      * @param int $matLayout
      * @return int
      */
@@ -99,6 +99,12 @@ class lapack {
         return self::$ffi_lapack->LAPACKE_ssyev($matLayout,'V', 'U', $mat->col, $mat->data, $mat->col, $wr->data);
     }
     
+    public static function slange(string $norm, \numphp\matrix $m, int $matLayout = self::ROW_MAJOR){
+        self::init();
+        return self::$ffi_lapack->LAPACKE_slange($matLayout, $norm, $m->row, $m->col, $m->data,$m->col);
+    }
+
+
     public static function sgels() {
         self::init();
         

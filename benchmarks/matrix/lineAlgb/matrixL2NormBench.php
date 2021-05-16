@@ -1,6 +1,6 @@
 <?php
 
-namespace numphp\benchmarks\lineAlgb;
+namespace numphp\benchmarks\matrix\lineAlgb;
 
 use numphp\matrix;
 
@@ -8,33 +8,25 @@ use numphp\matrix;
  * @Groups({"LinearAlgebra"})
  * @BeforeMethods({"setUp"})
  */
-class dotMatrixBench
+class matrixL2NormBench
 {
     /**
      * @var \numphp\matrix
      */
     protected $a;
 
-    /**
-     * @var \numphp\matrix
-     */
-    protected $b;
-
     public function setUp() : void
     {
-        $this->a = matrix::uniform(1000, 1000);
-
-        $this->b = matrix::uniform(1000, 1000);
+        $this->a = matrix::uniform(1500, 1500);
     }
 
     /**
      * @Subject
      * @Iterations(5)
-     * @Revs(1)
      * @OutputTimeUnit("seconds", precision=3)
      */
-    public function dotMatrix() : void
+    public function normL2() : void
     {
-        $this->a->dotMatrix($this->b);
+        $this->a->normL2();
     }
 }

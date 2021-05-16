@@ -17,7 +17,7 @@ namespace numphp;
 class vector {
     const INT=0, FLOAT = 1, DOUBLE = 2;
     public $data,$col,$dtype;
-    
+
     /**
      * 
      * @param int $col
@@ -424,6 +424,10 @@ class vector {
             return $vr;
         }
     }
+    
+    public function convolve(\numphp\vector $v, int $stride = 1): vector {
+        return convolve::conv1D($this, $v, $stride);
+    }
 
 
     /**
@@ -543,6 +547,13 @@ class vector {
                 break;
         }
         return $this;
+    }
+    public function asArray() {
+        $ar = array_fill(0, $this->col, null);
+        for($i = 0; $i < $this->col; ++$i) {
+            $ar[$i] = $this->data[$i];
+        }
+        return $ar;
     }
     
     private static function c_FloatVector(int $col): \FFI\CData {

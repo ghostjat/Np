@@ -94,3 +94,11 @@ int LAPACKE_sgelq2( int matrix_layout, int m, int n,
                            float* a, int lda, float* tau );
 int LAPACKE_spotrf( int matrix_order, char uplo, int n, float* a,
                            int lda );
+int LAPACKE_sgelsy( int matrix_order, int m, int n, int nrhs, float* a, int lda, float* b,
+                           int ldb, int* jpvt, float rcond, int* rank );
+void LAPACKE_sgelsd( int m, int n, int nrhs, float* a,
+                    int lda, float* b, int ldb, float* s,
+                    float* rcond, int rank, float* work,
+                    int lwork, int iwork, int info );
+float LAPACKE_slange(int matrix_layout, char norm, int m,
+                        int n, const float* a, int lda);

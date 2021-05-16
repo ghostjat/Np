@@ -18,7 +18,6 @@ class matrix {
     const TWO_PI = 2. * M_PI, EPSILON = 1e-8;
     const FLOAT = 1, DOUBLE = 2, INT = 3;
 
-    protected $l, $u, $p;
     public $data, $row, $col, $dtype;
     public static $_time = null, $_mem = null;
 
@@ -252,6 +251,16 @@ class matrix {
     }
 
     /**
+     * 2D convolution between a matrix ma and kernel kb, with a given stride.
+     * @param \numphp\matrix $m
+     * @param int $stride
+     * @return matrix
+     */
+    public function convolve(\numphp\matrix $m, int $stride = 1): matrix {
+        return convolve::conv2D($this, $m, $stride);
+    }
+
+    /**
      * trace
      * @return float
      */
@@ -325,9 +334,9 @@ class matrix {
      * @param int|float|matrix|vector $value
      * @return mixed (matrix,vector)
      */
-    public function multiply($value) {
+    public function multiply(int|float|vector|matrix $value): mixed {
         if ($value instanceof self) {
-            if ($this->checkDtype($value) && $this->checkDimensions($value)) {
+            if ($this->checkDtype($value) && $this->checkShape($value)) {
                 $ar = $this->copyMatrix();
                 for ($i = 0; $i < $this->row; ++$i) {
                     for ($j = 0; $j < $this->col; ++$j) {
@@ -413,6 +422,10 @@ class matrix {
             }
             return $ar;
         }
+    }
+
+    public function square(): matrix {
+        return $this->multiply($this);
     }
 
     /**
@@ -579,13 +592,22 @@ class matrix {
     }
 
     public function cholesky() {
-        $ar = $this->copyMatrix();
-        $lp = core\lapack::spotrf($ar);
-        if ($lp != 0) {
-            return null;
+        if ($this->isSymmetric()) {
+            $ar = $this->copyMatrix();
+            $lp = core\lapack::spotrf($ar);
+            if ($lp != 0) {
+                return null;
+            }
+            for ($i = 0; $i < $this->col; ++$i) {
+                for ($j = $i + 1; $j < $this->col; ++$j) {
+                    $ar->data[$i * $this->col + $j] = 0.0;
+                }
+            }
+            unset($lp);
+            return $ar;
+        } else {
+            self::_err('given matrix is not symmertric!');
         }
-        unset($lp);
-        return $ar;
     }
 
     /**
@@ -976,6 +998,38 @@ class matrix {
         return (object) ['l' => $l, 'u' => $u, 'p' => $p];
     }
 
+    /**
+     * Return the L1 norm of the matrix.
+     * @return int|float
+     */
+    public function normL1(): int|float {
+        return core\lapack::slange('1', $this);
+    }
+
+    /**
+     * Return the L2 norm of the matrix.
+     * @return int|float
+     */
+    public function normL2(): int|float {
+        return core\lapack::slange('f', $this);
+    }
+
+    /**
+     * Return the L1 norm of the matrix.
+     * @return int|float
+     */
+    public function normINF(): int|float {
+        return core\lapack::slange('i', $this);
+    }
+
+    /**
+     * Return the Frobenius norm of the matrix.
+     * @return int|float
+     */
+    public function normFrob(): int|float {
+        return core\lapack::slange('f', $this);
+    }
+
     public function determinate() {
         if (!$this->isSquare()) {
             self::_err('determinant is undefined for a non square matrix');
@@ -997,6 +1051,10 @@ class matrix {
             }
             return $ar;
         }
+    }
+
+    public function abs() {
+        return $this->map('abs');
     }
 
     /**
@@ -1053,9 +1111,16 @@ class matrix {
         return (string) $this->printMatrix();
     }
 
-    protected function checkDimensions(\numphp\matrix $matrix) {
+    protected function checkShape(\numphp\matrix $matrix) {
         if ($this->row != $matrix->row || $this->col != $matrix->col) {
             self::_err('Mismatch Dimensions of given matrix');
+        }
+        return true;
+    }
+
+    protected function checkDimensions(\numphp\matrix $matrix) {
+        if ($this->col != $matrix->row) {
+            self::_err('Mismatch Dimensions of given matrix! Matrix-A col & Matrix-B row amount need to be the same');
         }
         return true;
     }
@@ -1101,6 +1166,16 @@ class matrix {
                 break;
         }
         return $this;
+    }
+
+    function asArray() {
+        $ar = array_fill(0, $this->row, array_fill(0, $this->col, null));
+        for ($i = 0; $i < $this->row; ++$i) {
+            for ($j = 0; $j < $this->col; ++$j) {
+                $ar[$i][$j] = $this->data[$i * $this->col + $j];
+            }
+        }
+        return $ar;
     }
 
     private static function _err($msg): \Exception {

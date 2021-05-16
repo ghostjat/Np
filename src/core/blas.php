@@ -70,7 +70,7 @@ class blas {
      */
     public static function sgemm(\numphp\matrix $m1, \numphp\matrix $m2, \numphp\matrix $mr,int $trans1= self::CblasNoTrans,int $trans2= self::CblasNoTrans) {
         self::init();
-        self::$ffi_blas->cblas_sgemm(self::CblasRowMajor, $trans1, $trans2, $m1->row, $m2->col, $m1->col, 1.0, $m1->data, $m1->row, $m2->data, $m2->row, 0.0, $mr->data, $mr->row);
+        self::$ffi_blas->cblas_sgemm(self::CblasRowMajor, $trans1, $trans2, $m1->row, $m2->col, $m1->col, 1.0, $m1->data, $m1->col, $m2->data, $m2->col, 0.0, $mr->data, $mr->col);
     }
 
     /**
