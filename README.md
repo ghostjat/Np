@@ -77,7 +77,8 @@ Using configuration file: /home/ghost/projects/git/numphp/phpbench.json
 | matrixPseudoInverseBench  | inverse   | 0   | 1    | 5   | 4.775mb  | 0.222s  | ±13.76%  |
 | matrixInverseBench        | inverse   | 0   | 1    | 5   | 1.731mb  | 0.032s  | ±127.50% |
 | dotMatrixBench            | dotMatrix | 0   | 1    | 5   | 3.656mb  | 0.013s  | ±27.94%  |
-
+| matrixL1NormBench         | normL1    | 0   | 1    | 10  | 1.525mb  | 0.001s  | ±0.80%   |
+| matrixL2NormBench         | normL2    | 0   | 1    | 10  | 1.525mb  | 0.003s  | ±1.63%   |
 
 License
 -------

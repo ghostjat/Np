@@ -17,7 +17,7 @@ class matrixL1NormBench
 
     public function setUp() : void
     {
-        $this->a = matrix::uniform(1500, 1500);
+        $this->a = matrix::uniform(500, 500);
     }
 
     /**
