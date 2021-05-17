@@ -391,12 +391,13 @@ class matrix {
     }
 
     /**
+     * /**
      * Sum of two matrix or a scalar to current matrix
      * 
-     * @param mixed(scalar,\numphp\matrix) $value matrix|$scalar to add this matrix
-     * @return \numphp\matrix
+     * @param int|float|\numphp\matrix $value
+     * @return matrix
      */
-    public function sum($value): matrix {
+    public function sum(int|float|\numphp\matrix $value): matrix {
         if ($value instanceof self) {
             if ($this->row != $value->row || $this->col != $value->col) {
                 self::_err('Inavlid matrix size');
@@ -421,7 +422,7 @@ class matrix {
 
     /**
      * subtract another matrix or a scalar to this matrix
-     * @param mixed(scalar,\numphp\matrix) $value matrix|$scalar to add this matrix
+     * @param int|float|\numphp\matrix  $value matrix|$scalar to add this matrix
      * @return \numphp\matrix
      */
     public function subtract($value): matrix {
