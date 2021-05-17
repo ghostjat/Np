@@ -25,7 +25,7 @@ class matrix {
      * create empty 2d matrix for given data type
      * @param int $row  num of rows 
      * @param int $col  num of cols
-     * @param const $dtype matrix data type float|double
+     * @param int $dtype matrix data type float|double
      * @return \numphp\matrix
      */
     public static function factory(int $row, int $col, int $dtype = self::FLOAT): matrix {
@@ -35,7 +35,7 @@ class matrix {
     /**
      * create 2d matrix using php array
      * @param array $data
-     * @param const $dtype matrix data type float|double
+     * @param int $dtype matrix data type float|double
      * @return \numphp\matrix
      */
     public static function ar(array $data, int $dtype = self::FLOAT): matrix {
@@ -233,12 +233,12 @@ class matrix {
     /**
      * create an identity matrix with the given dimensions.
      * @param int $n
-     * @return \numphp\matrix
-     * @throws InvalidArgumentException
+     * @return matrix|null
+     * @throws \InvalidArgumentException
      */
-    public static function identity(int $n): matrix {
+    public static function identity(int $n): matrix|null {
         if ($n < 1) {
-            throw new InvalidArgumentException('Dimensionality must be greater than 0 on all axes.');
+            throw new \InvalidArgumentException('Dimensionality must be greater than 0 on all axes.');
         }
 
         $ar = self::factory($n, $n);
@@ -336,35 +336,58 @@ class matrix {
      */
     public function multiply(int|float|vector|matrix $value): mixed {
         if ($value instanceof self) {
-            if ($this->checkDtype($value) && $this->checkShape($value)) {
-                $ar = $this->copyMatrix();
-                for ($i = 0; $i < $this->row; ++$i) {
-                    for ($j = 0; $j < $this->col; ++$j) {
-                        $ar->data[$i * $this->col + $j] *= $value->data[$i * $this->col + $j];
-                    }
-                }
-                return $ar;
-            }
+            $this->multiplyMatrix($value);
         } else if ($value instanceof vector) {
-            return $value->mulVectorMatrix($this);
+            $this->multiplyVector($value);
         } else {
-            if (!is_int($value) || !is_float($value) || !is_double($value)) {
-                self::_err('Scalar must be an integer/float/double, ' . gettype($value) . ' found.');
+            $this->multiplyScalar($value);
+        }
+    }
+    
+    /**
+     * 
+     * @param \numphp\matrix $m
+     * @return matrix
+     */
+    protected function multiplyMatrix(\numphp\matrix $m): matrix {
+        if ($this->checkDtype($m) && $this->checkShape($m)) {
+            $ar = $this->copyMatrix();
+            for ($i = 0; $i < $this->row; ++$i) {
+                for ($j = 0; $j < $this->col; ++$j) {
+                    $ar->data[$i * $this->col + $j] *= $m->data[$i * $this->col + $j];
+                }
+            }
+            return $ar;
+        }
+    }
+
+    protected function multiplyVector(\numphp\vector $v) {
+        return $v->mulVectorMatrix($this);
+    }
+
+
+    /**
+     * 
+     * @param int|float $scalar
+     * @return matrix
+     */
+    protected function multiplyScalar(int|float $scalar):matrix {
+        if (!is_int($scalar) || !is_float($scalar) || !is_double($scalar)) {
+                self::_err('Scalar must be an integer/float/double, ' . gettype($scalar) . ' found.');
             }
 
-            if ($value == 0) {
+            if ($scalar == 0) {
                 return self::zeros($this->row, $this->col, $this->dtype);
             }
 
             $ar = $this->copyMatrix();
             for ($i = 0; $i < $this->row; ++$i) {
                 for ($j = 0; $j < $this->col; ++$j) {
-                    $ar->data[$i * $this->col + $j] *= $value;
+                    $ar->data[$i * $this->col + $j] *= $scalar;
                 }
             }
 
             return $ar;
-        }
     }
 
     /**
@@ -753,10 +776,12 @@ class matrix {
     }
 
     /**
-     * set data to matrix
-     * @param type $data
+     * Set given data in matrix
+     * @param int|float|array $data
+     * @param bool $dignoal
+     * @return void
      */
-    public function setData($data, $dignoal = false) {
+    public function setData(int|float|array $data, bool $dignoal = false):void {
         if (!is_null($data) && $dignoal == false) {
             if (is_array($data) && is_array($data[0])) {
                 for ($i = 0; $i < $this->row; ++$i) {
@@ -854,8 +879,9 @@ class matrix {
     }
 
     /**
+     *
      * Compute the multiplicative inverse of the matrix.
-     * @return \numphp\matrix
+     * @return matrix|null
      */
     public function inverse(): matrix|null {
         if (!$this->isSquare()) {
@@ -875,8 +901,12 @@ class matrix {
         unset($lp);
         return $imat;
     }
-
-    public function pseudoInverse() {
+    
+    /**
+     * 
+     * @return matrix|null
+     */
+    public function pseudoInverse(): matrix|null {
         $k = min($this->row, $this->col);
         $s = vector::factory($k);
         $u = self::factory($this->row, $this->row);
@@ -907,7 +937,7 @@ class matrix {
      *
      * @return object (u,s,v)
      */
-    public function svd() {
+    public function svd(): object{
         $k = min($this->row, $this->col);
         $ar = $this->copyMatrix();
         $s = vector::factory($k);
@@ -1168,7 +1198,7 @@ class matrix {
         return $this;
     }
 
-    function asArray() {
+    public function asArray() {
         $ar = array_fill(0, $this->row, array_fill(0, $this->col, null));
         for ($i = 0; $i < $this->row; ++$i) {
             for ($j = 0; $j < $this->col; ++$j) {
@@ -1183,7 +1213,7 @@ class matrix {
     }
 
     private function _invalidArgument($argument): \InvalidArgumentException {
-        throw new InvalidArgumentException($argument);
+        throw new \InvalidArgumentException($argument);
     }
 
     /**
