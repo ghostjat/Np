@@ -72,6 +72,23 @@ class blas {
         self::init();
         self::$ffi_blas->cblas_sgemm(self::CblasRowMajor, $trans1, $trans2, $m1->row, $m2->col, $m1->col, 1.0, $m1->data, $m1->col, $m2->data, $m2->col, 0.0, $mr->data, $mr->col);
     }
+    
+    /**
+     *  Product of symmetric matrix and general matrix
+     *    C := alpha * AB + beta * C
+     *            or
+     *    C := alpha * BA + beta * C
+     * 
+     * @param \numphp\matrix $m1
+     * @param \numphp\matrix $m2
+     * @param \numphp\matrix $mr
+     */
+     
+    public static function dsymm(\numphp\matrix $m1, \numphp\matrix $m2, \numphp\matrix $mr) {
+        self::init();
+        self::$ffi_blas->cblas_dsymm(self::CblasRowMajor, self::CblasLeft, self::CblasUpper, $m1->row, 
+                $m2->col,1.0, $m1->data, $m1->row, $m2->data, $m2->row, 0.0, $mr->data, $mr->row);
+    }
 
     /**
      *  Product of symmetric matrix and general matrix
@@ -99,10 +116,41 @@ class blas {
      * @param \numphp\matrix $m1
      * @param \numphp\matrix $m2
      */
+    public static function dsyrk(\numphp\matrix $m1, \numphp\matrix $m2) {
+        self::init();
+        self::$ffi_blas->cblas_dsyrk(self::CblasRowMajor, self::CblasUpper,
+        self::CblasNoTrans, $m1->row, $m2->col, 1.0, $m1->data, $m1->row, 0.0, $m2->data, $m2->row);
+    }
+    
+    /**
+     * Update rank n of symmetric matrix
+     *    C := alpha * A A^T + beta * C
+     *            or
+     *    C := alpha * A^T A + beta * C
+     * 
+     * @param \numphp\matrix $m1
+     * @param \numphp\matrix $m2
+     */
     public static function ssyrk(\numphp\matrix $m1, \numphp\matrix $m2) {
         self::init();
         self::$ffi_blas->cblas_ssyrk(self::CblasRowMajor, self::CblasUpper,
         self::CblasNoTrans, $m1->row, $m2->col, 1.0, $m1->data, $m1->row, 0.0, $m2->data, $m2->row);
+    }
+    
+    /**
+     * Update rank 2k of symmetric matrix
+     *    C := alpha * A B^T + alpha B A^T + beta * C
+     *            or
+     *    C := alpha * B^T A + alpha A^T B + beta * C
+     * 
+     * @param \numphp\matrix $m1
+     * @param \numphp\matrix $m2
+     * @param \numphp\matrix $mr
+     */
+    public static function dsyr2k(\numphp\matrix $m1, \numphp\matrix $m2, \numphp\matrix $mr) {
+        self::init();
+        self::$ffi_blas->cblas_dsyr2k(self::CblasRowMajor, self::CblasLower, self::CblasNoTrans, 
+                $m1->col, $m2->row, 1.0, $m1->data, $m1->row, $m2->data, $m2->row, 0.0, $mr->data, $mr->row);
     }
     
     /**
@@ -123,7 +171,11 @@ class blas {
 
 
     /**
-     * @static
+     *Product of symmetric matrix and general matrix
+     *    C := alpha * AB + beta * C
+     *            or
+     *    C := alpha * BA + beta * C
+     * 
      * @dtype Double
      * @param \numphp\matrix $m1
      * @param \numphp\matrix $m2
@@ -161,8 +213,28 @@ class blas {
      */
     public static function sgemv(\numphp\matrix $m, \numphp\vector $v, \numphp\vector $mvr) {
         self::init();
-        return self::$ffi_blas->cblas_sgemv(self::CblasRowMajor, self::CblasNoTrans, $m->row, $m->col,
-                1.0, $m->data, $m->row, $v->data, 1, 1.0, $mvr->data, 1);
+        return self::$ffi_blas->cblas_sgemv(self::CblasRowMajor, self::CblasNoTrans, $m->col, $m->row,
+                1.0, $m->data, $m->row, $v->data, 1, 0.0, $mvr->data, 1);
+    }
+    /**
+     * Compute the product of a general matrix and a vector stored in band format.
+     *    y := alpha * Ax + beta * y
+     * @param int $KL   Number of elements in the lower left part
+     * @param int $KU   Number of elements in the upper right part
+     * @param double $alpha  Coefficient of scalar multiple of vector
+     * @param double $beta   Coefficient of scalar multiple of  mvr
+     * @param \numphp\matrix $matrix
+     * @param \numphp\vector $vector
+     * @param \numphp\vector $mvr
+     */
+    public static function dgbmv(int $KL, int $KU, float $alpha, float $beta, \numphp\matrix $matrix, \numphp\vector $vector, \numphp\vector $mvr) {
+        self::init();
+        return self::$ffi_blas->cblas_dgbmv(self::CblasRowMajor,
+                 self::CblasNoTrans, $matrix->row, $matrix->col,
+                 $KL, $KU, $alpha,
+                 $matrix->data,$matrix->row, $vector->data,
+                 1, $beta, $mvr->data, 1);
+
     }
     
     /**
@@ -194,9 +266,23 @@ class blas {
      * @param \numphp\matrix $m
      * @return void
      */
+    public static function dger(\numphp\vector $v1, \numphp\vector $v2, \numphp\matrix $m) {
+        self::init();
+        return self::$ffi_blas->cblas_dger(self::CblasRowMajor, $v1->col, $v2->col,
+                1.0, $v1->data, 1, $v2->data, 1, $m->data, $m->row);
+    }
+    
+    /**
+     * Compute the product of a column vector and a row vector. (Real number)
+     *    A := alpha * x y^t + A
+     * @param \numphp\vector $v1
+     * @param \numphp\vector $v2
+     * @param \numphp\matrix $m
+     * @return void
+     */
     public static function sger(\numphp\vector $v1, \numphp\vector $v2, \numphp\matrix $m) {
         self::init();
-        return self::$ffi_blas->cblas_sger(self::CblasRowMajor, $m->row, $m->col,
+        return self::$ffi_blas->cblas_sger(self::CblasRowMajor, $v1->col, $v2->col,
                 1.0, $v1->data, 1, $v2->data, 1, $m->data, $m->row);
     }
     
@@ -268,8 +354,19 @@ class blas {
         return self::$ffi_blas->cblas_isamin($v->col, $v->data, 1);
     }
     
-    public static function dswap() {
+    /**
+     * Exchange the contents of the vector.
+     *    X := Y
+     *    Y := X
+     * @param \numphp\vector $v1
+     * @param \numphp\vector $v2
+     * @param int $inv1
+     * @param int $inv2
+     */
+    public static function dswap(\numphp\vector $v1 , \numphp\vector $v2,int $inv1 = 1, int $inv2 = 1) {
         self::init();
+        self::$ffi_blas->cblas_dswap($v1->col, $v1->data, $inv1, $v2->data , $inv2);
+
         
     }
     /**
@@ -278,16 +375,32 @@ class blas {
      *    Y := X
      * @param \numphp\vector $v1
      * @param \numphp\vector $v2
+     * @param int $inv1
+     * @param int $inv2
      */
-    public static function sswap(\numphp\vector $v1, \numphp\vector $v2) {
+    public static function sswap(\numphp\vector $v1, \numphp\vector $v2, int $inv1 = 1, int $inv2 = 1) {
         self::init();
-        self::$ffi_blas->cblas_sswap($v1->col, $v1->data, 1, $v2->data, 1);
+        self::$ffi_blas->cblas_sswap($v1->col, $v1->data, $inv1, $v2->data, $inv2);
     }
     
     /**
      *  Copy the vector from X to Y.
      *    Y := X
-     *  @param int $n           Number of elements in each vector
+     *  @param \numphp\vector $vect_X        Vector X buffer
+     *  @param \numphp\vector $vect_Y        Vector Y buffer
+     *  @param int $invX
+     *  @param int $invY 
+     *  @return void
+     */
+    public static function dcopy(\numphp\vector $vect_X, \numphp\vector $vect_Y, int $invX = 1, int $invY = 1) {
+        self::init();
+        return self::$ffi_blas->cblas_dcopy($vect_X->col, $vect_X->data, $invX, 
+                 $vect_Y->data, $invY);
+    }
+    
+    /**
+     *  Copy the vector from X to Y.
+     *    Y := X
      *  @param \numphp\vector $vect_X        Vector X buffer
      *  @param \numphp\vector $vect_Y        Vector Y buffer
      *  @return void
@@ -302,22 +415,47 @@ class blas {
      * Compute the Euclidean norm of a vector.
      *    ret := ||X||
      * @param \numphp\vector $v
+     * @return double
+     */
+    public static function dnrm2(\numphp\vector $v):float {
+        self::init();
+        return self::$ffi_blas->cblas_dnrme($v->col, $v->data, 1);
+    }
+    
+    /**
+     * Compute the Euclidean norm of a vector.
+     *    ret := ||X||
+     * @param \numphp\vector $v
      * @return float
      */
     public static function snrm2(\numphp\vector $v):float {
         self::init();
         return self::$ffi_blas->cblas_snrme($v->col, $v->data, 1);
     }
+    
     /**
      *  Add vectors
      *    Y := alpha * X + Y
-     *  @param int $n           Number of elements in each vector
      *  @param float $alpha     Coefficient of scalar multiple of X vector
      *  @param \numphp\vector $vect_X        Vector X buffer
      *  @param \numphp\vector $vect_Y        Vector Y buffer
      *  @return void
      */
-    public static function axpy(float $alpha, \numphp\vector $vect_X, \numphp\vector $vect_Y) {
+    public static function daxpy(float $alpha, \numphp\vector $vect_X, \numphp\vector $vect_Y) {
+        self::init();
+        return self::$ffi_blas->cblas_daxpy($vect_X->col, $alpha, $vect_X->data,
+                 1, $vect_Y->data, 1);
+    }
+    
+    /**
+     *  Add vectors
+     *    Y := alpha * X + Y
+     *  @param float $alpha     Coefficient of scalar multiple of X vector
+     *  @param \numphp\vector $vect_X        Vector X buffer
+     *  @param \numphp\vector $vect_Y        Vector Y buffer
+     *  @return void
+     */
+    public static function saxpy(float $alpha, \numphp\vector $vect_X, \numphp\vector $vect_Y) {
         self::init();
         return self::$ffi_blas->cblas_saxpy($vect_X->col, $alpha, $vect_X->data,
                  1, $vect_Y->data, 1);
@@ -326,13 +464,40 @@ class blas {
     /**
      *  Calculates the sum of the absolute values of each component of the vector.
      *    ret := |x_1| + ... + |x_n|
-     *  @param int $n           Number of elements in each vector
      *  @param \numphp\vector $vector        Vector X buffer
      *  @return float
      */
-    public static function asum(\numphp\vector $vector): float {
+    public static function dasum(\numphp\vector $vector): float {
+        self::init();
+        return self::$ffi_blas->cblas_dasum($vector->col, $vector->data, 1);
+    }
+    
+    /**
+     *  Calculates the sum of the absolute values of each component of the vector.
+     *    ret := |x_1| + ... + |x_n|
+     * 
+     *  @param \numphp\vector $vector        Vector X buffer
+     *  @return float
+     */
+    public static function sasum(\numphp\vector $vector): float {
         self::init();
         return self::$ffi_blas->cblas_sasum($vector->col, $vector->data, 1);
+    }
+    
+    /**
+     * Rotate about a given point.
+     *    X(i) := c * X(i) + s * Y(i)
+     *    Y(i) :=-s * X(i) + c * Y(i)
+     * @param \numphp\vector $v1 Vector X buffer
+     * @param \numphp\vector $v2 Vector Y buffer
+     * @param float $c         value of cos A(Value obtained with rotg function.)
+     * @param float $s         value of sin A(Value obtained with rotg function.)
+     * 
+     */
+    public static function drot(\numphp\vector $v1, \numphp\vector $v2,float $c, float $s) {
+        self::init();
+        return self::$ffi_blas->cblas_drot($v1->col, $v1->data, 1,
+                $v2->data, 1, $c, $s);
     }
     
     /**
@@ -372,9 +537,47 @@ class blas {
      *  @return void
      */
     
+    public static function drotg(float $a, float $b, float $c, float $s) {
+        self::init();
+        return self::$ffi_blas->cblas_drotg($a, $b, $c, $s);
+    }
+    
+    /**
+     *  Give the point P (a, b).
+     *  Rotate this point to givens and calculate the parameters a, b, c,
+     *  and s to make the y coordinate zero.
+     *    Conditions description:
+     *       c * a + s * b = r
+     *       -s * a + c * b = 0
+     *       r = ||(a,b)||
+     *       c^2 + s^2 = 1
+     *       z=s if |a| > |b|
+     *       z=1/c if |a| <= |b| and c != 0 and r != 0
+     *    Find r, z, c, s that satisfies the above description.
+     *    However, when r = 0, z = 0, c = 1, and s = 0 are returned.
+     *    Also, if c = 0, | a | <= | b | and c! = 0 and r! = 0, z = 1 is returned.
+     *  @param float $a     X-coordinate of P: The calculated r value is stored and returned
+     *  @param float $b     Y-coordinate of P: The calculated z value is stored and returned
+     *  @param float $c     Stores the calculated value of c
+     *  @param float $s     Stores the calculated value of s
+     *  @return void
+     */
+    
     public static function srotg(float $a, float $b, float $c, float $s) {
         self::init();
         return self::$ffi_blas->cblas_srotg($a, $b, $c, $s);
+    }
+    
+    /**
+     * Multiply vector by scalar.
+     *    X := alpha * X
+     * @param float $alpha     Coefficient of scalar multiple of V vector
+     * @param \numphp\vector $v
+     * 
+     */
+    public static function dscal(float $alpha, \numphp\vector $v) {
+        self::init();
+        return self::$ffi_blas->cblas_dscal($v->col, $alpha, $v->data, 1);
     }
     
     /**
