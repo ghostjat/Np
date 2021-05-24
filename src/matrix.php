@@ -363,7 +363,7 @@ class matrix {
             return $this->dotMatrix($d);
         }
         if ($d instanceof vector) {
-            return $this->dotVecotr($d);
+            return $this->dotVector($d);
         }
     }
 
