@@ -22,7 +22,7 @@ class vector {
      * 
      * @param int $col
      * @param int $dtype
-     * @return \numphp\vector
+     * @return vector
      */
     public static function factory(int $col, int $dtype = self::FLOAT) : vector {
         return new self($col, $dtype);
@@ -31,8 +31,8 @@ class vector {
     /**
      * create vector using php array
      * @param array $data
-     * @param const $dtype matrix data type float|double
-     * @return \numphp\matrix
+     * @param int $dtype
+     * @return vector
      */
     public static function ar(array $data,int $dtype= self::FLOAT): vector {
         if (is_array($data) && !is_array($data[0])) {
@@ -48,8 +48,8 @@ class vector {
     /**
      * Return vector with random values
      * @param int $col
-     * @param int $dtype float|double
-     * @return \numphp\vector
+     * @param int $dtype
+     * @return vector
      */
     public static function randn(int $col, int $dtype= self::FLOAT): vector {
         $ar = self::factory($col, $dtype);
@@ -65,7 +65,7 @@ class vector {
      * Return vector with uniform values
      * @param int $col
      * @param int $dtype
-     * @return \numphp\vector
+     * @return vector
      */
     public static function uniform(int $col, int $dtype = self::FLOAT): vector {
         $ar = self::factory($col, $dtype);
@@ -80,7 +80,7 @@ class vector {
      * 
      * @param int $col
      * @param int $dtype
-     * @return \numphp\vector
+     * @return vector
      */
     public static function zeros(int $col, int $dtype = self::FLOAT): vector {
         $ar = self::factory($col, $dtype);
@@ -93,7 +93,7 @@ class vector {
     /**
      * create one like vector
      * @param int $col
-     * @return \numphp\matrix
+     * @return matrix
      */
     public static function ones(int $col, int $dtype = self::FLOAT): vector {
         $ar = self::factory($col, $dtype);
@@ -106,7 +106,7 @@ class vector {
         /**
      * create a null like vector
      * @param int $col
-     * @return \numphp\matrix
+     * @return matrix
      */
     public static function null(int $col, int $dtype = self::FLOAT): vector {
         $ar = self::factory($col, $dtype);
@@ -121,7 +121,7 @@ class vector {
      * create a vector with given scalar value
      * @param int $col
      * @param int|float|double $val
-     * @return \numphp\vector
+     * @return vector
      */
     public static function full(int $col, $val, int $dtype = self::FLOAT): vector {
         $ar = self::factory($col, $dtype);
@@ -235,7 +235,7 @@ class vector {
 
     /**
      * make a copy of vector
-     * @return \numphp\vector
+     * @return vector
      */
     public function copyVector() : vector {
         return clone $this;
@@ -263,7 +263,7 @@ class vector {
     /**
      * Compute the vector-matrix product of this vector and matrix .
      * @param \numphp\matrix $matrix
-     * @return \numphp\matrix
+     * @return matrix
      */
     public function mulVectorMatrix(\numphp\matrix $matrix): vector {
         if($this->dtype != $matrix->dtype) {
@@ -282,7 +282,7 @@ class vector {
     /**
      * 
      * @param \numphp\matrix $matrix
-     * @return \numphp\matrix
+     * @return matrix
      */
     public function addMatrix(\numphp\matrix $matrix):matrix {
         if($this->col == $matrix->col && $this->dtype == $matrix->dtype) {
@@ -300,7 +300,7 @@ class vector {
     /**
      * 
      * @param \numphp\matrix $matrix
-     * @return \numphp\matrix
+     * @return matrix
      */
     public function divideMatrix(\numphp\matrix $matrix):matrix {
         if($this->col == $matrix->col && $this->dtype == $matrix->dtype) {
@@ -318,7 +318,7 @@ class vector {
     /**
      * 
      * @param \numphp\matrix $matrix
-     * @return \numphp\matrix
+     * @return matrix
      */
     public function multiplyMatrix(\numphp\matrix $matrix):matrix {
         if($this->col == $matrix->col && $this->dtype == $matrix->dtype) {
@@ -336,7 +336,7 @@ class vector {
     /**
      * 
      * @param \numphp\vector $vector
-     * @return \numphp\vector
+     * @return vector
      */
     public function divVector(\numphp\vector $vector) :vector {
         if($this->checkDimensions($vector) && $this->checkDtype($vector)) {
@@ -351,7 +351,7 @@ class vector {
     /**
      * 
      * @param \numphp\vector $vector
-     * @return \numphp\vector
+     * @return vector
      */
     public function multiplyVector(\numphp\vector $vector):vector {
         if($this->checkDimensions($vector) && $this->checkDtype($vector)) {
@@ -366,7 +366,7 @@ class vector {
     /**
      * 
      * @param \numphp\vector $vector
-     * @return \numphp\vector
+     * @return vector
      */
     public function sumVector(\numphp\vector $vector):vector {
         if($this->checkDimensions($vector) && $this->checkDtype($vector)) {
@@ -383,7 +383,7 @@ class vector {
     /**
      * 
      * @param \numphp\vector $vector
-     * @return \numphp\vector
+     * @return vector
      */
     public function powVector(\numphp\vector $vector):vector {
         if($this->checkDimensions($vector) && $this->checkDtype($vector)) {
@@ -398,7 +398,7 @@ class vector {
     /**
      * 
      * @param \numphp\vector $vector
-     * @return \numphp\vector
+     * @return vector
      */
     public function modVector(\numphp\vector $vector):vector {
         if($this->checkDimensions($vector) && $this->checkDtype($vector)) {
@@ -413,7 +413,7 @@ class vector {
     /**
      * 
      * @param \numphp\vector $vector
-     * @return \numphp\vector
+     * @return vector
      */
     public function subtractVector(\numphp\vector $vector):vector {
         if($this->checkDimensions($vector) && $this->checkDtype($vector)) {
@@ -451,7 +451,7 @@ class vector {
     /**
      *  Return the element-wise maximum of given vector with current vector
      * @param \numphp\vector $vector
-     * @return \numphp\vector
+     * @return vector
      */
     public function maximum(\numphp\vector $vector) :vector {
         if($this->checkDimensions($vector)) {
@@ -462,7 +462,7 @@ class vector {
     /**
      *  Return the element-wise minium of given vector with current vector
      * @param \numphp\vector $vector
-     * @return \numphp\vector
+     * @return vector
      */
     public function minium(\numphp\vector $vector) :vector {
         if($this->checkDimensions($vector)) {
