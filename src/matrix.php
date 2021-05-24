@@ -25,7 +25,7 @@ class matrix {
      * create empty 2d matrix for given data type
      * @param int $row  num of rows 
      * @param int $col  num of cols
-     * @param const $dtype matrix data type float|double
+     * @param int $dtype matrix data type float|double
      * @return \numphp\matrix
      */
     public static function factory(int $row, int $col, int $dtype = self::FLOAT): matrix {
@@ -35,7 +35,7 @@ class matrix {
     /**
      * create 2d matrix using php array
      * @param array $data
-     * @param const $dtype matrix data type float|double
+     * @param int $dtype matrix data type float|double
      * @return \numphp\matrix
      */
     public static function ar(array $data, int $dtype = self::FLOAT): matrix {
@@ -458,7 +458,6 @@ class matrix {
                 return $ar;
             }
             return $ar;
-        }
     }
 
     /**
@@ -1142,8 +1141,10 @@ class matrix {
     }
 
     /**
-     * set data to matrix
-     * @param type $data
+     * Set given data in matrix
+     * @param int|float|array $data
+     * @param bool $dignoal
+     * @return void
      */
     public function setData(int|float|array $data, bool $dignoal = false): void {
         if (!is_null($data) && $dignoal == false) {
@@ -1265,8 +1266,9 @@ class matrix {
     }
 
     /**
+     *
      * Compute the multiplicative inverse of the matrix.
-     * @return \numphp\matrix
+     * @return matrix|null
      */
     public function inverse(): matrix|null {
         if (!$this->isSquare()) {
@@ -1737,7 +1739,7 @@ class matrix {
         return $this;
     }
 
-    function asArray() {
+    public function asArray() {
         $ar = array_fill(0, $this->row, array_fill(0, $this->col, null));
         for ($i = 0; $i < $this->row; ++$i) {
             for ($j = 0; $j < $this->col; ++$j) {
@@ -1752,7 +1754,7 @@ class matrix {
     }
 
     private function _invalidArgument($argument): \InvalidArgumentException {
-        throw new InvalidArgumentException($argument);
+        throw new \InvalidArgumentException($argument);
     }
 
     /**

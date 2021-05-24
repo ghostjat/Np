@@ -6,13 +6,9 @@ use numphp\{vector,matrix};
 
 matrix::time();
 matrix::getMemory();
-$ta = vector::randn(3);        // to genrate random vector
-$tb = matrix::randn(3,3);
-$c = $ta->mulVectorMatrix($tb);            // do a dot opreation on given tensor
-echo $c;
-unset($c);
-$c = $ta->multiplyMatrix($tb);
-echo $c;
+$v = vector::ar([1,2,3,4]);        // to genrate random vector
+
+echo $v->product() . PHP_EOL;
 matrix::getMemory();           // get memory use
 matrix::time();               // get time
 /**

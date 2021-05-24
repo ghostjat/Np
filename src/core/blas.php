@@ -227,7 +227,7 @@ class blas {
     /**
      * @satatic
      * @param \numphp\vector $v
-     * @return type
+     * 
      */
     public static function dmax(\numphp\vector $v) {
         self::init();
@@ -249,7 +249,7 @@ class blas {
     /**
      * @static
      * @param \numphp\vector $v
-     * @return type
+     * 
      */
     public static function dmin(\numphp\vector $v) {
         self::init();
@@ -382,7 +382,7 @@ class blas {
      *    X := alpha * X
      * @param float $alpha     Coefficient of scalar multiple of V vector
      * @param \numphp\vector $v
-     * @return type
+     * 
      */
     public static function sscal(float $alpha, \numphp\vector $v) {
         self::init();
