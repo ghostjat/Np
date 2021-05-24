@@ -458,7 +458,7 @@ class matrix {
                 return $ar;
             }
             return $ar;
-    }
+        }
 
     /**
      * 
@@ -909,7 +909,7 @@ class matrix {
         return $ar;
     }
 
-    /**
+    /** 
      * Join matrix m to the Right of this matrix.
      * @param \numphp\matrix $m
      * @return matrix
@@ -1737,16 +1737,6 @@ class matrix {
                 break;
         }
         return $this;
-    }
-
-    public function asArray() {
-        $ar = array_fill(0, $this->row, array_fill(0, $this->col, null));
-        for ($i = 0; $i < $this->row; ++$i) {
-            for ($j = 0; $j < $this->col; ++$j) {
-                $ar[$i][$j] = $this->data[$i * $this->col + $j];
-            }
-        }
-        return $ar;
     }
 
     private static function _err($msg): \Exception {

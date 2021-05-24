@@ -3,21 +3,38 @@
 
 int LAPACKE_sgetrf( int matrix_layout, int m, int n,
                            float* a, int lda, int* ipiv );
+int LAPACKE_dgetrf( int matrix_layout, int m, int n,
+                           double* a, int lda, int* ipiv );
 int LAPACKE_sgetri( int matrix_layout, int n, float* a,
+                           int lda, const int* ipiv );
+int LAPACKE_dgetri( int matrix_layout, int n, double* a,
                            int lda, const int* ipiv );
 int LAPACKE_sgesdd( int matrix_layout, char jobz, int m,
                            int n, float* a, int lda, float* s,
                            float* u, int ldu, float* vt,
                            int ldvt );
+int LAPACKE_dgesdd( int matrix_layout, char jobz, int m,
+                           int n, double* a, int lda, double* s,
+                           double* u, int ldu, double* vt,
+                           int ldvt );
 int LAPACKE_sgeev( int matrix_layout, char jobvl, char jobvr,
                           int n, float* a, int lda, float* wr,
                           float* wi, float* vl, int ldvl, float* vr,
                           int ldvr );
+int LAPACKE_dgeev( int matrix_layout, char jobvl, char jobvr,
+                          int n, double* a, int lda, double* wr,
+                          double* wi, double* vl, int ldvl, double* vr,
+                          int ldvr );
 int LAPACKE_ssyev( int matrix_layout, char jobz, char uplo, int n,
                           float* a, int lda, float* w );
+int LAPACKE_dsyev( int matrix_layout, char jobz, char uplo, int n,
+                          double* a, int lda, double* w );
 int LAPACKE_sgels( int matrix_order, char trans, int m,
                           int n, int nrhs, float* a,
                           int lda, float* b, int ldb );
+int LAPACKE_dgels( int matrix_order, char trans, int m,
+                          int n, int nrhs, double* a,
+                          int lda, double* b, int ldb );
 int LAPACKE_sbdsdc( int matrix_layout, char uplo, char compq,
                            int n, float* d, float* e, float* u,
                            int ldu, float* vt, int ldvt, float* q,
@@ -94,6 +111,8 @@ int LAPACKE_sgelq2( int matrix_layout, int m, int n,
                            float* a, int lda, float* tau );
 int LAPACKE_spotrf( int matrix_order, char uplo, int n, float* a,
                            int lda );
+int LAPACKE_dpotrf( int matrix_layout, char uplo, int n, double* a,
+                           int lda );
 int LAPACKE_sgelsy( int matrix_order, int m, int n, int nrhs, float* a, int lda, float* b,
                            int ldb, int* jpvt, float rcond, int* rank );
 void LAPACKE_sgelsd( int m, int n, int nrhs, float* a,
@@ -102,3 +121,8 @@ void LAPACKE_sgelsd( int m, int n, int nrhs, float* a,
                     int lwork, int iwork, int info );
 float LAPACKE_slange(int matrix_layout, char norm, int m,
                         int n, const float* a, int lda);
+float LAPACKE_dlange(int matrix_layout, char norm, int m,
+                        int n, const double* a, int lda);
+int LAPACKE_sspsv( int matrix_layout, char uplo, int n,
+                          int nrhs, float* ap, int* ipiv,
+                          float* b, int ldb );
