@@ -455,10 +455,10 @@ class matrix {
                 for ($j = 0; $j < $this->col; ++$j) {
                     $ar->data[$i * $this->col + $j] *= $m->data[$i * $this->col + $j];
                 }
+                return $ar;
             }
             return $ar;
         }
-    }
 
     /**
      * 
@@ -909,7 +909,7 @@ class matrix {
         return $ar;
     }
 
-    /**
+    /** 
      * Join matrix m to the Right of this matrix.
      * @param \numphp\matrix $m
      * @return matrix
