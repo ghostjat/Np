@@ -215,10 +215,10 @@ class vector {
      */
     public static function linspace(float $min, float $max, int $n) : vector {
         if ($min > $max) {
-            $this->_invalidArgument('Minimum must be less than maximum.');
+            self::_invalidArgument('Minimum must be less than maximum.');
         }
         if ($n < 2) {
-            $this->_invalidArgument('Number of elements must be greater than 1.');
+            self::_invalidArgument('Number of elements must be greater than 1.');
         }
         $k = $n - 1;
         $interval = abs($max - $min) / $k;
@@ -261,9 +261,9 @@ class vector {
     }
     
     public function sum():float {
-        $r = 0;
+        $r = 0.0;
         for($i = 0; $i < $this->col; ++$i) {
-            $r = $r + $this->data[$i];
+            $r += $this->data[$i];
         }
         return $r;
     }
@@ -273,9 +273,9 @@ class vector {
      * @return int|float
      */
     public function product():float {
-        $r = 1;
+        $r = 1.0;
         for($i = 0; $i < $this->col; ++$i) {
-            $r = $r * $this->data[$i];
+            $r *= $this->data[$i];
         }
         return $r;
     }
@@ -314,25 +314,7 @@ class vector {
             }
             return $vr;
         }
-        $this->_invalidArgument('');
-    }
-    
-    /**
-     * 
-     * @param \numphp\matrix $matrix
-     * @return matrix
-     */
-    public function divideMatrix(\numphp\matrix $matrix):matrix {
-        if($this->col == $matrix->col && $this->dtype == $matrix->dtype) {
-            $vr = matrix::factory($matrix->row,$matrix->col, $matrix->dtype);
-            for($i = 0; $i < $matrix->row; ++$i) {
-                for($j = 0; $j < $matrix->col; ++$j) {
-                    $vr->data[$i * $matrix->col +$j] = $this->data[$j] / $matrix->data[$i * $matrix->col + $j];
-                }
-            }
-            return $vr;
-        }
-        $this->_invalidArgument('');
+        self::_invalidArgument('');
     }
     
     /**
@@ -350,24 +332,70 @@ class vector {
             }
             return $vr;
         }
-        $this->_invalidArgument('');
+        self::_invalidArgument('');
     }
     
     /**
      * 
-     * @param \numphp\vector $vector
+     * @param int|float|matrix|vector $d
+     * @return matrix|vector
+     */
+    public function divide(int|float|matrix|vector $d):matrix|vector {
+        if($d instanceof matrix){
+            return $this->divideMatrix($d);
+        } elseif ($d instanceof self) {
+            return $this->divideVector($d);
+        } else {
+            return $this->divideScalar($d);
+        }
+    }
+    
+    /**
+     * 
+     * @param \numphp\matrix $matrix
+     * @return matrix
+     */
+    protected function divideMatrix(\numphp\matrix $matrix):matrix {
+        if($this->col == $matrix->col && $this->dtype == $matrix->dtype) {
+            $vr = matrix::factory($matrix->row,$matrix->col, $matrix->dtype);
+            for($i = 0; $i < $matrix->row; ++$i) {
+                for($j = 0; $j < $matrix->col; ++$j) {
+                    $vr->data[$i * $matrix->col +$j] = $this->data[$j] / $matrix->data[$i * $matrix->col + $j];
+                }
+            }
+            return $vr;
+        }
+        self::_invalidArgument('');
+    }
+    
+    /**
+     * 
+     * @param vector $v
      * @return vector
      */
-    public function divVector(\numphp\vector $vector) :vector {
-        if($this->checkDimensions($vector) && $this->checkDtype($vector)) {
+    protected function divideVector(vector $v) :vector {
+        if($this->checkDimensions($v) && $this->checkDtype($v)) {
             $vr = self::factory($this->col, $this->dtype);
             for($i = 0; $i < $this->col; ++$i) {
-                $vr->data[$i] = $this->data[$i] / $vector->data[$i];
+                $vr->data[$i] = $this->data[$i] / $v->data[$i];
             }
             return $vr;
         }
     }
     
+    /**
+     * 
+     * @param int|float $s
+     * @return vector
+     */
+    protected function divideScalar(int|float $s): vector {
+        $vr = self::factory($this->col, $this->dtype);
+        for ($i = 0; $i < $this->col; ++$i) {
+            $vr->data[$i] = $this->data[$i] / $s;
+        }
+        return $vr;
+    }
+
     /**
      * 
      * @param \numphp\vector $vector
@@ -543,6 +571,14 @@ class vector {
         return $this->dtype;
     }
     
+    public function asArray() {
+        $ar = array_fill(0, $this->col, null);
+        for($i = 0; $i < $this->col; ++$i) {
+            $ar[$i] = $this->data[$i];
+        }
+        return $ar;
+    }
+    
     public function printVector() {
         for ($j = 0; $j < $this->col; ++$j) {
             printf('%lf  ', $this->data[$j]);
@@ -554,14 +590,14 @@ class vector {
         return (string) $this->printVector();
     }
     
-    protected function checkDimensions(\numphp\vector $vector) {
+    protected function checkDimensions(vector $vector) {
         if($this->col != $vector->col) {
             self::_err('Mismatch Dimensions of given vector');
         }
         return true;
     }
     
-     protected function checkDtype(\numphp\vector $vector) {
+     protected function checkDtype(vector $vector) {
         if($this->dtype != $vector->dtype) {
             self::_err('Mismatch Dtype of given vector');
         }
@@ -585,17 +621,10 @@ class vector {
                 $this->data = self::c_IntVector($this->col);
                 break;
             default :
-                $this->_invalidArgument('given dtype is not supported by numphp');
+                self::_invalidArgument('given dtype is not supported by numphp');
                 break;
         }
         return $this;
-    }
-    public function asArray() {
-        $ar = array_fill(0, $this->col, null);
-        for($i = 0; $i < $this->col; ++$i) {
-            $ar[$i] = $this->data[$i];
-        }
-        return $ar;
     }
     
     private static function c_FloatVector(int $col): \FFI\CData {
@@ -614,8 +643,8 @@ class vector {
         throw new \Exception($msg);
     }
     
-    private function _invalidArgument($argument) : \InvalidArgumentException{
-        throw new InvalidArgumentException($argument);
+    private static function _invalidArgument($argument) : \InvalidArgumentException{
+        throw new \InvalidArgumentException($argument);
     }
     
 }

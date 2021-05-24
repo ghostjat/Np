@@ -450,12 +450,11 @@ class matrix {
      */
     protected function multiplyMatrix(matrix $m): matrix {
         if ($this->checkDtype($m) && $this->checkShape($m)) {
-            $ar = $this->copyMatrix();
+            $ar = self::factory($this->row, $this->col, $this->dtype);
             for ($i = 0; $i < $this->row; ++$i) {
                 for ($j = 0; $j < $this->col; ++$j) {
-                    $ar->data[$i * $this->col + $j] *= $m->data[$i * $this->col + $j];
+                    $ar->data[$i * $this->col + $j] = $this->data[$i * $this->col + $j] * $m->data[$i * $this->col + $j];
                 }
-                return $ar;
             }
             return $ar;
         }
@@ -499,6 +498,18 @@ class matrix {
         } else {
             return $this->sumScalar($m);
         }
+    }
+    
+    public function sumRows():vector {
+        $vr = vector::factory($this->row, $this->dtype);
+        for($i = 0; $i < $this->row; ++$i) {
+            $sum = 0.0;
+            for($j = 0; $j < $this->col; ++$j) {
+                $sum += $this->data[$i * $this->col + $j];
+            }
+            $vr->data[$i] = $sum;
+        }
+        return $vr;
     }
 
     protected function sumScalar(int|float $s): matrix {
@@ -559,7 +570,12 @@ class matrix {
         }
         return $ar;
     }
-
+    
+    /**
+     * 
+     * @param matrix $m
+     * @return matrix
+     */
     protected function subtractMatrix(matrix $m): matrix {
         if ($this->checkShape($m) && $this->checkDtype($m)) {
             $ar = self::factory($this->row, $this->col, $this->dtype);
@@ -571,13 +587,35 @@ class matrix {
             return $ar;
         }
     }
-
+    
+    /**
+     * 
+     * @param vector $v
+     * @return matrix
+     */
     protected function subtractVector(vector $v): matrix {
         if ($this->row == $v->col && $this->dtype == $v->dtype) {
             $ar = self::factory($this->row, $this->col, $this->dtype);
             for ($i = 0; $i < $this->row; ++$i) {
                 for ($j = 0; $j < $this->col; ++$j) {
                     $ar->data[$i * $this->col + $j] = $this->data[$i * $this->col + $j] - $v->data[$j];
+                }
+            }
+            return $ar;
+        }
+    }
+    
+    /**
+     * 
+     * @param vector $v
+     * @return matrix
+     */
+    public function subtractColumnVector(vector $v): matrix {
+        if ($this->row == $v->col && $this->dtype == $v->dtype) {
+            $ar = self::factory($this->row, $this->col, $this->dtype);
+            for ($j = 0; $j < $this->col; ++$j) {
+                for ($i = 0; $i < $this->row; ++$i) {
+                    $ar->data[$i * $this->col + $j] = $this->data[$i * $this->col + $j] - $v->data[$i];
                 }
             }
             return $ar;
@@ -1375,8 +1413,7 @@ class matrix {
             if ($lp != 0) {
                 return null;
             }
-        }
-        if ($this->dtype == self::DOUBLE) {
+        } else {
             $lp = core\lapack::dgetrf($ar, $ipiv);
             if ($lp != 0) {
                 return null;
@@ -1526,7 +1563,92 @@ class matrix {
     public function ceil(): matrix {
         return $this->map('ceil');
     }
+    
+    /**
+     * Compute the means of each row and return them in a vector.
+     *
+     * @return vector
+     */
+    public function mean(): vector{
+        return $this->sumRows()->divide($this->col);
+    }
+    
+    /**
+     * Compute the row variance of the matrix.
+     * 
+     * @param vector|null $mean
+     * @return vector
+     */
+    public function variance(vector|null $mean = null): vector {
+        if (isset($mean)) {
+            if (!$mean instanceof vector) {
+                self::_invalidArgument('mean must be a vector!');
+            }
+            if ($this->row !== $mean->col) {
+                self::_err('Err:: given mean vector dimensionality mismatched!');
+            }
+        }
+        else{
+            $mean = $this->mean();
+        }
+        return $this->subtractColumnVector($mean)->square()
+                ->sumRows()->divide($this->row);
+    }
+    
+    /**
+     *  Return the median vector of this matrix.
+     * @return vector
+     */
+    public function median():vector{
+        $mid = intdiv($this->col, 2);
+        $odd = $this->col % 2 === 1;
+        $vr = vector::factory($this->row, $this->dtype);
+        $a = $this->asArray();
+        foreach ($a as $i=> $rowA) {
+            sort($rowA);
+            
+            if ($odd) {
+                $median = $rowA[$mid];
+            } else {
+                $median = ($rowA[$mid - 1] + $rowA[$mid]) / 2.0;
+            }
+            
+            $vr->data[$i] = $median;
+        }
+        unset($a);
+        return $vr;
+    }
+    
+    /**
+     * Compute the covariance matrix.
+     * 
+     * @param vector|null $mean
+     * @return matrix
+     */
+    
+    public function covariance(vector|null $mean = null) : matrix {
+        if (isset($mean)) {
+            if ($mean->col !== $this->row) {
+                self::_err('Err:: given mean vector dimensionality mismatched!');
+            }
+        } else {
+            $mean = $this->mean();
+        }
 
+        $b = $this->subtractColumnVector($mean);
+
+        return $b->dot($b->transpose())
+            ->divideScalar($this->row);
+    }
+
+    /**
+     * Clip the elements in the matrix to be between given minimum and maximum
+     * and return a new matrix.
+     * 
+     * @param float $min
+     * @param float $max
+     * @return matrix
+     */
     public function clip(float $min, float $max): matrix {
         $ar = self::factory($this->row, $this->col, $this->dtype);
         for ($i = 0; $i < $this->row; ++$i) {
@@ -1544,6 +1666,45 @@ class matrix {
         }
         return $ar;
     }
+    
+    /**
+     * Clip the tensor to be lower bounded by a given minimum.
+     * @param float $min
+     * @return matrix
+     */
+    public function clipLower(float $min):matrix {
+        $ar = self::factory($this->row, $this->col, $this->dtype);
+        for($i = 0; $i < $this->row; ++$i) {
+            for($j = 0; $j < $this->col; ++$j) {
+                if($this->data[$i * $this->col + $j] < $min ){
+                    $ar->data[$i * $this->col + $j] = $min;
+                    continue;
+                }
+                $ar->data[$i * $this->col + $j] = $this->data[$i * $this->col + $j];
+            }
+        }
+        return $ar;
+    }
+    
+    /**
+     * Clip the tensor to be upper bounded by a given maximum.
+     *
+     * @param float $max
+     * @return matrix
+     */
+    public function clipUpper(float $max):matrix {
+        $ar = self::factory($this->row, $this->col, $this->dtype);
+        for($i = 0; $i < $this->row; ++$i) {
+            for($j = 0; $j < $this->col; ++$j) {
+                if($this->data[$i * $this->col + $j] > $max ){
+                    $ar->data[$i * $this->col + $j] = $max;
+                    continue;
+                }
+                $ar->data[$i * $this->col + $j] = $this->data[$i * $this->col + $j];
+            }
+        }
+        return $ar;
+    }
 
     public function square(): matrix {
         return $this->multiplyMatrix($this);
@@ -1551,54 +1712,101 @@ class matrix {
 
     /**
      * 
-     * @param int|float|matrix $m
+     * @param int|float|matrix|vector $d
      * @return matrix
      */
-    public function equal(int|float|matrix $m): matrix {
-        $ar = self::factory($this->row, $this->col);
-        if ($m instanceof self) {
-            if ($this->checkShape($m)) {
-                for ($i = 0; $i < $this->row; ++$i) {
-                    for ($j = 0; $j < $this->col; ++$j) {
-                        $ar->data[$i * $this->col + $j] = $this->data[$i * $this->col + $j] == $m->data[$i * $this->col + $j] ? 1 : 0;
-                    }
-                }
-                return $ar;
-            }
-        } else {
+    public function equal(int|float|matrix|vector $d): matrix {
+        if ($d instanceof self) {
+            return $this->equalMatrix($d);
+        } elseif($d instanceof vector){
+            return $this->equalVector($d);
+        } else{
+            return $this->equalScalar($d);
+        }
+    }
+    
+    protected function equalMatrix(matrix $m): matrix {
+        if ($this->checkShape($m) && $this->checkDtype($m)) {
+            $ar = self::factory($this->row, $this->col, $this->dtype);
             for ($i = 0; $i < $this->row; ++$i) {
                 for ($j = 0; $j < $this->col; ++$j) {
-                    $ar->data[$i * $this->col + $j] = $this->data[$i * $this->col + $j] == $m ? 1 : 0;
+                    $ar->data[$i * $this->col + $j] = $this->data[$i * $this->col + $j] == $m->data[$i * $this->col + $j] ? 1 : 0;
                 }
             }
             return $ar;
         }
     }
 
-    /**
-     * 
-     * @param int|float|matrix $m
-     * @return matrix
-     */
-    public function greater(int|float|matrix $m): matrix {
-        $ar = self::factory($this->row, $this->col);
-        if ($m instanceof self) {
-            if ($this->checkShape($m)) {
-                for ($i = 0; $i < $this->row; ++$i) {
-                    for ($j = 0; $j < $this->col; ++$j) {
-                        $ar->data[$i * $this->col + $j] = $this->data[$i * $this->col + $j] > $m->data[$i * $this->col + $j] ? 1 : 0;
-                    }
-                }
-                return $ar;
-            }
-        } else {
+    protected function equalVector(vector $v):matrix {
+        if($this->row == $v->col && $this->dtype == $v->dtype){
+            $ar = self::factory($this->row, $this->col, $this->dtype);
             for ($i = 0; $i < $this->row; ++$i) {
                 for ($j = 0; $j < $this->col; ++$j) {
-                    $ar->data[$i * $this->col + $j] = $this->data[$i * $this->col + $j] > $m ? 1 : 0;
+                    $ar->data[$i * $this->col + $j] = $this->data[$i * $this->col + $j] == $v->data[$j] ? 1 : 0;
                 }
             }
             return $ar;
         }
+    }
+    
+    protected function equalScalar(int|float $s):matrix {
+        $ar = self::factory($this->row, $this->col, $this->dtype);
+        for ($i = 0; $i < $this->row; ++$i) {
+            for ($j = 0; $j < $this->col; ++$j) {
+                $ar->data[$i * $this->col + $j] = $this->data[$i * $this->col + $j] == $s ? 1 : 0;
+            }
+        }
+        return $ar;
+    }
+
+    /**
+     * 
+     * @param int|float|matrix|vector $d
+     * @return matrix
+     */
+    public function greater(int|float|matrix|vector $d): matrix {
+        if ($d instanceof self) {
+            return $this->greaterMatrix($d);
+        } elseif($d instanceof vector){
+            return $this->greaterVector($d);
+        }
+        else{
+            return $this->greaterScalar($d);
+        }
+    }
+    
+    protected function greaterMatrix(matrix $m): matrix {
+        if ($this->checkShape($m) && $this->checkDtype($m)) {
+            $ar = self::factory($this->row, $this->col, $this->dtype);
+            for ($i = 0; $i < $this->row; ++$i) {
+                for ($j = 0; $j < $this->col; ++$j) {
+                    $ar->data[$i * $this->col + $j] = $this->data[$i * $this->col + $j] > $m->data[$i * $this->col + $j] ? 1 : 0;
+                }
+            }
+            return $ar;
+        }
+    }
+
+    protected function greaterVector(vector $v):matrix {
+        if($this->row == $v->col && $this->dtype == $v->dtype){
+            $ar = self::factory($this->row, $this->col, $this->dtype);
+            for ($i = 0; $i < $this->row; ++$i) {
+                for ($j = 0; $j < $this->col; ++$j) {
+                    $ar->data[$i * $this->col + $j] = $this->data[$i * $this->col + $j] > $v->data[$j] ? 1 : 0;
+                }
+            }
+            return $ar;
+        }
+    }
+    
+    protected function greaterScalar(int|float $s):matrix {
+        $ar = self::factory($this->row, $this->col, $this->dtype);
+        for ($i = 0; $i < $this->row; ++$i) {
+            for ($j = 0; $j < $this->col; ++$j) {
+                $ar->data[$i * $this->col + $j] = $this->data[$i * $this->col + $j] > $s ? 1 : 0;
+            }
+        }
+        return $ar;
     }
 
     /**
