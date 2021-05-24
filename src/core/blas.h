@@ -36,11 +36,9 @@ void cblas_srot(const int N, float *X, const int incX,
 void cblas_srotm(const int N, float *X, const int incX,
                 float *Y, const int incY, const float *P);
 void cblas_sscal(const int N, const float alpha, float *X, const int incX);
-void cblas_sgemv(const enum CBLAS_ORDER order,
-                 const enum CBLAS_TRANSPOSE TransA, const int M, const int N,
-                 const float alpha, const float *A, const int lda,
-                 const float *X, const int incX, const float beta,
-                 float *Y, const int incY);
+void cblas_sgemv(const enum CBLAS_ORDER order, const enum CBLAS_TRANSPOSE TransA, const int M, 
+                 const int N, const float alpha, float *A, const int lda, const float *X, 
+                 const int incX, const float beta, float *Y, const int incY);
 void cblas_sgbmv(const enum CBLAS_ORDER order,
                  const enum CBLAS_TRANSPOSE TransA, const int M, const int N,
                  const int KL, const int KU, const float alpha,

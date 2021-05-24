@@ -260,12 +260,32 @@ class vector {
         }
     }
     
+    public function sum():float {
+        $r = 0;
+        for($i = 0; $i < $this->col; ++$i) {
+            $r = $r + $this->data[$i];
+        }
+        return $r;
+    }
+    
     /**
-     * Compute the vector-matrix product of this vector and matrix .
+     * Return the product of the vector.
+     * @return int|float
+     */
+    public function product():float {
+        $r = 1;
+        for($i = 0; $i < $this->col; ++$i) {
+            $r = $r * $this->data[$i];
+        }
+        return $r;
+    }
+    
+    /**
+     * Compute the vector-matrix dot product of this vector and matrix .
      * @param \numphp\matrix $matrix
      * @return matrix
      */
-    public function mulVectorMatrix(\numphp\matrix $matrix): vector {
+    public function dotMatrix(\numphp\matrix $matrix): vector {
         if($this->dtype != $matrix->dtype) {
             self::_err('Mismatch Dtype of given matrix');
         }
@@ -322,7 +342,7 @@ class vector {
      */
     public function multiplyMatrix(\numphp\matrix $matrix):matrix {
         if($this->col == $matrix->col && $this->dtype == $matrix->dtype) {
-            $vr = matrix::factory($matrix->row,$matrix->col, $matrix->dtype);
+            $vr = matrix::factory($matrix->row,$matrix->col, $matrix->dtype);;
             for($i = 0; $i < $matrix->row; ++$i) {
                 for($j = 0; $j < $matrix->col; ++$j) {
                     $vr->data[$i * $matrix->col +$j] = $this->data[$j] * $matrix->data[$i * $matrix->col + $j];
@@ -425,16 +445,28 @@ class vector {
         }
     }
     
+    /**
+     * 
+     * @param \numphp\vector $vector
+     * @return \numphp\vector
+     */
+    public function substractScalar(int|float $scalar): vector {
+        $vr = self::factory($this->col, $this->dtype);
+        for ($i = 0; $i < $this->col; ++$i) {
+            $vr->data[$i] = $this->data[$i] - $scalar;
+        }
+        return $vr;
+    }
+
     public function convolve(\numphp\vector $v, int $stride = 1): vector {
         return convolve::conv1D($this, $v, $stride);
     }
-
 
     /**
      * Return the inner product of two vectors.
      *
      * @param \numphp\vector $vector
-     * @return int|float
+     * @return float
      */
     public function inner(\numphp\vector $vector) {
         return $this->dotVector($vector);
@@ -487,6 +519,16 @@ class vector {
                 }
             }
         }
+    }
+    
+    public function asMatrix():matrix {
+        $ar = matrix::factory(1, $this->col, $this->dtype);
+        for($i = 0; $i < 1; ++$i) {
+            for($j = 0; $j < $this->col; ++$j) {
+                $ar->data[$i * $this->col + $j] = $this->data[$j];
+            }
+        }
+        return $ar;
     }
     
     /**
