@@ -93,7 +93,7 @@ class vector {
     /**
      * create one like vector
      * @param int $col
-     * @return matrix
+     * @return vector
      */
     public static function ones(int $col, int $dtype = self::FLOAT): vector {
         $ar = self::factory($col, $dtype);
@@ -106,7 +106,7 @@ class vector {
         /**
      * create a null like vector
      * @param int $col
-     * @return matrix
+     * @return vector
      */
     public static function null(int $col, int $dtype = self::FLOAT): vector {
         $ar = self::factory($col, $dtype);
@@ -160,7 +160,7 @@ class vector {
         while (count($a) < $n) {
             $r = sqrt(-2.0 * log(rand() / $max));
 
-            $phi = rand() / $max * TWO_PI;
+            $phi = rand() / $max * (2. * M_PI);
 
             $a[] = $r * sin($phi);
             $a[] = $r * cos($phi);
@@ -244,10 +244,10 @@ class vector {
 
     /**
      * vector-vector dot product
-     * @param \numphp\tensor $vector
+     * @param \numphp\vector $vector
      * @param int $incX
      * @param int $incY
-     * @return type
+     * @return vector
      */
     public function dotVector(\numphp\vector $vector ) {
         if($this->checkDtype($vector)) {
@@ -283,7 +283,7 @@ class vector {
     /**
      * Compute the vector-matrix dot product of this vector and matrix .
      * @param \numphp\matrix $matrix
-     * @return matrix
+     * @return vector
      */
     public function dotMatrix(\numphp\matrix $matrix): vector {
         if($this->dtype != $matrix->dtype) {

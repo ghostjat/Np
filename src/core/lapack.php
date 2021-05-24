@@ -180,7 +180,7 @@ class lapack {
      * @param string $norm
      * @param \numphp\matrix $m
      * @param int $matLayout
-     * @return type
+     * @return \FFI\CData
      */
     public static function slange(string $norm, \numphp\matrix $m, int $matLayout = self::ROW_MAJOR){
         self::init();
@@ -192,7 +192,7 @@ class lapack {
      * @param string $norm
      * @param \numphp\matrix $m
      * @param int $matLayout
-     * @return type
+     * @return \FFI\CData
      */
     public static function dlange(string $norm, \numphp\matrix $m, int $matLayout = self::ROW_MAJOR){
         self::init();

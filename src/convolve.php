@@ -27,7 +27,7 @@ class convolve {
             return $rc;
         }
         else {
-            throw new Exception('Err::given vectors has diffrent data type!');
+            throw new \Exception('Err::given vectors has diffrent data type!');
         }
     }
     
