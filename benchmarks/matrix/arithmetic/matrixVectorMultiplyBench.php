@@ -34,7 +34,6 @@ class matrixVectorMultiplyBench
      */
     public function multiply() : void
     {
-        $this->a->multiply($this->b);
-        #$this->b->multiplyMatrix($this->a);
+        $this->b->multiplyMatrix($this->a);
     }
 }
