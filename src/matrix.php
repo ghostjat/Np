@@ -368,7 +368,7 @@ class matrix {
     /**
      * get dot product of matrix & a vector
      * @param \numphp\vector $vector
-     * @return \numphp\matrix
+     * @return \numphp\vector
      */
     protected function dotVector(vector $vector): vector {
         if ($this->dtype != $vector->dtype) {
@@ -620,7 +620,7 @@ class matrix {
             $ar = self::factory($this->row, $this->col, $this->dtype);
             for ($i = 0; $i < $this->row; ++$i) {
                 for ($j = 0; $j < $this->col; ++$j) {
-                    $ar->data[$i * $this->col + $j] = $this->data[$i * $this->col + $j] / $m->data[$i * $this->col + $j];
+                    $ar->data[$i * $this->col + $j] = $this->data[$i * $this->col + $j] / $v->data[$j];
                 }
             }
             return $ar;
@@ -1241,7 +1241,7 @@ class matrix {
     /**
      * get a diagonal value from matrix
      * @param int $i
-     * @return type
+     * @return float
      */
     public function getDiagonalVal(int $i) {
         if ($this->isSquare()) {
@@ -1824,8 +1824,8 @@ class matrix {
                     $a[] = $v;
                 }
             }
+            return $a;
         }
-        return $a;
     }
 
     protected function checkShape(matrix $matrix) {
