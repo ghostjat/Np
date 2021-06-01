@@ -152,24 +152,17 @@ class vector {
      * @return self
      */
     public static function gaussian(int $n) : vector {
-
         $max = getrandmax();
-
         $a = [];
-
         while (count($a) < $n) {
             $r = sqrt(-2.0 * log(rand() / $max));
-
             $phi = rand() / $max * (2. * M_PI);
-
             $a[] = $r * sin($phi);
             $a[] = $r * cos($phi);
         }
-
         if (count($a) > $n) {
             $a = array_slice($a, 0, $n);
         }
-
         return self::ar($a);
     }
     
@@ -180,27 +173,19 @@ class vector {
      * @param float $lambda
      * @return vector
      */
-    public static function poisson(int $n, float $lambda = 1.) : vector
-    {
+    public static function poisson(int $n, float $lambda = 1.) : vector {
         $max = getrandmax();
-
         $l = exp(-$lambda);
-
         $a = [];
-
         while (count($a) < $n) {
             $k = 0;
             $p = 1.0;
-
             while ($p > $l) {
                 ++$k;
-
                 $p *= rand() / $max;
             }
-
             $a[] = $k - 1;
         }
-
         return self::ar($a);
     }
     
@@ -254,7 +239,7 @@ class vector {
             if($this->dtype == self::FLOAT) {
                 return core\blas::sdot($this, $vector);
             }
-            if($this->dtype == self::DOUBLE ) {
+            else {
                 return core\blas::ddot($this, $vector);
             }
         }
@@ -282,34 +267,34 @@ class vector {
     
     /**
      * Compute the vector-matrix dot product of this vector and matrix .
-     * @param \numphp\matrix $matrix
+     * @param \numphp\matrix $m
      * @return vector
      */
-    public function dotMatrix(\numphp\matrix $matrix): vector {
-        if($this->dtype != $matrix->dtype) {
+    public function dotMatrix(\numphp\matrix $m): vector {
+        if($this->dtype != $m->dtype) {
             self::_err('Mismatch Dtype of given matrix');
         }
         $mvr = self::factory($this->col, $this->dtype);
         if($this->dtype == self::FLOAT) {
-            core\blas::sgemv($matrix, $this, $mvr);
+            core\blas::sgemv($m, $this, $mvr);
         }
         else {
-            core\blas::dgemv($matrix, $this, $mvr);
+            core\blas::dgemv($m, $this, $mvr);
         }
         return $mvr;
     }
     
     /**
      * 
-     * @param \numphp\matrix $matrix
+     * @param \numphp\matrix $m
      * @return matrix
      */
-    public function addMatrix(\numphp\matrix $matrix):matrix {
-        if($this->col == $matrix->col && $this->dtype == $matrix->dtype) {
-            $vr = matrix::factory($matrix->row,$matrix->col, $matrix->dtype);
-            for($i = 0; $i < $matrix->row; ++$i) {
-                for($j = 0; $j < $matrix->col; ++$j) {
-                    $vr->data[$i * $matrix->col +$j] = $this->data[$j] + $matrix->data[$i * $matrix->col + $j];
+    public function addMatrix(\numphp\matrix $m):matrix {
+        if($this->col == $m->col && $this->dtype == $m->dtype) {
+            $vr = matrix::factory($m->row,$m->col, $m->dtype);
+            for($i = 0; $i < $m->row; ++$i) {
+                for($j = 0; $j < $m->col; ++$j) {
+                    $vr->data[$i * $m->col +$j] = $this->data[$j] + $m->data[$i * $m->col + $j];
                 }
             }
             return $vr;
@@ -319,20 +304,20 @@ class vector {
     
     /**
      * 
-     * @param \numphp\matrix $matrix
+     * @param \numphp\matrix $m
      * @return matrix
      */
-    public function multiplyMatrix(\numphp\matrix $matrix):matrix {
-        if($this->col == $matrix->col && $this->dtype == $matrix->dtype) {
-            $vr = matrix::factory($matrix->row,$matrix->col, $matrix->dtype);;
-            for($i = 0; $i < $matrix->row; ++$i) {
-                for($j = 0; $j < $matrix->col; ++$j) {
-                    $vr->data[$i * $matrix->col +$j] = $this->data[$j] * $matrix->data[$i * $matrix->col + $j];
+    public function multiplyMatrix(\numphp\matrix $m):matrix {
+        if($this->col == $m->col && $this->dtype == $m->dtype) {
+            $vr = matrix::factory($m->row,$m->col, $m->dtype);;
+            for($i = 0; $i < $m->row; ++$i) {
+                for($j = 0; $j < $m->col; ++$j) {
+                    $vr->data[$i * $m->col +$j] = $this->data[$j] * $m->data[$i * $m->col + $j];
                 }
             }
             return $vr;
         }
-        self::_invalidArgument('');
+        self::_invalidArgument('Err::' . __METHOD__);
     }
     
     /**
@@ -352,20 +337,20 @@ class vector {
     
     /**
      * 
-     * @param \numphp\matrix $matrix
+     * @param \numphp\matrix $m
      * @return matrix
      */
-    protected function divideMatrix(\numphp\matrix $matrix):matrix {
-        if($this->col == $matrix->col && $this->dtype == $matrix->dtype) {
-            $vr = matrix::factory($matrix->row,$matrix->col, $matrix->dtype);
-            for($i = 0; $i < $matrix->row; ++$i) {
-                for($j = 0; $j < $matrix->col; ++$j) {
-                    $vr->data[$i * $matrix->col +$j] = $this->data[$j] / $matrix->data[$i * $matrix->col + $j];
+    protected function divideMatrix(\numphp\matrix $m):matrix {
+        if($this->col == $m->col && $this->dtype == $m->dtype) {
+            $vr = matrix::factory($m->row,$m->col, $m->dtype);
+            for($i = 0; $i < $m->row; ++$i) {
+                for($j = 0; $j < $m->col; ++$j) {
+                    $vr->data[$i * $m->col +$j] = $this->data[$j] / $m->data[$i * $m->col + $j];
                 }
             }
             return $vr;
         }
-        self::_invalidArgument('');
+        self::_invalidArgument('Err::' . __METHOD__);
     }
     
     /**
@@ -475,7 +460,7 @@ class vector {
     
     /**
      * 
-     * @param \numphp\vector $vector
+     * @param \numphp\vector $scalar
      * @return \numphp\vector
      */
     public function substractScalar(int|float $scalar): vector {
@@ -486,6 +471,12 @@ class vector {
         return $vr;
     }
 
+    /**
+     * 
+     * @param \numphp\vector $v
+     * @param int $stride
+     * @return vector
+     */
     public function convolve(\numphp\vector $v, int $stride = 1): vector {
         return convolve::conv1D($this, $v, $stride);
     }
@@ -536,19 +527,21 @@ class vector {
      * @param int|float|array $data
      */
     public function setData(int|float|array $data) {
-        if (!is_null($data)) {
-            if (is_array($data) && !is_array($data[0])) {
-                for ($i = 0; $i < $this->col; ++$i) {
-                    $this->data[$i] = $data[$i];
-                }
-            } elseif (is_numeric($data)) {
-                for ($i = 0; $i < $this->col; ++$i) {
-                    $this->data[$i] = $data;
-                }
+        if (is_array($data) && !is_array($data[0])) {
+            for ($i = 0; $i < $this->col; ++$i) {
+                $this->data[$i] = $data[$i];
+            }
+        } elseif (is_numeric($data)) {
+            for ($i = 0; $i < $this->col; ++$i) {
+                $this->data[$i] = $data;
             }
         }
     }
     
+    /*
+     * FIXME------------
+     * 
+     */
     public function asMatrix():matrix {
         $ar = matrix::factory(1, $this->col, $this->dtype);
         for($i = 0; $i < 1; ++$i) {
@@ -612,13 +605,13 @@ class vector {
         $this->dtype = $dtype;
         switch ($dtype) {
             case self::FLOAT:
-                $this->data = self::c_FloatVector($this->col);
+                $this->data = self::_fVector($this->col);
                 break;
             case self::DOUBLE:
-                $this->data = self::c_DoubleVector($this->col);
+                $this->data = self::_dVector($this->col);
                 break;
             case self::INT:
-                $this->data = self::c_IntVector($this->col);
+                $this->data = self::_iVector($this->col);
                 break;
             default :
                 self::_invalidArgument('given dtype is not supported by numphp');
@@ -627,15 +620,15 @@ class vector {
         return $this;
     }
     
-    private static function c_FloatVector(int $col): \FFI\CData {
+    private static function _fVector(int $col): \FFI\CData {
         return \FFI::cast('float *', \FFI::new("float[$col]"));
     }
     
-    private static function c_IntVector(int $col): \FFI\CData {
+    private static function _iVector(int $col): \FFI\CData {
         return \FFI::cast('int *', \FFI::new("int[$col]"));
     }
     
-    private static function c_DoubleVector(int $col): \FFI\CData {
+    private static function _dVector(int $col): \FFI\CData {
         return \FFI::cast('double *', \FFI::new("double[$col]"));
     }
     
