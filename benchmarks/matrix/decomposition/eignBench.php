@@ -18,7 +18,7 @@ class eignBench
     {
         $this->a = matrix::uniform(500, 500);
 
-        $this->a = $this->a->dotMatrix($this->a);
+        $this->a = $this->a->dot($this->a);
     }
 
     /**

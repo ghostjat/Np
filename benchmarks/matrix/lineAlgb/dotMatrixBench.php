@@ -35,6 +35,6 @@ class dotMatrixBench
      */
     public function dotMatrix() : void
     {
-        $this->a->dotMatrix($this->b);
+        $this->a->dot($this->b);
     }
 }

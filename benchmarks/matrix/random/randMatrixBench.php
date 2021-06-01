@@ -12,6 +12,7 @@ class randMatrixBench
     /**
      * @Subject
      * @Iterations(5)
+     * @revs(5)
      * @OutputTimeUnit("seconds", precision=3)
      */
     public function randn() : void
