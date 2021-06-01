@@ -342,7 +342,7 @@ class matrix {
         if ($d instanceof self) {
             return $this->dotMatrix($d);
         }
-        if ($d instanceof vector) {
+        else{
             return $this->dotVector($d);
         }
     }
@@ -1129,7 +1129,7 @@ class matrix {
      * @return void
      */
     public function setData(int|float|array $data, bool $dignoal = false): void {
-        if (!is_null($data) && $dignoal == false) {
+        if (!empty($data) && $dignoal == false) {
             if (is_array($data) && is_array($data[0])) {
                 $f = $this->flattenArray($data);
                 foreach ($f as $k => $v) {
@@ -1469,7 +1469,11 @@ class matrix {
     }
 
     public function log(float $b = M_E): matrix {
-        return $this->map('exp');
+        $ar = $this->copyMatrix();
+        for($i = 0; $i < $ar->ndim; ++$i) {
+            log($ar->data[$i], $b);
+        }
+        return $ar;
     }
 
     public function log1p(): matrix {
