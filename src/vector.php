@@ -34,7 +34,7 @@ class vector {
      * @param int $dtype
      * @return vector
      */
-    public static function ar(array $data,int $dtype= self::FLOAT): vector {
+    public static function ar(array $data, int $dtype= self::FLOAT): vector {
         if (is_array($data) && !is_array($data[0])) {
             $ar = self::factory(count($data),$dtype);
             $ar->setData($data);
@@ -533,9 +533,9 @@ class vector {
 
     /**
      * set data to vector
-     * @param type $data
+     * @param int|float|array $data
      */
-    public function setData($data) {
+    public function setData(int|float|array $data) {
         if (!is_null($data)) {
             if (is_array($data) && !is_array($data[0])) {
                 for ($i = 0; $i < $this->col; ++$i) {
