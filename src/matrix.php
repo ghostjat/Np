@@ -590,7 +590,7 @@ class matrix {
 
     /**
      * Return the division of two elements, element-wise.
-     * @param int|float|matrix $m
+     * @param int|float|matrix $d
      * @return matrix
      */
     public function divide(int|float|matrix|vector $d): matrix {
@@ -722,7 +722,7 @@ class matrix {
             return $ar;
         }
     }
-
+    
     protected function modScalar(int|float $s): matrix {
         $ar = $this->copyMatrix();
         for ($i = 0; $i < $this->ndim; ++$i) {
@@ -794,18 +794,18 @@ class matrix {
     }
 
     /**
-     * swap specific values in tensor
-     * @param int $index1
-     * @param int $index2
+     * swap specific values in matrix
+     * @param int $i1
+     * @param int $i2
      */
-    public function swapValue(int $index1, int $index2) {
-        $tmp = $this->data[$index1];
-        $this->data[$index1] = $this->data[$index2];
-        $this->data[$index2] = $tmp;
+    public function swapValue(int $i1, int $i2) {
+        $tmp = $this->data[$i1];
+        $this->data[$i1] = $this->data[$i2];
+        $this->data[$i2] = $tmp;
     }
 
     /**
-     * swap specific rows in tensor
+     * swap specific rows in matrix
      * @param int $r1
      * @param int $r2
      */
@@ -818,7 +818,7 @@ class matrix {
     }
 
     /**
-     * swap specific cols in tensor
+     * swap specific cols in matrix
      * @param int $c1
      * @param int $c2
      */
@@ -831,7 +831,7 @@ class matrix {
     }
 
     /**
-     * 
+     * scale the matrix
      * @param float $c
      * @return \numphp\matrix
      */
@@ -846,7 +846,7 @@ class matrix {
     }
 
     /**
-     * 
+     * scale all the elements of a row 
      * @param int $row
      * @param float $c
      */
@@ -871,7 +871,7 @@ class matrix {
     /**
      * Attach given matrix to the left of this matrix.
      * 
-     * @param \numphp\matrix $matrix
+     * @param \numphp\matrix $m
      * @return \numphp\matrix
      */
     public function joinLeft(matrix $m): matrix {
@@ -966,7 +966,7 @@ class matrix {
                 return null;
             }
         }
-        if ($this->dtype == self::DOUBLE) {
+        else {
             $lp = core\lapack::dgetrf($ar, $ipiv);
             if ($lp != 0) {
                 return null;
@@ -987,7 +987,7 @@ class matrix {
                     return null;
                 }
             }
-            if ($this->dtype == self::DOUBLE) {
+            else {
                 $lp = core\lapack::dpotrf($ar);
                 if ($lp != 0) {
                     return null;
@@ -1006,6 +1006,7 @@ class matrix {
     }
 
     /**
+     * FIXME--------------
      * RREF
      * The reduced row echelon form (RREF) of a matrix.
      * @return \numphp\matrix
@@ -1096,7 +1097,7 @@ class matrix {
             for ($i = 0; $i < $this->row; ++$i) {
                 $v->data[$i] = core\blas::dmax($this->rowAsVector($i));
             }
-        } elseif ($this->dtype === self::FLOAT) {
+        } else {
             for ($i = 0; $i < $this->row; ++$i) {
                 $v->data[$i] = core\blas::smax($this->rowAsVector($i));
             }
@@ -1114,7 +1115,7 @@ class matrix {
             for ($i = 0; $i < $this->row; ++$i) {
                 $v->data[$i] = core\blas::dmin($this->rowAsVector($i));
             }
-        } elseif ($this->dtype === self::FLOAT) {
+        } else {
             for ($i = 0; $i < $this->row; ++$i) {
                 $v->data[$i] = core\blas::smin($this->rowAsVector($i));
             }
@@ -1129,17 +1130,12 @@ class matrix {
      * @return void
      */
     public function setData(int|float|array $data, bool $dignoal = false): void {
-        if (!empty($data) && $dignoal == false) {
+        if ($dignoal == false) {
             if (is_array($data) && is_array($data[0])) {
                 $f = $this->flattenArray($data);
                 foreach ($f as $k => $v) {
                     $this->data[$k] = $v;
                 }
-                #for ($i = 0; $i < $this->row; ++$i) {
-                #    for ($j = 0; $j < $this->col; ++$j) {
-                #        $this->data[$i * $this->col + $j] = $data[$i][$j];
-                #    }
-                #}
             } elseif (is_numeric($data) && $dignoal == false) {
                 for ($i = 0; $i < $this->ndim; ++$i) {
                     $this->data[$i] = $data;
@@ -1161,7 +1157,7 @@ class matrix {
     }
 
     /**
-     * get the number of elements in the tensor.
+     * get the number of elements in the matrix.
      * @return int
      */
     public function getSize(): int {
@@ -1260,17 +1256,40 @@ class matrix {
         }
         $imat = $this->copyMatrix();
         $ipiv = vector::factory($this->row, vector::INT);
-        $lp = core\lapack::sgetrf($imat, $ipiv);
+        if($this->dtype == self::FLOAT){
+            $this->_inverseFloat($imat, $ipiv);
+        }
+        else {
+            $this->_inverserDouble($imat,$ipiv);
+        }
+    }
+    
+    protected function _inverseFloat(\numphp\matrix $m, \numphp\vector $v): matrix|null {
+        $lp = core\lapack::sgetrf($m, $v);
         if ($lp != 0) {
             return null;
         }
-        $lp = core\lapack::sgetri($imat, $ipiv);
+        $lp = core\lapack::sgetri($m, $v);
         if ($lp != 0) {
             return null;
         }
-        unset($ipiv);
+        unset($v);
         unset($lp);
-        return $imat;
+        return $m;
+    }
+    
+    protected function _inverserDouble(\numphp\matrix $m, \numphp\vector $v): matrix|null {
+        $lp = core\lapack::dgetrf($m, $v);
+        if ($lp != 0) {
+            return null;
+        }
+        $lp = core\lapack::dgetri($m, $v);
+        if ($lp != 0) {
+            return null;
+        }
+        unset($v);
+        unset($lp);
+        return $m;
     }
 
     /**
@@ -1284,22 +1303,61 @@ class matrix {
         $vt = self::factory($this->col, $this->col, $this->dtype);
         $imat = $this->copyMatrix();
         $mr = self::factory($this->col, $this->row, $this->dtype);
-        $lp = core\lapack::sgesdd($imat, $s, $u, $vt);
-        if ($lp != 0) {
-            return null;
+        if($this->dtype == self::FLOAT){
+            $this->_pseudoInverseFloat($k, $imat, $s, $u, $vt, $mr);
+        } else {
+            $this->_pseudoInverseDouble($k, $imat, $s, $u, $vt, $mr);
         }
-
-        for ($i = 0; $i < $k; ++$i) {
-            core\blas::sscal(1.0 / $s->data[$i], $vt->rowAsVector($i));
-        }
-        core\blas::sgemm($vt, $u, $mr);
         unset($s);
         unset($u);
         unset($vt);
         unset($imat);
         unset($k);
-        unset($lp);
         return $mr;
+    }
+    
+    /**
+     * 
+     * @param int $k
+     * @param \numphp\matrix $m
+     * @param \numphp\vector $s
+     * @param \numphp\matrix $u
+     * @param \numphp\matrix $vt
+     * @param \numphp\matrix $mr
+     * 
+     */
+    protected function _pseudoInverseFloat(int $k, \numphp\matrix $m, \numphp\vector $s, \numphp\matrix $u, \numphp\matrix $vt, \numphp\matrix $mr) {
+        $lp = core\lapack::sgesdd($m, $s, $u, $vt);
+        if ($lp != 0) {
+            return null;
+        }
+        for ($i = 0; $i < $k; ++$i) {
+            core\blas::sscal(1.0 / $s->data[$i], $vt->rowAsVector($i));
+        }
+        core\blas::sgemm($vt, $u, $mr);
+        unset($lp);
+    }
+    
+    /**
+     * 
+     * @param int $k
+     * @param \numphp\matrix $m
+     * @param \numphp\vector $s
+     * @param \numphp\matrix $u
+     * @param \numphp\matrix $vt
+     * @param \numphp\matrix $mr
+     * 
+     */
+    protected function _pseudoInverseDouble(int $k, \numphp\matrix $m, \numphp\vector $s, \numphp\matrix $u, \numphp\matrix $vt, \numphp\matrix $mr) {
+        $lp = core\lapack::dgesdd($m, $s, $u, $vt);
+        if ($lp != 0) {
+            return null;
+        }
+        for ($i = 0; $i < $k; ++$i) {
+            core\blas::dscal(1.0 / $s->data[$i], $vt->rowAsVector($i));
+        }
+        core\blas::dgemm($vt, $u, $mr);
+        unset($lp);
     }
 
     /**
@@ -1314,9 +1372,16 @@ class matrix {
         $s = vector::factory($k, $this->dtype);
         $u = self::factory($this->row, $this->row, $this->dtype);
         $vt = self::factory($this->col, $this->col, $this->dtype);
-        $lp = core\lapack::sgesdd($ar, $s, $u, $vt);
-        if ($lp != 0) {
-            return null;
+        if ($this->dtype == self::FLOAT) {
+            $lp = core\lapack::sgesdd($ar, $s, $u, $vt);
+            if ($lp != 0) {
+                return null;
+            }
+        } else {
+            $lp = core\lapack::dgesdd($ar, $s, $u, $vt);
+            if ($lp != 0) {
+                return null;
+            }
         }
         unset($ar);
         unset($k);
@@ -1337,29 +1402,43 @@ class matrix {
         $wr = vector::factory($this->col, $this->dtype);
         $ar = $this->copyMatrix();
         if ($symmetric) {
-            $lp = core\lapack::ssyev($ar, $wr);
-            if ($lp != 0) {
-                return null;
+            if ($this->dtype == self::FLOAT) {
+                $lp = core\lapack::ssyev($ar, $wr);
+                if ($lp != 0) {
+                    return null;
+                }
+            } else {
+                $lp = core\lapack::dsyev($ar, $wr);
+                if ($lp != 0) {
+                    return null;
+                }
             }
             return (object) ['eignVal' => $wr, 'eignVec' => $ar];
         } else {
             $wi = vector::factory($this->col, $this->dtype);
             $vr = self::factory($this->col, $this->col, $this->dtype);
-            $lp = core\lapack::sgeev($ar, $wr, $wi, $vr);
-            if ($lp != 0) {
-                return null;
+            if ($this->dtype == self::FLOAT) {
+                $lp = core\lapack::sgeev($ar, $wr, $wi, $vr);
+                if ($lp != 0) {
+                    return null;
+                }
+            } else {
+                $lp = core\lapack::dgeev($ar, $wr, $wi, $vr);
+                if ($lp != 0) {
+                    return null;
+                }
             }
             return (object) ['eignVal' => $wr, 'eignVec' => $vr];
         }
     }
 
     /**
-     * Fixme 
+     *  
      * Compute the LU factorization of matrix.
      * return lower, upper, and permutation matrices as object.
      * @return object (l,u,p)
      */
-    public function lu() {  //Fixme
+    public function lu() {
         $ipiv = vector::factory($this->col, vector::INT);
         $ar = $this->copyMatrix();
         if ($this->dtype == self::FLOAT) {
@@ -1412,7 +1491,11 @@ class matrix {
      * @return float
      */
     public function normL1(): float {
-        return core\lapack::slange('1', $this);
+        if($this->dtype == self::FLOAT){
+            return core\lapack::slange('1', $this);
+        } else {
+            return core\lapack::dlange('1', $this);
+        }
     }
 
     /**
@@ -1420,7 +1503,11 @@ class matrix {
      * @return float
      */
     public function normL2(): float {
-        return core\lapack::slange('f', $this);
+        if($this->dtype == self::FLOAT){
+            return core\lapack::slange('f', $this);
+        } else {
+            return core\lapack::dlange('f', $this);
+        }
     }
 
     /**
@@ -1428,7 +1515,11 @@ class matrix {
      * @return float
      */
     public function normINF(): float {
-        return core\lapack::slange('i', $this);
+        if($this->dtype == self::FLOAT){
+            return core\lapack::slange('i', $this);
+        } else {
+            return core\lapack::dlange('i', $this);
+        }
     }
 
     /**
@@ -1436,7 +1527,7 @@ class matrix {
      * @return float
      */
     public function normFrob(): float {
-        return core\lapack::slange('f', $this);
+        return $this->normL2();
     }
 
     /**
@@ -1620,7 +1711,7 @@ class matrix {
     }
 
     /**
-     * Clip the tensor to be lower bounded by a given minimum.
+     * Clip the matrix to be lower bounded by a given minimum.
      * @param float $min
      * @return matrix
      */
@@ -1637,7 +1728,7 @@ class matrix {
     }
 
     /**
-     * Clip the tensor to be upper bounded by a given maximum.
+     * Clip the matrix to be upper bounded by a given maximum.
      *
      * @param float $max
      * @return matrix
@@ -1653,7 +1744,11 @@ class matrix {
         }
         return $ar;
     }
-
+    
+    /**
+     * Square of matrix
+     * @return matrix
+     */
     public function square(): matrix {
         return $this->multiplyMatrix($this);
     }
