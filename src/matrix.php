@@ -1248,9 +1248,9 @@ class matrix {
     /**
      *
      * Compute the multiplicative inverse of the matrix.
-     * @return matrix|null
+     * @return matrix
      */
-    public function inverse(): matrix|null {
+    public function inverse(): matrix {
         if (!$this->isSquare()) {
             self::_err('Error::invalid Size of matrix!');
         }
