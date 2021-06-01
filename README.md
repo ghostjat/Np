@@ -62,6 +62,11 @@ MEM:- 8GB
 PhpBench @git_tag@. Running benchmarks.
 Using configuration file: /home/ghost/projects/git/numphp/phpbench.json
 
+
+<p align="center">
+  <img src="https://github.com/ghostjat/numphp/blob/main/Numphp Benchmarks.png">
+</p>
+
 Current Benchmark
 
 | benchmark                 | subject  | set | revs | its | mem_peak | best   | mode   | mean   | worst  | stdev  | rstdev |
