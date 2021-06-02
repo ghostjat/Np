@@ -7,7 +7,6 @@ namespace numphp\decompositions;
 use numphp\matrix;
 use numphp\vector;
 use numphp\core\lapack;
-use InvalidArgumentException;
 
 /**
  * SVD
@@ -22,11 +21,6 @@ use InvalidArgumentException;
  */
 class svd {
 
-    /**
-     * The U matrix.
-     *
-     * @var \Tensor\Matrix
-     */
     protected $u, $s, $v;
 
     /**
