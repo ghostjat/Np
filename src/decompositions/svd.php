@@ -93,7 +93,7 @@ class svd {
     /**
      * Return the V transposed matrix.
      *
-     * @return \Tensor\Matrix
+     * @return matrix
      */
     public function vt(): matrix {
         return $this->v->transpose();
