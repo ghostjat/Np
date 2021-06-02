@@ -3,14 +3,21 @@
 declare(strict_types=1);
 
 namespace numphp;
+use numphp\reductions\ref;
+use numphp\reductions\rref;
+use numphp\decompositions\lu;
+use numphp\decompositions\svd;
+use numphp\decompositions\eigen;
+use numphp\decompositions\cholesky;
 
 /**
- * A fast lite memory efficient Scientific Computing for php
  * Matrix
- * @package NumPhp\Matrix
- * @category Scientific Computing
- * @author ghost (Shubham Chaudhary)
- * @email ghost.jat@gmail.com
+ * A fast lite memory efficient Scientific Computing for php
+ * 
+ * @package   NumPhp
+ * @category  Scientific Computing
+ * @author    ghost (Shubham Chaudhary)
+ * @email     ghost.jat@gmail.com
  * @copyright (c) 2020-2021, Shubham Chaudhary
  */
 class matrix {
@@ -957,52 +964,23 @@ class matrix {
         return $ar;
     }
 
+    /**
+     * Calculate the row echelon form of the matrix. 
+     * Return the reduced matrix.
+     *
+     * @return \numphp\reductions\ref
+     */
     public function ref(): matrix|null {
-        $ipiv = vector::factory(min($this->row, $this->col), vector::INT);
-        $ar = $this->copyMatrix();
-        if ($this->dtype == self::FLOAT) {
-            $lp = core\lapack::sgetrf($ar, $ipiv);
-            if ($lp != 0) {
-                return null;
-            }
-        }
-        else {
-            $lp = core\lapack::dgetrf($ar, $ipiv);
-            if ($lp != 0) {
-                return null;
-            }
-        }
-
-        unset($ipiv);
-        unset($lp);
-        return $ar;
+        return ref::factory($this);
     }
 
-    public function cholesky() {
-        if ($this->isSquare()) {
-            $ar = $this->copyMatrix();
-            if ($this->dtype == self::FLOAT) {
-                $lp = core\lapack::spotrf($ar);
-                if ($lp != 0) {
-                    return null;
-                }
-            }
-            else {
-                $lp = core\lapack::dpotrf($ar);
-                if ($lp != 0) {
-                    return null;
-                }
-            }
-            for ($i = 0; $i < $this->col; ++$i) {
-                for ($j = $i + 1; $j < $this->col; ++$j) {
-                    $ar->data[$i * $this->col + $j] = 0.0;
-                }
-            }
-            unset($lp);
-            return $ar;
-        } else {
-            self::_err('given matrix is not a squred!');
-        }
+    /**
+     * Return the lower triangular matrix of the Cholesky decomposition.
+     *
+     * @return \numphp\decompositions\cholesky
+     */
+    public function cholesky():matrix {
+        return cholesky::factory($this);
     }
 
     /**
@@ -1012,41 +990,7 @@ class matrix {
      * @return \numphp\matrix
      */
     public function rref(): matrix {
-        $lead = 0;
-        $ar = $this->copyMatrix();
-        for ($r = 0; $r < $ar->row; ++$r) {
-            if ($lead >= $ar->col)
-                break;
-            {
-                $i = $r;
-                while ($ar->data[$i * $ar->col + $lead] == 0) {
-                    $i++;
-                    if ($i == $ar->row) {
-                        $i = $r;
-                        $lead++;
-                        if ($lead == $ar->col) {
-                            return $ar;
-                        }
-                    }
-                }
-                $ar->swapRows($r, $i);
-            } {
-                $lv = $ar->data[$r * $ar->col + $lead];
-                for ($j = 0; $j < $ar->col; ++$j) {
-                    $ar->data[$r * $ar->col + $j] = $ar->data[$r * $ar->col + $j] / $lv;
-                }
-            }
-            for ($i = 0; $i < $ar->row; ++$i) {
-                if ($i != $r) {
-                    $lv = $ar->data[$i * $ar->col + $lead];
-                    for ($j = 0; $j < $ar->col; ++$j) {
-                        $ar->data[$i * $ar->col + $j] -= $lv * $ar->data[$r * $ar->col + $j];
-                    }
-                }
-            }
-            $lead++;
-        }
-        return $ar;
+        return rref::factory($this);
     }
 
     /**
@@ -1257,10 +1201,10 @@ class matrix {
         $imat = $this->copyMatrix();
         $ipiv = vector::factory($this->row, vector::INT);
         if($this->dtype == self::FLOAT){
-            $this->_inverseFloat($imat, $ipiv);
+           return $this->_inverseFloat($imat, $ipiv);
         }
         else {
-            $this->_inverserDouble($imat,$ipiv);
+            return $this->_inverserDouble($imat,$ipiv);
         }
     }
     
@@ -1366,124 +1310,30 @@ class matrix {
      *
      * @return object (u,s,v)
      */
-    public function svd(): object {
-        $k = min($this->row, $this->col);
-        $ar = $this->copyMatrix();
-        $s = vector::factory($k, $this->dtype);
-        $u = self::factory($this->row, $this->row, $this->dtype);
-        $vt = self::factory($this->col, $this->col, $this->dtype);
-        if ($this->dtype == self::FLOAT) {
-            $lp = core\lapack::sgesdd($ar, $s, $u, $vt);
-            if ($lp != 0) {
-                return null;
-            }
-        } else {
-            $lp = core\lapack::dgesdd($ar, $s, $u, $vt);
-            if ($lp != 0) {
-                return null;
-            }
-        }
-        unset($ar);
-        unset($k);
-        unset($lp);
-        return (object) ['u' => $u, 's' => $s, 'v' => $vt];
+    public function svd(): svd {
+        return svd::factory($this);
     }
 
     /**
      * Compute the eigen decomposition of a general matrix.
      * return the eigenvalues and eigenvectors as object
+     * 
      * @param bool $symmetric
-     * @return object (eignVal,eignVec)
+     * @return eigen
      */
-    public function eign(bool $symmetric = false) {
-        if (!$this->isSquare()) {
-            self::_err('A Non Square Matrix is given!');
-        }
-        $wr = vector::factory($this->col, $this->dtype);
-        $ar = $this->copyMatrix();
-        if ($symmetric) {
-            if ($this->dtype == self::FLOAT) {
-                $lp = core\lapack::ssyev($ar, $wr);
-                if ($lp != 0) {
-                    return null;
-                }
-            } else {
-                $lp = core\lapack::dsyev($ar, $wr);
-                if ($lp != 0) {
-                    return null;
-                }
-            }
-            return (object) ['eignVal' => $wr, 'eignVec' => $ar];
-        } else {
-            $wi = vector::factory($this->col, $this->dtype);
-            $vr = self::factory($this->col, $this->col, $this->dtype);
-            if ($this->dtype == self::FLOAT) {
-                $lp = core\lapack::sgeev($ar, $wr, $wi, $vr);
-                if ($lp != 0) {
-                    return null;
-                }
-            } else {
-                $lp = core\lapack::dgeev($ar, $wr, $wi, $vr);
-                if ($lp != 0) {
-                    return null;
-                }
-            }
-            return (object) ['eignVal' => $wr, 'eignVec' => $vr];
-        }
+    public function eign(bool $symmetric = false): eigen {
+        return eigen::factory($this,$symmetric);
     }
 
     /**
      *  
      * Compute the LU factorization of matrix.
      * return lower, upper, and permutation matrices as object.
-     * @return object (l,u,p)
+     * 
+     * @return lu
      */
-    public function lu() {
-        $ipiv = vector::factory($this->col, vector::INT);
-        $ar = $this->copyMatrix();
-        if ($this->dtype == self::FLOAT) {
-            $lp = core\lapack::sgetrf($ar, $ipiv);
-            if ($lp != 0) {
-                return null;
-            }
-        } else {
-            $lp = core\lapack::dgetrf($ar, $ipiv);
-            if ($lp != 0) {
-                return null;
-            }
-        }
-        $l = self::factory($this->col, $this->col, $this->dtype);
-        $u = self::factory($this->col, $this->col, $this->dtype);
-        $p = self::factory($this->col, $this->col, $this->dtype);
-        for ($i = 0; $i < $this->col; ++$i) {
-            for ($j = 0; $j < $i; ++$j) {
-                $l->data[$i * $this->col + $j] = $ar->data[$i * $this->col + $j];
-            }
-            $l->data[$i * $this->col + $i] = 1.0;
-            for ($j = $i + 1; $j < $this->col; ++$j) {
-                $l->data[$i * $this->col + $j] = 0.0;
-            }
-        }
-        for ($i = 0; $i < $this->col; ++$i) {
-            for ($j = 0; $j < $i; ++$j) {
-                $u->data[$i * $this->col + $j] = 0.0;
-            }
-            for ($j = $i; $j < $this->col; ++$j) {
-                $u->data[$i * $this->col + $j] = $ar->data[$i * $this->col + $j];
-            }
-        }
-        for ($i = 0; $i < $this->col; ++$i) {
-            for ($j = 0; $j < $this->col; ++$j) {
-                if ($j == $ipiv->data[$i] - 1) {
-                    $p->data[$i * $this->col + $j] = 1;
-                } else {
-                    $p->data[$i * $this->col + $j] = 0;
-                }
-            }
-        }
-        unset($ar);
-        unset($ipiv);
-        return (object) ['l' => $l, 'u' => $u, 'p' => $p];
+    public function lu():lu {
+        return lu::factory($this);
     }
 
     /**

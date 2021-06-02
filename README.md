@@ -59,9 +59,6 @@ Performance
 System-Conf:- 
 CPU:- Intel(R) Core(TM) i3-2370M CPU @ 2.40GHz 64bit
 MEM:- 8GB
-PhpBench @git_tag@. Running benchmarks.
-Using configuration file: /home/ghost/projects/git/numphp/phpbench.json
-
 
 <p align="center">
   <img src="https://github.com/ghostjat/numphp/blob/main/Numphp Benchmarks.png">
