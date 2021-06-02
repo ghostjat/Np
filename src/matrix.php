@@ -297,10 +297,10 @@ class matrix {
             self::_err('determinant is undefined for a non square matrix');
         }
         $lu = $this->lu();
-        $nSwaps = $lu->p->diagonalAsVector()->substractScalar($lu->p->diagonalAsVector()->sum())->col - 1;
+        $nSwaps = $lu->p()->diagonalAsVector()->substractScalar($lu->p->diagonalAsVector()->sum())->col - 1;
         $detP = (-1) ** $nSwaps;
-        $detL = $lu->l->diagonalAsVector()->product();
-        $detU = $lu->u->diagonalAsVector()->product();
+        $detL = $lu->l()->diagonalAsVector()->product();
+        $detU = $lu->u()->diagonalAsVector()->product();
         unset($lu);
         return ($detP * $detL * $detU);
     }
