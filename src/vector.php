@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace numphp;
+namespace Np;
 
 /** A fast lite memory efficient Scientific Computing in php
  * Vector (rank-1)
  * 
  * @package NumPhp
- * @version 0.0.1.alpha
+ * @version V0.0.alpha
  * @category Php Scientific Library
  * @author ghost (Shubham Chaudhary)
  * @email ghost.jat@gmail.com
@@ -16,7 +16,7 @@ namespace numphp;
  */
 class vector {
     const INT=0, FLOAT = 1, DOUBLE = 2;
-    public $data,$col,$dtype;
+    public $data,$col,$ndim,$dtype;
 
     /**
      * 
@@ -229,22 +229,17 @@ class vector {
 
     /**
      * vector-vector dot product
-     * @param \numphp\vector $vector
+     * @param \Np\vector $vector
      * @param int $incX
      * @param int $incY
      * @return vector
      */
-    public function dotVector(\numphp\vector $vector ) {
-        if($this->checkDtype($vector)) {
-            if($this->dtype == self::FLOAT) {
-                return core\blas::sdot($this, $vector);
-            }
-            else {
-                return core\blas::ddot($this, $vector);
-            }
+    public function dotVector(\Np\vector $v) {
+        if ($this->checkDtype($v)) {
+            return core\blas::dot($this, $v);
         }
     }
-    
+
     public function sum():float {
         $r = 0.0;
         for($i = 0; $i < $this->col; ++$i) {
@@ -267,58 +262,18 @@ class vector {
     
     /**
      * Compute the vector-matrix dot product of this vector and matrix .
-     * @param \numphp\matrix $m
+     * @param \Np\matrix $m
      * @return vector
      */
-    public function dotMatrix(\numphp\matrix $m): vector {
+    public function dotMatrix(\Np\matrix $m): vector {
         if($this->dtype != $m->dtype) {
             self::_err('Mismatch Dtype of given matrix');
         }
         $mvr = self::factory($this->col, $this->dtype);
-        if($this->dtype == self::FLOAT) {
-            core\blas::sgemv($m, $this, $mvr);
-        }
-        else {
-            core\blas::dgemv($m, $this, $mvr);
-        }
+        core\blas::gemv($m, $this, $mvr);
         return $mvr;
     }
     
-    /**
-     * 
-     * @param \numphp\matrix $m
-     * @return matrix
-     */
-    public function addMatrix(\numphp\matrix $m):matrix {
-        if($this->col == $m->col && $this->dtype == $m->dtype) {
-            $vr = matrix::factory($m->row,$m->col, $m->dtype);
-            for($i = 0; $i < $m->row; ++$i) {
-                for($j = 0; $j < $m->col; ++$j) {
-                    $vr->data[$i * $m->col +$j] = $this->data[$j] + $m->data[$i * $m->col + $j];
-                }
-            }
-            return $vr;
-        }
-        self::_invalidArgument('');
-    }
-    
-    /**
-     * 
-     * @param \numphp\matrix $m
-     * @return matrix
-     */
-    public function multiplyMatrix(\numphp\matrix $m):matrix {
-        if($this->col == $m->col && $this->dtype == $m->dtype) {
-            $vr = matrix::factory($m->row,$m->col, $m->dtype);;
-            for($i = 0; $i < $m->row; ++$i) {
-                for($j = 0; $j < $m->col; ++$j) {
-                    $vr->data[$i * $m->col +$j] = $this->data[$j] * $m->data[$i * $m->col + $j];
-                }
-            }
-            return $vr;
-        }
-        self::_invalidArgument('Err::' . __METHOD__);
-    }
     
     /**
      * 
@@ -337,10 +292,10 @@ class vector {
     
     /**
      * 
-     * @param \numphp\matrix $m
+     * @param \Np\matrix $m
      * @return matrix
      */
-    protected function divideMatrix(\numphp\matrix $m):matrix {
+    protected function divideMatrix(\Np\matrix $m):matrix {
         if($this->col == $m->col && $this->dtype == $m->dtype) {
             $vr = matrix::factory($m->row,$m->col, $m->dtype);
             for($i = 0; $i < $m->row; ++$i) {
@@ -383,10 +338,43 @@ class vector {
 
     /**
      * 
-     * @param \numphp\vector $vector
+     * @param int|float|matrix|vector $d
+     * @return matrix|vector
+     */
+    public function multiply(int|float|matrix|vector $d):matrix|vector {
+        if($d instanceof matrix){
+            return $this->multiplyMatrix($d);
+        } elseif ($d instanceof self) {
+            return $this->multiplyVector($d);
+        } else {
+            return $this->multiplyScalar($d);
+        }
+    }
+    
+    /**
+     * 
+     * @param \Np\matrix $m
+     * @return matrix
+     */
+    protected function multiplyMatrix(\Np\matrix $m):matrix {
+        if($this->col == $m->col && $this->dtype == $m->dtype) {
+            $vr = matrix::factory($m->row,$m->col, $m->dtype);;
+            for($i = 0; $i < $m->row; ++$i) {
+                for($j = 0; $j < $m->col; ++$j) {
+                    $vr->data[$i * $m->col +$j] = $this->data[$j] * $m->data[$i * $m->col + $j];
+                }
+            }
+            return $vr;
+        }
+        self::_invalidArgument('Err::' . __METHOD__);
+    }
+    
+    /**
+     * 
+     * @param \Np\vector $vector
      * @return vector
      */
-    public function multiplyVector(\numphp\vector $vector):vector {
+    protected function multiplyVector(\Np\vector $vector):vector {
         if($this->checkDimensions($vector) && $this->checkDtype($vector)) {
             $vr = self::factory($this->col, $this->dtype);
             for($i = 0; $i < $this->col; ++$i) {
@@ -394,14 +382,60 @@ class vector {
             }
             return $vr;
         }
+        self::_invalidArgument('Err::' . __METHOD__);
     }
     
     /**
      * 
-     * @param \numphp\vector $vector
+     * @param int|float $s
      * @return vector
      */
-    public function sumVector(\numphp\vector $vector):vector {
+    protected function multiplyScalar(int|float $s): vector {
+        $vr = $this->copyVector();
+        core\blas::scale($s, $vr);
+        return $vr;
+    }
+    
+    
+    /**
+     * 
+     * @param int|float|matrix|vector $d
+     * @return matrix|vector
+     */
+    public function add(int|float|matrix|vector $d):matrix|vector {
+        if($d instanceof matrix){
+            return $this->addMatrix($d);
+        } elseif ($d instanceof self) {
+            return $this->addVector($d);
+        } else {
+            return $this->addScalar($d);
+        }
+    }
+    
+    /**
+     * 
+     * @param \Np\matrix $m
+     * @return matrix
+     */
+    protected function addMatrix(\Np\matrix $m):matrix {
+        if($this->col == $m->col && $this->dtype == $m->dtype) {
+            $vr = matrix::factory($m->row,$m->col, $m->dtype);
+            for($i = 0; $i < $m->row; ++$i) {
+                for($j = 0; $j < $m->col; ++$j) {
+                    $vr->data[$i * $m->col +$j] = $this->data[$j] + $m->data[$i * $m->col + $j];
+                }
+            }
+            return $vr;
+        }
+        self::_invalidArgument('');
+    }
+    
+    /**
+     * 
+     * @param \Np\vector $vector
+     * @return vector
+     */
+    protected function addVector(\Np\vector $vector):vector {
         if($this->checkDimensions($vector) && $this->checkDtype($vector)) {
             $vr = self::factory($this->col, $this->dtype);
             for($i = 0; $i < $this->col; ++$i) {
@@ -411,14 +445,26 @@ class vector {
         }
     }
     
+    /**
+     * 
+     * @param int|float $s
+     * @return vector
+     */
+    protected function addScalar(int|float $s): vector {
+        $vr = $this->copyVector();
+        for ($i = 0; $i < $this->col; ++$i) {
+            $vr->data[$i] += $s;
+        }
+        return $vr;
+    }
     
     
     /**
      * 
-     * @param \numphp\vector $vector
+     * @param \Np\vector $vector
      * @return vector
      */
-    public function powVector(\numphp\vector $vector):vector {
+    public function powVector(\Np\vector $vector):vector {
         if($this->checkDimensions($vector) && $this->checkDtype($vector)) {
             $vr = self::factory($this->col, $this->dtype);
             for($i = 0; $i < $this->col; ++$i) {
@@ -430,10 +476,10 @@ class vector {
     
     /**
      * 
-     * @param \numphp\vector $vector
+     * @param \Np\vector $vector
      * @return vector
      */
-    public function modVector(\numphp\vector $vector):vector {
+    public function modVector(\Np\vector $vector):vector {
         if($this->checkDimensions($vector) && $this->checkDtype($vector)) {
             $vr = self::factory($this->col, $this->dtype);
             for($i = 0; $i < $this->col; ++$i) {
@@ -445,10 +491,43 @@ class vector {
     
     /**
      * 
-     * @param \numphp\vector $vector
+     * @param int|float|matrix|vector $d
+     * @return matrix|vector
+     */
+    public function subtract(int|float|matrix|vector $d):matrix|vector {
+        if($d instanceof matrix){
+            return $this->subtractMatrix($d);
+        } elseif ($d instanceof self) {
+            return $this->subtractVector($d);
+        } else {
+            return $this->substractScalar($d);
+        }
+    }
+    
+    /**
+     * 
+     * @param \Np\matrix $m
+     * @return matrix
+     */
+    protected function subtractMatrix(\Np\matrix $m):matrix {
+        if($this->col == $m->col && $this->dtype == $m->dtype) {
+            $vr = matrix::factory($m->row,$m->col, $m->dtype);
+            for($i = 0; $i < $m->row; ++$i) {
+                for($j = 0; $j < $m->col; ++$j) {
+                    $vr->data[$i * $m->col +$j] = $this->data[$j] - $m->data[$i * $m->col + $j];
+                }
+            }
+            return $vr;
+        }
+        self::_invalidArgument('');
+    }
+    
+    /**
+     * 
+     * @param \Np\vector $vector
      * @return vector
      */
-    public function subtractVector(\numphp\vector $vector):vector {
+    protected function subtractVector(\Np\vector $vector):vector {
         if($this->checkDimensions($vector) && $this->checkDtype($vector)) {
             $vr = self::factory($this->col, $this->dtype);
             for($i = 0; $i < $this->col; ++$i) {
@@ -460,10 +539,10 @@ class vector {
     
     /**
      * 
-     * @param \numphp\vector $scalar
-     * @return \numphp\vector
+     * @param \Np\vector $scalar
+     * @return \Np\vector
      */
-    public function substractScalar(int|float $scalar): vector {
+    protected function substractScalar(int|float $scalar): vector {
         $vr = self::factory($this->col, $this->dtype);
         for ($i = 0; $i < $this->col; ++$i) {
             $vr->data[$i] = $this->data[$i] - $scalar;
@@ -473,21 +552,21 @@ class vector {
 
     /**
      * 
-     * @param \numphp\vector $v
+     * @param \Np\vector $v
      * @param int $stride
      * @return vector
      */
-    public function convolve(\numphp\vector $v, int $stride = 1): vector {
+    public function convolve(\Np\vector $v, int $stride = 1): vector {
         return convolve::conv1D($this, $v, $stride);
     }
 
     /**
      * Return the inner product of two vectors.
      *
-     * @param \numphp\vector $vector
+     * @param \Np\vector $vector
      * @return float
      */
-    public function inner(\numphp\vector $vector) {
+    public function inner(\Np\vector $vector) {
         return $this->dotVector($vector);
     }
 
@@ -501,10 +580,10 @@ class vector {
 
     /**
      *  Return the element-wise maximum of given vector with current vector
-     * @param \numphp\vector $vector
+     * @param \Np\vector $vector
      * @return vector
      */
-    public function maximum(\numphp\vector $vector) :vector {
+    public function maximum(\Np\vector $vector) :vector {
         if($this->checkDimensions($vector)) {
             
         }
@@ -512,13 +591,22 @@ class vector {
     
     /**
      *  Return the element-wise minium of given vector with current vector
-     * @param \numphp\vector $vector
+     * @param \Np\vector $vector
      * @return vector
      */
-    public function minium(\numphp\vector $vector) :vector {
+    public function minium(\Np\vector $vector) :vector {
         if($this->checkDimensions($vector)) {
             
         }
+    }
+    /**
+     * sort the vector 
+     * @param string $type i or d
+     * 
+     */
+    public function sort($type='i') {
+        core\lapack::sort($this, $type);
+        return $this;
     }
 
 
@@ -538,16 +626,12 @@ class vector {
         }
     }
     
-    /*
-     * FIXME------------
-     * 
-     */
+    
     public function asMatrix():matrix {
-        $ar = matrix::factory(1, $this->col, $this->dtype);
-        for($i = 0; $i < 1; ++$i) {
-            for($j = 0; $j < $this->col; ++$j) {
-                $ar->data[$i * $this->col + $j] = $this->data[$j];
-            }
+        $size = (int) sqrt($this->col);
+        $ar = matrix::factory($size, $size, $this->dtype);
+        for($i = 0; $i < $ar->ndim; ++$i) {
+            $ar->data[$i] = $this->data[$i];
         }
         return $ar;
     }
@@ -602,6 +686,7 @@ class vector {
             throw new InvalidArgumentException('* To create Numphp/Vector col must be greater than 0!, Op Failed! * ');
         }
         $this->col = $col;
+        $this->ndim = $col;
         $this->dtype = $dtype;
         switch ($dtype) {
             case self::FLOAT:
@@ -614,7 +699,7 @@ class vector {
                 $this->data = self::_iVector($this->col);
                 break;
             default :
-                self::_invalidArgument('given dtype is not supported by numphp');
+                self::_invalidArgument('given dtype is not supported by Np');
                 break;
         }
         return $this;

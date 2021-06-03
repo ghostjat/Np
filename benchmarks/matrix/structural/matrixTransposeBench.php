@@ -1,8 +1,8 @@
 <?php
 
-namespace numphp\benchmarks\matrix\structural;
+namespace Np\benchmarks\matrix\structural;
 
-use numphp\matrix;
+use Np\matrix;
 
 /**
  * @Groups({"Structural"})
@@ -11,7 +11,7 @@ use numphp\matrix;
 class matrixTransposeBench
 {
     /**
-     * @var \numphp\matrix
+     * @var \Np\matrix
      */
     protected $a;
 
@@ -23,6 +23,7 @@ class matrixTransposeBench
     /**
      * @Subject
      * @Iterations(5)
+     * @revs(5)
      * @OutputTimeUnit("seconds", precision=3)
      */
     public function transpose() : void

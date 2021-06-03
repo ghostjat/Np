@@ -35,6 +35,8 @@ int LAPACKE_sgels( int matrix_order, char trans, int m,
 int LAPACKE_dgels( int matrix_order, char trans, int m,
                           int n, int nrhs, double* a,
                           int lda, double* b, int ldb );
+int LAPACKE_dgebal( int matrix_layout, char job, int n, double* a,
+                           int lda, int* ilo, int* ihi,double* scale );
 int LAPACKE_sbdsdc( int matrix_layout, char uplo, char compq,
                            int n, float* d, float* e, float* u,
                            int ldu, float* vt, int ldvt, float* q,
@@ -126,3 +128,6 @@ float LAPACKE_dlange(int matrix_layout, char norm, int m,
 int LAPACKE_sspsv( int matrix_layout, char uplo, int n,
                           int nrhs, float* ap, int* ipiv,
                           float* b, int ldb );
+int LAPACKE_slasrt( char id, int n, float* d );
+int LAPACKE_dlasrt( char id, int n, double* d );
+

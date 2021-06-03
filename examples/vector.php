@@ -2,16 +2,14 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use numphp\{vector,matrix};
+use Np\vector;
+$unit = ['b', 'kb', 'mb', 'gb', 'tb', 'pb'];
+$time = microtime(1);
+$mem = memory_get_usage();
+$v = vector::ar(range(-100000, 100000));        // to genrate random vector
 
-matrix::time();
-matrix::getMemory();
-$v = vector::ar([1,2,3,4]);        // to genrate random vector
+echo PHP_EOL;
+$memory = memory_get_usage() - $mem . PHP_EOL;
+echo round($memory / pow(1024, ($i = floor(log($memory, 1024)))), 2) . $unit[$i] . PHP_EOL;
 
-echo $v->product() . PHP_EOL;
-matrix::getMemory();           // get memory use
-matrix::time();               // get time
-/**
- * Memory-Consumed 7.7mb
- * Time-Consumed:- 0.19370794296265
- */
+echo microtime(1) - $time . PHP_EOL;

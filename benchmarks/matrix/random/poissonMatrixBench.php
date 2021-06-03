@@ -1,21 +1,22 @@
 <?php
 
-namespace numphp\benchmarks\matrix\random;
+namespace Np\benchmarks\matrix\random;
 
-use numphp\matrix;
+use Np\matrix;
 
 /**
  * @Groups({"Random"})
  */
-class poissonMatrixBench
-{
+class poissonMatrixBench {
+
     /**
      * @Subject
      * @Iterations(5)
+     * @revs(5)
      * @OutputTimeUnit("seconds", precision=3)
      */
-    public function poisson() : void
-    {
+    public function poisson(): void {
         matrix::poisson(500, 500);
     }
+
 }

@@ -1,12 +1,12 @@
 {
-    "name": "ghostjat/numphp",
+    "name": "ghostjat/np",
     "description": "numphp is numerical library with low memory footprint for php language. Suitable for large scale computing. php7.4+ 64 bit is required!",
     "type": "library",
     "keywords": [
         "arithmetic", "computation", "computing", "decomposition", "engineering",
         "linear algebra", "math", "matrix", "norms", "php","blas","lapack",
         "random number generation", "rng", "reduction", "scientific computing", "statistics",
-        "tensor", "vector", "trigonometry","statstics","numphp"
+        "tensor", "vector", "trigonometry","statstics","numphp","np"
     ],
     "homepage": "https://github.com/ghostjat/numphp",
     "license": "MIT",
@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "numphp\\": "src/"
+            "Np\\": "src/"
         }
     },
     "require": {

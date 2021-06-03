@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
-namespace numphp\reductions;
+namespace Np\reductions;
 
-use numphp\matrix;
+use Np\matrix;
 
 /**
  * RREF
@@ -17,7 +17,12 @@ use numphp\matrix;
 
 class rref { 
      
-    public static function factory(\numphp\matrix $m): matrix {
+    /**
+     * 
+     * @param \Np\matrix $m
+     * @return matrix
+     */
+    public static function factory(\Np\matrix $m): matrix {
         $lead = 0;
         $ar = $m->copyMatrix();
         for ($r = 0; $r < $ar->row; ++$r) {

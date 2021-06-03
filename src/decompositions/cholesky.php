@@ -1,11 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace numphp\decompositions;
 
-use numphp\matrix;
-use numphp\core\lapack;
+namespace Np\decompositions;
+
+use Np\matrix;
+use Np\core\lapack;
 use RuntimeException;
+
 /**
  * Cholesky
  *
@@ -23,23 +25,15 @@ class cholesky {
     /**
      * 
      * @param matrix $m
-     * @return matrix
+     * @return matrix|null
      * @throws RuntimeException
      */
-    public static function factory(matrix $m): matrix {
+    public static function factory(matrix $m): matrix|null {
         if ($m->isSquare()) {
             $ar = $m->copyMatrix();
-            if ($m->dtype == matrix::FLOAT) {
-                $lp = lapack::spotrf($ar);
-                if ($lp != 0) {
-                    return null;
-                }
-            }
-            else {
-                $lp = lapack::dpotrf($ar);
-                if ($lp != 0) {
-                    return null;
-                }
+            $lp = lapack::potrf($ar);
+            if ($lp != 0) {
+                return null;
             }
             for ($i = 0; $i < $m->col; ++$i) {
                 for ($j = $i + 1; $j < $m->col; ++$j) {
@@ -49,7 +43,8 @@ class cholesky {
             unset($lp);
             return $ar;
         } else {
-            throw new RuntimeException('Err:: in ' . __METHOD__ . 'at ' . __LINE__ );
+            throw new RuntimeException('Err:: in ' . __METHOD__ . 'at ' . __LINE__);
         }
     }
+
 }

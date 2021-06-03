@@ -1,10 +1,12 @@
 <?php
-declare (strict_types=1);
-namespace numphp\decompositions;
 
-use numphp\matrix;
-use numphp\vector;
-use numphp\core\lapack;
+declare (strict_types=1);
+
+namespace Np\decompositions;
+
+use Np\matrix;
+use Np\vector;
+use Np\core\lapack;
 use InvalidArgumentException;
 
 /**
@@ -24,40 +26,28 @@ class eigen {
     protected $eignVal;
     protected $eignVec;
 
-   
-    public static function factory(\numphp\matrix $m, bool $symmetric = false) : self {
+    public static function factory(\Np\matrix $m, bool $symmetric = false): self {
         if (!$m->isSquare()) {
             throw new InvalidArgumentException('A Non Square Matrix is given!');
         }
         $wr = vector::factory($m->col, $m->dtype);
         $ar = $m->copyMatrix();
         if ($symmetric) {
-            if ($m->dtype == matrix::FLOAT) {
-                $lp = lapack::ssyev($ar, $wr);
-                if ($lp != 0) {
-                    return null;
-                }
-            } else {
-                $lp = lapack::dsyev($ar, $wr);
-                if ($lp != 0) {
-                    return null;
-                }
+            $lp = lapack::syev($ar, $wr);
+            if ($lp != 0) {
+                return null;
             }
+
             return new self($wr, $ar);
         } else {
             $wi = vector::factory($m->col, $m->dtype);
             $vr = matrix::factory($m->col, $m->col, $m->dtype);
-            if ($m->dtype == matrix::FLOAT) {
-                $lp = lapack::sgeev($ar, $wr, $wi, $vr);
-                if ($lp != 0) {
-                    return null;
-                }
-            } else {
-                $lp = lapack::dgeev($ar, $wr, $wi, $vr);
-                if ($lp != 0) {
-                    return null;
-                }
+
+            $lp = lapack::geev($ar, $wr, $wi, $vr);
+            if ($lp != 0) {
+                return null;
             }
+
             return new self($wr, $vr);
         }
     }
@@ -77,7 +67,7 @@ class eigen {
      * 
      * @return vector
      */
-    public function eigenVal() : vector {
+    public function eigenVal(): vector {
         return $this->eignVal;
     }
 
@@ -86,7 +76,8 @@ class eigen {
      * 
      * @return matrix
      */
-    public function eigenVec() : matrix {
+    public function eigenVec(): matrix {
         return $this->eignVec->transpose();
     }
+
 }

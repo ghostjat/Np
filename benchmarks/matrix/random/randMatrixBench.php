@@ -1,22 +1,22 @@
 <?php
 
-namespace numphp\benchmarks\matrix\random;
+namespace Np\benchmarks\matrix\random;
 
-use numphp\matrix;
+use Np\matrix;
 
 /**
  * @Groups({"Random"})
  */
-class randMatrixBench
-{
+class randMatrixBench {
+
     /**
      * @Subject
      * @Iterations(5)
      * @revs(5)
      * @OutputTimeUnit("seconds", precision=3)
      */
-    public function randn() : void
-    {
+    public function randn(): void {
         matrix::randn(500, 500);
     }
+
 }

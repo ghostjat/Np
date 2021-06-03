@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
-namespace numphp\reductions;
+namespace Np\reductions;
 
-use numphp\matrix;
-use numphp\vector;
-use numphp\core\lapack;
+use Np\matrix;
+use Np\vector;
+use Np\core\lapack;
 
 /**
  * REF
@@ -18,8 +18,13 @@ use numphp\core\lapack;
  */
 
 class ref { 
-     
-    public static function factory(\numphp\matrix $m): matrix|null {
+    
+     /**
+      * 
+      * @param \Np\matrix $m
+      * @return matrix|null
+      */
+    public static function factory(\Np\matrix $m): matrix|null {
         $ipiv = vector::factory(min($m->row, $m->col), vector::INT);
         $ar = $m->copyMatrix();
         if($m->dtype == matrix::FLOAT) {

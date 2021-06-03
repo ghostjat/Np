@@ -2,11 +2,11 @@
 
 declare (strict_types=1);
 
-namespace numphp\decompositions;
+namespace Np\decompositions;
 
-use numphp\matrix;
-use numphp\vector;
-use numphp\core\lapack;
+use Np\matrix;
+use Np\vector;
+use Np\core\lapack;
 
 /**
  * SVD
@@ -28,22 +28,15 @@ class svd {
      * @param matrix $m
      * @return self
      */
-    public static function factory(\numphp\matrix $m): self {
+    public static function factory(\Np\matrix $m): self {
         $k = min($m->row, $m->col);
         $ar = $m->copyMatrix();
         $s = vector::factory($k, $m->dtype);
         $u = matrix::factory($m->row, $m->row, $m->dtype);
         $v = matrix::factory($m->col, $m->col, $m->dtype);
-        if ($m->dtype == matrix::FLOAT) {
-            $lp = lapack::sgesdd($ar, $s, $u, $v);
-            if ($lp != 0) {
-                return null;
-            }
-        } else {
-            $lp = lapack::dgesdd($ar, $s, $u, $v);
-            if ($lp != 0) {
-                return null;
-            }
+        $lp = lapack::gesdd($ar, $s, $u, $v);
+        if ($lp != 0) {
+            return null;
         }
         unset($ar);
         unset($k);
@@ -53,11 +46,11 @@ class svd {
 
     /**
      * 
-     * @param \numphp\matrix $u
-     * @param \numphp\matrix $v
-     * @param \numphp\vector $s
+     * @param \Np\matrix $u
+     * @param \Np\matrix $v
+     * @param \Np\vector $s
      */
-    protected function __construct(\numphp\matrix $u, \numphp\matrix $v, \numphp\vector $s) {
+    protected function __construct(\Np\matrix $u, \Np\matrix $v, \Np\vector $s) {
         $this->u = $u;
         $this->s = $s;
         $this->v = $v;

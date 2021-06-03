@@ -1,8 +1,8 @@
 <?php
 
-namespace numphp\benchmarks\vector\signalProcessing;
+namespace Np\benchmarks\vector\signalProcessing;
 
-use numphp\matrix;
+use Np\matrix;
 
 /**
  * @Groups({"Signal Processing"})
@@ -11,12 +11,12 @@ use numphp\matrix;
 class convolveBench
 {
     /**
-     * @var \numphp\matrix
+     * @var \Np\matrix
      */
     protected $a;
 
     /**
-     * @var \numphp\matrix
+     * @var \Np\matrix
      */
     protected $b;
 
@@ -29,6 +29,7 @@ class convolveBench
     /**
      * @Subject
      * @Iterations(5)
+     * @revs(5)
      * @OutputTimeUnit("seconds", precision=3)
      */
     public function convolve() : void

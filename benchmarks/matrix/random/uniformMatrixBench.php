@@ -1,8 +1,8 @@
 <?php
 
-namespace numphp\benchmarks\matrix\random;
+namespace Np\benchmarks\matrix\random;
 
-use numphp\matrix;
+use Np\matrix;
 
 /**
  * @Groups({"Random"})
@@ -12,6 +12,7 @@ class uniformMatrixBench
     /**
      * @Subject
      * @Iterations(5)
+     * @revs(5)
      * @OutputTimeUnit("seconds", precision=3)
      */
     public function uniform() : void

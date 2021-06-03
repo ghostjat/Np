@@ -1,8 +1,8 @@
 <?php
 
-namespace numphp\benchmarks\matrix\arithmetic;
+namespace Np\benchmarks\matrix\arithmetic;
 
-use numphp\{matrix,vector};
+use Np\{matrix,vector};
 
 /**
  * @Groups({"Arithmetic"})
@@ -11,12 +11,12 @@ use numphp\{matrix,vector};
 class matrixVectorMultiplyBench
 {
     /**
-     * @var \numphp\matrix
+     * @var \Np\matrix
      */
     protected $a;
 
     /**
-     * @var \numphp\vector
+     * @var \Np\vector
      */
     protected $b;
 
@@ -30,10 +30,11 @@ class matrixVectorMultiplyBench
     /**
      * @Subject
      * @Iterations(5)
+     * @revs(5)
      * @OutputTimeUnit("seconds", precision=3)
      */
     public function multiply() : void
     {
-        $this->b->multiplyMatrix($this->a);
+        $this->a->multiply($this->b);
     }
 }

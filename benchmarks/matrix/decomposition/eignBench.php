@@ -1,8 +1,8 @@
 <?php
 
-namespace numphp\benchmarks\matrix\decomposition;
+namespace Np\benchmarks\matrix\decomposition;
 
-use numphp\matrix;
+use Np\matrix;
 
 /**
  * @Groups({"Decompositions"})
@@ -10,7 +10,7 @@ use numphp\matrix;
 class eignBench
 {
     /**
-     * @var \numphp\matrix
+     * @var \Np\matrix
      */
     protected $a;
 
@@ -24,6 +24,7 @@ class eignBench
     /**
      * @Subject
      * @Iterations(5)
+     * @revs(5)
      * @BeforeMethods({"setUp"})
      * @OutputTimeUnit("seconds", precision=3)
      */

@@ -1,8 +1,8 @@
 <?php
 
-namespace numphp\benchmarks\matrix\arithmetic;
+namespace Np\benchmarks\matrix\arithmetic;
 
-use numphp\matrix;
+use Np\matrix;
 
 /**
  * @Groups({"Arithmetic"})
@@ -11,7 +11,7 @@ use numphp\matrix;
 class matrixScalarMultiplyBench
 {
     /**
-     * @var \numphp\matrix
+     * @var \Np\matrix
      */
     protected $a;
 
@@ -28,6 +28,7 @@ class matrixScalarMultiplyBench
     /**
      * @Subject
      * @Iterations(5)
+     * @revs(5)
      * @OutputTimeUnit("seconds", precision=3)
      */
     public function multiply() : void

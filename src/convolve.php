@@ -1,30 +1,33 @@
 <?php
 declare(strict_types=1);
 
-namespace numphp;
+namespace Np;
 
 class convolve {
     
     /**
-     * 1D convolution between a vector va and kernel kb, with a given stride.
-     * @param \numphp\vector $va
-     * @param \numphp\vector $kb
+     * 1D convolution between a vector v and kernel k, with a given stride.
+     * 
+     * @param \Np\vector $v
+     * @param \Np\vector $k
      * @param int $stride
+     * @return vector
+     * @throws \Exception
      */
-    public static function conv1D(\numphp\vector $va, \numphp\vector $kb, int $stride = 1): vector {
-        if ($va->dtype == $kb->dtype) {
-            $nc = $va->col + $kb->col - 1;
-            $rc = vector::factory($nc / $stride);
+    public static function conv1D(\Np\vector $v, \Np\vector $k, int $stride = 1): vector {
+        if ($v->dtype == $k->dtype) {
+            $nc = $v->col + $k->col - 1;
+            $r = vector::factory($nc / $stride);
             for ($i = 0; $i < $nc; $i += $stride) {
-                $jmin = $i >= $kb->col - 1 ? $i - ($kb->col - 1) : 0;
-                $jmax = $i <= $va->col ? $i : $va->col - 1;
+                $jmin = $i >= $k->col - 1 ? $i - ($k->col - 1) : 0;
+                $jmax = $i <= $v->col ? $i : $v->col - 1;
                 $sigma = 0.0;
                 for ($j = $jmin; $j <= $jmax; ++$j) {
-                    $sigma += $va->data[$j] * $kb->data[$i - $j];
+                    $sigma += $v->data[$j] * $k->data[$i - $j];
                 }
-                $rc->data[$i] = $sigma;
+                $r->data[$i] = $sigma;
             }
-            return $rc;
+            return $r;
         }
         else {
             throw new \Exception('Err::given vectors has diffrent data type!');
@@ -33,12 +36,14 @@ class convolve {
     
     /**
      * 2D convolution between a matrix ma and kernel kb, with a given stride.
-     * @param \numphp\matrix $ma
-     * @param \numphp\matrix $kb
+     * 
+     * @param \Np\matrix $ma
+     * @param \Np\matrix $kb
      * @param int $stride
      * @return matrix
+     * @throws \Exception
      */
-    public static function conv2D(\numphp\matrix $ma, \numphp\matrix $kb, int $stride = 1): matrix{
+    public static function conv2D(\Np\matrix $ma, \Np\matrix $kb, int $stride = 1): matrix{
         if ($ma->dtype == $kb->dtype) {
             $p = $kb->row / 2;
             $q = $kb->col / 2;

@@ -16,18 +16,18 @@
    -----------
 Lite, Fast &amp; Memory Efficient php-FFI library for scientific computing
 
-numphp is a library that provides objects for computing large sets of numbers in [PHP](https://php.net).
+Np(numphp) is a library that provides objects for computing large sets of numbers in [PHP](https://php.net).
 
 ## Installation
-Install Numphp into your project with [Composer](https://getcomposer.org/):
+Install Np (Numphp) into your project with [Composer](https://getcomposer.org/):
 ```sh
-$ composer require ghostjat/numphp
+$ composer require ghostjat/np
 ```
 ##Sample Code
 ```php
 require __DIR__ . '/../vendor/autoload.php';
 
-use numphp\matrix;
+use Np\matrix;
 
 matrix::time();
 matrix::getMemory();

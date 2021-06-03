@@ -1,27 +1,26 @@
 <?php
 
-namespace numphp\benchmarks\matrix\lineAlgb;
+namespace Np\benchmarks\matrix\lineAlgb;
 
-use numphp\matrix;
+use Np\matrix;
 
 /**
  * @Groups({"LinearAlgebra"})
  * @BeforeMethods({"setUp"})
  */
-class dotMatrixBench
-{
+class dotMatrixBench {
+
     /**
-     * @var \numphp\matrix
+     * @var \Np\matrix
      */
     protected $a;
 
     /**
-     * @var \numphp\matrix
+     * @var \Np\matrix
      */
     protected $b;
 
-    public function setUp() : void
-    {
+    public function setUp(): void {
         $this->a = matrix::uniform(500, 500);
 
         $this->b = matrix::uniform(500, 500);
@@ -30,11 +29,11 @@ class dotMatrixBench
     /**
      * @Subject
      * @Iterations(5)
-     * @Revs(1)
+     * @Revs(5)
      * @OutputTimeUnit("seconds", precision=3)
      */
-    public function dotMatrix() : void
-    {
+    public function dot(): void {
         $this->a->dot($this->b);
     }
+
 }

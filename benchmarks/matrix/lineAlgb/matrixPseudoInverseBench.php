@@ -1,8 +1,8 @@
 <?php
 
-namespace numphp\benchmarks\matrix\lineAlgb;
+namespace Np\benchmarks\matrix\lineAlgb;
 
-use numphp\matrix;
+use Np\matrix;
 
 /**
  * @Groups({"LinearAlgebra"})
@@ -11,7 +11,7 @@ use numphp\matrix;
 class matrixPseudoInverseBench
 {
     /**
-     * @var \numphp\matrix
+     * @var \Np\matrix
      */
     protected $a;
 
@@ -23,6 +23,7 @@ class matrixPseudoInverseBench
     /**
      * @Subject
      * @Iterations(5)
+     * @revs(5)
      * @OutputTimeUnit("seconds", precision=3)
      */
     public function inverse() : void

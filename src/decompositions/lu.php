@@ -2,11 +2,11 @@
 
 declare (strict_types=1);
 
-namespace numphp\decompositions;
+namespace Np\decompositions;
 
-use numphp\matrix;
-use numphp\vector;
-use numphp\core\lapack;
+use Np\matrix;
+use Np\vector;
+use Np\core\lapack;
 use InvalidArgumentException;
 
 /**
@@ -25,22 +25,21 @@ class lu {
 
     protected $l, $u, $p;
 
+    /**
+     * 
+     * @param matrix $m
+     * @return self
+     * @throws InvalidArgumentException
+     */
     public static function factory(matrix $m): self {
         if (!$m->isSquare()) {
             throw new InvalidArgumentException('Matrix must be given.');
         }
         $ipiv = vector::factory($m->col, vector::INT);
         $ar = $m->copyMatrix();
-        if ($m->dtype == matrix::FLOAT) {
-            $lp = lapack::sgetrf($ar, $ipiv);
-            if ($lp != 0) {
-                return null;
-            }
-        } else {
-            $lp = lapack::dgetrf($ar, $ipiv);
-            if ($lp != 0) {
-                return null;
-            }
+        $lp = lapack::getrf($ar, $ipiv);
+        if ($lp != 0) {
+            return null;
         }
         $l = matrix::factory($m->col, $m->col, $m->dtype);
         $u = matrix::factory($m->col, $m->col, $m->dtype);

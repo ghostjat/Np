@@ -1,27 +1,26 @@
 <?php
 
-namespace numphp\benchmarks\matrix\structural;
+namespace Np\benchmarks\matrix\structural;
 
-use numphp\matrix;
+use Np\matrix;
 
 /**
  * @Groups({"Structural"})
  * @BeforeMethods({"setUp"})
  */
-class matrixJoinBelowBench
-{
+class matrixJoinBelowBench {
+
     /**
-     * @var \numphp\matrix
+     * @var \Np\matrix
      */
     protected $a;
 
     /**
-     * @var \numphp\matrix
+     * @var \Np\matrix
      */
     protected $b;
 
-    public function setUp() : void
-    {
+    public function setUp(): void {
         $this->a = matrix::uniform(500, 500);
 
         $this->b = matrix::uniform(500, 500);
@@ -30,10 +29,11 @@ class matrixJoinBelowBench
     /**
      * @Subject
      * @Iterations(5)
+     * @revs(5)
      * @OutputTimeUnit("seconds", precision=3)
      */
-    public function joinBelow() : void
-    {
+    public function joinBelow(): void {
         $this->a->joinBelow($this->b);
     }
+
 }

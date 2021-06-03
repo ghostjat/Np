@@ -1,8 +1,8 @@
 <?php
 
-namespace numphp\benchmarks\matrix\arithmetic;
+namespace Np\benchmarks\matrix\arithmetic;
 
-use numphp\matrix;
+use Np\matrix;
 
 /**
  * @Groups({"Arithmetic"})
@@ -11,7 +11,7 @@ use numphp\matrix;
 class sumMatrixBench
 {
     /**
-     * @var \numphp\matrix
+     * @var \Np\matrix
      */
     protected $a,$b;
 
@@ -23,6 +23,7 @@ class sumMatrixBench
     /**
      * @Subject
      * @Iterations(5)
+     * @revs(5)
      * @OutputTimeUnit("seconds", precision=3)
      */
     public function sum() : void

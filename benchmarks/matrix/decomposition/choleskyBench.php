@@ -1,8 +1,8 @@
 <?php
 
-namespace numphp\benchmarks\matrix\decomposition;
+namespace Np\benchmarks\matrix\decomposition;
 
-use numphp\matrix;
+use Np\matrix;
 
 /**
  * @Groups({"Decompositions"})
@@ -11,7 +11,7 @@ use numphp\matrix;
 class choleskyBench
 {
     /**
-     * @var \numphp\matrix
+     * @var \Np\matrix
      */
     protected $a;
 
@@ -23,6 +23,7 @@ class choleskyBench
     /**
      * @Subject
      * @Iterations(5)
+     * @revs(5)
      * @OutputTimeUnit("seconds", precision=3)
      */
     public function cholesky() : void

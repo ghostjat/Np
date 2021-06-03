@@ -2,13 +2,15 @@
 
 declare(strict_types=1);
 
-namespace numphp;
-use numphp\reductions\ref;
-use numphp\reductions\rref;
-use numphp\decompositions\lu;
-use numphp\decompositions\svd;
-use numphp\decompositions\eigen;
-use numphp\decompositions\cholesky;
+namespace Np;
+
+use Np\core\nd;
+use Np\reductions\ref;
+use Np\reductions\rref;
+use Np\decompositions\lu;
+use Np\decompositions\svd;
+use Np\decompositions\eigen;
+use Np\decompositions\cholesky;
 
 /**
  * Matrix
@@ -20,20 +22,15 @@ use numphp\decompositions\cholesky;
  * @email     ghost.jat@gmail.com
  * @copyright (c) 2020-2021, Shubham Chaudhary
  */
-class matrix {
+class matrix extends nd{
 
-    const TWO_PI = 2. * M_PI, EPSILON = 1e-8;
-    const FLOAT = 1, DOUBLE = 2, INT = 3;
-
-    public $data, $row, $col, $ndim, $dtype;
-    public static $_time = null, $_mem = null;
-
+    public $row, $col;
     /**
      * create empty 2d matrix for given data type
      * @param int $row  num of rows 
      * @param int $col  num of cols
      * @param int $dtype matrix data type float|double
-     * @return \numphp\matrix
+     * @return \Np\matrix
      */
     public static function factory(int $row, int $col, int $dtype = self::FLOAT): matrix {
         return new self($row, $col, $dtype);
@@ -43,7 +40,7 @@ class matrix {
      * create 2d matrix using php array
      * @param array $data
      * @param int $dtype matrix data type float|double
-     * @return \numphp\matrix
+     * @return \Np\matrix
      */
     public static function ar(array $data, int $dtype = self::FLOAT): matrix {
         if (is_array($data) && is_array($data[0])) {
@@ -60,7 +57,7 @@ class matrix {
      * create one like 2d matrix
      * @param int $row
      * @param int $col
-     * @return \numphp\matrix
+     * @return \Np\matrix
      */
     public static function ones(int $row, int $col, int $dtype = self::FLOAT): matrix {
         $ar = self::factory($row, $col, $dtype);
@@ -75,7 +72,7 @@ class matrix {
      * @param int $row
      * @param int $col
      * @param int $dtype  Float|Double
-     * @return \numphp\matrix
+     * @return \Np\matrix
      */
     public static function randn(int $row, int $col, int $dtype = self::FLOAT): matrix {
         $ar = self::factory($row, $col, $dtype);
@@ -91,7 +88,7 @@ class matrix {
      * @param int $row
      * @param int $col
      * @param int $dtype
-     * @return \numphp\matrix
+     * @return \Np\matrix
      */
     public static function uniform(int $row, int $col, int $dtype = self::FLOAT): matrix {
         $ar = self::factory($row, $col, $dtype);
@@ -107,7 +104,7 @@ class matrix {
      * @param int $row
      * @param int $col
      * @param int $dtype
-     * @return \numphp\matrix
+     * @return \Np\matrix
      */
     public static function zeros(int $row, int $col, int $dtype = self::FLOAT): matrix {
         $ar = self::factory($row, $col, $dtype);
@@ -121,7 +118,7 @@ class matrix {
      * create a null like 2d matrix
      * @param int $row
      * @param int $col
-     * @return \numphp\matrix
+     * @return \Np\matrix
      */
     public static function null(int $row, int $col, int $dtype = self::FLOAT): matrix {
         $ar = self::factory($row, $col, $dtype);
@@ -136,7 +133,7 @@ class matrix {
      * @param int $row
      * @param int $col
      * @param int|float|double $val
-     * @return \numphp\matrix
+     * @return \Np\matrix
      */
     public static function full(int $row, int $col, $val, int $dtype = self::FLOAT): matrix {
         $ar = self::factory($row, $col, $dtype);
@@ -149,7 +146,7 @@ class matrix {
     /**
      * create a diagonal 2d matrix with given 1d array;
      * @param array $elements
-     * @return \numphp\matrix
+     * @return \Np\matrix
      */
     public static function diagonal(array $elements, int $dtype = self::FLOAT): matrix {
         $n = count($elements);
@@ -167,7 +164,7 @@ class matrix {
      * @param int $col
      * @param float $lambda
      * @param int $dtype 
-     * @return \numphp\matrix
+     * @return \Np\matrix
      */
     public static function poisson(int $row, int $col, float $lambda = 1.0, int $dtype = self::FLOAT): matrix {
         $ar = self::factory($row, $col, $dtype);
@@ -193,7 +190,7 @@ class matrix {
      * @param int $row
      * @param int $col
      * @param int $dtype Description
-     * @return \numphp\matrix
+     * @return \Np\matrix
      */
     public static function gaussian(int $row, int $col, int $dtype = self::FLOAT): matrix {
         $max = getrandmax();
@@ -249,7 +246,7 @@ class matrix {
     /**
      * Return the element-wise minimum of two matrices.
      * 
-     * @param \numphp\matrix $m
+     * @param \Np\matrix $m
      * @return matrix
      */
     public function minimum(matrix $m): matrix {
@@ -265,7 +262,7 @@ class matrix {
     /**
      * Return the element-wise maximum of two matrices.
      * 
-     * @param \numphp\matrix $m
+     * @param \Np\matrix $m
      * @return matrix
      */
     public function maximum(matrix $m): matrix {
@@ -280,7 +277,7 @@ class matrix {
 
     /**
      * 2D convolution between a matrix ma and kernel kb, with a given stride.
-     * @param \numphp\matrix $m
+     * @param \Np\matrix $m
      * @param int $stride
      * @return matrix
      */
@@ -297,7 +294,7 @@ class matrix {
             self::_err('determinant is undefined for a non square matrix');
         }
         $lu = $this->lu();
-        $nSwaps = $lu->p()->diagonalAsVector()->substractScalar($lu->p->diagonalAsVector()->sum())->col - 1;
+        $nSwaps = $lu->p()->diagonalAsVector()->subtract($lu->p()->diagonalAsVector()->sum())->col - 1;
         $detP = (-1) ** $nSwaps;
         $detL = $lu->l()->diagonalAsVector()->product();
         $detU = $lu->u()->diagonalAsVector()->product();
@@ -342,40 +339,34 @@ class matrix {
      *  
      * get dot product of m.m or m.v
      * 
-     * @param \numphp\matrix|\numphp\vector $d
+     * @param \Np\matrix|\Np\vector $d
      * @return matrix|vector
      */
     public function dot(matrix|vector $d): matrix|vector {
         if ($d instanceof self) {
             return $this->dotMatrix($d);
-        }
-        else{
+        } else {
             return $this->dotVector($d);
         }
     }
 
     /**
      * get matrix & matrix dot product
-     * @param \numphp\matrix $matrix
-     * @return \numphp\matrix
+     * @param \Np\matrix $matrix
+     * @return \Np\matrix
      */
     protected function dotMatrix(matrix $matrix): matrix {
         if ($this->checkDtype($matrix) && $this->checkDimensions($matrix)) {
             $ar = self::factory($this->row, $this->col, $this->dtype);
-            if ($this->dtype == self::FLOAT) {
-                core\blas::sgemm($this, $matrix, $ar);
-            } else {
-                core\blas::dgemm($this, $matrix, $ar);
-            }
-
+            core\blas::gemm($this, $matrix, $ar);
             return $ar;
         }
     }
 
     /**
      * get dot product of matrix & a vector
-     * @param \numphp\vector $vector
-     * @return \numphp\vector
+     * @param \Np\vector $vector
+     * @return \Np\vector
      */
     protected function dotVector(vector $vector): vector {
         if ($this->dtype != $vector->dtype) {
@@ -384,14 +375,8 @@ class matrix {
         if ($this->row != $vector->col) {
             self::_err('Mismatch row and col of matrix and vector');
         }
-
         $mvr = vector::factory($this->col, $this->dtype);
-        if ($this->dtype == self::FLOAT) {
-            core\blas::sgemv($this, $vector, $mvr);
-        } else {
-            core\blas::dgemv($this, $vector, $mvr);
-        }
-
+        core\blas::gemv($this, $vector, $mvr);
         return $mvr;
     }
 
@@ -407,15 +392,15 @@ class matrix {
         if ($m instanceof self) {
             return $this->multiplyMatrix($m);
         } else if ($m instanceof vector) {
-            return $m->multiplyVector($m);
+            return $this->multiplyVector($m);
         } else {
-            return $this->multiplyScalar($m);
+            return $this->scale($m);
         }
     }
 
     /**
      * 
-     * @param \numphp\vector $v
+     * @param \Np\vector $v
      * @return matrix
      */
     protected function multiplyVector(vector $v): matrix {
@@ -432,7 +417,7 @@ class matrix {
 
     /**
      * 
-     * @param \numphp\matrix $m
+     * @param \Np\matrix $m
      * @return matrix
      */
     protected function multiplyMatrix(matrix $m): matrix {
@@ -452,7 +437,7 @@ class matrix {
      * @param int|float $scalar
      * @return matrix
      */
-    protected function multiplyScalar(int|float $scalar): matrix {
+    public function scale(int|float $scalar): matrix {
         if ($scalar == 0) {
             return self::zeros($this->row, $this->col, $this->dtype);
         }
@@ -466,21 +451,9 @@ class matrix {
     }
 
     /**
-     * Sum of two matrix or a scalar to current matrix
-     * 
-     * @param int|float|\numphp\matrix $m matrix|$scalar to add this matrix
-     * @return \numphp\matrix
+     * Sum of Rows of matrix
+     * @return vector
      */
-    public function sum(int|float|matrix|vector $m): matrix {
-        if ($m instanceof self) {
-            return $this->sumMatrix($m);
-        } elseif ($m instanceof vector) {
-            return $this->sumVector($m);
-        } else {
-            return $this->sumScalar($m);
-        }
-    }
-
     public function sumRows(): vector {
         $vr = vector::factory($this->row, $this->dtype);
         for ($i = 0; $i < $this->row; ++$i) {
@@ -491,6 +464,22 @@ class matrix {
             $vr->data[$i] = $sum;
         }
         return $vr;
+    }
+
+    /**
+     * Sum of two matrix, vector or a scalar to current matrix
+     * 
+     * @param int|float|matrix|vector $m
+     * @return matrix
+     */
+    public function sum(int|float|matrix|vector $m): matrix {
+        if ($m instanceof self) {
+            return $this->sumMatrix($m);
+        } elseif ($m instanceof vector) {
+            return $this->sumVector($m);
+        } else {
+            return $this->sumScalar($m);
+        }
     }
 
     protected function sumScalar(int|float $s): matrix {
@@ -526,7 +515,7 @@ class matrix {
     /**
      * subtract another matrix, vector or a scalar to this matrix
      * @param int|float|matrix|vector $d matrix|$scalar to subtract this matrix
-     * @return \numphp\matrix
+     * @return \Np\matrix
      */
     public function subtract(int|float|matrix|vector $d): matrix {
         if ($d instanceof self) {
@@ -729,7 +718,7 @@ class matrix {
             return $ar;
         }
     }
-    
+
     protected function modScalar(int|float $s): matrix {
         $ar = $this->copyMatrix();
         for ($i = 0; $i < $this->ndim; ++$i) {
@@ -788,7 +777,7 @@ class matrix {
 
     /**
      * Transpose the matrix i.e row become cols and cols become rows.
-     * @return \numphp\matrix
+     * @return \Np\matrix
      */
     public function transpose(): matrix {
         $ar = self::factory($this->col, $this->row, $this->dtype);
@@ -838,21 +827,6 @@ class matrix {
     }
 
     /**
-     * scale the matrix
-     * @param float $c
-     * @return \numphp\matrix
-     */
-    public function scale(float $c): matrix {
-        $ar = $this->copyMatrix();
-        for ($i = 0; $i < $ar->row; ++$i) {
-            for ($j = 0; $j < $ar->col; ++$j) {
-                $ar->data[$i * $ar->col + $j] *= $c;
-            }
-        }
-        return $ar;
-    }
-
-    /**
      * scale all the elements of a row 
      * @param int $row
      * @param float $c
@@ -878,8 +852,8 @@ class matrix {
     /**
      * Attach given matrix to the left of this matrix.
      * 
-     * @param \numphp\matrix $m
-     * @return \numphp\matrix
+     * @param \Np\matrix $m
+     * @return \Np\matrix
      */
     public function joinLeft(matrix $m): matrix {
         if ($this->row != $m->row && $this->checkDtype($m)) {
@@ -900,7 +874,7 @@ class matrix {
 
     /**
      * Join matrix m to the Right of this matrix.
-     * @param \numphp\matrix $m
+     * @param \Np\matrix $m
      * @return matrix
      */
     public function joinRight(matrix $m): matrix {
@@ -922,7 +896,7 @@ class matrix {
 
     /**
      * Join matrix m Above this matrix.
-     * @param \numphp\matrix $m
+     * @param \Np\matrix $m
      * @return matrix
      */
     public function joinAbove(matrix $m): matrix {
@@ -944,7 +918,7 @@ class matrix {
 
     /**
      * Join matrix m below this matrix.
-     * @param \numphp\matrix $m
+     * @param \Np\matrix $m
      * @return matrix
      */
     public function joinBelow(matrix $m): matrix {
@@ -968,7 +942,7 @@ class matrix {
      * Calculate the row echelon form of the matrix. 
      * Return the reduced matrix.
      *
-     * @return \numphp\reductions\ref
+     * @return matrix|null
      */
     public function ref(): matrix|null {
         return ref::factory($this);
@@ -977,9 +951,9 @@ class matrix {
     /**
      * Return the lower triangular matrix of the Cholesky decomposition.
      *
-     * @return \numphp\decompositions\cholesky
+     * @return matrix|null
      */
-    public function cholesky():matrix {
+    public function cholesky(): matrix|null {
         return cholesky::factory($this);
     }
 
@@ -987,7 +961,7 @@ class matrix {
      * FIXME--------------
      * RREF
      * The reduced row echelon form (RREF) of a matrix.
-     * @return \numphp\matrix
+     * @return \Np\matrix
      */
     public function rref(): matrix {
         return rref::factory($this);
@@ -995,7 +969,7 @@ class matrix {
 
     /**
      * make copy of the matrix
-     * @return \numphp\matrix
+     * @return \Np\matrix
      */
     public function copyMatrix(): matrix {
         return clone $this;
@@ -1004,7 +978,7 @@ class matrix {
     /**
      * 
      * @param int $cols
-     * @return \numphp\matrix
+     * @return \Np\matrix
      */
     public function diminish_left(int $cols): matrix {
         $ar = self::factory($this->row, $cols, $this->dtype);
@@ -1019,7 +993,7 @@ class matrix {
     /**
      * 
      * @param int $cols
-     * @return \numphp\matrix
+     * @return \Np\matrix
      */
     public function diminish_right(int $cols): matrix {
         $ar = self::factory($this->row, $cols, $this->dtype);
@@ -1033,37 +1007,26 @@ class matrix {
 
     /**
      * Return the index of the maximum element in every row of the matrix.
-     * @return \numphp\vector int
+     * @return \Np\vector int
      */
     public function argMax(): vector {
         $v = vector::factory($this->row, vector::INT);
-        if ($this->dtype === self::DOUBLE) {
-            for ($i = 0; $i < $this->row; ++$i) {
-                $v->data[$i] = core\blas::dmax($this->rowAsVector($i));
-            }
-        } else {
-            for ($i = 0; $i < $this->row; ++$i) {
-                $v->data[$i] = core\blas::smax($this->rowAsVector($i));
-            }
+        for ($i = 0; $i < $this->row; ++$i) {
+            $v->data[$i] = core\blas::max($this->rowAsVector($i));
         }
         return $v;
     }
 
     /**
      * Return the index of the minimum element in every row of the matrix.
-     * @return \numphp\vector int
+     * @return \Np\vector int
      */
     public function argMin(): vector {
         $v = vector::factory($this->row, vector::INT);
-        if ($this->dtype === self::DOUBLE) {
-            for ($i = 0; $i < $this->row; ++$i) {
-                $v->data[$i] = core\blas::dmin($this->rowAsVector($i));
-            }
-        } else {
-            for ($i = 0; $i < $this->row; ++$i) {
-                $v->data[$i] = core\blas::smin($this->rowAsVector($i));
-            }
+        for ($i = 0; $i < $this->row; ++$i) {
+            $v->data[$i] = core\blas::min($this->rowAsVector($i));
         }
+
         return $v;
     }
 
@@ -1126,7 +1089,7 @@ class matrix {
     /**
      * Return a row as vector from the matrix.
      * @param int $index
-     * @return \numphp\vector
+     * @return \Np\vector
      */
     public function rowAsVector(int $index): vector {
         $vr = vector::factory($this->col, $this->dtype);
@@ -1139,7 +1102,7 @@ class matrix {
     /**
      * Return a col as vector from the matrix.
      * @param int $index
-     * @return \numphp\vector
+     * @return \Np\vector
      */
     public function colAsVector(int $index): vector {
         $vr = vector::factory($this->row, $this->dtype);
@@ -1151,7 +1114,7 @@ class matrix {
 
     /**
      * Return the diagonal elements of a square matrix as a vector.
-     * @return \numphp\vector
+     * @return \Np\vector
      */
     public function diagonalAsVector(): vector {
         if (!$this->isSquare()) {
@@ -1160,6 +1123,19 @@ class matrix {
         $vr = vector::factory($this->row, $this->dtype);
         for ($i = 0; $i < $this->row; ++$i) {
             $vr->data[$i] = $this->getDiagonalVal($i);
+        }
+        return $vr;
+    }
+
+    /**
+     * Flatten i.e unravel the matrix into a vector.
+     *
+     * @return \Np\vector
+     */
+    public function asVector(): vector {
+        $vr = vector::factory($this->ndim, $this->dtype);
+        for ($i = 0; $i < $this->ndim; ++$i) {
+            $vr->data[$i] = $this->data[$i];
         }
         return $vr;
     }
@@ -1200,42 +1176,18 @@ class matrix {
         }
         $imat = $this->copyMatrix();
         $ipiv = vector::factory($this->row, vector::INT);
-        if($this->dtype == self::FLOAT){
-           return $this->_inverseFloat($imat, $ipiv);
-        }
-        else {
-            return $this->_inverserDouble($imat,$ipiv);
-        }
-    }
-    
-    protected function _inverseFloat(\numphp\matrix $m, \numphp\vector $v): matrix|null {
-        $lp = core\lapack::sgetrf($m, $v);
+        $lp = core\lapack::getrf($imat, $ipiv);
         if ($lp != 0) {
             return null;
         }
-        $lp = core\lapack::sgetri($m, $v);
+        $lp = core\lapack::getri($imat, $ipiv);
         if ($lp != 0) {
             return null;
         }
-        unset($v);
+        unset($ipiv);
         unset($lp);
-        return $m;
+        return $imat;
     }
-    
-    protected function _inverserDouble(\numphp\matrix $m, \numphp\vector $v): matrix|null {
-        $lp = core\lapack::dgetrf($m, $v);
-        if ($lp != 0) {
-            return null;
-        }
-        $lp = core\lapack::dgetri($m, $v);
-        if ($lp != 0) {
-            return null;
-        }
-        unset($v);
-        unset($lp);
-        return $m;
-    }
-
     /**
      * Compute the (Moore-Penrose) pseudo inverse of the general matrix.
      * @return matrix|null
@@ -1246,62 +1198,22 @@ class matrix {
         $u = self::factory($this->row, $this->row, $this->dtype);
         $vt = self::factory($this->col, $this->col, $this->dtype);
         $imat = $this->copyMatrix();
-        $mr = self::factory($this->col, $this->row, $this->dtype);
-        if($this->dtype == self::FLOAT){
-            $this->_pseudoInverseFloat($k, $imat, $s, $u, $vt, $mr);
-        } else {
-            $this->_pseudoInverseDouble($k, $imat, $s, $u, $vt, $mr);
+        $lp = core\lapack::gesdd($imat, $s, $u, $vt);
+        if ($lp != 0) {
+            return null;
         }
-        unset($s);
-        unset($u);
-        unset($vt);
+        for ($i = 0; $i < $k; ++$i) {
+            core\blas::scale(1.0 / $s->data[$i], $vt->rowAsVector($i));
+        }
         unset($imat);
         unset($k);
+        unset($lp);
+        unset($s);
+        $mr = self::factory($this->col, $this->row, $this->dtype);
+        core\blas::gemm($vt, $u, $mr);
+        unset($u);
+        unset($vt);
         return $mr;
-    }
-    
-    /**
-     * 
-     * @param int $k
-     * @param \numphp\matrix $m
-     * @param \numphp\vector $s
-     * @param \numphp\matrix $u
-     * @param \numphp\matrix $vt
-     * @param \numphp\matrix $mr
-     * 
-     */
-    protected function _pseudoInverseFloat(int $k, \numphp\matrix $m, \numphp\vector $s, \numphp\matrix $u, \numphp\matrix $vt, \numphp\matrix $mr) {
-        $lp = core\lapack::sgesdd($m, $s, $u, $vt);
-        if ($lp != 0) {
-            return null;
-        }
-        for ($i = 0; $i < $k; ++$i) {
-            core\blas::sscal(1.0 / $s->data[$i], $vt->rowAsVector($i));
-        }
-        core\blas::sgemm($vt, $u, $mr);
-        unset($lp);
-    }
-    
-    /**
-     * 
-     * @param int $k
-     * @param \numphp\matrix $m
-     * @param \numphp\vector $s
-     * @param \numphp\matrix $u
-     * @param \numphp\matrix $vt
-     * @param \numphp\matrix $mr
-     * 
-     */
-    protected function _pseudoInverseDouble(int $k, \numphp\matrix $m, \numphp\vector $s, \numphp\matrix $u, \numphp\matrix $vt, \numphp\matrix $mr) {
-        $lp = core\lapack::dgesdd($m, $s, $u, $vt);
-        if ($lp != 0) {
-            return null;
-        }
-        for ($i = 0; $i < $k; ++$i) {
-            core\blas::dscal(1.0 / $s->data[$i], $vt->rowAsVector($i));
-        }
-        core\blas::dgemm($vt, $u, $mr);
-        unset($lp);
     }
 
     /**
@@ -1322,7 +1234,7 @@ class matrix {
      * @return eigen
      */
     public function eign(bool $symmetric = false): eigen {
-        return eigen::factory($this,$symmetric);
+        return eigen::factory($this, $symmetric);
     }
 
     /**
@@ -1332,7 +1244,7 @@ class matrix {
      * 
      * @return lu
      */
-    public function lu():lu {
+    public function lu(): lu {
         return lu::factory($this);
     }
 
@@ -1341,11 +1253,7 @@ class matrix {
      * @return float
      */
     public function normL1(): float {
-        if($this->dtype == self::FLOAT){
-            return core\lapack::slange('1', $this);
-        } else {
-            return core\lapack::dlange('1', $this);
-        }
+        return core\lapack::lange('l', $this);
     }
 
     /**
@@ -1353,11 +1261,7 @@ class matrix {
      * @return float
      */
     public function normL2(): float {
-        if($this->dtype == self::FLOAT){
-            return core\lapack::slange('f', $this);
-        } else {
-            return core\lapack::dlange('f', $this);
-        }
+        return core\lapack::lange('f', $this);
     }
 
     /**
@@ -1365,11 +1269,7 @@ class matrix {
      * @return float
      */
     public function normINF(): float {
-        if($this->dtype == self::FLOAT){
-            return core\lapack::slange('i', $this);
-        } else {
-            return core\lapack::dlange('i', $this);
-        }
+        return core\lapack::lange('i', $this);
     }
 
     /**
@@ -1383,7 +1283,7 @@ class matrix {
     /**
      * Run a function over all of the elements in the matrix. 
      * @param callable $func
-     * @return \numphp\matrix
+     * @return \Np\matrix
      */
     public function map(callable $func): matrix {
         $ar = self::factory($this->row, $this->col, $this->dtype);
@@ -1411,7 +1311,7 @@ class matrix {
 
     public function log(float $b = M_E): matrix {
         $ar = $this->copyMatrix();
-        for($i = 0; $i < $ar->ndim; ++$i) {
+        for ($i = 0; $i < $ar->ndim; ++$i) {
             log($ar->data[$i], $b);
         }
         return $ar;
@@ -1499,16 +1399,13 @@ class matrix {
         $mid = intdiv($this->col, 2);
         $odd = $this->col % 2 === 1;
         $vr = vector::factory($this->row, $this->dtype);
-        $a = $this->asArray();
-        foreach ($a as $i => $rowA) {
-            sort($rowA);
-
+        for ($i = 0; $i < $this->row; ++$i) {
+            $a = $this->rowAsVector($i)->sort();
             if ($odd) {
-                $median = $rowA[$mid];
+                $median = $a->data[$mid];
             } else {
-                $median = ($rowA[$mid - 1] + $rowA[$mid]) / 2.0;
+                $median = ($a->data[$mid - 1] + $a->data[$mid]) / 2.0;
             }
-
             $vr->data[$i] = $median;
         }
         unset($a);
@@ -1594,7 +1491,7 @@ class matrix {
         }
         return $ar;
     }
-    
+
     /**
      * Square of matrix
      * @return matrix
@@ -1736,19 +1633,6 @@ class matrix {
     }
 
     /**
-     * Flatten i.e unravel the matrix into a vector.
-     *
-     * @return \numphp\vector
-     */
-    public function flatten(): vector {
-        $vr = vector::factory($this->ndim, $this->dtype);
-        for ($i = 0; $i < $this->ndim; ++$i) {
-            $vr->data[$i] = $this->data[$i];
-        }
-        return $vr;
-    }
-
-    /**
      * print the matrix in consol
      */
     public function printMatrix() {
@@ -1797,74 +1681,14 @@ class matrix {
         }
         return true;
     }
-
-    protected static function _ndFloat(int $size) {
-        return \FFI::cast('float *', \FFI::new("float[$size]"));
-    }
-
-    protected static function _ndDouble(int $size) {
-        return \FFI::cast('double *', \FFI::new("double[$size]"));
-    }
-
-    protected static function _ndInt(int $size) {
-        return \FFI::cast('int *', \FFI::new("int[$size]"));
-    }
-
+    
     protected function __construct(int $row, int $col, int $dtype = self::Float) {
         if ($row < 1 || $col < 1) {
             self::_invalidArgument('* To create Numphp/Matrix row & col must be greater than 0!, Op Failed! * ');
         }
+        parent::__construct($row*$col, $dtype);
         $this->row = $row;
         $this->col = $col;
-        $this->ndim = $row * $col;
-        $this->dtype = $dtype;
-        switch ($dtype) {
-            case self::FLOAT:
-                $this->data = self::_ndFloat($this->ndim);
-                break;
-            case self::DOUBLE:
-                $this->data = self::_ndDouble($this->ndim);
-                break;
-            case self::INT:
-                $this->data = self::_ndInt($this->ndim);
-                break;
-            default :
-                self::_invalidArgument('given dtype is not supported by numphp');
-                break;
-        }
         return $this;
     }
-
-    private static function _err($msg): \Exception {
-        throw new \Exception($msg);
-    }
-
-    private static function _invalidArgument($argument): \InvalidArgumentException {
-        throw new \InvalidArgumentException($argument);
-    }
-
-    /**
-     * set Timer, get total time 
-     */
-    public static function time() {
-        if (is_null(self::$_time)) {
-            self::$_time = microtime(true);
-        } else {
-            echo 'Time-Consumed:- ' . (microtime(true) - self::$_time) . PHP_EOL;
-        }
-    }
-
-    /**
-     * set memory dog, get total memory
-     */
-    public static function getMemory() {
-        if (is_null(self::$_mem)) {
-            self::$_mem = memory_get_usage();
-        } else {
-            $memory = memory_get_usage() - self::$_mem;
-            $unit = ['b', 'kb', 'mb', 'gb', 'tb', 'pb'];
-            echo round($memory / pow(1024, ($i = floor(log($memory, 1024)))), 2) . $unit[$i] . PHP_EOL;
-        }
-    }
-
 }

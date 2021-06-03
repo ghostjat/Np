@@ -1,32 +1,32 @@
 <?php
 
-namespace numphp\benchmarks\matrix\reduction;
+namespace Np\benchmarks\matrix\reduction;
 
-use numphp\matrix;
+use Np\matrix;
 
 /**
  * @Groups({"Reductions"})
  * @BeforeMethods({"setUp"})
  */
-class rrefBench
-{
+class rrefBench {
+
     /**
-     * @var \numphp\matrix
+     * @var \Np\matrix
      */
     protected $a;
 
-    public function setUp() : void
-    {
+    public function setUp(): void {
         $this->a = matrix::uniform(500, 500);
     }
 
     /**
      * @Subject
      * @Iterations(5)
+     * @revs(5)
      * @OutputTimeUnit("seconds", precision=3)
      */
-    public function rref() : void
-    {
+    public function rref(): void {
         $this->a->rref();
     }
+
 }

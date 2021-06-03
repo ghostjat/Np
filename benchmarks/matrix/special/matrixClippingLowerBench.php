@@ -1,15 +1,14 @@
 <?php
-
-namespace Np\benchmarks\matrix\structural;
+namespace Np\benchmarks\matrix\special;
 
 use Np\matrix;
 
 /**
- * @Groups({"Structural"})
+ * @Groups({"Special"})
  * @BeforeMethods({"setUp"})
  */
-class matrixJoinLeftBench {
-
+class matrixClippingLowerBench {
+    
     /**
      * @var \Np\matrix
      */
@@ -18,12 +17,10 @@ class matrixJoinLeftBench {
     /**
      * @var \Np\matrix
      */
-    protected $b;
+    protected $kernel;
 
     public function setUp(): void {
-        $this->a = matrix::uniform(500, 500);
-
-        $this->b = matrix::uniform(500, 500);
+        $this->a = matrix::uniform(1000, 1000);
     }
 
     /**
@@ -32,8 +29,8 @@ class matrixJoinLeftBench {
      * @revs(5)
      * @OutputTimeUnit("seconds", precision=3)
      */
-    public function joinLeft(): void {
-        $this->a->joinLeft($this->b);
+    public function clipLower(): void {
+        $this->a->clipLower(0);
     }
-
 }
+

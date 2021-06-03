@@ -1,8 +1,8 @@
 <?php
 
-namespace numphp\benchmarks\matrix\decomposition;
+namespace Np\benchmarks\matrix\decomposition;
 
-use numphp\matrix;
+use Np\matrix;
 
 /**
  * @Groups({"Decompositions"})
@@ -11,7 +11,7 @@ use numphp\matrix;
 class svdBench
 {
     /**
-     * @var \numphp\matrix
+     * @var \Np\matrix
      */
     protected $a;
 
@@ -22,8 +22,8 @@ class svdBench
 
     /**
      * @Subject
-     * @Revs(10)
-     * @Iterations(10)
+     * @Revs(5)
+     * @Iterations(5)
      * @OutputTimeUnit("seconds", precision=3)
      */
     public function svd() : void
