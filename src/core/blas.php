@@ -86,7 +86,7 @@ class blas {
      * @param \Np\matrix $m2
      * @param \Np\matrix $mr
      */
-    public static function dsymm(\Np\matrix $m1, \Np\matrix $m2, \Np\matrix $mr) {
+    public static function symm(\Np\matrix $m1, \Np\matrix $m2, \Np\matrix $mr) {
         self::init();
         if ($m1->dtype == \Np\matrix::DOUBLE) {
             self::$ffi_blas->cblas_dsymm(self::CblasRowMajor, self::CblasLeft, self::CblasUpper, $m1->row,
@@ -106,25 +106,15 @@ class blas {
      * @param \Np\matrix $m1
      * @param \Np\matrix $m2
      */
-    public static function dsyrk(\Np\matrix $m1, \Np\matrix $m2) {
+    public static function syrk(\Np\matrix $m1, \Np\matrix $m2) {
         self::init();
-        self::$ffi_blas->cblas_dsyrk(self::CblasRowMajor, self::CblasUpper,
-                self::CblasNoTrans, $m1->row, $m2->col, 1.0, $m1->data, $m1->row, 0.0, $m2->data, $m2->row);
-    }
-
-    /**
-     * Update rank n of symmetric matrix
-     *    C := alpha * A A^T + beta * C
-     *            or
-     *    C := alpha * A^T A + beta * C
-     * 
-     * @param \Np\matrix $m1
-     * @param \Np\matrix $m2
-     */
-    public static function ssyrk(\Np\matrix $m1, \Np\matrix $m2) {
-        self::init();
-        self::$ffi_blas->cblas_ssyrk(self::CblasRowMajor, self::CblasUpper,
-                self::CblasNoTrans, $m1->row, $m2->col, 1.0, $m1->data, $m1->row, 0.0, $m2->data, $m2->row);
+        if ($m1->dtype == \Np\matrix::DOUBLE) {
+            return self::$ffi_blas->cblas_dsyrk(self::CblasRowMajor, self::CblasUpper,
+                            self::CblasNoTrans, $m1->row, $m2->col, 1.0, $m1->data, $m1->row, 0.0, $m2->data, $m2->row);
+        } else {
+            return self::$ffi_blas->cblas_ssyrk(self::CblasRowMajor, self::CblasUpper,
+                            self::CblasNoTrans, $m1->row, $m2->col, 1.0, $m1->data, $m1->row, 0.0, $m2->data, $m2->row);
+        }
     }
 
     /**
@@ -137,26 +127,15 @@ class blas {
      * @param \Np\matrix $m2
      * @param \Np\matrix $mr
      */
-    public static function dsyr2k(\Np\matrix $m1, \Np\matrix $m2, \Np\matrix $mr) {
+    public static function syr2k(\Np\matrix $m1, \Np\matrix $m2, \Np\matrix $mr) {
         self::init();
-        self::$ffi_blas->cblas_dsyr2k(self::CblasRowMajor, self::CblasLower, self::CblasNoTrans,
-                $m1->col, $m2->row, 1.0, $m1->data, $m1->row, $m2->data, $m2->row, 0.0, $mr->data, $mr->row);
-    }
-
-    /**
-     * Update rank 2k of symmetric matrix
-     *    C := alpha * A B^T + alpha B A^T + beta * C
-     *            or
-     *    C := alpha * B^T A + alpha A^T B + beta * C
-     * 
-     * @param \Np\matrix $m1
-     * @param \Np\matrix $m2
-     * @param \Np\matrix $mr
-     */
-    public static function ssyr2k(\Np\matrix $m1, \Np\matrix $m2, \Np\matrix $mr) {
-        self::init();
-        self::$ffi_blas->cblas_ssyr2k(self::CblasRowMajor, self::CblasLower, self::CblasNoTrans, $m1->col, $m2->row, 1.0, $m1->data, $m1->row,
-                $m2->data, $m2->row, 0.0, $mr->data, $mr->row);
+        if ($m1->dtype == \Np\matrix::DOUBLE) {
+            self::$ffi_blas->cblas_dsyr2k(self::CblasRowMajor, self::CblasLower, self::CblasNoTrans,
+                    $m1->col, $m2->row, 1.0, $m1->data, $m1->row, $m2->data, $m2->row, 0.0, $mr->data, $mr->row);
+        } else {
+            self::$ffi_blas->cblas_ssyr2k(self::CblasRowMajor, self::CblasLower, self::CblasNoTrans, $m1->col, $m2->row, 1.0, $m1->data, $m1->row,
+                    $m2->data, $m2->row, 0.0, $mr->data, $mr->row);
+        }
     }
 
     /**
@@ -406,27 +385,7 @@ class blas {
         self::init();
         return self::$ffi_blas->cblas_drotg($a, $b, $c, $s);
     }
-
-    /**
-     *  Give the point P (a, b).
-     *  Rotate this point to givens and calculate the parameters a, b, c,
-     *  and s to make the y coordinate zero.
-     *    Conditions description:
-     *       c * a + s * b = r
-     *       -s * a + c * b = 0
-     *       r = ||(a,b)||
-     *       c^2 + s^2 = 1
-     *       z=s if |a| > |b|
-     *       z=1/c if |a| <= |b| and c != 0 and r != 0
-     *    Find r, z, c, s that satisfies the above description.
-     *    However, when r = 0, z = 0, c = 1, and s = 0 are returned.
-     *    Also, if c = 0, | a | <= | b | and c! = 0 and r! = 0, z = 1 is returned.
-     *  @param float $a     X-coordinate of P: The calculated r value is stored and returned
-     *  @param float $b     Y-coordinate of P: The calculated z value is stored and returned
-     *  @param float $c     Stores the calculated value of c
-     *  @param float $s     Stores the calculated value of s
-     *  @return void
-     */
+    
     public static function srotg(float $a, float $b, float $c, float $s) {
         self::init();
         return self::$ffi_blas->cblas_srotg($a, $b, $c, $s);
