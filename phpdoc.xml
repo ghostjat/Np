@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdocumentor configVersion="3.0">
+  <paths>
+    <output>docs/api</output>
+    <!--Optional:-->
+    <cache>string</cache>
+  </paths>
+  <!--Zero or more repetitions:-->
+  <version number="3.0">
+    <!--Optional:-->
+    <folder>latest</folder>
+    <!--Zero or more repetitions:-->
+    <api format="php">
+      <source dsn=".">
+        <!--1 or more repetitions:-->
+        <path>src/</path>
+      </source>
+      <!--Optional:-->
+      <output>api</output>
+      <!--Optional:-->
+      <ignore hidden="true" symlinks="true">
+        <!--1 or more repetitions:-->
+        <path>tests/**/*</path>
+      </ignore>
+      <!--Optional:-->
+      <extensions>
+        <!--1 or more repetitions:-->
+        <extension>php</extension>
+      </extensions>
+      <!--Optional:-->
+      <visibility>private</visibility>
+      <!--Optional:-->
+      <default-package-name>Np (Numphp)</default-package-name>
+      <!--Optional:-->
+      <include-source>true</include-source>
+      <!--Optional:-->
+      <markers>
+        <!--1 or more repetitions:-->
+        <marker>TODO</marker>
+        <marker>FIXME</marker>
+      </markers>
+    </api>
+    <!--Zero or more repetitions:-->
+    <guide format="rst">
+      <source dsn=".">
+        <!--1 or more repetitions:-->
+        <path>support/docs</path>
+      </source>
+      <!--Optional:-->
+      <output>docs</output>
+    </guide>
+  </version>
+  <!--Zero or more repetitions:-->
+  <setting name="string" value="string"/>
+  <!--Zero or more repetitions:-->
+  <template name="string" location="string">
+    <!--Zero or more repetitions:-->
+    <parameter name="string" value="string"/>
+  </template>
+</phpdocumentor>

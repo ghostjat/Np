@@ -1,6 +1,6 @@
 {
     "name": "ghostjat/np",
-    "description": "numphp is numerical library with low memory footprint for php language. Suitable for large scale computing. php7.4+ 64 bit is required!",
+    "description": "Np (numphp) is numerical library with low memory footprint for php language. Suitable for large scale computing. php-8.0+ 64 bit is required!",
     "type": "library",
     "keywords": [
         "arithmetic", "computation", "computing", "decomposition", "engineering",
@@ -8,7 +8,8 @@
         "random number generation", "rng", "reduction", "scientific computing", "statistics",
         "tensor", "vector", "trigonometry","statstics","numphp","np"
     ],
-    "homepage": "https://github.com/ghostjat/numphp",
+    "homepage": "https://github.com/ghostjat/Np",
+    "Docs" : "https://ghostjat.github.io/Np/",
     "license": "MIT",
     "authors": [
         {
@@ -28,13 +29,18 @@
         }
     },
     "require": {
-        "php": ">=8.0",
+        "php-64bit": ">=8.0",
         "ext-ffi": "*"
     },
+    
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    },
+    
     "autoload-dev": {
         "psr-4": {
-            "numphp\\tests\\": "tests/",
-            "numphp\\benchmarks\\": "benchmarks/"
+            "Np\\tests\\": "tests/",
+            "Np\\benchmarks\\": "benchmarks/"
         }
     },
     "config":{"optimize-autoloader":true}

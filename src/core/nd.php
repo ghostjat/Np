@@ -4,6 +4,13 @@ declare(strict_types=1);
 
 namespace Np\core;
 
+use Np\exceptions\{
+    dtypeException,
+    invalidArgumentException,
+    runtimeException,
+    dimensionalityMismatch
+};
+
 /**
  * ND
  * A fast lite memory efficient Scientific Computing for php
@@ -37,8 +44,7 @@ class nd {
                 $this->data = self::_ndInt($this->ndim);
                 break;
             default :
-                self::_invalidArgument('given dtype is not supported by Np');
-                break;
+                throw new dtypeException('given dtype is not supported by Np');
         }
     }
 
@@ -54,12 +60,20 @@ class nd {
         return \FFI::cast('int *', \FFI::new("int[$size]"));
     }
 
-    protected static function _err($msg): \Exception {
-        throw new \Exception($msg);
+    protected static function _err($msg): runtimeException {
+        throw new runtimeException($msg);
     }
 
-    protected static function _invalidArgument($argument): \InvalidArgumentException {
-        throw new \InvalidArgumentException($argument);
+    protected static function _invalidArgument($argument): invalidArgumentException {
+        throw new invalidArgumentException($argument);
+    }
+    
+    protected static function _dtypeErr($msg) : dtypeException {
+        throw new dtypeException($msg);
+    }
+    
+    protected static function _dimensionaMisMatchErr($msg) :dimensionalityMismatch {
+        throw new dimensionalityMismatch($msg);
     }
 
     /**

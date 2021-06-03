@@ -1677,14 +1677,14 @@ class matrix extends nd{
 
     protected function checkDtype(matrix $matrix) {
         if ($this->dtype != $matrix->dtype) {
-            self::_err('Mismatch Dtype of given matrix');
+            ('Mismatch Dtype of given matrix');
         }
         return true;
     }
     
     protected function __construct(int $row, int $col, int $dtype = self::Float) {
         if ($row < 1 || $col < 1) {
-            self::_invalidArgument('* To create Numphp/Matrix row & col must be greater than 0!, Op Failed! * ');
+            throw new invalidArgumentException('* To create Numphp/Matrix row & col must be greater than 0!, Op Failed! * ');
         }
         parent::__construct($row*$col, $dtype);
         $this->row = $row;
