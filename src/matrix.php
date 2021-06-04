@@ -1590,7 +1590,7 @@ class matrix extends nd{
     public function less(int|float|matrix $m): matrix {
         $ar = self::factory($this->row, $this->col, $this->dtype);
         if ($m instanceof self) {
-            if ($this->checkShape($m)) {
+            if ($this->checkShape($this,$m)) {
                 for ($i = 0; $i < $this->ndim; ++$i) {
                     $ar->data[$i] = $this->data[$i] < $m->data[$i] ? 1 : 0;
                 }
