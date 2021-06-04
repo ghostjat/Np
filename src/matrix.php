@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Np;
 
 use Np\core\nd;
+use Np\core\blas;
+use Np\core\lapack;
 use Np\reductions\ref;
 use Np\reductions\rref;
 use Np\decompositions\lu;
@@ -358,7 +360,7 @@ class matrix extends nd{
     protected function dotMatrix(matrix $matrix): matrix {
         if ($this->checkDtype($matrix) && $this->checkDimensions($matrix)) {
             $ar = self::factory($this->row, $this->col, $this->dtype);
-            core\blas::gemm($this, $matrix, $ar);
+            blas::gemm($this, $matrix, $ar);
             return $ar;
         }
     }
@@ -370,13 +372,13 @@ class matrix extends nd{
      */
     protected function dotVector(vector $vector): vector {
         if ($this->dtype != $vector->dtype) {
-            self::_err('Mismatch Dtype of given vector');
+            self::_dtypeErr('Mismatch Dtype of given vector');
         }
         if ($this->row != $vector->col) {
-            self::_err('Mismatch row and col of matrix and vector');
+            self::_dimensionaMisMatchErr('Mismatch row and col of matrix and vector');
         }
         $mvr = vector::factory($this->col, $this->dtype);
-        core\blas::gemv($this, $vector, $mvr);
+        blas::gemv($this, $vector, $mvr);
         return $mvr;
     }
 
@@ -606,8 +608,6 @@ class matrix extends nd{
                 $ar->data[$i] = $this->data[$i] / $m->data[$i];
             }
             return $ar;
-        } else {
-            self::_err('Err in' . __METHOD__);
         }
     }
 
@@ -620,8 +620,6 @@ class matrix extends nd{
                 }
             }
             return $ar;
-        } else {
-            self::_err('Err:: in' . __METHOD__);
         }
     }
 
@@ -702,9 +700,7 @@ class matrix extends nd{
                 $ar->data[$i] = $this->data[$i] % $m->data[$i];
             }
             return $ar;
-        } else {
-            self::_err('Err in ' . __METHOD__);
-        }
+        } 
     }
 
     protected function modVector(vector $v): matrix {
@@ -1012,7 +1008,7 @@ class matrix extends nd{
     public function argMax(): vector {
         $v = vector::factory($this->row, vector::INT);
         for ($i = 0; $i < $this->row; ++$i) {
-            $v->data[$i] = core\blas::max($this->rowAsVector($i));
+            $v->data[$i] = blas::max($this->rowAsVector($i));
         }
         return $v;
     }
@@ -1024,7 +1020,7 @@ class matrix extends nd{
     public function argMin(): vector {
         $v = vector::factory($this->row, vector::INT);
         for ($i = 0; $i < $this->row; ++$i) {
-            $v->data[$i] = core\blas::min($this->rowAsVector($i));
+            $v->data[$i] = blas::min($this->rowAsVector($i));
         }
 
         return $v;
@@ -1176,11 +1172,11 @@ class matrix extends nd{
         }
         $imat = $this->copyMatrix();
         $ipiv = vector::factory($this->row, vector::INT);
-        $lp = core\lapack::getrf($imat, $ipiv);
+        $lp = lapack::getrf($imat, $ipiv);
         if ($lp != 0) {
             return null;
         }
-        $lp = core\lapack::getri($imat, $ipiv);
+        $lp = lapack::getri($imat, $ipiv);
         if ($lp != 0) {
             return null;
         }
@@ -1188,6 +1184,7 @@ class matrix extends nd{
         unset($lp);
         return $imat;
     }
+    
     /**
      * Compute the (Moore-Penrose) pseudo inverse of the general matrix.
      * @return matrix|null
@@ -1198,19 +1195,19 @@ class matrix extends nd{
         $u = self::factory($this->row, $this->row, $this->dtype);
         $vt = self::factory($this->col, $this->col, $this->dtype);
         $imat = $this->copyMatrix();
-        $lp = core\lapack::gesdd($imat, $s, $u, $vt);
+        $lp = lapack::gesdd($imat, $s, $u, $vt);
         if ($lp != 0) {
             return null;
         }
         for ($i = 0; $i < $k; ++$i) {
-            core\blas::scale(1.0 / $s->data[$i], $vt->rowAsVector($i));
+            blas::scale(1.0 / $s->data[$i], $vt->rowAsVector($i));
         }
         unset($imat);
         unset($k);
         unset($lp);
         unset($s);
         $mr = self::factory($this->col, $this->row, $this->dtype);
-        core\blas::gemm($vt, $u, $mr);
+        blas::gemm($vt, $u, $mr);
         unset($u);
         unset($vt);
         return $mr;
@@ -1253,7 +1250,7 @@ class matrix extends nd{
      * @return float
      */
     public function normL1(): float {
-        return core\lapack::lange('l', $this);
+        return lapack::lange('l', $this);
     }
 
     /**
@@ -1261,7 +1258,7 @@ class matrix extends nd{
      * @return float
      */
     public function normL2(): float {
-        return core\lapack::lange('f', $this);
+        return lapack::lange('f', $this);
     }
 
     /**
@@ -1269,7 +1266,7 @@ class matrix extends nd{
      * @return float
      */
     public function normINF(): float {
-        return core\lapack::lange('i', $this);
+        return lapack::lange('i', $this);
     }
 
     /**
@@ -1663,28 +1660,28 @@ class matrix extends nd{
 
     protected function checkShape(matrix $matrix) {
         if ($this->row != $matrix->row || $this->col != $matrix->col) {
-            self::_err('Mismatch Dimensions of given matrix');
+            self::_dimensionaMisMatchErr('mismatch Dimensions of given matrix');
         }
         return true;
     }
 
     protected function checkDimensions(matrix $matrix) {
         if ($this->col != $matrix->row) {
-            self::_err('Mismatch Dimensions of given matrix! Matrix-A col & Matrix-B row amount need to be the same');
+            self::_dimensionaMisMatchErr('Mismatch Dimensions of given matrix! Matrix-A col & Matrix-B row amount need to be the same');
         }
         return true;
     }
 
     protected function checkDtype(matrix $matrix) {
         if ($this->dtype != $matrix->dtype) {
-            ('Mismatch Dtype of given matrix');
+            self::_dtypeErr('mismatch dtype of given matrix');
         }
         return true;
     }
     
     protected function __construct(int $row, int $col, int $dtype = self::Float) {
         if ($row < 1 || $col < 1) {
-            throw new invalidArgumentException('* To create Numphp/Matrix row & col must be greater than 0!, Op Failed! * ');
+            self::_invalidArgument('* To create Numphp/Matrix row & col must be greater than 0!, Op Failed! * ');
         }
         parent::__construct($row*$col, $dtype);
         $this->row = $row;
