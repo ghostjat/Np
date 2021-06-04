@@ -153,7 +153,7 @@ class vector extends nd {
      * @return vector
      */
     public static function range(int|float $start, int|float $end, int|float $interval = 1, int $dtype = self::FLOAT): vector {
-        return self::ar(range($start, $end, $interval));
+        return self::ar(range($start, $end, $interval, $dtype));
     }
 
     /**
@@ -166,7 +166,7 @@ class vector extends nd {
      */
     public static function gaussian(int $n, int $dtype = self::FLOAT): vector {
         $max = getrandmax();
-        $a = new self($n, $dtype);
+        $a = [];
         while (count($a) < $n) {
             $r = sqrt(-2.0 * log(rand() / $max));
             $phi = rand() / $max * (2. * M_PI);
@@ -227,7 +227,7 @@ class vector extends nd {
             $a[] = end($a) + $interval;
         }
         $a[] = $max;
-        return self::ar($a);
+        return self::ar($a,$dtype);
     }
 
     /**
@@ -713,12 +713,11 @@ class vector extends nd {
         return true;
     }
 
-    protected function __construct(int $col, int $dtype = self::FLOAT) {
-        if ($col < 1) {
+    protected function __construct(public int $col, int $dtype = self::FLOAT) {
+        if ($this->col < 1) {
             throw new invalidArgumentException('* To create Numphp/Vector col must be greater than 0!, Op Failed! * ');
         }
-        parent::__construct($col, $dtype);
-        $this->col = $col;
+        parent::__construct($this->col, $dtype);
         return $this;
     }
 
