@@ -6,7 +6,6 @@ namespace Np\decompositions;
 
 use Np\matrix;
 use Np\core\lapack;
-use RuntimeException;
 
 /**
  * Cholesky
@@ -26,7 +25,7 @@ class cholesky {
      * 
      * @param matrix $m
      * @return matrix|null
-     * @throws RuntimeException
+     * 
      */
     public static function factory(matrix $m): matrix|null {
         if ($m->isSquare()) {
@@ -42,8 +41,6 @@ class cholesky {
             }
             unset($lp);
             return $ar;
-        } else {
-            throw new RuntimeException('Err:: in ' . __METHOD__ . 'at ' . __LINE__);
         }
     }
 

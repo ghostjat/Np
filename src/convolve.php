@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 namespace Np;
+use Np\exceptions\dtypeException;
 
 class convolve {
     
@@ -30,7 +31,7 @@ class convolve {
             return $r;
         }
         else {
-            throw new \Exception('Err::given vectors has diffrent data type!');
+            throw new dtypeException('Err::given vectors has diffrent data type!');
         }
     }
     
@@ -48,8 +49,6 @@ class convolve {
             $p = $kb->row / 2;
             $q = $kb->col / 2;
             $rc = matrix::factory($ma->row / $stride, $ma->col / $stride, $ma->dtype);
-            #core\blas::sgemm($ma, $kb, $rc);
-
             for ($i = 0; $i < $ma->row; $i += $stride) {
 
                 for ($j = 0; $j < $ma->col; $j += $stride) {

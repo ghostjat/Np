@@ -396,7 +396,7 @@ class blas {
      *
      * @param float $alpha Coefficient of scalar multiple of V vector
      * @param \Np\vector|\Np\matrix $v
-     * @return type
+     * @return \FFI\CData
      */
     public static function scale(float $alpha, \Np\vector|\Np\matrix $v) {
         self::init();

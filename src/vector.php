@@ -11,8 +11,6 @@ use Np\core\{
 };
 use Np\exceptions\{
     invalidArgumentException,
-    dimensionalityMismatch,
-    dtypeException,
 };
 
 /** A fast lite memory efficient Scientific Computing in php
@@ -245,7 +243,7 @@ class vector extends nd {
      * @return vector
      */
     public function maximum(\Np\vector $vector): vector {
-        if ($this->checkDimensions($vector) && $this->checkDtype($vector)) {
+        if ($this->checkShape($this,$vector) && $this->checkDtype($this,$vector)) {
             $v = new self($this->ndim, $this->dtype);
             for($i = 0; $i<$v->ndim; ++$i) {
                 $v->data[$i] = max($this->data[$i],$vector->data[$i]);
@@ -261,7 +259,7 @@ class vector extends nd {
      * @return vector
      */
     public function minium(\Np\vector $vector): vector {
-        if ($this->checkDimensions($vector) && $this->checkDtype($vector)) {
+        if ($this->checkShape($this, $vector) && $this->checkDtype($this, $vector)) {
             $v = new self($this->ndim, $this->dtype);
             for($i = 0; $i<$v->ndim; ++$i) {
                 $v->data[$i] = min($this->data[$i],$vector->data[$i]);
@@ -296,7 +294,7 @@ class vector extends nd {
      * @return vector
      */
     public function dotVector(\Np\vector $v) {
-        if ($this->checkDtype($v)) {
+        if ($this->checkDtype($this, $v)) {
             return blas::dot($this, $v);
         }
     }
@@ -327,12 +325,11 @@ class vector extends nd {
      * @return vector
      */
     public function dotMatrix(\Np\matrix $m): vector {
-        if ($this->dtype != $m->dtype) {
-            self::_err('Mismatch Dtype of given matrix');
+        if ($this->checkDtype($this, $m)) {
+            $mvr = self::factory($this->col, $this->dtype);
+            core\blas::gemv($m, $this, $mvr);
+            return $mvr;
         }
-        $mvr = self::factory($this->col, $this->dtype);
-        core\blas::gemv($m, $this, $mvr);
-        return $mvr;
     }
 
     /**
@@ -356,7 +353,7 @@ class vector extends nd {
      * @return matrix
      */
     protected function divideMatrix(\Np\matrix $m): matrix {
-        if ($this->col == $m->col && $this->dtype == $m->dtype) {
+        if ($this->checkShape($this, $m) && $this->checkDtype($this, $m)) {
             $vr = matrix::factory($m->row, $m->col, $m->dtype);
             for ($i = 0; $i < $m->row; ++$i) {
                 for ($j = 0; $j < $m->col; ++$j) {
@@ -373,7 +370,7 @@ class vector extends nd {
      * @return vector
      */
     protected function divideVector(vector $v): vector {
-        if ($this->checkDimensions($v) && $this->checkDtype($v)) {
+        if ($this->checkShape($this, $v) && $this->checkDtype($this, $v)) {
             $vr = self::factory($this->col, $this->dtype);
             for ($i = 0; $i < $this->col; ++$i) {
                 $vr->data[$i] = $this->data[$i] / $v->data[$i];
@@ -416,7 +413,7 @@ class vector extends nd {
      * @return matrix
      */
     protected function multiplyMatrix(\Np\matrix $m): matrix {
-        if ($this->col == $m->col && $this->dtype == $m->dtype) {
+        if ($this->checkShape($this, $m) && $this->checkDtype($this, $m)) {
             $vr = matrix::factory($m->row, $m->col, $m->dtype);
             for ($i = 0; $i < $m->row; ++$i) {
                 for ($j = 0; $j < $m->col; ++$j) {
@@ -433,7 +430,7 @@ class vector extends nd {
      * @return vector
      */
     protected function multiplyVector(\Np\vector $vector): vector {
-        if ($this->checkDimensions($vector) && $this->checkDtype($vector)) {
+        if ($this->checkShape($this,$vector) && $this->checkDtype($this,$vector)) {
             $vr = self::factory($this->col, $this->dtype);
             for ($i = 0; $i < $this->col; ++$i) {
                 $vr->data[$i] = $this->data[$i] * $vector->data[$i];
@@ -474,7 +471,7 @@ class vector extends nd {
      * @return matrix
      */
     protected function addMatrix(\Np\matrix $m): matrix {
-        if ($this->col == $m->col && $this->dtype == $m->dtype) {
+        if ($this->checkShape($this, $m) && $this->checkDtype($this, $m)) {
             $vr = matrix::factory($m->row, $m->col, $m->dtype);
             for ($i = 0; $i < $m->row; ++$i) {
                 for ($j = 0; $j < $m->col; ++$j) {
@@ -483,7 +480,6 @@ class vector extends nd {
             }
             return $vr;
         }
-        self::_invalidArgument('');
     }
 
     /**
@@ -492,7 +488,7 @@ class vector extends nd {
      * @return vector
      */
     protected function addVector(\Np\vector $vector): vector {
-        if ($this->checkDimensions($vector) && $this->checkDtype($vector)) {
+        if ($this->checkShape($this, $vector) && $this->checkDtype($this, $vector)) {
             $vr = self::factory($this->col, $this->dtype);
             for ($i = 0; $i < $this->col; ++$i) {
                 $vr->data[$i] = $this->data[$i] + $vector->data[$i];
@@ -520,7 +516,7 @@ class vector extends nd {
      * @return vector
      */
     public function powVector(\Np\vector $vector): vector {
-        if ($this->checkDimensions($vector) && $this->checkDtype($vector)) {
+        if ($this->checkShape($this, $vector) && $this->checkDtype($this,  $vector)) {
             $vr = self::factory($this->col, $this->dtype);
             for ($i = 0; $i < $this->col; ++$i) {
                 $vr->data[$i] = $this->data[$i] ** $vector->data[$i];
@@ -535,7 +531,7 @@ class vector extends nd {
      * @return vector
      */
     public function modVector(\Np\vector $vector): vector {
-        if ($this->checkDimensions($vector) && $this->checkDtype($vector)) {
+        if ($this->checkShape($this, $vector) && $this->checkDtype($this, $vector)) {
             $vr = self::factory($this->col, $this->dtype);
             for ($i = 0; $i < $this->col; ++$i) {
                 $vr->data[$i] = $this->data[$i] % $vector->data[$i];
@@ -565,7 +561,7 @@ class vector extends nd {
      * @return matrix
      */
     protected function subtractMatrix(\Np\matrix $m): matrix {
-        if ($this->col == $m->col && $this->dtype == $m->dtype) {
+        if ($this->checkShape($this, $m) && $this->checkDtype($this, $m)) {
             $vr = matrix::factory($m->row, $m->col, $m->dtype);
             for ($i = 0; $i < $m->row; ++$i) {
                 for ($j = 0; $j < $m->col; ++$j) {
@@ -574,7 +570,6 @@ class vector extends nd {
             }
             return $vr;
         }
-        self::_invalidArgument('');
     }
 
     /**
@@ -583,7 +578,7 @@ class vector extends nd {
      * @return vector
      */
     protected function subtractVector(\Np\vector $vector): vector {
-        if ($this->checkDimensions($vector) && $this->checkDtype($vector)) {
+        if ($this->checkShape($this,$vector) && $this->checkDtype($this,$vector)) {
             $vr = self::factory($this->col, $this->dtype);
             for ($i = 0; $i < $this->col; ++$i) {
                 $vr->data[$i] = $this->data[$i] - $vector->data[$i];
@@ -619,7 +614,7 @@ class vector extends nd {
      * Return the inner product of two vectors.
      *
      * @param \Np\vector $vector
-     * @return float
+     * 
      */
     public function inner(\Np\vector $vector) {
         return $this->dotVector($vector);
@@ -698,21 +693,7 @@ class vector extends nd {
     public function __toString() {
         return (string) $this->printVector();
     }
-
-    protected function checkDimensions(vector $vector) {
-        if ($this->col != $vector->col) {
-            throw new dimensionalityMismatch('Mismatch Dimensions of given vectors');
-        }
-        return true;
-    }
-
-    protected function checkDtype(vector $vector) {
-        if ($this->dtype != $vector->dtype) {
-            throw new dtypeException('Mismatch dtype of given vector');
-        }
-        return true;
-    }
-
+    
     protected function __construct(public int $col, int $dtype = self::FLOAT) {
         if ($this->col < 1) {
             throw new invalidArgumentException('* To create Numphp/Vector col must be greater than 0!, Op Failed! * ');

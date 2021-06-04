@@ -21,8 +21,6 @@ use Np\core\lapack;
  */
 class svd {
 
-    protected $u, $s, $v;
-
     /**
      * 
      * @param matrix $m
@@ -50,10 +48,8 @@ class svd {
      * @param \Np\matrix $v
      * @param \Np\vector $s
      */
-    protected function __construct(\Np\matrix $u, \Np\matrix $v, \Np\vector $s) {
-        $this->u = $u;
-        $this->s = $s;
-        $this->v = $v;
+    protected function __construct(protected \Np\matrix $u, protected \Np\matrix $v, protected \Np\vector $s) {
+        
     }
 
     /**

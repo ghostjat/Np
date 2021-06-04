@@ -29,6 +29,39 @@ class nd {
 
     public $data, $ndim, $dtype;
     public static $_time = null, $_mem = null;
+    
+    public function checkDimensions(\Np\matrix|\Np\vector $Obj1, \Np\matrix $Obj2) {
+        if($Obj1->col == $Obj2->row){
+            return true;
+        }
+        self::_dimensionaMisMatchErr('Mismatch Dimensions of given Objects! Obj-A col & Obj-B row amount need to be the same!');
+    }
+    
+    public function checkDtype(\Np\matrix|\Np\vector $Obj1, \Np\matrix|\Np\vector $Obj2){
+        if($Obj1->dtype == $Obj2->dtype) {
+            return true;
+        }
+        self::_dtypeErr('mismatch data type of given Np\Objects!');
+    }
+    
+    public function checkShape(\Np\matrix|\Np\vector $Obj1, \Np\matrix|\Np\vector $Obj2) {
+        if ($Obj1 instanceof \Np\vector && $Obj2 instanceof \Np\vector) {
+            if ($Obj1->col == $Obj2->col) {
+                return true;
+            }
+            self::_dimensionaMisMatchErr('mismatch Dimensions of given vectors!');
+        } elseif ($Obj1 instanceof \Np\vector && $Obj2 instanceof \Np\matrix) {
+            if ($Obj1->col == $Obj2->col) {
+                return true;
+            }
+            self::_dimensionaMisMatchErr('mismatch Dimensions of given vectors & matrix!');
+        } else {
+            if ($Obj1->row == $Obj2->row || $Obj1->col == $Obj2->col) {
+                return true;
+            }
+            self::_dimensionaMisMatchErr('mismatch Dimensions of given matrix!');
+        }
+    }
 
     protected function __construct(int $size, int $dtype = self::FLOAT) {
         $this->ndim = $size;

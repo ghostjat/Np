@@ -26,7 +26,6 @@ use Np\decompositions\cholesky;
  */
 class matrix extends nd{
 
-    public $row, $col;
     /**
      * create empty 2d matrix for given data type
      * @param int $row  num of rows 
@@ -233,7 +232,7 @@ class matrix extends nd{
      */
     public static function identity(int $n, int $dtype = self::FLOAT): matrix {
         if ($n < 1) {
-            self::_invalidArgument('Dimensionality must be greater than 0 on all axes.');
+            self::_dimensionaMisMatchErr('dimensionality must be greater than 0 on all axes.');
         }
 
         $ar = self::factory($n, $n, $dtype);
@@ -252,7 +251,7 @@ class matrix extends nd{
      * @return matrix
      */
     public function minimum(matrix $m): matrix {
-        if ($this->checkShape($m)) {
+        if ($this->checkShape($this,$m)) {
             $ar = self::factory($this->row, $this->col, $this->dtype);
             for ($i = 0; $i < $this->ndim; ++$i) {
                 $ar->data[$i] = min($this->data[$i], $m->data[$i]);
@@ -268,7 +267,7 @@ class matrix extends nd{
      * @return matrix
      */
     public function maximum(matrix $m): matrix {
-        if ($this->checkShape($m)) {
+        if ($this->checkShape($this, $m)) {
             $ar = self::factory($this->row, $this->col, $this->dtype);
             for ($i = 0; $i < $this->ndim; ++$i) {
                 $ar->data[$i] = max($this->data[$i], $m->data[$i]);
@@ -358,7 +357,7 @@ class matrix extends nd{
      * @return \Np\matrix
      */
     protected function dotMatrix(matrix $matrix): matrix {
-        if ($this->checkDtype($matrix) && $this->checkDimensions($matrix)) {
+        if ($this->checkDtype($this, $matrix) && $this->checkDimensions($this,$matrix)) {
             $ar = self::factory($this->row, $this->col, $this->dtype);
             blas::gemm($this, $matrix, $ar);
             return $ar;
@@ -371,15 +370,11 @@ class matrix extends nd{
      * @return \Np\vector
      */
     protected function dotVector(vector $vector): vector {
-        if ($this->dtype != $vector->dtype) {
-            self::_dtypeErr('Mismatch Dtype of given vector');
+        if ($this->checkDtype($this, $vector) && $this->checkDimensions($vector, $this)) {
+            $mvr = vector::factory($this->col, $this->dtype);
+            blas::gemv($this, $vector, $mvr);
+            return $mvr;
         }
-        if ($this->row != $vector->col) {
-            self::_dimensionaMisMatchErr('Mismatch row and col of matrix and vector');
-        }
-        $mvr = vector::factory($this->col, $this->dtype);
-        blas::gemv($this, $vector, $mvr);
-        return $mvr;
     }
 
     //---------------Arthmetic Opreations-----------------------------------
@@ -406,7 +401,7 @@ class matrix extends nd{
      * @return matrix
      */
     protected function multiplyVector(vector $v): matrix {
-        if ($this->row == $v->col && $this->dtype == $v->dtype) {
+        if ($this->checkDimensions($v, $this) && $this->checkDtype($this, $v)) {
             $ar = matrix::factory($this->row, $this->col, $this->dtype);
             for ($i = 0; $i < $this->row; ++$i) {
                 for ($j = 0; $j < $this->col; ++$j) {
@@ -423,7 +418,7 @@ class matrix extends nd{
      * @return matrix
      */
     protected function multiplyMatrix(matrix $m): matrix {
-        if ($this->checkDtype($m) && $this->checkShape($m)) {
+        if ($this->checkDtype($this, $m) && $this->checkShape($this, $m)) {
             $ar = self::factory($this->row, $this->col, $this->dtype);
             for ($i = 0; $i < $this->row; ++$i) {
                 for ($j = 0; $j < $this->col; ++$j) {
@@ -493,7 +488,7 @@ class matrix extends nd{
     }
 
     protected function sumMatrix(matrix $m): matrix {
-        if ($this->checkShape($m) && $this->checkDtype($m)) {
+        if ($this->checkShape($this, $m) && $this->checkDtype($this, $m)) {
             $ar = self::factory($this->row, $this->col, $this->dtype);
             for ($i = 0; $i < $this->ndim; ++$i) {
                 $ar->data[$i] = $this->data[$i] + $m->data[$i];
@@ -503,7 +498,7 @@ class matrix extends nd{
     }
 
     protected function sumVector(vector $v): matrix {
-        if ($this->row == $v->col && $this->dtype == $v->dtype) {
+        if ($this->checkDimensions($v, $this) && $this->checkDtype($this, $v)) {
             $ar = self::factory($this->row, $this->col, $this->dtype);
             for ($i = 0; $i < $this->row; ++$i) {
                 for ($j = 0; $j < $this->col; ++$j) {
@@ -543,7 +538,7 @@ class matrix extends nd{
      * @return matrix
      */
     protected function subtractMatrix(matrix $m): matrix {
-        if ($this->checkShape($m) && $this->checkDtype($m)) {
+        if ($this->checkShape($this, $m) && $this->checkDtype($this, $m)) {
             $ar = self::factory($this->row, $this->col, $this->dtype);
             for ($i = 0; $i < $this->ndim; ++$i) {
                 $ar->data[$i] = $this->data[$i] - $m->data[$i];
@@ -558,7 +553,7 @@ class matrix extends nd{
      * @return matrix
      */
     protected function subtractVector(vector $v): matrix {
-        if ($this->row == $v->col && $this->dtype == $v->dtype) {
+        if ($this->checkDimensions($v, $this) && $this->checkDtype($this,$v)) {
             $ar = self::factory($this->row, $this->col, $this->dtype);
             for ($i = 0; $i < $this->row; ++$i) {
                 for ($j = 0; $j < $this->col; ++$j) {
@@ -575,7 +570,7 @@ class matrix extends nd{
      * @return matrix
      */
     public function subtractColumnVector(vector $v): matrix {
-        if ($this->row == $v->col && $this->dtype == $v->dtype) {
+        if ($this->checkDimensions($v, $this) && $this->checkDtype($this, $v)) {
             $ar = self::factory($this->row, $this->col, $this->dtype);
             for ($j = 0; $j < $this->col; ++$j) {
                 for ($i = 0; $i < $this->row; ++$i) {
@@ -602,7 +597,7 @@ class matrix extends nd{
     }
 
     protected function divideMatrix(matrix $m): matrix {
-        if ($this->checkShape($m) && $this->checkDtype($m)) {
+        if ($this->checkShape($this, $m) && $this->checkDtype($this, $m)) {
             $ar = self::factory($this->row, $this->col, $this->dtype);
             for ($i = 0; $i < $this->ndim; ++$i) {
                 $ar->data[$i] = $this->data[$i] / $m->data[$i];
@@ -612,7 +607,7 @@ class matrix extends nd{
     }
 
     protected function divideVector(vector $v): matrix {
-        if ($this->row == $v->col && $this->dtype == $v->dtype) {
+        if ($this->checkDimensions($v, $this) && $this->checkDtype($this, $v)) {
             $ar = self::factory($this->row, $this->col, $this->dtype);
             for ($i = 0; $i < $this->row; ++$i) {
                 for ($j = 0; $j < $this->col; ++$j) {
@@ -649,7 +644,7 @@ class matrix extends nd{
     }
 
     protected function powMatrix(matrix $m): matrix {
-        if ($this->checkShape($m) && $this->checkDtype($m)) {
+        if ($this->checkShape($this, $m) && $this->checkDtype($this, $m)) {
             $ar = self::factory($this->row, $this->col, $this->dtype);
             for ($i = 0; $i < $this->ndim; ++$i) {
                 $ar->data[$i] = $this->data[$i] ** $m->data[$i];
@@ -659,7 +654,7 @@ class matrix extends nd{
     }
 
     protected function powVector(vector $v): matrix {
-        if ($this->row == $v->col && $this->dtype == $v->dtype) {
+        if ($this->checkDimensions($v, $this) && $this->checkDtype($this, $v)) {
             $ar = self::factory($this->row, $this->col, $this->dtype);
             for ($i = 0; $i < $this->row; ++$i) {
                 for ($j = 0; $j < $this->col; ++$j) {
@@ -694,7 +689,7 @@ class matrix extends nd{
     }
 
     protected function modMatrix(matrix $m): matrix {
-        if ($this->checkShape($m) && $this->checkDtype($m)) {
+        if ($this->checkShape($this, $m) && $this->checkDtype($this, $m)) {
             $ar = self::factory($this->row, $this->col, $this->dtype);
             for ($i = 0; $i < $this->ndim; ++$i) {
                 $ar->data[$i] = $this->data[$i] % $m->data[$i];
@@ -704,7 +699,7 @@ class matrix extends nd{
     }
 
     protected function modVector(vector $v): matrix {
-        if ($this->row == $v->col && $this->dtype == $v->dtype) {
+        if ($this->checkDimensions($v, $this) && $this->checkDtype($this, $v)) {
             $ar = self::factory($this->row, $this->col, $this->dtype);
             for ($i = 0; $i < $this->row; ++$i) {
                 for ($j = 0; $j < $this->col; ++$j) {
@@ -852,7 +847,7 @@ class matrix extends nd{
      * @return \Np\matrix
      */
     public function joinLeft(matrix $m): matrix {
-        if ($this->row != $m->row && $this->checkDtype($m)) {
+        if ($this->row != $m->row && !$this->checkDtype($this, $m)) {
             self::_err('Error::Invalid size! or DataType!');
         }
         $col = $this->col + $m->col;
@@ -874,7 +869,7 @@ class matrix extends nd{
      * @return matrix
      */
     public function joinRight(matrix $m): matrix {
-        if ($this->row != $m->row && $this->checkDtype($m)) {
+        if ($this->row != $m->row && !$this->checkDtype($this,$m)) {
             self::_err('Error::Invalid size! or DataType!');
         }
         $col = $this->col + $m->col;
@@ -896,7 +891,7 @@ class matrix extends nd{
      * @return matrix
      */
     public function joinAbove(matrix $m): matrix {
-        if ($this->col !== $m->col && $this->checkDtype($m)) {
+        if ($this->col !== $m->col && !$this->checkDtype($this, $m)) {
             self::_err('Error::Invalid size! or DataType!');
         }
         $row = $this->row + $m->row;
@@ -918,7 +913,7 @@ class matrix extends nd{
      * @return matrix
      */
     public function joinBelow(matrix $m): matrix {
-        if ($this->col !== $m->col && $this->checkDtype($m)) {
+        if ($this->col !== $m->col && !$this->checkDtype($this, $m)) {
             self::_err('Error::Invalid size! or DataType!');
         }
         $row = $this->row + $m->row;
@@ -1039,14 +1034,14 @@ class matrix extends nd{
                 foreach ($f as $k => $v) {
                     $this->data[$k] = $v;
                 }
-            } elseif (is_numeric($data) && $dignoal == false) {
+            } elseif (is_numeric($data)) {
                 for ($i = 0; $i < $this->ndim; ++$i) {
                     $this->data[$i] = $data;
                 }
-            } elseif (is_numeric($data) && $dignoal == true) {
-                for ($i = 0; $i < $this->row; ++$i) {
-                    $this->data[$i * $this->col * $i] = $data;
-                }
+            }
+        } elseif (is_numeric($data) || is_array($data) && !is_array($data[0])) {
+            for ($i = 0; $i < $this->row; ++$i) {
+                $this->data[$i * $this->col * $i] = $data;
             }
         }
     }
@@ -1513,7 +1508,7 @@ class matrix extends nd{
     }
 
     protected function equalMatrix(matrix $m): matrix {
-        if ($this->checkShape($m) && $this->checkDtype($m)) {
+        if ($this->checkShape($this, $m) && $this->checkDtype($this, $m)) {
             $ar = self::factory($this->row, $this->col, $this->dtype);
             for ($i = 0; $i < $this->ndim; ++$i) {
                 $ar->data[$i] = $this->data[$i] == $m->data[$i] ? 1 : 0;
@@ -1523,7 +1518,7 @@ class matrix extends nd{
     }
 
     protected function equalVector(vector $v): matrix {
-        if ($this->row == $v->col && $this->dtype == $v->dtype) {
+        if ($this->checkDimensions($v, $this) && $this->checkDtype($this, $v)) {
             $ar = self::factory($this->row, $this->col, $this->dtype);
             for ($i = 0; $i < $this->row; ++$i) {
                 for ($j = 0; $j < $this->col; ++$j) {
@@ -1558,7 +1553,7 @@ class matrix extends nd{
     }
 
     protected function greaterMatrix(matrix $m): matrix {
-        if ($this->checkShape($m) && $this->checkDtype($m)) {
+        if ($this->checkShape($this, $m) && $this->checkDtype($this,$m)) {
             $ar = self::factory($this->row, $this->col, $this->dtype);
             for ($i = 0; $i < $this->ndim; ++$i) {
                 $ar->data[$i] = $this->data[$i] > $m->data[$i] ? 1 : 0;
@@ -1568,7 +1563,7 @@ class matrix extends nd{
     }
 
     protected function greaterVector(vector $v): matrix {
-        if ($this->row == $v->col && $this->dtype == $v->dtype) {
+        if ($this->checkDimensions($v, $this) && $this->checkDtype($this,$v)) {
             $ar = self::factory($this->row, $this->col, $this->dtype);
             for ($i = 0; $i < $this->row; ++$i) {
                 for ($j = 0; $j < $this->col; ++$j) {
@@ -1657,35 +1652,19 @@ class matrix extends nd{
             return $a;
         }
     }
-
-    protected function checkShape(matrix $matrix) {
-        if ($this->row != $matrix->row || $this->col != $matrix->col) {
-            self::_dimensionaMisMatchErr('mismatch Dimensions of given matrix');
-        }
-        return true;
-    }
-
-    protected function checkDimensions(matrix $matrix) {
-        if ($this->col != $matrix->row) {
-            self::_dimensionaMisMatchErr('Mismatch Dimensions of given matrix! Matrix-A col & Matrix-B row amount need to be the same');
-        }
-        return true;
-    }
-
-    protected function checkDtype(matrix $matrix) {
-        if ($this->dtype != $matrix->dtype) {
-            self::_dtypeErr('mismatch dtype of given matrix');
-        }
-        return true;
-    }
     
-    protected function __construct(int $row, int $col, int $dtype = self::Float) {
-        if ($row < 1 || $col < 1) {
+    /**
+     * 
+     * @param int $row
+     * @param int $col
+     * @param int $dtype
+     * @return $this
+     */
+    protected function __construct(public int $row, public int $col, int $dtype = self::Float) {
+        if ($this->row < 1 || $this->col < 1) {
             self::_invalidArgument('* To create Numphp/Matrix row & col must be greater than 0!, Op Failed! * ');
         }
-        parent::__construct($row*$col, $dtype);
-        $this->row = $row;
-        $this->col = $col;
+        parent::__construct($this->row * $this->col, $dtype);
         return $this;
     }
 }

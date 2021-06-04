@@ -7,7 +7,7 @@ namespace Np\decompositions;
 use Np\matrix;
 use Np\vector;
 use Np\core\lapack;
-use InvalidArgumentException;
+use Np\exceptions\invalidArgumentException;
 
 /**
  * Eigen
@@ -28,7 +28,7 @@ class eigen {
 
     public static function factory(\Np\matrix $m, bool $symmetric = false): self {
         if (!$m->isSquare()) {
-            throw new InvalidArgumentException('A Non Square Matrix is given!');
+            throw new invalidArgumentException('A Non Square Matrix is given!');
         }
         $wr = vector::factory($m->col, $m->dtype);
         $ar = $m->copyMatrix();

@@ -7,7 +7,7 @@ namespace Np\decompositions;
 use Np\matrix;
 use Np\vector;
 use Np\core\lapack;
-use InvalidArgumentException;
+use Np\exceptions\invalidArgumentException;
 
 /**
  * LU
@@ -23,8 +23,6 @@ use InvalidArgumentException;
  */
 class lu {
 
-    protected $l, $u, $p;
-
     /**
      * 
      * @param matrix $m
@@ -33,7 +31,7 @@ class lu {
      */
     public static function factory(matrix $m): self {
         if (!$m->isSquare()) {
-            throw new InvalidArgumentException('Matrix must be given.');
+            throw new invalidArgumentException('Matrix must be given.');
         }
         $ipiv = vector::factory($m->col, vector::INT);
         $ar = $m->copyMatrix();
@@ -81,10 +79,8 @@ class lu {
      * @param matrix $u
      * @param matrix $p
      */
-    protected function __construct(matrix $l, matrix $u, matrix $p) {
-        $this->l = $l;
-        $this->u = $u;
-        $this->p = $p;
+    protected function __construct(protected matrix $l, protected matrix $u, protected matrix $p) {
+        
     }
 
     /**
