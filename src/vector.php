@@ -534,7 +534,7 @@ class vector extends nd {
         if ($this->checkDimensions($this, $m) && $this->checkDtype($this, $m)) {
             $ar = matrix::factory($m->row, $m->col, $this->dtype);
             for ($i = 0; $i < $m->row; ++$i) {
-                for ($j = 0; $j < $m - col; ++$j) {
+                for ($j = 0; $j < $m->col; ++$j) {
                     $ar->data[$i * $m->col + $j] = $m->data[$i * $m->col + $j] ** $this->data[$j];
                 }
             }
@@ -560,12 +560,14 @@ class vector extends nd {
     /**
      * 
      * @param int|float $s
+     * @return vector
      */
-    protected function powScalar(int|float $s) {
+    protected function powScalar(int|float $s): vector {
         $v = $this->copyVector();
         for ($i = 0; $i < $this->col; ++$i) {
             $v->data[$i] = $v->data[$i] ** $s;
         }
+        return $v;
     }
 
     /**
@@ -592,7 +594,7 @@ class vector extends nd {
         if ($this->checkDimensions($this, $m) && $this->checkDtype($this, $m)) {
             $ar = matrix::factory($m->row, $m->col, $this->dtype);
             for ($i = 0; $i < $m->row; ++$i) {
-                for ($j = 0; $j < $m - col; ++$j) {
+                for ($j = 0; $j < $m->col; ++$j) {
                     $ar->data[$i * $m->col + $j] = $m->data[$i * $m->col + $j] % $this->data[$j];
                 }
             }
