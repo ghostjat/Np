@@ -27,7 +27,7 @@ class nd {
     const TWO_PI = 2. * M_PI, EPSILON = 1e-8;
     const FLOAT = 1, DOUBLE = 2, INT = 3;
 
-    public $data, $ndim, $dtype;
+    public $data;
     public static $_time = null, $_mem = null;
     
     public function checkDimensions(\Np\matrix|\Np\vector $Obj1, \Np\matrix $Obj2) {
@@ -63,10 +63,8 @@ class nd {
         }
     }
 
-    protected function __construct(int $size, int $dtype = self::FLOAT) {
-        $this->ndim = $size;
-        $this->dtype = $dtype;
-        switch ($dtype) {
+    protected function __construct(public int $ndim, public int $dtype = self::FLOAT) {
+        switch ($this->dtype) {
             case self::FLOAT:
                 $this->data = self::_ndFloat($this->ndim);
                 break;

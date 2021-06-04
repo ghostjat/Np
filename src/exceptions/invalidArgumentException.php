@@ -2,8 +2,8 @@
 
 namespace Np\exceptions;
 
-use InvalidArgumentException;
+use InvalidArgumentException as NpInvalidArgException;
 
-class invalidArgumentException extends InvalidArgumentException implements npException {
+class invalidArgumentException extends NpInvalidArgException implements npException {
     //
 }

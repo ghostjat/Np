@@ -225,7 +225,7 @@ class vector extends nd {
             $a[] = end($a) + $interval;
         }
         $a[] = $max;
-        return self::ar($a,$dtype);
+        return self::ar($a, $dtype);
     }
 
     /**
@@ -243,10 +243,10 @@ class vector extends nd {
      * @return vector
      */
     public function maximum(\Np\vector $vector): vector {
-        if ($this->checkShape($this,$vector) && $this->checkDtype($this,$vector)) {
+        if ($this->checkShape($this, $vector) && $this->checkDtype($this, $vector)) {
             $v = new self($this->ndim, $this->dtype);
-            for($i = 0; $i<$v->ndim; ++$i) {
-                $v->data[$i] = max($this->data[$i],$vector->data[$i]);
+            for ($i = 0; $i < $v->ndim; ++$i) {
+                $v->data[$i] = max($this->data[$i], $vector->data[$i]);
             }
             return $v;
         }
@@ -261,28 +261,28 @@ class vector extends nd {
     public function minium(\Np\vector $vector): vector {
         if ($this->checkShape($this, $vector) && $this->checkDtype($this, $vector)) {
             $v = new self($this->ndim, $this->dtype);
-            for($i = 0; $i<$v->ndim; ++$i) {
-                $v->data[$i] = min($this->data[$i],$vector->data[$i]);
+            for ($i = 0; $i < $v->ndim; ++$i) {
+                $v->data[$i] = min($this->data[$i], $vector->data[$i]);
             }
             return $v;
         }
     }
-    
+
     /**
      * Return the index of the minimum element in the vector.
      * 
      * @return int
      */
-    public function argMin():int {
+    public function argMin(): int {
         return blas::min($this);
     }
-    
+
     /**
      * Return the index of the maximum element in the vector.
      * 
      * @return int
      */
-    public function argMx():int {
+    public function argMx(): int {
         return blas::max($this);
     }
 
@@ -300,7 +300,7 @@ class vector extends nd {
     }
 
     /**
-     * 
+     * The sum of the vector.
      * @return float
      */
     public function sum(): float {
@@ -430,7 +430,7 @@ class vector extends nd {
      * @return vector
      */
     protected function multiplyVector(\Np\vector $vector): vector {
-        if ($this->checkShape($this,$vector) && $this->checkDtype($this,$vector)) {
+        if ($this->checkShape($this, $vector) && $this->checkDtype($this, $vector)) {
             $vr = self::factory($this->col, $this->dtype);
             for ($i = 0; $i < $this->col; ++$i) {
                 $vr->data[$i] = $this->data[$i] * $vector->data[$i];
@@ -512,11 +512,43 @@ class vector extends nd {
 
     /**
      * 
+     * @param int|float|\Np\matrix|\Np\vector $d
+     * @return matrix|vector
+     */
+    public function pow(int|float|\Np\matrix|\Np\vector $d): matrix|vector {
+        if ($d instanceof matrix) {
+            return $this->powMatrix($d);
+        } elseif ($d instanceof vector) {
+            return $this->powVector($d);
+        } else {
+            return $this->powScalar($d);
+        }
+    }
+
+    /**
+     * 
+     * @param \Np\matrix $m
+     * @return matrix
+     */
+    protected function powMatrix(\Np\matrix $m): matrix {
+        if ($this->checkDimensions($this, $m) && $this->checkDtype($this, $m)) {
+            $ar = matrix::factory($m->row, $m->col, $this->dtype);
+            for ($i = 0; $i < $m->row; ++$i) {
+                for ($j = 0; $j < $m - col; ++$j) {
+                    $ar->data[$i * $m->col + $j] = $m->data[$i * $m->col + $j] ** $this->data[$j];
+                }
+            }
+            return $ar;
+        }
+    }
+
+    /**
+     * 
      * @param \Np\vector $vector
      * @return vector
      */
-    public function powVector(\Np\vector $vector): vector {
-        if ($this->checkShape($this, $vector) && $this->checkDtype($this,  $vector)) {
+    protected function powVector(\Np\vector $vector): vector {
+        if ($this->checkShape($this, $vector) && $this->checkDtype($this, $vector)) {
             $vr = self::factory($this->col, $this->dtype);
             for ($i = 0; $i < $this->col; ++$i) {
                 $vr->data[$i] = $this->data[$i] ** $vector->data[$i];
@@ -527,16 +559,70 @@ class vector extends nd {
 
     /**
      * 
+     * @param int|float $s
+     */
+    protected function powScalar(int|float $s) {
+        $v = $this->copyVector();
+        for ($i = 0; $i < $this->col; ++$i) {
+            $v->data[$i] = $v->data[$i] ** $s;
+        }
+    }
+
+    /**
+     * 
+     * @param int|float|\Np\matrix|\Np\vector $d
+     * @return matrix|vector
+     */
+    public function mod(int|float|\Np\matrix|\Np\vector $d): matrix|vector {
+        if ($d instanceof matrix) {
+            return $this->powMatrix($d);
+        } elseif ($d instanceof vector) {
+            return $this->powVector($d);
+        } else {
+            return $this->powScalar($d);
+        }
+    }
+
+    /**
+     * 
+     * @param \Np\matrix $m
+     * @return matrix
+     */
+    protected function modMatrix(\Np\matrix $m): matrix {
+        if ($this->checkDimensions($this, $m) && $this->checkDtype($this, $m)) {
+            $ar = matrix::factory($m->row, $m->col, $this->dtype);
+            for ($i = 0; $i < $m->row; ++$i) {
+                for ($j = 0; $j < $m - col; ++$j) {
+                    $ar->data[$i * $m->col + $j] = $m->data[$i * $m->col + $j] % $this->data[$j];
+                }
+            }
+            return $ar;
+        }
+    }
+
+    /**
+     * 
      * @param \Np\vector $vector
      * @return vector
      */
-    public function modVector(\Np\vector $vector): vector {
+    protected function modVector(\Np\vector $vector): vector {
         if ($this->checkShape($this, $vector) && $this->checkDtype($this, $vector)) {
             $vr = self::factory($this->col, $this->dtype);
             for ($i = 0; $i < $this->col; ++$i) {
                 $vr->data[$i] = $this->data[$i] % $vector->data[$i];
             }
             return $vr;
+        }
+    }
+
+    /**
+     * 
+     * @param int|float $s
+     */
+    protected function modScalar(int|float $s) {
+        $v = $this->copyVector();
+        for ($i = 0; $i < $this->col; ++$i) {
+            $v->data[$i] = $v->data[$i] % $s;
         }
     }
 
@@ -578,7 +664,7 @@ class vector extends nd {
      * @return vector
      */
     protected function subtractVector(\Np\vector $vector): vector {
-        if ($this->checkShape($this,$vector) && $this->checkDtype($this,$vector)) {
+        if ($this->checkShape($this, $vector) && $this->checkDtype($this, $vector)) {
             $vr = self::factory($this->col, $this->dtype);
             for ($i = 0; $i < $this->col; ++$i) {
                 $vr->data[$i] = $this->data[$i] - $vector->data[$i];
@@ -611,6 +697,145 @@ class vector extends nd {
     }
 
     /**
+     * Run a function over all of the elements in the vector. 
+     * 
+     * @param callable $func
+     * @return vector
+     */
+    public function map(callable $func): vector {
+        $vr = self::factory($this->col, $this->dtype);
+        for ($i = 0; $i < $this->col; ++$i) {
+            $vr->data[$i] = $func($this->data[$i]);
+        }
+        return $vr;
+    }
+
+    public function log(float $b = M_E): vector {
+        $vr = $this->copyVector();
+        for ($i = 0; $i < $vr->col; ++$i) {
+            log($vr->data[$i], $b);
+        }
+        return $vr;
+    }
+
+    public function max() {
+        return $this->data[blas::max($this)];
+    }
+
+    public function min() {
+        $this->data[blas::min($this)];
+    }
+
+    public function abs(): vector {
+        return $this->map('abs');
+    }
+
+    public function sqrt(): vector {
+        return $this->map('sqrt');
+    }
+
+    public function exp(): vector {
+        return $this->map('exp');
+    }
+
+    public function exp1(): vector {
+        return $this->map('exp1');
+    }
+
+    public function log1p(): vector {
+        return $this->map('log1p');
+    }
+
+    public function sin(): vector {
+        return $this->map('sin');
+    }
+
+    public function asin(): vector {
+        return $this->map('asin');
+    }
+
+    public function cos(): vector {
+        return $this->map('cos');
+    }
+
+    public function acos(): vector {
+        return $this->map('acos');
+    }
+
+    public function tan(): vector {
+        return $this->map('tan');
+    }
+
+    public function atan(): vector {
+        return $this->map('atan');
+    }
+
+    public function radToDeg(): vector {
+        return $this->map('rad2deg');
+    }
+
+    public function degToRad(): vector {
+        return $this->map('deg2rad');
+    }
+
+    public function floor(): vector {
+        return $this->map('floor');
+    }
+
+    public function ceil(): vector {
+        return $this->map('ceil');
+    }
+    
+    /**
+     * 
+     * @param float $min
+     * @param float $max
+     * @return vector
+     */
+    public function clip(float $min, float $max) : vector {
+        if ($min > $max) {
+            self::_invalidArgument('Minimum cannot be greater than maximum.');
+        }
+
+        $vr = self::factory($this->col, $this->dtype);
+        
+        for($i = 0; $i < $this->col; ++$i) {
+            if ($this->data[$i] > $max) {
+                $vr->data[$i] = $max;
+                continue;
+            }
+            if ($this->data[$i] < $min) {
+                $vr->data[$i] = $min;
+                continue;
+            }
+        }
+
+        return $vr;
+    }
+    
+    public function clipUpper(float $min) : vector {
+        $vr = self::factory($this->col, $this->dtype);
+        for($i = 0; $i < $this->col; ++$i) {
+            if ($this->data[$i] > $min) {
+                $vr->data[$i] = $min;
+                continue;
+            }
+        }
+        return $vr;
+    }
+    
+    public function clipLower(float $min) : vector {
+        $vr = self::factory($this->col, $this->dtype);
+        for($i = 0; $i < $this->col; ++$i) {
+            if ($this->data[$i] < $min) {
+                $vr->data[$i] = $min;
+                continue;
+            }
+        }
+        return $vr;
+    }
+    
+    /**
      * Return the inner product of two vectors.
      *
      * @param \Np\vector $vector
@@ -620,12 +845,82 @@ class vector extends nd {
         return $this->dotVector($vector);
     }
 
-    public function l1_norm() {
-        
+    /**
+     * Calculate the L1 norm of the vector.
+     * @return float
+     */
+    public function normL1(): float {
+        return $this->abs()->sum();
     }
 
-    public function l2_norm() {
-        
+    public function normL2() {
+        return sqrt($this->square()->sum());
+    }
+
+    public function normMax() {
+        return $this->abs()->max();
+    }
+
+    public function normP(float $p = 2.5) {
+        if ($p <= 0.0) {
+            self::_invalidArgument('P must be greater than 0.0 !');
+        }
+        return $this->abs()->powScalar($p)->sum() ** (1.0 / $p);
+    }
+
+    /**
+     * Return the reciprocal of the vector element-wise.
+     *
+     * @return self
+     */
+    public function reciprocal(): vector {
+        return self::ones($this->col, $this->dtype)
+                        ->divideVector($this);
+    }
+    
+    /**
+     * 
+     * @return int|float
+     */
+    public function mean():int|float {
+        return $this->sum()/ $this->col;
+    }
+    
+    /**
+     * 
+     * @return int|float
+     */
+    public function median():int|float {
+        $mid = intdiv($this->col, 2);
+
+        $a = $this->copyVector()->sort();
+        if ($this->col % 2 === 1) {
+            $median = $a->data[$mid];
+        } else {
+            $median = ($a->data[$mid - 1] + $a->data[$mid]) / 2.;
+        }
+        return $median;
+    }
+    
+    public function variance($mean = null)
+    {
+        if (is_null($mean)) {
+            $mean = $this->mean();
+        }
+
+        $sd = $this->substractScalar($mean)
+            ->square()
+            ->sum();
+
+        return $sd / $this->col;
+    }
+
+    /**
+     * 
+     * @return vector
+     */
+    public function square(): vector {
+        return $this->multiplyVector($this);
     }
 
     /**
@@ -693,7 +988,7 @@ class vector extends nd {
     public function __toString() {
         return (string) $this->printVector();
     }
-    
+
     protected function __construct(public int $col, int $dtype = self::FLOAT) {
         if ($this->col < 1) {
             throw new invalidArgumentException('* To create Numphp/Vector col must be greater than 0!, Op Failed! * ');
