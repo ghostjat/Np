@@ -153,7 +153,7 @@ class vector extends nd {
      * @return vector
      */
     public static function range(int|float $start, int|float $end, int|float $interval = 1, int $dtype = self::FLOAT): vector {
-        return self::ar(range($start, $end, $interval, $dtype));
+        return self::ar(range($start, $end, $interval), $dtype);
     }
 
     /**
