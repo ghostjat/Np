@@ -1,19 +1,62 @@
-The interface is not final and may change in the future. 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ghostjat/Np/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/ghostjat/Np/?branch=main)
+![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/ghostjat/Np)
+[![Build Status](https://scrutinizer-ci.com/g/ghostjat/Np/badges/build.png?b=main)](https://scrutinizer-ci.com/g/ghostjat/Np/build-status/main)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/ghostjat/Np/badges/code-intelligence.svg?b=main)](https://scrutinizer-ci.com/code-intelligence)
+![GitHub contributors](https://img.shields.io/github/contributors/ghostjat/Np)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ghostjat/Np)
+![GitHub last commit](https://img.shields.io/github/last-commit/ghostjat/Np)
+![Packagist Version](https://img.shields.io/packagist/v/ghostjat/Np)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ghostjat/Np)
+![Lines of code](https://img.shields.io/tokei/lines/github/ghostjat/Np)
+![GitHub top language](https://img.shields.io/github/languages/top/ghostjat/Np)
+![Np](https://github.com/ghostjat/numphp/blob/main/np.png)
 
-Requirements
+## Description
+   -----------
+Lite, Fast &amp; Memory Efficient *Mathematical PHP library for scientific computing*
+
+Np(numphp) is a library that provides objects for computing large sets of numbers in [PHP](https://php.net).
+
+## Installation
+Install [Np](https://packagist.org/packages/ghostjat/np) into your project with [Composer](https://getcomposer.org/):
+
+```sh
+$ composer require ghostjat/np
+```
+##Sample Code
+```php
+require __DIR__ . '/../vendor/autoload.php';
+use Np\matrix;
+
+$ta = matrix::randn(1000, 1000);    
+$tb = matrix::randn(1000, 1000); // to generate random 2d matrix
+$ta->dot($tb);                  // do a dot operation on given matrix
+$ta->getMemory();              // get memory use
+$ta->time();                  // get time
+/**
+ * 7.7mb
+ * Time-Consumed:- 0.18390893936157
+ */
+```
+*Synopsis*
+--------
+WARNING:  
+This module is in its early stages and should be considered a Work in Progress.The interface is not final and may change in the future. 
+
+*Requirements*
 ------------
-- [PHP](https://php.net) 8+ with ffi & #libblas, #liblapacke   
+- [PHP](https://php.net) 8+ 64bit with ffi & #libblas, #liblapacke   
 
 Make sure you have all the necessary tools installed such as FFI, libblas, liblapacke.
 
-Performance
+*Performance*
 -----------
 
 System Conf:- Intel(R) Core(TM) i3-2370M CPU @ 2.40GHz 64bit 
 Memory:- 8GB
 php:- 8.0.5 64bit
 
-Current Benchmarks of this library
+*Current Benchmarks of this library*
 -----------------------------------
 ![Benckmark](https://github.com/ghostjat/numphp/blob/main/npbm.png)
 
