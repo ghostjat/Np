@@ -10,7 +10,7 @@
 ![Lines of code](https://img.shields.io/tokei/lines/github/ghostjat/Np)
 ![GitHub top language](https://img.shields.io/github/languages/top/ghostjat/Np)
 <p align="center">
-  <img src="https://github.com/ghostjat/numphp/blob/main/numphp.png">
+  <img src="https://github.com/ghostjat/numphp/blob/main/np.png">
 </p>
 ## Description
    -----------
@@ -61,7 +61,7 @@ CPU:- Intel(R) Core(TM) i3-2370M CPU @ 2.40GHz 64bit
 MEM:- 8GB
 
 <p align="center">
-  <img src="https://github.com/ghostjat/numphp/blob/main/Numphp Benchmarks.png">
+  <img src="https://github.com/ghostjat/numphp/blob/main/npbm.png">
 </p>
 
 Current Benchmark
