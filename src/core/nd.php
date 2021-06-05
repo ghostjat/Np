@@ -28,7 +28,7 @@ class nd {
     const FLOAT = 1, DOUBLE = 2, INT = 3;
 
     public $data;
-    public static $_time = null, $_mem = null;
+    protected $_time = null, $_mem = null;
     
     public function checkDimensions(\Np\matrix|\Np\vector $Obj1, \Np\matrix $Obj2) {
         if($Obj1->col == $Obj2->row){
@@ -64,6 +64,8 @@ class nd {
     }
 
     protected function __construct(public int $ndim, public int $dtype = self::FLOAT) {
+        $this->getMemory();
+        $this->time();
         switch ($this->dtype) {
             case self::FLOAT:
                 $this->data = self::_ndFloat($this->ndim);
@@ -110,22 +112,22 @@ class nd {
     /**
      * set Timer, get total time 
      */
-    public static function time() {
-        if (is_null(self::$_time)) {
-            self::$_time = microtime(true);
+    public function time() {
+        if (is_null($this->_time)) {
+            $this->_time = microtime(true);
         } else {
-            echo 'Time-Consumed:- ' . (microtime(true) - self::$_time) . PHP_EOL;
+            echo 'Time-Consumed:- ' . (microtime(true) - $this->_time) . PHP_EOL;
         }
     }
 
     /**
      * set memory dog, get total memory
      */
-    public static function getMemory() {
-        if (is_null(self::$_mem)) {
-            self::$_mem = memory_get_usage();
+    public function getMemory() {
+        if (is_null($this->_mem)) {
+            $this->_mem = memory_get_usage();
         } else {
-            $memory = memory_get_usage() - self::$_mem;
+            $memory = memory_get_usage() - $this->_mem;
             $unit = ['b', 'kb', 'mb', 'gb', 'tb', 'pb'];
             echo round($memory / pow(1024, ($i = floor(log($memory, 1024)))), 2) . $unit[$i] . PHP_EOL;
         }
