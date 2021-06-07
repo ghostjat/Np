@@ -33,9 +33,6 @@
         "ext-ffi": "*"
     },
     
-    "require-dev": {
-        "phpunit/phpunit": "^9"
-    },
     
     "autoload-dev": {
         "psr-4": {
