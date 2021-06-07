@@ -24,7 +24,7 @@ use Np\exceptions\{
  * @copyright (c) 2020-2021, Shubham Chaudhary
  * 
  */
-class vector extends nd {
+ class vector extends nd {
 
     /**
      * Factory method to build a new vector.
@@ -951,20 +951,26 @@ class vector extends nd {
         }
     }
 
-    public function asMatrix(): matrix {
-        $size = (int) sqrt($this->col);
-        $ar = matrix::factory($size, $size, $this->dtype);
-        for ($i = 0; $i < $ar->ndim; ++$i) {
-            $ar->data[$i] = $this->data[$i];
+    /**
+     * Return a matrix in the shape specified.
+     * @param int $row
+     * @param int $col
+     * @return matrix
+     */
+    public function reshape(int $row, int $col): matrix {
+        if($this->col != $row * $col) {
+            self::_dimensionaMisMatchErr('given dimenssion is not valid for current bufferData');
         }
+        $ar = matrix::factory($row, $col, $this->dtype);
+        $ar->data = $this->data;
         return $ar;
     }
 
     /**
-     * get the shape of matrix
+     * get the size of vector
      * @return int
      */
-    public function getShape(): int {
+    public function getSize(): int {
         return $this->col;
     }
 

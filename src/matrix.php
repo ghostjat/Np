@@ -160,7 +160,6 @@ class matrix extends nd{
 
     /**
      * Generate a m x n matrix with elements from a Poisson distribution.
-     *
      * @param int $row
      * @param int $col
      * @param float $lambda
@@ -427,24 +426,6 @@ class matrix extends nd{
             }
             return $ar;
         }
-    }
-
-    /**
-     * 
-     * @param int|float $scalar
-     * @return matrix
-     */
-    public function scale(int|float $scalar): matrix {
-        if ($scalar == 0) {
-            return self::zeros($this->row, $this->col, $this->dtype);
-        }
-
-        $ar = $this->copyMatrix();
-        for ($i = 0; $i < $this->ndim; ++$i) {
-            $ar->data[$i] *= $scalar;
-        }
-
-        return $ar;
     }
 
     /**
@@ -816,15 +797,62 @@ class matrix extends nd{
             $this->data[$i * $this->row + $c2] = $tmp;
         }
     }
+    
+    /**
+     * 
+     * @param int|float $scalar
+     * @return matrix
+     */
+    public function scale(int|float $scalar): matrix {
+        if ($scalar == 0) {
+            return self::zeros($this->row, $this->col, $this->dtype);
+        }
 
+        $ar = $this->copyMatrix();
+        for ($i = 0; $i < $this->ndim; ++$i) {
+            $ar->data[$i] *= $scalar;
+        }
+
+        return $ar;
+    }
+    
     /**
      * scale all the elements of a row 
      * @param int $row
-     * @param float $c
+     * @param int|float $c
      */
-    public function scaleRow(int $row, float $c) {
+    public function scaleRow(int $row, int|float $c) {
         for ($i = 0; $i < $this->col; ++$i) {
             $this->data[$row * $this->col + $i] *= $c;
+        }
+    }
+    
+    /**
+     * scale all the elements of 
+     * @param int $col
+     * @param int|float $c
+     */
+    public function scaleCol(int $col, int|float $c) {
+        for ($i = 0; $i < $this->row; ++$i) {
+            $this->data[$i * $this->col + $col] *= $c;
+        }
+    }
+    
+    /**
+     * Scale digonally 
+     * @param int|float $c
+     * @param bool $lDig
+     */
+    public function scaleDigonalCol(int|float $c, bool $lDig = true) {
+        if($lDig){
+            for ($i = 0; $i < $this->row ; ++$i) {
+                $this->data[$i * $this->col + $i] *= $c;
+            }
+        }
+        else{
+            for ($i = $this->row; $i > 0 ; --$i) {
+                $this->data[$i * $this->col - $i] *= $c;
+            }
         }
     }
 
@@ -1045,6 +1073,14 @@ class matrix extends nd{
             }
         }
     }
+    
+    /**
+     * get the matrix data type
+     * @return type
+     */
+    public function getDtype() {
+        return $this->dtype;
+    }
 
     /**
      * get the shape of matrix
@@ -1059,11 +1095,11 @@ class matrix extends nd{
      * @return int
      */
     public function getSize(): int {
-        return $this->row * $this->col;
+        return $this->ndim;
     }
 
     /**
-     * 
+     * is matrix squred
      * @return bool
      */
     public function isSquare(): bool {
@@ -1071,10 +1107,6 @@ class matrix extends nd{
             return true;
         }
         return false;
-    }
-
-    public function getDtype() {
-        return $this->dtype;
     }
 
     /**
@@ -1623,6 +1655,21 @@ class matrix extends nd{
         unset($ar);
         return true;
     }
+    
+    /**
+     * Reshape current matrix.
+     * @param int $row
+     * @param int $col
+     * @return matrix
+     */
+    public function reshape(int $row, int $col):matrix {
+        if($this->ndim != $row * $col) {
+            self::_dimensionaMisMatchErr('given dimenssion is not valid for current bufferData');
+        }
+        $this->row = $row;
+        $this->col = $col;
+        return $this;
+    }
 
     /**
      * print the matrix in consol
@@ -1641,7 +1688,7 @@ class matrix extends nd{
         return (string) $this->printMatrix();
     }
 
-    protected function flattenArray(array $ar) {
+    private function flattenArray(array $ar) {
         if (is_array($ar) && is_array($ar[0])) {
             $a = [];
             foreach ($ar as $y => $value) {
