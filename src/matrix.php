@@ -1076,9 +1076,9 @@ class matrix extends nd{
     
     /**
      * get the matrix data type
-     * @return type
+     * @return int
      */
-    public function getDtype() {
+    public function getDtype():int {
         return $this->dtype;
     }
 
