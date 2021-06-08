@@ -23,7 +23,7 @@ class blas {
 
     public static function init() {
         if (is_null(self::$ffi_blas)) {
-            self::$ffi_blas = \FFI::load(__DIR__ . '/blas.h');
+            self::$ffi_blas = \FFI::scope('blas');
         }
         return self::$ffi_blas;
     }

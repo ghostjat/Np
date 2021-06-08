@@ -21,7 +21,7 @@ class lapack {
 
     public static function init() {
         if (is_null(self::$ffi_lapack)) {
-            self::$ffi_lapack = \FFI::load(__DIR__ . '/lapack.h');
+            self::$ffi_lapack = \FFI::scope('lapack');
         }
         return self::$ffi_lapack;
     }
