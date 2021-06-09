@@ -25,7 +25,8 @@ use Np\decompositions\cholesky;
  * @copyright (c) 2020-2021, Shubham Chaudhary
  */
 class matrix extends nd{
-
+    
+    use ops,linAlg;
     /**
      * create empty 2d matrix for given data type
      * @param int $row  num of rows 
@@ -244,38 +245,6 @@ class matrix extends nd{
     }
 
     /**
-     * Return the element-wise minimum of two matrices.
-     * 
-     * @param \Np\matrix $m
-     * @return matrix
-     */
-    public function minimum(matrix $m): matrix {
-        if ($this->checkShape($this,$m)) {
-            $ar = self::factory($this->row, $this->col, $this->dtype);
-            for ($i = 0; $i < $this->ndim; ++$i) {
-                $ar->data[$i] = min($this->data[$i], $m->data[$i]);
-            }
-            return $ar;
-        }
-    }
-
-    /**
-     * Return the element-wise maximum of two matrices.
-     * 
-     * @param \Np\matrix $m
-     * @return matrix
-     */
-    public function maximum(matrix $m): matrix {
-        if ($this->checkShape($this, $m)) {
-            $ar = self::factory($this->row, $this->col, $this->dtype);
-            for ($i = 0; $i < $this->ndim; ++$i) {
-                $ar->data[$i] = max($this->data[$i], $m->data[$i]);
-            }
-            return $ar;
-        }
-    }
-
-    /**
      * 2D convolution between a matrix ma and kernel kb, with a given stride.
      * @param \Np\matrix $m
      * @param int $stride
@@ -332,50 +301,7 @@ class matrix extends nd{
             }
         }
     }
-
-    //----------------Linear Algebra Opreations-------------------------------
-
-    /**
-     *  
-     * get dot product of m.m or m.v
-     * 
-     * @param \Np\matrix|\Np\vector $d
-     * @return matrix|vector
-     */
-    public function dot(matrix|vector $d): matrix|vector {
-        if ($d instanceof self) {
-            return $this->dotMatrix($d);
-        } else {
-            return $this->dotVector($d);
-        }
-    }
-
-    /**
-     * get matrix & matrix dot product
-     * @param \Np\matrix $matrix
-     * @return \Np\matrix
-     */
-    protected function dotMatrix(matrix $matrix): matrix {
-        if ($this->checkDtype($this, $matrix) && $this->checkDimensions($this,$matrix)) {
-            $ar = self::factory($this->row, $this->col, $this->dtype);
-            blas::gemm($this, $matrix, $ar);
-            return $ar;
-        }
-    }
-
-    /**
-     * get dot product of matrix & a vector
-     * @param \Np\vector $vector
-     * @return \Np\vector
-     */
-    protected function dotVector(vector $vector): vector {
-        if ($this->checkDtype($this, $vector) && $this->checkDimensions($vector, $this)) {
-            $mvr = vector::factory($this->col, $this->dtype);
-            blas::gemv($this, $vector, $mvr);
-            return $mvr;
-        }
-    }
-
+    
     //---------------Arthmetic Opreations-----------------------------------
 
     /**
@@ -647,7 +573,7 @@ class matrix extends nd{
     }
 
     protected function powScalar(int|float $s): matrix {
-        $ar = $this->copyMatrix();
+        $ar = $this->copy();
         for ($i = 0; $i < $this->ndim; ++$i) {
             $ar->data[$i] **= $s;
         }
@@ -692,7 +618,7 @@ class matrix extends nd{
     }
 
     protected function modScalar(int|float $s): matrix {
-        $ar = $this->copyMatrix();
+        $ar = $this->copy();
         for ($i = 0; $i < $this->ndim; ++$i) {
             $ar->data[$i] %= $s;
         }
@@ -808,7 +734,7 @@ class matrix extends nd{
             return self::zeros($this->row, $this->col, $this->dtype);
         }
 
-        $ar = $this->copyMatrix();
+        $ar = $this->copy();
         for ($i = 0; $i < $this->ndim; ++$i) {
             $ar->data[$i] *= $scalar;
         }
@@ -984,14 +910,6 @@ class matrix extends nd{
      */
     public function rref(): matrix {
         return rref::factory($this);
-    }
-
-    /**
-     * make copy of the matrix
-     * @return \Np\matrix
-     */
-    public function copyMatrix(): matrix {
-        return clone $this;
     }
 
     /**
@@ -1188,57 +1106,7 @@ class matrix extends nd{
         }
     }
 
-    /**
-     *
-     * Compute the multiplicative inverse of the matrix.
-     * @return matrix
-     */
-    public function inverse(): matrix {
-        if (!$this->isSquare()) {
-            self::_err('Error::invalid Size of matrix!');
-        }
-        $imat = $this->copyMatrix();
-        $ipiv = vector::factory($this->row, vector::INT);
-        $lp = lapack::getrf($imat, $ipiv);
-        if ($lp != 0) {
-            return null;
-        }
-        $lp = lapack::getri($imat, $ipiv);
-        if ($lp != 0) {
-            return null;
-        }
-        unset($ipiv);
-        unset($lp);
-        return $imat;
-    }
     
-    /**
-     * Compute the (Moore-Penrose) pseudo inverse of the general matrix.
-     * @return matrix|null
-     */
-    public function pseudoInverse(): matrix|null {
-        $k = min($this->row, $this->col);
-        $s = vector::factory($k, $this->dtype);
-        $u = self::factory($this->row, $this->row, $this->dtype);
-        $vt = self::factory($this->col, $this->col, $this->dtype);
-        $imat = $this->copyMatrix();
-        $lp = lapack::gesdd($imat, $s, $u, $vt);
-        if ($lp != 0) {
-            return null;
-        }
-        for ($i = 0; $i < $k; ++$i) {
-            blas::scale(1.0 / $s->data[$i], $vt->rowAsVector($i));
-        }
-        unset($imat);
-        unset($k);
-        unset($lp);
-        unset($s);
-        $mr = self::factory($this->col, $this->row, $this->dtype);
-        blas::gemm($vt, $u, $mr);
-        unset($u);
-        unset($vt);
-        return $mr;
-    }
 
     /**
      * Compute the singular value decomposition of a matrix and 
@@ -1302,87 +1170,6 @@ class matrix extends nd{
      */
     public function normFrob(): float {
         return $this->normL2();
-    }
-
-    /**
-     * Run a function over all of the elements in the matrix. 
-     * @param callable $func
-     * @return \Np\matrix
-     */
-    public function map(callable $func): matrix {
-        $ar = self::factory($this->row, $this->col, $this->dtype);
-        for ($i = 0; $i < $this->ndim; ++$i) {
-            $ar->data[$i] = $func($this->data[$i]);
-        }
-        return $ar;
-    }
-
-    public function abs(): matrix {
-        return $this->map('abs');
-    }
-
-    public function sqrt(): matrix {
-        return $this->map('sqrt');
-    }
-
-    public function exp(): matrix {
-        return $this->map('exp');
-    }
-
-    public function exp1(): matrix {
-        return $this->map('exp1');
-    }
-
-    public function log(float $b = M_E): matrix {
-        $ar = $this->copyMatrix();
-        for ($i = 0; $i < $ar->ndim; ++$i) {
-            log($ar->data[$i], $b);
-        }
-        return $ar;
-    }
-
-    public function log1p(): matrix {
-        return $this->map('log1p');
-    }
-
-    public function sin(): matrix {
-        return $this->map('sin');
-    }
-
-    public function asin(): matrix {
-        return $this->map('asin');
-    }
-
-    public function cos(): matrix {
-        return $this->map('cos');
-    }
-
-    public function acos(): matrix {
-        return $this->map('acos');
-    }
-
-    public function tan(): matrix {
-        return $this->map('tan');
-    }
-
-    public function atan(): matrix {
-        return $this->map('atan');
-    }
-
-    public function radToDeg(): matrix {
-        return $this->map('rad2deg');
-    }
-
-    public function degToRad(): matrix {
-        return $this->map('deg2rad');
-    }
-
-    public function floor(): matrix {
-        return $this->map('floor');
-    }
-
-    public function ceil(): matrix {
-        return $this->map('ceil');
     }
 
     /**
@@ -1455,65 +1242,6 @@ class matrix extends nd{
 
         return $b->dot($b->transpose())
                         ->divideScalar($this->row);
-    }
-
-    /**
-     * Clip the elements in the matrix to be between given minimum and maximum
-     * and return a new matrix.
-     * 
-     * @param float $min
-     * @param float $max
-     * @return matrix
-     */
-    public function clip(float $min, float $max): matrix {
-        $ar = self::factory($this->row, $this->col, $this->dtype);
-        for ($i = 0; $i < $this->ndim; ++$i) {
-            if ($this->data[$i] > $max) {
-                $ar->data[$i] = $max;
-                continue;
-            }
-            if ($this->data[$i] < $min) {
-                $ar->data[$i] = $min;
-                continue;
-            }
-            $ar->data[$i] = $this->data[$i];
-        }
-        return $ar;
-    }
-
-    /**
-     * Clip the matrix to be lower bounded by a given minimum.
-     * @param float $min
-     * @return matrix
-     */
-    public function clipLower(float $min): matrix {
-        $ar = self::factory($this->row, $this->col, $this->dtype);
-        for ($i = 0; $i < $this->ndim; ++$i) {
-            if ($this->data[$i] < $min) {
-                $ar->data[$i] = $min;
-                continue;
-            }
-            $ar->data[$i] = $this->data[$i];
-        }
-        return $ar;
-    }
-
-    /**
-     * Clip the matrix to be upper bounded by a given maximum.
-     *
-     * @param float $max
-     * @return matrix
-     */
-    public function clipUpper(float $max): matrix {
-        $ar = self::factory($this->row, $this->col, $this->dtype);
-        for ($i = 0; $i < $this->ndim; ++$i) {
-            if ($this->data[$i] > $max) {
-                $ar->data[$i] = $max;
-                continue;
-            }
-            $ar->data[$i] = $this->data[$i];
-        }
-        return $ar;
     }
 
     /**
@@ -1654,21 +1382,6 @@ class matrix extends nd{
         }
         unset($ar);
         return true;
-    }
-    
-    /**
-     * Reshape current matrix.
-     * @param int $row
-     * @param int $col
-     * @return matrix
-     */
-    public function reshape(int $row, int $col):matrix {
-        if($this->ndim != $row * $col) {
-            self::_dimensionaMisMatchErr('given dimenssion is not valid for current bufferData');
-        }
-        $this->row = $row;
-        $this->col = $col;
-        return $this;
     }
 
     /**

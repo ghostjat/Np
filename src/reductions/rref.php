@@ -24,7 +24,7 @@ class rref {
      */
     public static function factory(\Np\matrix $m): matrix {
         $lead = 0;
-        $ar = $m->copyMatrix();
+        $ar = $m->copy();
         for ($r = 0; $r < $ar->row; ++$r) {
             if ($lead >= $ar->col)
                 break; {

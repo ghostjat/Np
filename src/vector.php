@@ -25,6 +25,7 @@ use Np\exceptions\{
  * 
  */
  class vector extends nd {
+     use ops, linAlg;
 
     /**
      * Factory method to build a new vector.
@@ -227,47 +228,7 @@ use Np\exceptions\{
         $a[] = $max;
         return self::ar($a, $dtype);
     }
-
-    /**
-     * make a copy of vector
-     * @return vector
-     */
-    public function copyVector(): vector {
-        return clone $this;
-    }
-
-    /**
-     * Return the element-wise maximum of given vector with current vector
-     * 
-     * @param \Np\vector $vector
-     * @return vector
-     */
-    public function maximum(\Np\vector $vector): vector {
-        if ($this->checkShape($this, $vector) && $this->checkDtype($this, $vector)) {
-            $v = new self($this->ndim, $this->dtype);
-            for ($i = 0; $i < $v->ndim; ++$i) {
-                $v->data[$i] = max($this->data[$i], $vector->data[$i]);
-            }
-            return $v;
-        }
-    }
-
-    /**
-     * Return the element-wise minium of given vector with current vector
-     * 
-     * @param \Np\vector $vector
-     * @return vector
-     */
-    public function minium(\Np\vector $vector): vector {
-        if ($this->checkShape($this, $vector) && $this->checkDtype($this, $vector)) {
-            $v = new self($this->ndim, $this->dtype);
-            for ($i = 0; $i < $v->ndim; ++$i) {
-                $v->data[$i] = min($this->data[$i], $vector->data[$i]);
-            }
-            return $v;
-        }
-    }
-
+    
     /**
      * Return the index of the minimum element in the vector.
      * 
@@ -282,21 +243,8 @@ use Np\exceptions\{
      * 
      * @return int
      */
-    public function argMx(): int {
+    public function argMax(): int {
         return blas::max($this);
-    }
-
-    /**
-     * vector-vector dot product
-     * @param \Np\vector $vector
-     * @param int $incX
-     * @param int $incY
-     * @return vector
-     */
-    public function dotVector(\Np\vector $v) {
-        if ($this->checkDtype($this, $v)) {
-            return blas::dot($this, $v);
-        }
     }
 
     /**
@@ -445,7 +393,7 @@ use Np\exceptions\{
      * @return vector
      */
     protected function multiplyScalar(int|float $s): vector {
-        $vr = $this->copyVector();
+        $vr = $this->copy();
         blas::scale($s, $vr);
         return $vr;
     }
@@ -503,7 +451,7 @@ use Np\exceptions\{
      * @return vector
      */
     protected function addScalar(int|float $s): vector {
-        $vr = $this->copyVector();
+        $vr = $this->copy();
         for ($i = 0; $i < $this->col; ++$i) {
             $vr->data[$i] += $s;
         }
@@ -563,7 +511,7 @@ use Np\exceptions\{
      * @return vector
      */
     protected function powScalar(int|float $s): vector {
-        $v = $this->copyVector();
+        $v = $this->copy();
         for ($i = 0; $i < $this->col; ++$i) {
             $v->data[$i] = $v->data[$i] ** $s;
         }
@@ -622,7 +570,7 @@ use Np\exceptions\{
      * @param int|float $s
      */
     protected function modScalar(int|float $s) {
-        $v = $this->copyVector();
+        $v = $this->copy();
         for ($i = 0; $i < $this->col; ++$i) {
             $v->data[$i] = $v->data[$i] % $s;
         }
@@ -698,143 +646,12 @@ use Np\exceptions\{
         return convolve::conv1D($this, $v, $stride);
     }
 
-    /**
-     * Run a function over all of the elements in the vector. 
-     * 
-     * @param callable $func
-     * @return vector
-     */
-    public function map(callable $func): vector {
-        $vr = self::factory($this->col, $this->dtype);
-        for ($i = 0; $i < $this->col; ++$i) {
-            $vr->data[$i] = $func($this->data[$i]);
-        }
-        return $vr;
-    }
-
-    public function log(float $b = M_E): vector {
-        $vr = $this->copyVector();
-        for ($i = 0; $i < $vr->col; ++$i) {
-            log($vr->data[$i], $b);
-        }
-        return $vr;
-    }
-
     public function max() {
         return $this->data[blas::max($this)];
     }
 
     public function min() {
         $this->data[blas::min($this)];
-    }
-
-    public function abs(): vector {
-        return $this->map('abs');
-    }
-
-    public function sqrt(): vector {
-        return $this->map('sqrt');
-    }
-
-    public function exp(): vector {
-        return $this->map('exp');
-    }
-
-    public function exp1(): vector {
-        return $this->map('exp1');
-    }
-
-    public function log1p(): vector {
-        return $this->map('log1p');
-    }
-
-    public function sin(): vector {
-        return $this->map('sin');
-    }
-
-    public function asin(): vector {
-        return $this->map('asin');
-    }
-
-    public function cos(): vector {
-        return $this->map('cos');
-    }
-
-    public function acos(): vector {
-        return $this->map('acos');
-    }
-
-    public function tan(): vector {
-        return $this->map('tan');
-    }
-
-    public function atan(): vector {
-        return $this->map('atan');
-    }
-
-    public function radToDeg(): vector {
-        return $this->map('rad2deg');
-    }
-
-    public function degToRad(): vector {
-        return $this->map('deg2rad');
-    }
-
-    public function floor(): vector {
-        return $this->map('floor');
-    }
-
-    public function ceil(): vector {
-        return $this->map('ceil');
-    }
-    
-    /**
-     * 
-     * @param float $min
-     * @param float $max
-     * @return vector
-     */
-    public function clip(float $min, float $max) : vector {
-        if ($min > $max) {
-            self::_invalidArgument('Minimum cannot be greater than maximum.');
-        }
-
-        $vr = self::factory($this->col, $this->dtype);
-        
-        for($i = 0; $i < $this->col; ++$i) {
-            if ($this->data[$i] > $max) {
-                $vr->data[$i] = $max;
-                continue;
-            }
-            if ($this->data[$i] < $min) {
-                $vr->data[$i] = $min;
-                continue;
-            }
-        }
-
-        return $vr;
-    }
-    
-    public function clipUpper(float $min) : vector {
-        $vr = self::factory($this->col, $this->dtype);
-        for($i = 0; $i < $this->col; ++$i) {
-            if ($this->data[$i] > $min) {
-                $vr->data[$i] = $min;
-                continue;
-            }
-        }
-        return $vr;
-    }
-    
-    public function clipLower(float $min) : vector {
-        $vr = self::factory($this->col, $this->dtype);
-        for($i = 0; $i < $this->col; ++$i) {
-            if ($this->data[$i] < $min) {
-                $vr->data[$i] = $min;
-                continue;
-            }
-        }
-        return $vr;
     }
     
     /**
@@ -895,7 +712,7 @@ use Np\exceptions\{
     public function median():int|float {
         $mid = intdiv($this->col, 2);
 
-        $a = $this->copyVector()->sort();
+        $a = $this->copy()->sort();
         if ($this->col % 2 === 1) {
             $median = $a->data[$mid];
         } else {
@@ -949,21 +766,6 @@ use Np\exceptions\{
                 $this->data[$i] = $data;
             }
         }
-    }
-
-    /**
-     * Return a matrix in the shape specified.
-     * @param int $row
-     * @param int $col
-     * @return matrix
-     */
-    public function reshape(int $row, int $col): matrix {
-        if($this->col != $row * $col) {
-            self::_dimensionaMisMatchErr('given dimenssion is not valid for current bufferData');
-        }
-        $ar = matrix::factory($row, $col, $this->dtype);
-        $ar->data = $this->data;
-        return $ar;
     }
 
     /**

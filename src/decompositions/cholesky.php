@@ -29,7 +29,7 @@ class cholesky {
      */
     public static function factory(matrix $m): matrix|null {
         if ($m->isSquare()) {
-            $ar = $m->copyMatrix();
+            $ar = $m->copy();
             $lp = lapack::potrf($ar);
             if ($lp != 0) {
                 return null;

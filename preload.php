@@ -11,6 +11,12 @@ if (!opcache_is_script_cached(__DIR__ . '/src/core/blas.php')) {
 if (!opcache_is_script_cached(__DIR__ . '/src/core/lapack.php')) {
     opcache_compile_file(__DIR__ . '/src/core/lapack.php');
 }
+if (!opcache_is_script_cached(__DIR__ . '/src/ops.php')) {
+    opcache_compile_file(__DIR__ . '/src/ops.php');
+}
+if (!opcache_is_script_cached(__DIR__ . '/src/linAlg.php')) {
+    opcache_compile_file(__DIR__ . '/src/linAlg.php');
+}
 if (!opcache_is_script_cached(__DIR__ . '/src/matrix.php')) {
     opcache_compile_file(__DIR__ . '/src/matrix.php');
 }
