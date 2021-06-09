@@ -28,7 +28,7 @@ class svd {
      */
     public static function factory(\Np\matrix $m): self {
         $k = min($m->row, $m->col);
-        $ar = $m->copyMatrix();
+        $ar = $m->copy();
         $s = vector::factory($k, $m->dtype);
         $u = matrix::factory($m->row, $m->row, $m->dtype);
         $v = matrix::factory($m->col, $m->col, $m->dtype);

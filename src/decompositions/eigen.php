@@ -31,7 +31,7 @@ class eigen {
             throw new invalidArgumentException('A Non Square Matrix is given!');
         }
         $wr = vector::factory($m->col, $m->dtype);
-        $ar = $m->copyMatrix();
+        $ar = $m->copy();
         if ($symmetric) {
             $lp = lapack::syev($ar, $wr);
             if ($lp != 0) {

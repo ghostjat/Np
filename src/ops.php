@@ -132,7 +132,20 @@ trait ops {
     public function ceil(): matrix {
         return $this->map('ceil');
     }
-
+    
+    public function free():void {
+        if($this instanceof matrix) {
+            unset($this->row);
+            unset($this->col);
+            unset($this->ndim);
+            unset($this->data);
+            return;
+        }
+        unset($this->col);
+        unset($this->ndim);
+        unset($this->data);
+        return;
+    }
     /**
      * make a copy of matrix|vector;
      * @return matrix|vector

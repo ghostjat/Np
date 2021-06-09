@@ -72,7 +72,7 @@ trait linAlg {
         if (!$this->isSquare()) {
             self::_err('Error::invalid Size of matrix!');
         }
-        $imat = $this->copyMatrix();
+        $imat = $this->copy();
         $ipiv = vector::factory($this->row, vector::INT);
         $lp = lapack::getrf($imat, $ipiv);
         if ($lp != 0) {
@@ -96,7 +96,7 @@ trait linAlg {
         $s = vector::factory($k, $this->dtype);
         $u = self::factory($this->row, $this->row, $this->dtype);
         $vt = self::factory($this->col, $this->col, $this->dtype);
-        $imat = $this->copyMatrix();
+        $imat = $this->copy();
         $lp = lapack::gesdd($imat, $s, $u, $vt);
         if ($lp != 0) {
             return null;

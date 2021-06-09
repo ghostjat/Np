@@ -80,6 +80,9 @@ class nd {
                 throw new dtypeException('given dtype is not supported by Np');
         }
     }
+    
+    protected function __destruct() {
+    }
 
     protected static function _ndFloat(int $size) {
         return \FFI::cast('float *', \FFI::new("float[$size]"));

@@ -34,7 +34,7 @@ class lu {
             throw new invalidArgumentException('Matrix must be given.');
         }
         $ipiv = vector::factory($m->col, vector::INT);
-        $ar = $m->copyMatrix();
+        $ar = $m->copy();
         $lp = lapack::getrf($ar, $ipiv);
         if ($lp != 0) {
             return null;
