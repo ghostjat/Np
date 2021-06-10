@@ -71,9 +71,8 @@ class blas {
         self::init();
         if ($m1->dtype == \Np\matrix::FLOAT) {
             self::$ffi_blas->cblas_sgemm(self::CblasRowMajor, $trans1, $trans2, $m1->row, $m2->col, $m1->col, 1.0, $m1->data, $m1->col, $m2->data, $m2->col, 0.0, $mr->data, $mr->col);
-        } else {
-            self::$ffi_blas->cblas_dgemm(self::CblasRowMajor, $trans1, $trans2, $m1->row, $m2->col, $m1->col, 1.0, $m1->data, $m1->col, $m2->data, $m2->col, 0.0, $mr->data, $mr->col);
         }
+        self::$ffi_blas->cblas_dgemm(self::CblasRowMajor, $trans1, $trans2, $m1->row, $m2->col, $m1->col, 1.0, $m1->data, $m1->col, $m2->data, $m2->col, 0.0, $mr->data, $mr->col);
     }
 
     /**
@@ -91,10 +90,9 @@ class blas {
         if ($m1->dtype == \Np\matrix::DOUBLE) {
             self::$ffi_blas->cblas_dsymm(self::CblasRowMajor, self::CblasLeft, self::CblasUpper, $m1->row,
                     $m2->col, 1.0, $m1->data, $m1->row, $m2->data, $m2->row, 0.0, $mr->data, $mr->row);
-        } else {
-            self::$ffi_blas->cblas_ssymm(self::CblasRowMajor, self::CblasLeft, self::CblasUpper, $m1->row,
-                    $m2->col, 1.0, $m1->data, $m1->row, $m2->data, $m2->row, 0.0, $mr->data, $mr->row);
         }
+        self::$ffi_blas->cblas_ssymm(self::CblasRowMajor, self::CblasLeft, self::CblasUpper, $m1->row,
+                $m2->col, 1.0, $m1->data, $m1->row, $m2->data, $m2->row, 0.0, $mr->data, $mr->row);
     }
 
     /**
@@ -111,10 +109,9 @@ class blas {
         if ($m1->dtype == \Np\matrix::DOUBLE) {
             return self::$ffi_blas->cblas_dsyrk(self::CblasRowMajor, self::CblasUpper,
                             self::CblasNoTrans, $m1->row, $m2->col, 1.0, $m1->data, $m1->row, 0.0, $m2->data, $m2->row);
-        } else {
-            return self::$ffi_blas->cblas_ssyrk(self::CblasRowMajor, self::CblasUpper,
-                            self::CblasNoTrans, $m1->row, $m2->col, 1.0, $m1->data, $m1->row, 0.0, $m2->data, $m2->row);
         }
+        return self::$ffi_blas->cblas_ssyrk(self::CblasRowMajor, self::CblasUpper,
+                        self::CblasNoTrans, $m1->row, $m2->col, 1.0, $m1->data, $m1->row, 0.0, $m2->data, $m2->row);
     }
 
     /**
@@ -132,10 +129,9 @@ class blas {
         if ($m1->dtype == \Np\matrix::DOUBLE) {
             self::$ffi_blas->cblas_dsyr2k(self::CblasRowMajor, self::CblasLower, self::CblasNoTrans,
                     $m1->col, $m2->row, 1.0, $m1->data, $m1->row, $m2->data, $m2->row, 0.0, $mr->data, $mr->row);
-        } else {
-            self::$ffi_blas->cblas_ssyr2k(self::CblasRowMajor, self::CblasLower, self::CblasNoTrans, $m1->col, $m2->row, 1.0, $m1->data, $m1->row,
-                    $m2->data, $m2->row, 0.0, $mr->data, $mr->row);
         }
+        self::$ffi_blas->cblas_ssyr2k(self::CblasRowMajor, self::CblasLower, self::CblasNoTrans, $m1->col, $m2->row, 1.0, $m1->data, $m1->row,
+                $m2->data, $m2->row, 0.0, $mr->data, $mr->row);
     }
 
     /**
@@ -151,10 +147,9 @@ class blas {
         if ($m->dtype == \Np\matrix::DOUBLE) {
             return self::$ffi_blas->cblas_dgemv(self::CblasRowMajor, self::CblasNoTrans, $m->row, $m->col,
                             1.0, $m->data, $m->row, $v->data, 1, 1.0, $mvr->data, 1);
-        } else {
-            return self::$ffi_blas->cblas_sgemv(self::CblasRowMajor, self::CblasNoTrans, $m->col, $m->row,
-                            1.0, $m->data, $m->row, $v->data, 1, 0.0, $mvr->data, 1);
         }
+        return self::$ffi_blas->cblas_sgemv(self::CblasRowMajor, self::CblasNoTrans, $m->col, $m->row,
+                        1.0, $m->data, $m->row, $v->data, 1, 0.0, $mvr->data, 1);
     }
 
     /**
@@ -176,13 +171,12 @@ class blas {
                             $KL, $KU, $alpha,
                             $matrix->data, $matrix->row, $vector->data,
                             1, $beta, $mvr->data, 1);
-        } else {
-            return self::$ffi_blas->cblas_sgbmv(self::CblasRowMajor,
-                            self::CblasNoTrans, $matrix->row, $matrix->col,
-                            $KL, $KU, $alpha,
-                            $matrix->data, $matrix->row, $vector->data,
-                            1, $beta, $mvr->data, 1);
         }
+        return self::$ffi_blas->cblas_sgbmv(self::CblasRowMajor,
+                        self::CblasNoTrans, $matrix->row, $matrix->col,
+                        $KL, $KU, $alpha,
+                        $matrix->data, $matrix->row, $vector->data,
+                        1, $beta, $mvr->data, 1);
     }
 
     /**
@@ -198,10 +192,9 @@ class blas {
         if ($m->dtype == \Np\matrix::DOUBLE) {
             return self::$ffi_blas->cblas_dger(self::CblasRowMajor, $v1->col, $v2->col,
                             1.0, $v1->data, 1, $v2->data, 1, $m->data, $m->row);
-        } else {
-            return self::$ffi_blas->cblas_sger(self::CblasRowMajor, $v1->col, $v2->col,
-                            1.0, $v1->data, 1, $v2->data, 1, $m->data, $m->row);
         }
+        return self::$ffi_blas->cblas_sger(self::CblasRowMajor, $v1->col, $v2->col,
+                        1.0, $v1->data, 1, $v2->data, 1, $m->data, $m->row);
     }
 
     /**
@@ -214,9 +207,8 @@ class blas {
         self::init();
         if ($v1->dtype == \Np\vector::DOUBLE) {
             return self::$ffi_blas->cblas_ddot($v1->col, $v1->data, 1, $v2->data, 1);
-        } else {
-            return self::$ffi_blas->cblas_sdot($v1->col, $v1->data, 1, $v2->data, 1);
         }
+        return self::$ffi_blas->cblas_sdot($v1->col, $v1->data, 1, $v2->data, 1);
     }
 
     /**
@@ -231,9 +223,8 @@ class blas {
         self::init();
         if ($v->dtype == \Np\vector::FLOAT) {
             return self::$ffi_blas->cblas_isamax($v->col, $v->data, 1);
-        } else {
-            return self::$ffi_blas->cblas_idamax($v->col, $v->data, 1);
         }
+        return self::$ffi_blas->cblas_idamax($v->col, $v->data, 1);
     }
 
     /**
@@ -248,9 +239,8 @@ class blas {
         self::init();
         if ($v->dtype == \Np\vector::FLOAT) {
             return self::$ffi_blas->cblas_isamin($v->col, $v->data, 1);
-        } else {
-            return self::$ffi_blas->cblas_idamin($v->col, $v->data, 1);
         }
+        return self::$ffi_blas->cblas_idamin($v->col, $v->data, 1);
     }
 
     /**
@@ -266,9 +256,8 @@ class blas {
         self::init();
         if ($v1->dtype == \Np\vector::DOUBLE) {
             self::$ffi_blas->cblas_dswap($v1->col, $v1->data, $inv1, $v2->data, $inv2);
-        } else {
-            self::$ffi_blas->cblas_sswap($v1->col, $v1->data, $inv1, $v2->data, $inv2);
         }
+        self::$ffi_blas->cblas_sswap($v1->col, $v1->data, $inv1, $v2->data, $inv2);
     }
 
     /**
@@ -285,10 +274,9 @@ class blas {
         if ($vect_X->dtype == \Np\vector::DOUBLE) {
             return self::$ffi_blas->cblas_dcopy($vect_X->col, $vect_X->data, $invX,
                             $vect_Y->data, $invY);
-        } else {
-            return self::$ffi_blas->cblas_scopy($vect_X->col, $vect_X->data, 1,
-                            $vect_Y->data, 1);
         }
+        return self::$ffi_blas->cblas_scopy($vect_X->col, $vect_X->data, 1,
+                        $vect_Y->data, 1);
     }
 
     /**
@@ -301,9 +289,8 @@ class blas {
         self::init();
         if ($v->dtype == \Np\vector::DOUBLE) {
             return self::$ffi_blas->cblas_dnrme($v->col, $v->data, 1);
-        } else {
-            return self::$ffi_blas->cblas_snrme($v->col, $v->data, 1);
         }
+        return self::$ffi_blas->cblas_snrme($v->col, $v->data, 1);
     }
 
     /**
@@ -319,10 +306,9 @@ class blas {
         if ($vect_X->dtype == \Np\vector::DOUBLE) {
             return self::$ffi_blas->cblas_daxpy($vect_X->col, $alpha, $vect_X->data,
                             1, $vect_Y->data, 1);
-        } else {
-            return self::$ffi_blas->cblas_saxpy($vect_X->col, $alpha, $vect_X->data,
-                            1, $vect_Y->data, 1);
         }
+        return self::$ffi_blas->cblas_saxpy($vect_X->col, $alpha, $vect_X->data,
+                        1, $vect_Y->data, 1);
     }
 
     /**
@@ -335,9 +321,8 @@ class blas {
         self::init();
         if ($v->dtype == \Np\vector::DOUBLE) {
             return self::$ffi_blas->cblas_dasum($v->col, $v->data, 1);
-        } else {
-            return self::$ffi_blas->cblas_sasum($v->col, $v->data, 1);
         }
+        return self::$ffi_blas->cblas_sasum($v->col, $v->data, 1);
     }
 
     /**
@@ -355,10 +340,9 @@ class blas {
         if ($v1->dtype == \Np\vector::DOUBLE) {
             return self::$ffi_blas->cblas_drot($v1->col, $v1->data, 1,
                             $v2->data, 1, $c, $s);
-        } else {
-            return self::$ffi_blas->cblas_srot($v1->col, $v1->data, 1,
-                            $v2->data, 1, $c, $s);
         }
+        return self::$ffi_blas->cblas_srot($v1->col, $v1->data, 1,
+                        $v2->data, 1, $c, $s);
     }
 
     /**
@@ -385,7 +369,7 @@ class blas {
         self::init();
         return self::$ffi_blas->cblas_drotg($a, $b, $c, $s);
     }
-    
+
     public static function srotg(float $a, float $b, float $c, float $s) {
         self::init();
         return self::$ffi_blas->cblas_srotg($a, $b, $c, $s);
@@ -402,9 +386,8 @@ class blas {
         self::init();
         if ($v->dtype == \Np\vector::DOUBLE) {
             return self::$ffi_blas->cblas_dscal($v->ndim, $alpha, $v->data, 1);
-        } else {
-            return self::$ffi_blas->cblas_sscal($v->ndim, $alpha, $v->data, 1);
         }
+        return self::$ffi_blas->cblas_sscal($v->ndim, $alpha, $v->data, 1);
     }
 
 }

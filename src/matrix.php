@@ -243,7 +243,7 @@ class matrix extends nd{
         }
         return $ar;
     }
-
+    
     /**
      * 2D convolution between a matrix ma and kernel kb, with a given stride.
      * @param \Np\matrix $m

@@ -146,6 +146,7 @@ trait ops {
         unset($this->data);
         return;
     }
+    
     /**
      * make a copy of matrix|vector;
      * @return matrix|vector
@@ -153,7 +154,7 @@ trait ops {
     public function copy(): matrix|vector {
         return clone $this;
     }
-
+    
     /**
      * Clip the elements in the matrix to be between given minimum and maximum
      * and return a new matrix.

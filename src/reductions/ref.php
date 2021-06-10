@@ -26,7 +26,7 @@ class ref {
       */
     public static function factory(\Np\matrix $m): matrix|null {
         $ipiv = vector::factory(min($m->row, $m->col), vector::INT);
-        $ar = $m->copyMatrix();
+        $ar = $m->copy();
         $lp = lapack::getrf($ar, $ipiv);
         if ($lp != 0) {
             return null;

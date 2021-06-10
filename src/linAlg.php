@@ -64,11 +64,11 @@ trait linAlg {
     }
     
     /**
-     *
+     * FIXEME:-Bug noticed on 10/06/21
      * Compute the multiplicative inverse of the matrix.
-     * @return matrix
+     * @return matrix|null
      */
-    public function inverse(): matrix {
+    public function inverse(): matrix|null {
         if (!$this->isSquare()) {
             self::_err('Error::invalid Size of matrix!');
         }
@@ -88,6 +88,7 @@ trait linAlg {
     }
     
     /**
+     * FIXEME:-Bug noticed on 10/06/21
      * Compute the (Moore-Penrose) pseudo inverse of the general matrix.
      * @return matrix|null
      */

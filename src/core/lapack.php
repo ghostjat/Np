@@ -37,9 +37,8 @@ class lapack {
         self::init();
         if ($mat->dtype == \Np\matrix::FLOAT) {
             return self::$ffi_lapack->LAPACKE_sgetrf($matLayout, $mat->row, $mat->col, $mat->data, $mat->row, $ipiv->data);
-        } else {
-            return self::$ffi_lapack->LAPACKE_dgetrf($matLayout, $mat->row, $mat->col, $mat->data, $mat->row, $ipiv->data);
         }
+        return self::$ffi_lapack->LAPACKE_dgetrf($matLayout, $mat->row, $mat->col, $mat->data, $mat->row, $ipiv->data);
     }
 
     /**
@@ -51,12 +50,11 @@ class lapack {
      */
     public static function getri(\Np\matrix $mat, \Np\vector $ipiv, int $matLayout = self::ROW_MAJOR) {
         self::init();
-        if($mat->dtype == \Np\matrix::FLOAT){
+        if ($mat->dtype == \Np\matrix::FLOAT) {
             return self::$ffi_lapack->LAPACKE_sgetri($matLayout, $mat->row, $mat->data, $mat->row, $ipiv->data);
         }
-        else {
-            return self::$ffi_lapack->LAPACKE_dgetri($matLayout, $mat->row, $mat->data, $mat->row, $ipiv->data);
-        }
+
+        return self::$ffi_lapack->LAPACKE_dgetri($matLayout, $mat->row, $mat->data, $mat->row, $ipiv->data);
     }
 
     /**
@@ -72,9 +70,8 @@ class lapack {
         self::init();
         if ($mat->dtype == \Np\matrix::FLOAT) {
             return self::$ffi_lapack->LAPACKE_sgesdd($matLayout, 'A', $mat->row, $mat->col, $mat->data, $mat->col, $s->data, $u->data, $mat->row, $vt->data, $mat->col);
-        } else {
-            return self::$ffi_lapack->LAPACKE_dgesdd($matLayout, 'A', $mat->row, $mat->col, $mat->data, $mat->col, $s->data, $u->data, $mat->row, $vt->data, $mat->col);
         }
+        return self::$ffi_lapack->LAPACKE_dgesdd($matLayout, 'A', $mat->row, $mat->col, $mat->data, $mat->col, $s->data, $u->data, $mat->row, $vt->data, $mat->col);
     }
 
     /**
@@ -88,9 +85,8 @@ class lapack {
         self::init();
         if ($mat->dtype == \Np\matrix::FLOAT) {
             return self::$ffi_lapack->LAPACKE_spotrf($matLayout, $uplo, $mat->col, $mat->data, $mat->col);
-        } else {
-            return self::$ffi_lapack->LAPACKE_dpotrf($matLayout, $uplo, $mat->col, $mat->data, $mat->col);
         }
+        return self::$ffi_lapack->LAPACKE_dpotrf($matLayout, $uplo, $mat->col, $mat->data, $mat->col);
     }
 
     /**
@@ -106,9 +102,8 @@ class lapack {
         self::init();
         if ($mat->dtype == \Np\matrix::FLOAT) {
             return self::$ffi_lapack->LAPACKE_sgeev($matLayout, 'N', 'V', $mat->col, $mat->data, $mat->col, $wr->data, $wi->data, null, $mat->col, $vr->data, $mat->col);
-        } else {
-            return self::$ffi_lapack->LAPACKE_dgeev($matLayout, 'N', 'V', $mat->col, $mat->data, $mat->col, $wr->data, $wi->data, null, $mat->col, $vr->data, $mat->col);
         }
+        return self::$ffi_lapack->LAPACKE_dgeev($matLayout, 'N', 'V', $mat->col, $mat->data, $mat->col, $wr->data, $wi->data, null, $mat->col, $vr->data, $mat->col);
     }
 
     /**
@@ -122,9 +117,8 @@ class lapack {
         self::init();
         if ($mat->dtype == \Np\matrix::FLOAT) {
             return self::$ffi_lapack->LAPACKE_ssyev($matLayout, 'V', 'U', $mat->col, $mat->data, $mat->col, $wr->data);
-        } else {
-            return self::$ffi_lapack->LAPACKE_dsyev($matLayout, 'V', 'U', $mat->col, $mat->data, $mat->col, $wr->data);
         }
+        return self::$ffi_lapack->LAPACKE_dsyev($matLayout, 'V', 'U', $mat->col, $mat->data, $mat->col, $wr->data);
     }
 
     /**
@@ -136,12 +130,10 @@ class lapack {
      */
     public static function lange(string $norm, \Np\matrix $m, int $matLayout = self::ROW_MAJOR) {
         self::init();
-        if($m->dtype == \Np\matrix::FLOAT){
+        if ($m->dtype == \Np\matrix::FLOAT) {
             return self::$ffi_lapack->LAPACKE_slange($matLayout, $norm, $m->row, $m->col, $m->data, $m->col);
         }
-        else{
-            return self::$ffi_lapack->LAPACKE_dlange($matLayout, $norm, $m->row, $m->col, $m->data, $m->col);
-        }   
+        return self::$ffi_lapack->LAPACKE_dlange($matLayout, $norm, $m->row, $m->col, $m->data, $m->col);
     }
 
     /**
@@ -154,9 +146,8 @@ class lapack {
         self::init();
         if ($v->dtype == \Np\vector::FLOAT) {
             return self::$ffi_lapack->LAPACKE_slasrt($id, $v->col, $v->data);
-        } else {
-            return self::$ffi_lapack->LAPACKE_dlasrt($id, $v->col, $v->data);
         }
+        return self::$ffi_lapack->LAPACKE_dlasrt($id, $v->col, $v->data);
     }
 
     public static function sgels() {

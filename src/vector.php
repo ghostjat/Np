@@ -789,6 +789,7 @@ use Np\exceptions\{
     }
 
     public function printVector() {
+        echo __CLASS__ . PHP_EOL;
         for ($j = 0; $j < $this->col; ++$j) {
             printf('%lf  ', $this->data[$j]);
         }
