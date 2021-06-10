@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacenumphp_1_1core" kind="namespace" language="PHP">
+    <compoundname>numphp::core</compoundname>
+    <innerclass refid="classnumphp_1_1core_1_1blas" prot="public">numphp::core::blas</innerclass>
+    <innerclass refid="classnumphp_1_1core_1_1lapack" prot="public">numphp::core::lapack</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="3" column="1"/>
+  </compounddef>
+</doxygen>

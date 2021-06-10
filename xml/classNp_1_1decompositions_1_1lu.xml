@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classNp_1_1decompositions_1_1lu" kind="class" language="PHP" prot="public">
+    <compoundname>Np::decompositions::lu</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classNp_1_1decompositions_1_1lu_1a12939e49fe2dafdbaed5b350cf4f460a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\decompositions\lu::factory</definition>
+        <argsstring>(matrix $m)</argsstring>
+        <name>factory</name>
+        <param>
+          <type><ref refid="classNp_1_1matrix" kindref="compound">matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>matrix</parametertype>
+<parametername>$m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>InvalidArgumentException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/decompositions/lu.php" line="32" column="1" bodyfile="/home/ghost/projects/git/numphp/src/decompositions/lu.php" bodystart="32" bodyend="74"/>
+        <references refid="classNp_1_1vector_1ae273c5dfb35a12db0977326d765ea2e4" compoundref="vector_8php" startline="37" endline="39">Np\vector\factory</references>
+        <references refid="classNp_1_1matrix_1a41010884ae9f834864b569d714ca0e25" compoundref="matrix_8php" startline="37" endline="39">Np\matrix\factory</references>
+        <references refid="classNp_1_1core_1_1lapack_1ab4d38b46b6cfad63cae6cd07cdc6e045" compoundref="lapack_8php" startline="38" endline="44">Np\core\lapack\getrf</references>
+        <references refid="classNp_1_1matrix_1adb337e32840446442dcf145107e26eba" compoundref="matrix_8php" startline="1023" endline="1028">Np\matrix\isSquare</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classNp_1_1decompositions_1_1lu_1ad10cede9d4078b6301265b7b2939a8a5" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\decompositions\lu::__construct</definition>
+        <argsstring>(protected matrix $l, protected matrix $u, protected matrix $p)</argsstring>
+        <name>__construct</name>
+        <param>
+          <type>protected <ref refid="classNp_1_1matrix" kindref="compound">matrix</ref></type>
+          <declname>$l</declname>
+        </param>
+        <param>
+          <type>protected <ref refid="classNp_1_1matrix" kindref="compound">matrix</ref></type>
+          <declname>$u</declname>
+        </param>
+        <param>
+          <type>protected <ref refid="classNp_1_1matrix" kindref="compound">matrix</ref></type>
+          <declname>$p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>matrix</parametertype>
+<parametername>$l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>matrix</parametertype>
+<parametername>$u</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>matrix</parametertype>
+<parametername>$p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/decompositions/lu.php" line="82" column="1" bodyfile="/home/ghost/projects/git/numphp/src/decompositions/lu.php" bodystart="82" bodyend="84"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classNp_1_1decompositions_1_1lu_1aa3c9fc188549d42d590cef2fceed6648" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\decompositions\lu::l</definition>
+        <argsstring>()</argsstring>
+        <name>l</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the lower triangular matrix.</para><para><simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/decompositions/lu.php" line="91" column="1" bodyfile="/home/ghost/projects/git/numphp/src/decompositions/lu.php" bodystart="91" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1decompositions_1_1lu_1a28194b5a31536e8fc7ca6e75158db7ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\decompositions\lu::p</definition>
+        <argsstring>()</argsstring>
+        <name>p</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the permutation matrix.</para><para><simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/decompositions/lu.php" line="109" column="1" bodyfile="/home/ghost/projects/git/numphp/src/decompositions/lu.php" bodystart="109" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1decompositions_1_1lu_1af742f37f697ef79a14a72a7e3681795c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\decompositions\lu::u</definition>
+        <argsstring>()</argsstring>
+        <name>u</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the upper triangular matrix.</para><para><simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/decompositions/lu.php" line="100" column="1" bodyfile="/home/ghost/projects/git/numphp/src/decompositions/lu.php" bodystart="100" bodyend="102"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="41">
+        <label>Np\decompositions\lu</label>
+        <link refid="classNp_1_1decompositions_1_1lu"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/ghost/projects/git/numphp/src/decompositions/lu.php" line="24" column="1" bodyfile="/home/ghost/projects/git/numphp/src/decompositions/lu.php" bodystart="24" bodyend="113"/>
+    <listofallmembers>
+      <member refid="classNp_1_1decompositions_1_1lu_1ad10cede9d4078b6301265b7b2939a8a5" prot="protected" virt="non-virtual"><scope>Np::decompositions::lu</scope><name>__construct</name></member>
+      <member refid="classNp_1_1decompositions_1_1lu_1a12939e49fe2dafdbaed5b350cf4f460a" prot="public" virt="non-virtual"><scope>Np::decompositions::lu</scope><name>factory</name></member>
+      <member refid="classNp_1_1decompositions_1_1lu_1aa3c9fc188549d42d590cef2fceed6648" prot="public" virt="non-virtual"><scope>Np::decompositions::lu</scope><name>l</name></member>
+      <member refid="classNp_1_1decompositions_1_1lu_1a28194b5a31536e8fc7ca6e75158db7ef" prot="public" virt="non-virtual"><scope>Np::decompositions::lu</scope><name>p</name></member>
+      <member refid="classNp_1_1decompositions_1_1lu_1af742f37f697ef79a14a72a7e3681795c" prot="public" virt="non-virtual"><scope>Np::decompositions::lu</scope><name>u</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

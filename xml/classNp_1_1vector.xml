@@ -1,0 +1,1802 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classNp_1_1vector" kind="class" language="PHP" prot="public">
+    <compoundname>Np::vector</compoundname>
+    <basecompoundref refid="classNp_1_1core_1_1nd" prot="public" virt="non-virtual">Np\core\nd</basecompoundref>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classNp_1_1vector_1a321b5db5c101a97a4904f8dbafc2fd2b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\vector::ar</definition>
+        <argsstring>(array $data, int $dtype=self::FLOAT)</argsstring>
+        <name>ar</name>
+        <param>
+          <type>array</type>
+          <declname>$data</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$dtype</declname>
+          <defval>self::FLOAT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Build a new vector from a php array.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>array</parametertype>
+<parametername>$data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$dtype</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="48" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="48" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1ae273c5dfb35a12db0977326d765ea2e4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\vector::factory</definition>
+        <argsstring>(int $col, int $dtype=self::FLOAT)</argsstring>
+        <name>factory</name>
+        <param>
+          <type>int</type>
+          <declname>$col</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$dtype</declname>
+          <defval>self::FLOAT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Factory method to build a new vector.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$col</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$dtype</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="37" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="37" bodyend="39"/>
+        <referencedby refid="classNp_1_1reductions_1_1ref_1a5c705593b301c61edb93be153355ac14" compoundref="ref_8php" startline="28" endline="37">Np\reductions\ref\factory</referencedby>
+        <referencedby refid="classNp_1_1decompositions_1_1svd_1ac8bda3519697c3b3e32f7808053f5675" compoundref="svd_8php" startline="29" endline="43">Np\decompositions\svd\factory</referencedby>
+        <referencedby refid="classNp_1_1decompositions_1_1lu_1a12939e49fe2dafdbaed5b350cf4f460a" compoundref="lu_8php" startline="32" endline="74">Np\decompositions\lu\factory</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a98c901b06c1a84ddfb6891feb8cbbcde" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\vector::full</definition>
+        <argsstring>(int $col, int|float $val, int $dtype=self::FLOAT)</argsstring>
+        <name>full</name>
+        <param>
+          <type>int</type>
+          <declname>$col</declname>
+        </param>
+        <param>
+          <type>int|float</type>
+          <declname>$val</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$dtype</declname>
+          <defval>self::FLOAT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>create a vector with given scalar value <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$col</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametertype>double</parametertype>
+<parametername>$val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$dtype</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="137" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="137" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1ab34501259447fb39fad747966d7abdec" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\vector::gaussian</definition>
+        <argsstring>(int $n, int $dtype=self::FLOAT)</argsstring>
+        <name>gaussian</name>
+        <param>
+          <type>int</type>
+          <declname>$n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$dtype</declname>
+          <defval>self::FLOAT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return a Gaussian random vector with mean 0 and unit variance.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$dtype</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="166" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="166" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a49110009eb344bb0072b596c64768a65" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\vector::linspace</definition>
+        <argsstring>(float $min, float $max, int $n, int $dtype=self::FLOAT)</argsstring>
+        <name>linspace</name>
+        <param>
+          <type>float</type>
+          <declname>$min</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>$max</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$dtype</declname>
+          <defval>self::FLOAT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return a vector of n evenly spaced numbers between minimum and maximum.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>float</parametertype>
+<parametername>$min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>float</parametertype>
+<parametername>$max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$dtype</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>invalidArgumentException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="215" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="215" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a6edf88614f6198f52839a45cbc9516b9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\vector::null</definition>
+        <argsstring>(int $col, int $dtype=self::FLOAT)</argsstring>
+        <name>null</name>
+        <param>
+          <type>int</type>
+          <declname>$col</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$dtype</declname>
+          <defval>self::FLOAT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>create a null like vector <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$col</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="122" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="122" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1aa3506e77cfa02211825725683fdf0872" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\vector::ones</definition>
+        <argsstring>(int $col, int $dtype=self::FLOAT)</argsstring>
+        <name>ones</name>
+        <param>
+          <type>int</type>
+          <declname>$col</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$dtype</declname>
+          <defval>self::FLOAT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>create one like vector</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$col</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="109" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="109" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a7f05718d649e07e09ce12f2a879f3bc7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\vector::poisson</definition>
+        <argsstring>(int $n, float $lambda=1.0, int $dtype=self::FLOAT)</argsstring>
+        <name>poisson</name>
+        <param>
+          <type>int</type>
+          <declname>$n</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>$lambda</declname>
+          <defval>1.0</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$dtype</declname>
+          <defval>self::FLOAT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Generate a vector with n elements from a Poisson distribution.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>float</parametertype>
+<parametername>$lambda</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$dtype</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="189" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="189" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a7bad2422e309d0afe808b814734edc26" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\vector::randn</definition>
+        <argsstring>(int $col, int $dtype=self::FLOAT)</argsstring>
+        <name>randn</name>
+        <param>
+          <type>int</type>
+          <declname>$col</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$dtype</declname>
+          <defval>self::FLOAT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return vector with random values <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$col</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$dtype</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="64" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="64" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a4c46c04b386b08536ba9fbd1da6cb85e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\vector::range</definition>
+        <argsstring>(int|float $start, int|float $end, int|float $interval=1, int $dtype=self::FLOAT)</argsstring>
+        <name>range</name>
+        <param>
+          <type>int|float</type>
+          <declname>$start</declname>
+        </param>
+        <param>
+          <type>int|float</type>
+          <declname>$end</declname>
+        </param>
+        <param>
+          <type>int|float</type>
+          <declname>$interval</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$dtype</declname>
+          <defval>self::FLOAT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return evenly spaced values within a given interval.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametername>$start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametername>$end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametername>$interval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$dtype</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="154" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="154" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1ae82f1bb2d726470ca3caef0df0cd6cd2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\vector::uniform</definition>
+        <argsstring>(int $col, int $dtype=self::FLOAT)</argsstring>
+        <name>uniform</name>
+        <param>
+          <type>int</type>
+          <declname>$col</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$dtype</declname>
+          <defval>self::FLOAT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return vector with uniform values <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$col</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$dtype</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="79" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="79" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1af69c6c5b02bfc712cdc8ce6f6b1b278f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\vector::zeros</definition>
+        <argsstring>(int $col, int $dtype=self::FLOAT)</argsstring>
+        <name>zeros</name>
+        <param>
+          <type>int</type>
+          <declname>$col</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$dtype</declname>
+          <defval>self::FLOAT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Build a vector of zeros with n elements.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$col</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$dtype</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="95" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="95" bodyend="101"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classNp_1_1vector_1a9a47a62217b91473b3a4045de5979b5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::__toString</definition>
+        <argsstring>()</argsstring>
+        <name>__toString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="799" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="799" bodyend="801"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a904759320b4157ca0dd801314bc16ad2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::add</definition>
+        <argsstring>(int|float|matrix|vector $d)</argsstring>
+        <name>add</name>
+        <param>
+          <type>int|float|<ref refid="classNp_1_1matrix" kindref="compound">matrix</ref>|<ref refid="classNp_1_1vector" kindref="compound">vector</ref></type>
+          <declname>$d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametertype>matrix</parametertype>
+<parametertype>vector</parametertype>
+<parametername>$d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix|vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="406" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="406" bodyend="414"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1ab7fca2ed871609d439639b1578ac796b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::argMax</definition>
+        <argsstring>()</argsstring>
+        <name>argMax</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the index of the maximum element in the vector.</para><para><simplesect kind="return"><para>int </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="246" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="246" bodyend="248"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a0e9e2514e25d2ed5bd69e52826313cf6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::argMin</definition>
+        <argsstring>()</argsstring>
+        <name>argMin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the index of the minimum element in the vector.</para><para><simplesect kind="return"><para>int </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="237" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="237" bodyend="239"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1ab5e12e9ecefe0d6a1c1aa9acf178c849" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::asArray</definition>
+        <argsstring>()</argsstring>
+        <name>asArray</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="783" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="783" bodyend="789"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a665adc8dff655feb5eb588c7456783fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::convolve</definition>
+        <argsstring>(\Np\vector $v, int $stride=1)</argsstring>
+        <name>convolve</name>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$v</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$stride</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$stride</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="645" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="645" bodyend="647"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a87ea5a8c3d0c6bf737e146f274828e33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::divide</definition>
+        <argsstring>(int|float|matrix|vector $d)</argsstring>
+        <name>divide</name>
+        <param>
+          <type>int|float|<ref refid="classNp_1_1matrix" kindref="compound">matrix</ref>|<ref refid="classNp_1_1vector" kindref="compound">vector</ref></type>
+          <declname>$d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametertype>matrix</parametertype>
+<parametertype>vector</parametertype>
+<parametername>$d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix|vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="288" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="288" bodyend="296"/>
+        <referencedby refid="classNp_1_1matrix_1a95e2b0f464f99db3166b616c7b759f7a" compoundref="matrix_8php" startline="1180" endline="1182">Np\matrix\mean</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a29f60ad2a0cce758f7472d36702d66a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::dotMatrix</definition>
+        <argsstring>(\Np\matrix $m)</argsstring>
+        <name>dotMatrix</name>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compute the vector-matrix dot product of this vector and matrix . <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="275" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="275" bodyend="281"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a867b9409f7132d7d745c0687ca8f6d9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::getDtype</definition>
+        <argsstring>()</argsstring>
+        <name>getDtype</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="779" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="779" bodyend="781"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1af26db43f20669c59aafaeb332be5430c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::getSize</definition>
+        <argsstring>()</argsstring>
+        <name>getSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>get the size of vector <simplesect kind="return"><para>int </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="775" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="775" bodyend="777"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a7996372ddb2aeabe132c1d517d309fb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::inner</definition>
+        <argsstring>(\Np\vector $vector)</argsstring>
+        <name>inner</name>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$vector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the inner product of two vectors.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$vector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="663" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="663" bodyend="665"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a75b477520c3e60af9211e31fd1f5208f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::max</definition>
+        <argsstring>()</argsstring>
+        <name>max</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="649" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="649" bodyend="651"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1adb515869a1fff77aa47340d5860c2bfe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::mean</definition>
+        <argsstring>()</argsstring>
+        <name>mean</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>int|float </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="704" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="704" bodyend="706"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a2b7fb0132187781a08f5fb32af53a2c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::median</definition>
+        <argsstring>()</argsstring>
+        <name>median</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>int|float </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="712" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="712" bodyend="722"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a1772599059a67a3dc2f366f147c4685f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::min</definition>
+        <argsstring>()</argsstring>
+        <name>min</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="653" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="653" bodyend="655"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a53610b4dd3b191053c899e7f8bcb91e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::mod</definition>
+        <argsstring>(int|float|\Np\matrix|\Np\vector $d)</argsstring>
+        <name>mod</name>
+        <param>
+          <type>int|float|\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref>|\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametertype>\Np\matrix</parametertype>
+<parametertype>\Np\vector</parametertype>
+<parametername>$d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix|vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="526" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="526" bodyend="534"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a15da7ba340a0387b503e0b1edf60e64a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::multiply</definition>
+        <argsstring>(int|float|matrix|vector $d)</argsstring>
+        <name>multiply</name>
+        <param>
+          <type>int|float|<ref refid="classNp_1_1matrix" kindref="compound">matrix</ref>|<ref refid="classNp_1_1vector" kindref="compound">vector</ref></type>
+          <declname>$d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametertype>matrix</parametertype>
+<parametertype>vector</parametertype>
+<parametername>$d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix|vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="348" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="348" bodyend="356"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a86c0984ab50856d33564680d9aa1f33d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::normL1</definition>
+        <argsstring>()</argsstring>
+        <name>normL1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculate the L1 norm of the vector. <simplesect kind="return"><para>float </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="671" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="671" bodyend="673"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1ac8e403095bbf4cf3daec447054cf0492" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::normL2</definition>
+        <argsstring>()</argsstring>
+        <name>normL2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="675" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="675" bodyend="677"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1ad22e85c589bd619d046f425dc54cbce5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::normMax</definition>
+        <argsstring>()</argsstring>
+        <name>normMax</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="679" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="679" bodyend="681"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a753e9edeb839e6a5149478e7d3211793" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::normP</definition>
+        <argsstring>(float $p=2.5)</argsstring>
+        <name>normP</name>
+        <param>
+          <type>float</type>
+          <declname>$p</declname>
+          <defval>2.5</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="683" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="683" bodyend="688"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a3259bf0dadf7eed48f9e85a98f0dbc4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::pow</definition>
+        <argsstring>(int|float|\Np\matrix|\Np\vector $d)</argsstring>
+        <name>pow</name>
+        <param>
+          <type>int|float|\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref>|\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametertype>\Np\matrix</parametertype>
+<parametertype>\Np\vector</parametertype>
+<parametername>$d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix|vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="466" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="466" bodyend="474"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a2115701918dc3db1bc9a7f2fc27c4c64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::printVector</definition>
+        <argsstring>()</argsstring>
+        <name>printVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="791" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="791" bodyend="797"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1affd0c31fb8677b04b869d64e10877027" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::product</definition>
+        <argsstring>()</argsstring>
+        <name>product</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the product of the vector. <simplesect kind="return"><para>int|float </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="262" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="262" bodyend="268"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a7e36a800925e3bcedc88821d3b685583" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::reciprocal</definition>
+        <argsstring>()</argsstring>
+        <name>reciprocal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the reciprocal of the vector element-wise.</para><para><simplesect kind="return"><para>self </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="695" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="695" bodyend="698"/>
+        <references refid="classNp_1_1vector_1a77913a26c6cc1a9bcbcae1832589a765" compoundref="vector_8php" startline="320" endline="328">Np\vector\divideVector</references>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a1fcfc617c3b2651e29c609e1c8eca68f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::setData</definition>
+        <argsstring>(int|float|array $data)</argsstring>
+        <name>setData</name>
+        <param>
+          <type>int|float|array</type>
+          <declname>$data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>set data to vector <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametertype>array</parametertype>
+<parametername>$data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="759" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="759" bodyend="769"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1ab88c721c641c09f845440c38818b58e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::sort</definition>
+        <argsstring>($type=&apos;i&apos;)</argsstring>
+        <name>sort</name>
+        <param>
+          <declname>$type</declname>
+          <defval>&apos;i&apos;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>sort the vector <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>i or d </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="750" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="750" bodyend="753"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1af7eb2a26f100a9638e7be753dd3cdf26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::square</definition>
+        <argsstring>()</argsstring>
+        <name>square</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="741" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="741" bodyend="743"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a6f5a453f2824e06fcaad4c2756928e56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::subtract</definition>
+        <argsstring>(int|float|matrix|vector $d)</argsstring>
+        <name>subtract</name>
+        <param>
+          <type>int|float|<ref refid="classNp_1_1matrix" kindref="compound">matrix</ref>|<ref refid="classNp_1_1vector" kindref="compound">vector</ref></type>
+          <declname>$d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametertype>matrix</parametertype>
+<parametertype>vector</parametertype>
+<parametername>$d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix|vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="584" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="584" bodyend="592"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a1274696da319a6b2716065b4dc6cda0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::sum</definition>
+        <argsstring>()</argsstring>
+        <name>sum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The sum of the vector. <simplesect kind="return"><para>float </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="254" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="254" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a43a4964b7763c5b06e7be255cce5a986" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::variance</definition>
+        <argsstring>($mean=null)</argsstring>
+        <name>variance</name>
+        <param>
+          <declname>$mean</declname>
+          <defval><ref refid="classNp_1_1vector_1a6edf88614f6198f52839a45cbc9516b9" kindref="member">null</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="724" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="724" bodyend="735"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classNp_1_1vector_1a71322a6cfd2ed8879d22b4fcd2933492" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::__construct</definition>
+        <argsstring>(public int $col, int $dtype=self::FLOAT)</argsstring>
+        <name>__construct</name>
+        <param>
+          <type>public int</type>
+          <declname>$col</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$dtype</declname>
+          <defval>self::FLOAT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="803" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="803" bodyend="809"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a0d58a18ecd9b3ee28cd2f8722ec19cc9" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::addMatrix</definition>
+        <argsstring>(\Np\matrix $m)</argsstring>
+        <name>addMatrix</name>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="421" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="421" bodyend="431"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a91e11bcbf9d37b6d6b06d076a4ebcd0d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::addScalar</definition>
+        <argsstring>(int|float $s)</argsstring>
+        <name>addScalar</name>
+        <param>
+          <type>int|float</type>
+          <declname>$s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametername>$s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="453" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="453" bodyend="459"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1af4acc16a81e885aee7b55e4bd8d46cf1" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::addVector</definition>
+        <argsstring>(\Np\vector $vector)</argsstring>
+        <name>addVector</name>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$vector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$vector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="438" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="438" bodyend="446"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1ac00870f4f2c4d5247344cd20dec39fe3" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::divideMatrix</definition>
+        <argsstring>(\Np\matrix $m)</argsstring>
+        <name>divideMatrix</name>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="303" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="303" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1ae14510e79a7f79baa4908c5715e12b56" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::divideScalar</definition>
+        <argsstring>(int|float $s)</argsstring>
+        <name>divideScalar</name>
+        <param>
+          <type>int|float</type>
+          <declname>$s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametername>$s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="335" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="335" bodyend="341"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a77913a26c6cc1a9bcbcae1832589a765" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::divideVector</definition>
+        <argsstring>(vector $v)</argsstring>
+        <name>divideVector</name>
+        <param>
+          <type><ref refid="classNp_1_1vector" kindref="compound">vector</ref></type>
+          <declname>$v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>vector</parametertype>
+<parametername>$v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="320" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="320" bodyend="328"/>
+        <referencedby refid="classNp_1_1vector_1a7e36a800925e3bcedc88821d3b685583" compoundref="vector_8php" startline="695" endline="698">Np\vector\reciprocal</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1ab74b16defa5b23b458507a8c9da3ca3f" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::modMatrix</definition>
+        <argsstring>(\Np\matrix $m)</argsstring>
+        <name>modMatrix</name>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="541" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="541" bodyend="551"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a089b10043ab029f97710eb299271dc6b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::modScalar</definition>
+        <argsstring>(int|float $s)</argsstring>
+        <name>modScalar</name>
+        <param>
+          <type>int|float</type>
+          <declname>$s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametername>$s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="572" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="572" bodyend="577"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1aad28d49e1466e964b170aa9dee3818a7" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::modVector</definition>
+        <argsstring>(\Np\vector $vector)</argsstring>
+        <name>modVector</name>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$vector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$vector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="558" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="558" bodyend="566"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a5337af6cecc91301aa21e8d389a29593" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::multiplyMatrix</definition>
+        <argsstring>(\Np\matrix $m)</argsstring>
+        <name>multiplyMatrix</name>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="363" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="363" bodyend="373"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1aa73208685829e2714c09abed56dff189" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::multiplyScalar</definition>
+        <argsstring>(int|float $s)</argsstring>
+        <name>multiplyScalar</name>
+        <param>
+          <type>int|float</type>
+          <declname>$s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametername>$s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="395" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="395" bodyend="399"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a819e51f21f7b2f25457990fa562ab9fd" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::multiplyVector</definition>
+        <argsstring>(\Np\vector $vector)</argsstring>
+        <name>multiplyVector</name>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$vector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$vector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="380" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="380" bodyend="388"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1ae07c60da3523240c6f3224e8a82ce29e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::powMatrix</definition>
+        <argsstring>(\Np\matrix $m)</argsstring>
+        <name>powMatrix</name>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="481" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="481" bodyend="491"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1ac6256209b0ce7dc2a35ee0a22ba1460d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::powScalar</definition>
+        <argsstring>(int|float $s)</argsstring>
+        <name>powScalar</name>
+        <param>
+          <type>int|float</type>
+          <declname>$s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametername>$s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="513" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="513" bodyend="519"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a8de891a0c5d25ae53dd3f5421fe4627e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::powVector</definition>
+        <argsstring>(\Np\vector $vector)</argsstring>
+        <name>powVector</name>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$vector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$vector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="498" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="498" bodyend="506"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a2102b4d22544551be497286ae806b2ec" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::substractScalar</definition>
+        <argsstring>(int|float $scalar)</argsstring>
+        <name>substractScalar</name>
+        <param>
+          <type>int|float</type>
+          <declname>$scalar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$scalar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="631" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="631" bodyend="637"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1a38c5131c6b672b07c456283b024bf6ee" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::subtractMatrix</definition>
+        <argsstring>(\Np\matrix $m)</argsstring>
+        <name>subtractMatrix</name>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="599" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="599" bodyend="609"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1vector_1af3ce54ab7fb8dfd42b56e0376d00049a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\vector::subtractVector</definition>
+        <argsstring>(\Np\vector $vector)</argsstring>
+        <name>subtractVector</name>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$vector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$vector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/vector.php" line="616" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="616" bodyend="624"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="73">
+        <label>Np\core\nd</label>
+        <link refid="classNp_1_1core_1_1nd"/>
+      </node>
+      <node id="72">
+        <label>Np\vector</label>
+        <link refid="classNp_1_1vector"/>
+        <childnode refid="73" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="75">
+        <label>Np\core\nd</label>
+        <link refid="classNp_1_1core_1_1nd"/>
+      </node>
+      <node id="74">
+        <label>Np\vector</label>
+        <link refid="classNp_1_1vector"/>
+        <childnode refid="75" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/ghost/projects/git/numphp/src/vector.php" line="27" column="1" bodyfile="/home/ghost/projects/git/numphp/src/vector.php" bodystart="27" bodyend="811"/>
+    <listofallmembers>
+      <member refid="classNp_1_1core_1_1nd_1abc85d7a6814d7ded610948b4898e0339" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>$_mem</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a892ec28f47c788c88759bb851a0e69e8" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>$_time</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a1047cca77e15c6ef853a198e277a0f97" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>$data</name></member>
+      <member refid="classNp_1_1vector_1a71322a6cfd2ed8879d22b4fcd2933492" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>__construct</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a83e0eadca8d82d475427b8022b2f292f" prot="protected" virt="non-virtual" ambiguityscope="Np::core::nd::"><scope>Np::vector</scope><name>__construct</name></member>
+      <member refid="classNp_1_1vector_1a9a47a62217b91473b3a4045de5979b5a" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>__toString</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a90d94bb4ead503ed65e1ee8ab42ea985" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>_dimensionaMisMatchErr</name></member>
+      <member refid="classNp_1_1core_1_1nd_1ac330c2040a9012c8c939c8a288c5aeb3" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>_dtypeErr</name></member>
+      <member refid="classNp_1_1core_1_1nd_1adf2b1feb2b6184c1ec5dde8261f95af5" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>_err</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a791da280f8f30e070c5440568ee71d3f" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>_invalidArgument</name></member>
+      <member refid="classNp_1_1core_1_1nd_1ae2aa3f0e0934d8786c2c61994640700a" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>_ndDouble</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a8390c8b280cbcbfc7eadbaff38440b0b" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>_ndFloat</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a9c2cf5fa04310a48da88d919510eecc0" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>_ndInt</name></member>
+      <member refid="classNp_1_1vector_1a904759320b4157ca0dd801314bc16ad2" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>add</name></member>
+      <member refid="classNp_1_1vector_1a0d58a18ecd9b3ee28cd2f8722ec19cc9" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>addMatrix</name></member>
+      <member refid="classNp_1_1vector_1a91e11bcbf9d37b6d6b06d076a4ebcd0d" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>addScalar</name></member>
+      <member refid="classNp_1_1vector_1af4acc16a81e885aee7b55e4bd8d46cf1" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>addVector</name></member>
+      <member refid="classNp_1_1vector_1a321b5db5c101a97a4904f8dbafc2fd2b" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>ar</name></member>
+      <member refid="classNp_1_1vector_1ab7fca2ed871609d439639b1578ac796b" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>argMax</name></member>
+      <member refid="classNp_1_1vector_1a0e9e2514e25d2ed5bd69e52826313cf6" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>argMin</name></member>
+      <member refid="classNp_1_1vector_1ab5e12e9ecefe0d6a1c1aa9acf178c849" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>asArray</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a1e703b85fabb38eeb5a6292c7518e506" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>checkDimensions</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a9b45333b32d6f8158c85d254db029993" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>checkDtype</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a73895489de029e9514558939c87dbbeb" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>checkShape</name></member>
+      <member refid="classNp_1_1vector_1a665adc8dff655feb5eb588c7456783fd" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>convolve</name></member>
+      <member refid="classNp_1_1vector_1a87ea5a8c3d0c6bf737e146f274828e33" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>divide</name></member>
+      <member refid="classNp_1_1vector_1ac00870f4f2c4d5247344cd20dec39fe3" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>divideMatrix</name></member>
+      <member refid="classNp_1_1vector_1ae14510e79a7f79baa4908c5715e12b56" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>divideScalar</name></member>
+      <member refid="classNp_1_1vector_1a77913a26c6cc1a9bcbcae1832589a765" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>divideVector</name></member>
+      <member refid="classNp_1_1vector_1a29f60ad2a0cce758f7472d36702d66a3" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>dotMatrix</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a5abc5ae3340c7f6ed5c2c8bfd94a2141" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>DOUBLE</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a8111f5c6304828ac4a237f37d7c3122b" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>EPSILON</name></member>
+      <member refid="classNp_1_1vector_1ae273c5dfb35a12db0977326d765ea2e4" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>factory</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a64df2a8510737a561e4f24ced94be393" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>FLOAT</name></member>
+      <member refid="classNp_1_1vector_1a98c901b06c1a84ddfb6891feb8cbbcde" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>full</name></member>
+      <member refid="classNp_1_1vector_1ab34501259447fb39fad747966d7abdec" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>gaussian</name></member>
+      <member refid="classNp_1_1vector_1a867b9409f7132d7d745c0687ca8f6d9f" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>getDtype</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a03ade5ab6733e2900870ab557d922d8f" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>getMemory</name></member>
+      <member refid="classNp_1_1vector_1af26db43f20669c59aafaeb332be5430c" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>getSize</name></member>
+      <member refid="classNp_1_1vector_1a7996372ddb2aeabe132c1d517d309fb0" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>inner</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a47f23f416b0fdb9661064a931e72d30c" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>INT</name></member>
+      <member refid="classNp_1_1vector_1a49110009eb344bb0072b596c64768a65" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>linspace</name></member>
+      <member refid="classNp_1_1vector_1a75b477520c3e60af9211e31fd1f5208f" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>max</name></member>
+      <member refid="classNp_1_1vector_1adb515869a1fff77aa47340d5860c2bfe" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>mean</name></member>
+      <member refid="classNp_1_1vector_1a2b7fb0132187781a08f5fb32af53a2c8" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>median</name></member>
+      <member refid="classNp_1_1vector_1a1772599059a67a3dc2f366f147c4685f" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>min</name></member>
+      <member refid="classNp_1_1vector_1a53610b4dd3b191053c899e7f8bcb91e4" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>mod</name></member>
+      <member refid="classNp_1_1vector_1ab74b16defa5b23b458507a8c9da3ca3f" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>modMatrix</name></member>
+      <member refid="classNp_1_1vector_1a089b10043ab029f97710eb299271dc6b" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>modScalar</name></member>
+      <member refid="classNp_1_1vector_1aad28d49e1466e964b170aa9dee3818a7" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>modVector</name></member>
+      <member refid="classNp_1_1vector_1a15da7ba340a0387b503e0b1edf60e64a" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>multiply</name></member>
+      <member refid="classNp_1_1vector_1a5337af6cecc91301aa21e8d389a29593" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>multiplyMatrix</name></member>
+      <member refid="classNp_1_1vector_1aa73208685829e2714c09abed56dff189" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>multiplyScalar</name></member>
+      <member refid="classNp_1_1vector_1a819e51f21f7b2f25457990fa562ab9fd" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>multiplyVector</name></member>
+      <member refid="classNp_1_1vector_1a86c0984ab50856d33564680d9aa1f33d" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>normL1</name></member>
+      <member refid="classNp_1_1vector_1ac8e403095bbf4cf3daec447054cf0492" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>normL2</name></member>
+      <member refid="classNp_1_1vector_1ad22e85c589bd619d046f425dc54cbce5" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>normMax</name></member>
+      <member refid="classNp_1_1vector_1a753e9edeb839e6a5149478e7d3211793" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>normP</name></member>
+      <member refid="classNp_1_1vector_1a6edf88614f6198f52839a45cbc9516b9" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>null</name></member>
+      <member refid="classNp_1_1vector_1aa3506e77cfa02211825725683fdf0872" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>ones</name></member>
+      <member refid="classNp_1_1vector_1a7f05718d649e07e09ce12f2a879f3bc7" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>poisson</name></member>
+      <member refid="classNp_1_1vector_1a3259bf0dadf7eed48f9e85a98f0dbc4f" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>pow</name></member>
+      <member refid="classNp_1_1vector_1ae07c60da3523240c6f3224e8a82ce29e" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>powMatrix</name></member>
+      <member refid="classNp_1_1vector_1ac6256209b0ce7dc2a35ee0a22ba1460d" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>powScalar</name></member>
+      <member refid="classNp_1_1vector_1a8de891a0c5d25ae53dd3f5421fe4627e" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>powVector</name></member>
+      <member refid="classNp_1_1vector_1a2115701918dc3db1bc9a7f2fc27c4c64" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>printVector</name></member>
+      <member refid="classNp_1_1vector_1affd0c31fb8677b04b869d64e10877027" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>product</name></member>
+      <member refid="classNp_1_1vector_1a7bad2422e309d0afe808b814734edc26" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>randn</name></member>
+      <member refid="classNp_1_1vector_1a4c46c04b386b08536ba9fbd1da6cb85e" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>range</name></member>
+      <member refid="classNp_1_1vector_1a7e36a800925e3bcedc88821d3b685583" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>reciprocal</name></member>
+      <member refid="classNp_1_1vector_1a1fcfc617c3b2651e29c609e1c8eca68f" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>setData</name></member>
+      <member refid="classNp_1_1vector_1ab88c721c641c09f845440c38818b58e4" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>sort</name></member>
+      <member refid="classNp_1_1vector_1af7eb2a26f100a9638e7be753dd3cdf26" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>square</name></member>
+      <member refid="classNp_1_1vector_1a2102b4d22544551be497286ae806b2ec" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>substractScalar</name></member>
+      <member refid="classNp_1_1vector_1a6f5a453f2824e06fcaad4c2756928e56" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>subtract</name></member>
+      <member refid="classNp_1_1vector_1a38c5131c6b672b07c456283b024bf6ee" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>subtractMatrix</name></member>
+      <member refid="classNp_1_1vector_1af3ce54ab7fb8dfd42b56e0376d00049a" prot="protected" virt="non-virtual"><scope>Np::vector</scope><name>subtractVector</name></member>
+      <member refid="classNp_1_1vector_1a1274696da319a6b2716065b4dc6cda0b" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>sum</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a16af7a4464500d01322a99b970949a9e" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>time</name></member>
+      <member refid="classNp_1_1core_1_1nd_1ae6b40189201f85346be61ced3028eb2d" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>TWO_PI</name></member>
+      <member refid="classNp_1_1vector_1ae82f1bb2d726470ca3caef0df0cd6cd2" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>uniform</name></member>
+      <member refid="classNp_1_1vector_1a43a4964b7763c5b06e7be255cce5a986" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>variance</name></member>
+      <member refid="classNp_1_1vector_1af69c6c5b02bfc712cdc8ce6f6b1b278f" prot="public" virt="non-virtual"><scope>Np::vector</scope><name>zeros</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

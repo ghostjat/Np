@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_6e33d6500a76933db4361f663e54ab12" kind="dir">
+    <compoundname>/home/ghost/projects/git/numphp/src/exceptions</compoundname>
+    <innerfile refid="dimensionalityMismatch_8php">dimensionalityMismatch.php</innerfile>
+    <innerfile refid="dtypeException_8php">dtypeException.php</innerfile>
+    <innerfile refid="invalidArgumentException_8php">invalidArgumentException.php</innerfile>
+    <innerfile refid="npException_8php">npException.php</innerfile>
+    <innerfile refid="runtimeException_8php">runtimeException.php</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/ghost/projects/git/numphp/src/exceptions/"/>
+  </compounddef>
+</doxygen>

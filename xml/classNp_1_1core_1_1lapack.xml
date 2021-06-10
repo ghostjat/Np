@@ -1,0 +1,619 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classNp_1_1core_1_1lapack" kind="class" language="PHP" prot="public">
+    <compoundname>Np::core::lapack</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classNp_1_1core_1_1lapack_1a01239fed22c9c735e13a02e74dad05d4" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const Np\core\lapack::COL_MAJOR</definition>
+        <argsstring></argsstring>
+        <name>COL_MAJOR</name>
+        <initializer>= 102</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.php" line="18" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/lapack.php" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNp_1_1core_1_1lapack_1acdf7c7389e7d45c2ee1ee52437f956ca" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const Np\core\lapack::DECR</definition>
+        <argsstring></argsstring>
+        <name>DECR</name>
+        <initializer>= &apos;D&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.php" line="20" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/lapack.php" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNp_1_1core_1_1lapack_1a092bf0f19f7dcb1cb32e4cf34c0e928a" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const Np\core\lapack::INCR</definition>
+        <argsstring></argsstring>
+        <name>INCR</name>
+        <initializer>= &apos;I&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.php" line="20" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/lapack.php" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNp_1_1core_1_1lapack_1afc850b5058cf68604d3b923b3a609307" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const Np\core\lapack::Lower</definition>
+        <argsstring></argsstring>
+        <name>Lower</name>
+        <initializer>= &apos;L&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.php" line="19" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/lapack.php" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNp_1_1core_1_1lapack_1a0a92f38ae658d15fcb31e720c60d25d7" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const Np\core\lapack::ROW_MAJOR</definition>
+        <argsstring></argsstring>
+        <name>ROW_MAJOR</name>
+        <initializer>= 101</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.php" line="18" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/lapack.php" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNp_1_1core_1_1lapack_1a5eac9840fbfa616b77fd5139efbba412" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const Np\core\lapack::Upper</definition>
+        <argsstring></argsstring>
+        <name>Upper</name>
+        <initializer>= &apos;U&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.php" line="19" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/lapack.php" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classNp_1_1core_1_1lapack_1a74a7502cda4d0ac0b27f7b4a321d8f6a" prot="public" static="yes" mutable="no">
+        <type>static</type>
+        <definition>Np\core\lapack::$ffi_lapack</definition>
+        <argsstring></argsstring>
+        <name>$ffi_lapack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.php" line="22" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/lapack.php" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classNp_1_1core_1_1lapack_1a1687226a965887584bbdbb11272d0fea" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\lapack::geev</definition>
+        <argsstring>(\Np\matrix $mat, \Np\vector $wr, \Np\vector $wi, \Np\matrix $vr, int $matLayout=self::ROW_MAJOR)</argsstring>
+        <name>geev</name>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$mat</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$wr</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$wi</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$vr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$matLayout</declname>
+          <defval>self::ROW_MAJOR</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$mat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$wr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$wi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$vr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$matLayout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.php" line="103" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/lapack.php" bodystart="103" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1lapack_1a1f2a85f0b6e387cafc98e9269114dca5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\lapack::gesdd</definition>
+        <argsstring>(\Np\matrix $mat, \Np\vector $s, \Np\matrix $u, \Np\matrix $vt, int $matLayout=self::ROW_MAJOR)</argsstring>
+        <name>gesdd</name>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$mat</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$s</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$u</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$vt</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$matLayout</declname>
+          <defval>self::ROW_MAJOR</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$mat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$u</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$vt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$matLayout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.php" line="71" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/lapack.php" bodystart="71" bodyend="77"/>
+        <referencedby refid="classNp_1_1decompositions_1_1svd_1ac8bda3519697c3b3e32f7808053f5675" compoundref="svd_8php" startline="29" endline="43">Np\decompositions\svd\factory</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1lapack_1ab4d38b46b6cfad63cae6cd07cdc6e045" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\lapack::getrf</definition>
+        <argsstring>(\Np\matrix $mat, \Np\vector $ipiv, int $matLayout=self::ROW_MAJOR)</argsstring>
+        <name>getrf</name>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$mat</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$ipiv</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$matLayout</declname>
+          <defval>self::ROW_MAJOR</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$mat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$ipiv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$matLayout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.php" line="38" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/lapack.php" bodystart="38" bodyend="44"/>
+        <referencedby refid="classNp_1_1reductions_1_1ref_1a5c705593b301c61edb93be153355ac14" compoundref="ref_8php" startline="28" endline="37">Np\reductions\ref\factory</referencedby>
+        <referencedby refid="classNp_1_1decompositions_1_1lu_1a12939e49fe2dafdbaed5b350cf4f460a" compoundref="lu_8php" startline="32" endline="74">Np\decompositions\lu\factory</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1lapack_1aa64f2f6bbd2554ca6a8657af69f264db" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\lapack::getri</definition>
+        <argsstring>(\Np\matrix $mat, \Np\vector $ipiv, int $matLayout=self::ROW_MAJOR)</argsstring>
+        <name>getri</name>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$mat</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$ipiv</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$matLayout</declname>
+          <defval>self::ROW_MAJOR</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$mat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$ipiv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$matLayout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.php" line="53" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/lapack.php" bodystart="53" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1lapack_1a68ae2955615fb2b7c86a7850e80cda82" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\lapack::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.php" line="24" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/lapack.php" bodystart="24" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1lapack_1a9e3bbce301906ed54cca74fc2dbda232" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\lapack::lange</definition>
+        <argsstring>(string $norm, \Np\matrix $m, int $matLayout=self::ROW_MAJOR)</argsstring>
+        <name>lange</name>
+        <param>
+          <type>string</type>
+          <declname>$norm</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$matLayout</declname>
+          <defval>self::ROW_MAJOR</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$norm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$matLayout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.php" line="133" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/lapack.php" bodystart="133" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1lapack_1a545330e971d4922d4d46abdbd21a423d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\lapack::potrf</definition>
+        <argsstring>(\Np\matrix $mat, $uplo=self::Lower, int $matLayout=self::ROW_MAJOR)</argsstring>
+        <name>potrf</name>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$mat</declname>
+        </param>
+        <param>
+          <declname>$uplo</declname>
+          <defval>self::Lower</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$matLayout</declname>
+          <defval>self::ROW_MAJOR</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$mat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$uplo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$matLayout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.php" line="86" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/lapack.php" bodystart="86" bodyend="92"/>
+        <referencedby refid="classNp_1_1decompositions_1_1cholesky_1a5885c1d3828f0c389b77313070f01355" compoundref="cholesky_8php" startline="30" endline="45">Np\decompositions\cholesky\factory</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1lapack_1a8702ac8aad340008cdc6f7af2cff0561" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\lapack::sgels</definition>
+        <argsstring>()</argsstring>
+        <name>sgels</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.php" line="155" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/lapack.php" bodystart="155" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1lapack_1a533677386a4843e951ede97e080ed05e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\lapack::sort</definition>
+        <argsstring>(\Np\vector $v, $id=self::INCR)</argsstring>
+        <name>sort</name>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$v</declname>
+        </param>
+        <param>
+          <declname>$id</declname>
+          <defval>self::INCR</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>$id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.php" line="147" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/lapack.php" bodystart="147" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1lapack_1af379f43ab68d41bc73a93797d7dd97ea" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\lapack::syev</definition>
+        <argsstring>(\Np\matrix $mat, \Np\vector $wr, int $matLayout=self::ROW_MAJOR)</argsstring>
+        <name>syev</name>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$mat</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$wr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$matLayout</declname>
+          <defval>self::ROW_MAJOR</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$mat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$wr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$matLayout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.php" line="118" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/lapack.php" bodystart="118" bodyend="124"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="39">
+        <label>Np\core\lapack</label>
+        <link refid="classNp_1_1core_1_1lapack"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/ghost/projects/git/numphp/src/core/lapack.php" line="16" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/lapack.php" bodystart="16" bodyend="159"/>
+    <listofallmembers>
+      <member refid="classNp_1_1core_1_1lapack_1a74a7502cda4d0ac0b27f7b4a321d8f6a" prot="public" virt="non-virtual"><scope>Np::core::lapack</scope><name>$ffi_lapack</name></member>
+      <member refid="classNp_1_1core_1_1lapack_1a01239fed22c9c735e13a02e74dad05d4" prot="public" virt="non-virtual"><scope>Np::core::lapack</scope><name>COL_MAJOR</name></member>
+      <member refid="classNp_1_1core_1_1lapack_1acdf7c7389e7d45c2ee1ee52437f956ca" prot="public" virt="non-virtual"><scope>Np::core::lapack</scope><name>DECR</name></member>
+      <member refid="classNp_1_1core_1_1lapack_1a1687226a965887584bbdbb11272d0fea" prot="public" virt="non-virtual"><scope>Np::core::lapack</scope><name>geev</name></member>
+      <member refid="classNp_1_1core_1_1lapack_1a1f2a85f0b6e387cafc98e9269114dca5" prot="public" virt="non-virtual"><scope>Np::core::lapack</scope><name>gesdd</name></member>
+      <member refid="classNp_1_1core_1_1lapack_1ab4d38b46b6cfad63cae6cd07cdc6e045" prot="public" virt="non-virtual"><scope>Np::core::lapack</scope><name>getrf</name></member>
+      <member refid="classNp_1_1core_1_1lapack_1aa64f2f6bbd2554ca6a8657af69f264db" prot="public" virt="non-virtual"><scope>Np::core::lapack</scope><name>getri</name></member>
+      <member refid="classNp_1_1core_1_1lapack_1a092bf0f19f7dcb1cb32e4cf34c0e928a" prot="public" virt="non-virtual"><scope>Np::core::lapack</scope><name>INCR</name></member>
+      <member refid="classNp_1_1core_1_1lapack_1a68ae2955615fb2b7c86a7850e80cda82" prot="public" virt="non-virtual"><scope>Np::core::lapack</scope><name>init</name></member>
+      <member refid="classNp_1_1core_1_1lapack_1a9e3bbce301906ed54cca74fc2dbda232" prot="public" virt="non-virtual"><scope>Np::core::lapack</scope><name>lange</name></member>
+      <member refid="classNp_1_1core_1_1lapack_1afc850b5058cf68604d3b923b3a609307" prot="public" virt="non-virtual"><scope>Np::core::lapack</scope><name>Lower</name></member>
+      <member refid="classNp_1_1core_1_1lapack_1a545330e971d4922d4d46abdbd21a423d" prot="public" virt="non-virtual"><scope>Np::core::lapack</scope><name>potrf</name></member>
+      <member refid="classNp_1_1core_1_1lapack_1a0a92f38ae658d15fcb31e720c60d25d7" prot="public" virt="non-virtual"><scope>Np::core::lapack</scope><name>ROW_MAJOR</name></member>
+      <member refid="classNp_1_1core_1_1lapack_1a8702ac8aad340008cdc6f7af2cff0561" prot="public" virt="non-virtual"><scope>Np::core::lapack</scope><name>sgels</name></member>
+      <member refid="classNp_1_1core_1_1lapack_1a533677386a4843e951ede97e080ed05e" prot="public" virt="non-virtual"><scope>Np::core::lapack</scope><name>sort</name></member>
+      <member refid="classNp_1_1core_1_1lapack_1af379f43ab68d41bc73a93797d7dd97ea" prot="public" virt="non-virtual"><scope>Np::core::lapack</scope><name>syev</name></member>
+      <member refid="classNp_1_1core_1_1lapack_1a5eac9840fbfa616b77fd5139efbba412" prot="public" virt="non-virtual"><scope>Np::core::lapack</scope><name>Upper</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

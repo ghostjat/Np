@@ -62,10 +62,9 @@
                     <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/Default.html"><abbr title="\Default">Default</abbr></a></h3>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/NumPhp.html"><abbr title="\NumPhp">NumPhp</abbr></a></h3>
                         <ul class="phpdocumentor-list">
-                                    <li><a href="packages/NumPhp-Convolve.html"><abbr title="\NumPhp\Convolve">Convolve</abbr></a></li>
-                                    <li><a href="packages/NumPhp-Core.html"><abbr title="\NumPhp\Core">Core</abbr></a></li>
+                                    <li><a href="packages/NumPhp-Blas.html"><abbr title="\NumPhp\Blas">Blas</abbr></a></li>
+                                    <li><a href="packages/NumPhp-Lapack.html"><abbr title="\NumPhp\Lapack">Lapack</abbr></a></li>
                                     <li><a href="packages/NumPhp-Matrix.html"><abbr title="\NumPhp\Matrix">Matrix</abbr></a></li>
-                                    <li><a href="packages/NumPhp-Vector.html"><abbr title="\NumPhp\Vector">Vector</abbr></a></li>
                             </ul>
                         </section>
     
@@ -97,8 +96,7 @@
             in package
             <ul class="phpdocumentor-breadcrumbs">
                                     <li class="phpdocumentor-breadcrumb"><a href="packages/NumPhp.html">NumPhp</a></li>
-                                    <li class="phpdocumentor-breadcrumb"><a href="packages/NumPhp-Core.html">Core</a></li>
-                                    <li class="phpdocumentor-breadcrumb"><a href="packages/NumPhp-Core-Blas.html">Blas</a></li>
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/NumPhp-Blas.html">Blas</a></li>
                             </ul>
         </div>
     
@@ -106,7 +104,7 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">14</span>
 </aside>
@@ -255,19 +253,26 @@
 <dd></dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/numphp-core-blas.html#method_asum">asum()</a>
+    <a href="classes/numphp-core-blas.html#method_dasum">dasum()</a>
     <span>
                         &nbsp;: float    </span>
 </dt>
 <dd>Calculates the sum of the absolute values of each component of the vector.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/numphp-core-blas.html#method_axpy">axpy()</a>
+    <a href="classes/numphp-core-blas.html#method_daxpy">daxpy()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
 <dd>Add vectors
    Y := alpha * X + Y</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/numphp-core-blas.html#method_dcopy">dcopy()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Copy the vector from X to Y.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/numphp-core-blas.html#method_ddot">ddot()</a>
@@ -277,11 +282,21 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/numphp-core-blas.html#method_dgbmv">dgbmv()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Compute the product of a general matrix and a vector stored in band format.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/numphp-core-blas.html#method_dgemm">dgemm()</a>
     <span>
                         &nbsp;: <abbr title="\FFI\CData">CData</abbr>    </span>
 </dt>
-<dd></dd>
+<dd>Product of symmetric matrix and general matrix
+   C := alpha * AB + beta * C
+           or
+   C := alpha * BA + beta * C</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/numphp-core-blas.html#method_dgemv">dgemv()</a>
@@ -289,6 +304,14 @@
                         &nbsp;: <abbr title="\FFI\CData">CData</abbr>    </span>
 </dt>
 <dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/numphp-core-blas.html#method_dger">dger()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Compute the product of a column vector and a row vector. (Real number)
+   A := alpha * x y^t + A</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/numphp-core-blas.html#method_dmax">dmax()</a>
@@ -305,11 +328,69 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/numphp-core-blas.html#method_dnrm2">dnrm2()</a>
+    <span>
+                        &nbsp;: float    </span>
+</dt>
+<dd>Compute the Euclidean norm of a vector.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/numphp-core-blas.html#method_drot">drot()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Rotate about a given point.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/numphp-core-blas.html#method_drotg">drotg()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Give the point P (a, b).</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/numphp-core-blas.html#method_dscal">dscal()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Multiply vector by scalar.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/numphp-core-blas.html#method_dswap">dswap()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Exchange the contents of the vector.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/numphp-core-blas.html#method_dsymm">dsymm()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Product of symmetric matrix and general matrix
+   C := alpha * AB + beta * C
+           or
+   C := alpha * BA + beta * C</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/numphp-core-blas.html#method_dsyr2k">dsyr2k()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Update rank 2k of symmetric matrix
+   C := alpha * A B^T + alpha B A^T + beta * C
+           or
+   C := alpha * B^T A + alpha A^T B + beta * C</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/numphp-core-blas.html#method_dsyrk">dsyrk()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Update rank n of symmetric matrix
+   C := alpha * A A^T + beta * C
+           or
+   C := alpha * A^T A + beta * C</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/numphp-core-blas.html#method_getConfig">getConfig()</a>
@@ -352,6 +433,21 @@
                         &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/numphp-core-blas.html#method_sasum">sasum()</a>
+    <span>
+                        &nbsp;: float    </span>
+</dt>
+<dd>Calculates the sum of the absolute values of each component of the vector.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/numphp-core-blas.html#method_saxpy">saxpy()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Add vectors
+   Y := alpha * X + Y</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/numphp-core-blas.html#method_scopy">scopy()</a>
@@ -500,7 +596,7 @@
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">19</span>
 </aside>
@@ -525,7 +621,7 @@
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">20</span>
 </aside>
@@ -550,7 +646,7 @@
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">16</span>
 </aside>
@@ -575,7 +671,7 @@
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">17</span>
 </aside>
@@ -600,7 +696,7 @@
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">18</span>
 </aside>
@@ -625,7 +721,7 @@
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">20</span>
 </aside>
@@ -650,7 +746,7 @@
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">16</span>
 </aside>
@@ -675,7 +771,7 @@
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">19</span>
 </aside>
@@ -700,7 +796,7 @@
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">20</span>
 </aside>
@@ -725,7 +821,7 @@
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">18</span>
 </aside>
@@ -750,7 +846,7 @@
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">17</span>
 </aside>
@@ -790,7 +886,7 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">22</span>
 </aside>
@@ -819,21 +915,21 @@
             -public
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_asum">
-        asum()
-        <a href="classes/numphp-core-blas.html#method_asum" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_dasum">
+        dasum()
+        <a href="classes/numphp-core-blas.html#method_dasum" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">333</span>
+    <span class="phpdocumentor-element-found-in__line">470</span>
 </aside>
 
         <p class="phpdocumentor-summary">Calculates the sum of the absolute values of each component of the vector.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">asum</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$vector</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">dasum</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$vector</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
 
         <section class="phpdocumentor-description"><p>ret := |x_1| + ... + |x_n|</p>
 </section>
@@ -845,7 +941,10 @@
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>Vector X buffer
+@return float</p>
+</section>
+
             </dd>
             </dl>
 
@@ -864,14 +963,14 @@
             -public
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_axpy">
-        axpy()
-        <a href="classes/numphp-core-blas.html#method_axpy" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_daxpy">
+        daxpy()
+        <a href="classes/numphp-core-blas.html#method_daxpy" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">320</span>
+    <span class="phpdocumentor-element-found-in__line">444</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add vectors
@@ -879,9 +978,9 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">axpy</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$alpha</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$vect_X</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$vect_Y</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">daxpy</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$alpha</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$vect_X</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$vect_Y</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"><p>@param int $n           Number of elements in each vector</p>
+        <section class="phpdocumentor-description"><p>@param float $alpha     Coefficient of scalar multiple of X vector</p>
 </section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -891,19 +990,18 @@
                 : <span class="phpdocumentor-signature__argument__return-type">float</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Coefficient of scalar multiple of X vector
-@param \numphp\vector $vect_X        Vector X buffer
-@param \numphp\vector $vect_Y        Vector Y buffer
-@return void</p>
-</section>
-
+                
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$vect_X</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>Vector X buffer
+@param \numphp\vector $vect_Y        Vector Y buffer
+@return void</p>
+</section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$vect_Y</span>
@@ -929,14 +1027,86 @@
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_dcopy">
+        dcopy()
+        <a href="classes/numphp-core-blas.html#method_dcopy" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">395</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Copy the vector from X to Y.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">dcopy</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$vect_X</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$vect_Y</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$invX</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">1</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$invY</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">1</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"><p>Y := X</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$vect_X</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Vector X buffer
+@param \numphp\vector $vect_Y        Vector Y buffer
+@param int $invX
+@param int $invY
+@return void</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$vect_Y</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$invX</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">1</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$invY</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">1</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_ddot">
         ddot()
         <a href="classes/numphp-core-blas.html#method_ddot" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">210</span>
+    <span class="phpdocumentor-element-found-in__line">296</span>
 </aside>
 
     
@@ -1004,17 +1174,119 @@
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_dgbmv">
+        dgbmv()
+        <a href="classes/numphp-core-blas.html#method_dgbmv" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">230</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Compute the product of a general matrix and a vector stored in band format.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">dgbmv</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$KL</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$KU</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$alpha</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$beta</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-matrix.html"><abbr title="\numphp\matrix">matrix</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$matrix</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$vector</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$mvr</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"><p>y := alpha * Ax + beta * y</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$KL</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Number of elements in the lower left part</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$KU</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Number of elements in the upper right part</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$alpha</span>
+                : <span class="phpdocumentor-signature__argument__return-type">float</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Coefficient of scalar multiple of vector</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$beta</span>
+                : <span class="phpdocumentor-signature__argument__return-type">float</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Coefficient of scalar multiple of  mvr</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$matrix</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-matrix.html"><abbr title="\numphp\matrix">matrix</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$vector</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$mvr</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_dgemm">
         dgemm()
         <a href="classes/numphp-core-blas.html#method_dgemm" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">133</span>
+    <span class="phpdocumentor-element-found-in__line">185</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Product of symmetric matrix and general matrix
+   C := alpha * AB + beta * C
+           or
+   C := alpha * BA + beta * C</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
             <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">dgemm</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-matrix.html"><abbr title="\numphp\matrix">matrix</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$m1</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-matrix.html"><abbr title="\numphp\matrix">matrix</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$m2</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-matrix.html"><abbr title="\numphp\matrix">matrix</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$mr</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\FFI\CData">CData</abbr></span></code>
@@ -1056,14 +1328,6 @@
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">static</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"></section>
-
-                                    </dd>
-                                                <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">dtype</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -1092,9 +1356,9 @@
         <a href="classes/numphp-core-blas.html#method_dgemv" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">147</span>
+    <span class="phpdocumentor-element-found-in__line">199</span>
 </aside>
 
     
@@ -1170,14 +1434,76 @@
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_dger">
+        dger()
+        <a href="classes/numphp-core-blas.html#method_dger" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">269</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Compute the product of a column vector and a row vector. (Real number)
+   A := alpha * x y^t + A</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">dger</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$v1</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$v2</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-matrix.html"><abbr title="\numphp\matrix">matrix</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$m</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$v1</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$v2</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$m</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-matrix.html"><abbr title="\numphp\matrix">matrix</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_dmax">
         dmax()
         <a href="classes/numphp-core-blas.html#method_dmax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">232</span>
+    <span class="phpdocumentor-element-found-in__line">318</span>
 </aside>
 
     
@@ -1233,9 +1559,9 @@
         <a href="classes/numphp-core-blas.html#method_dmin" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">254</span>
+    <span class="phpdocumentor-element-found-in__line">340</span>
 </aside>
 
     
@@ -1286,23 +1612,505 @@
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_dnrm2">
+        dnrm2()
+        <a href="classes/numphp-core-blas.html#method_dnrm2" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">420</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Compute the Euclidean norm of a vector.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">dnrm2</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$v</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
+
+        <section class="phpdocumentor-description"><p>ret := ||X||</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$v</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">float</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_drot">
+        drot()
+        <a href="classes/numphp-core-blas.html#method_drot" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">497</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Rotate about a given point.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">drot</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$v1</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$v2</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$c</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$s</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"><p>X(i) := c * X(i) + s * Y(i)
+Y(i) :=-s * X(i) + c * Y(i)</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$v1</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Vector X buffer</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$v2</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Vector Y buffer</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$c</span>
+                : <span class="phpdocumentor-signature__argument__return-type">float</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>value of cos A(Value obtained with rotg function.)</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$s</span>
+                : <span class="phpdocumentor-signature__argument__return-type">float</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>value of sin A(Value obtained with rotg function.)</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_drotg">
+        drotg()
+        <a href="classes/numphp-core-blas.html#method_drotg" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">540</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Give the point P (a, b).</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">drotg</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$a</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$b</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$c</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$s</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"><p>Rotate this point to givens and calculate the parameters a, b, c,
+and s to make the y coordinate zero.
+Conditions description:
+c * a + s * b = r
+-s * a + c * b = 0
+r = ||(a,b)||
+c^2 + s^2 = 1
+z=s if |a| &gt; |b|
+z=1/c if |a| &lt;= |b| and c != 0 and r != 0
+Find r, z, c, s that satisfies the above description.
+However, when r = 0, z = 0, c = 1, and s = 0 are returned.
+Also, if c = 0, | a | &lt;= | b | and c! = 0 and r! = 0, z = 1 is returned.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$a</span>
+                : <span class="phpdocumentor-signature__argument__return-type">float</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>X-coordinate of P: The calculated r value is stored and returned
+@param float $b     Y-coordinate of P: The calculated z value is stored and returned
+@param float $c     Stores the calculated value of c
+@param float $s     Stores the calculated value of s
+@return void</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$b</span>
+                : <span class="phpdocumentor-signature__argument__return-type">float</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$c</span>
+                : <span class="phpdocumentor-signature__argument__return-type">float</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$s</span>
+                : <span class="phpdocumentor-signature__argument__return-type">float</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_dscal">
+        dscal()
+        <a href="classes/numphp-core-blas.html#method_dscal" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">578</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Multiply vector by scalar.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">dscal</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$alpha</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$v</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"><p>X := alpha * X</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$alpha</span>
+                : <span class="phpdocumentor-signature__argument__return-type">float</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Coefficient of scalar multiple of V vector</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$v</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_dswap">
         dswap()
         <a href="classes/numphp-core-blas.html#method_dswap" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">271</span>
+    <span class="phpdocumentor-element-found-in__line">366</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Exchange the contents of the vector.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">dswap</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">dswap</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$v1</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$v2</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$inv1</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">1</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$inv2</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">1</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"><p>X := Y
+Y := X</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$v1</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$v2</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$inv1</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">1</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$inv2</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">1</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
 
     
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
     
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_dsymm">
+        dsymm()
+        <a href="classes/numphp-core-blas.html#method_dsymm" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">87</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Product of symmetric matrix and general matrix
+   C := alpha * AB + beta * C
+           or
+   C := alpha * BA + beta * C</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">dsymm</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-matrix.html"><abbr title="\numphp\matrix">matrix</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$m1</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-matrix.html"><abbr title="\numphp\matrix">matrix</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$m2</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-matrix.html"><abbr title="\numphp\matrix">matrix</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$mr</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$m1</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-matrix.html"><abbr title="\numphp\matrix">matrix</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$m2</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-matrix.html"><abbr title="\numphp\matrix">matrix</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$mr</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-matrix.html"><abbr title="\numphp\matrix">matrix</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_dsyr2k">
+        dsyr2k()
+        <a href="classes/numphp-core-blas.html#method_dsyr2k" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">150</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Update rank 2k of symmetric matrix
+   C := alpha * A B^T + alpha B A^T + beta * C
+           or
+   C := alpha * B^T A + alpha A^T B + beta * C</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">dsyr2k</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-matrix.html"><abbr title="\numphp\matrix">matrix</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$m1</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-matrix.html"><abbr title="\numphp\matrix">matrix</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$m2</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-matrix.html"><abbr title="\numphp\matrix">matrix</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$mr</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$m1</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-matrix.html"><abbr title="\numphp\matrix">matrix</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$m2</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-matrix.html"><abbr title="\numphp\matrix">matrix</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$mr</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-matrix.html"><abbr title="\numphp\matrix">matrix</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_dsyrk">
+        dsyrk()
+        <a href="classes/numphp-core-blas.html#method_dsyrk" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">119</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Update rank n of symmetric matrix
+   C := alpha * A A^T + beta * C
+           or
+   C := alpha * A^T A + beta * C</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">dsyrk</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-matrix.html"><abbr title="\numphp\matrix">matrix</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$m1</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-matrix.html"><abbr title="\numphp\matrix">matrix</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$m2</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$m1</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-matrix.html"><abbr title="\numphp\matrix">matrix</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$m2</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-matrix.html"><abbr title="\numphp\matrix">matrix</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -1323,7 +2131,7 @@
         <a href="classes/numphp-core-blas.html#method_getConfig" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">47</span>
 </aside>
@@ -1355,7 +2163,7 @@
         <a href="classes/numphp-core-blas.html#method_getCoreName" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">52</span>
 </aside>
@@ -1387,7 +2195,7 @@
         <a href="classes/numphp-core-blas.html#method_getNumParallel" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">57</span>
 </aside>
@@ -1419,7 +2227,7 @@
         <a href="classes/numphp-core-blas.html#method_getNumPorcs" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">42</span>
 </aside>
@@ -1451,7 +2259,7 @@
         <a href="classes/numphp-core-blas.html#method_getNumThreads" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">37</span>
 </aside>
@@ -1483,7 +2291,7 @@
         <a href="classes/numphp-core-blas.html#method_init" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">25</span>
 </aside>
@@ -1510,14 +2318,126 @@
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_sasum">
+        sasum()
+        <a href="classes/numphp-core-blas.html#method_sasum" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">482</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Calculates the sum of the absolute values of each component of the vector.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">sasum</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$vector</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
+
+        <section class="phpdocumentor-description"><p>ret := |x_1| + ... + |x_n|</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$vector</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Vector X buffer
+@return float</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">float</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_saxpy">
+        saxpy()
+        <a href="classes/numphp-core-blas.html#method_saxpy" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">458</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Add vectors
+   Y := alpha * X + Y</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">saxpy</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$alpha</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$vect_X</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$vect_Y</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"><p>@param float $alpha     Coefficient of scalar multiple of X vector</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$alpha</span>
+                : <span class="phpdocumentor-signature__argument__return-type">float</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$vect_X</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Vector X buffer
+@param \numphp\vector $vect_Y        Vector Y buffer
+@return void</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$vect_Y</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_scopy">
         scopy()
         <a href="classes/numphp-core-blas.html#method_scopy" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">295</span>
+    <span class="phpdocumentor-element-found-in__line">408</span>
 </aside>
 
         <p class="phpdocumentor-summary">Copy the vector from X to Y.</p>
@@ -1536,7 +2456,11 @@
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>Vector X buffer
+@param \numphp\vector $vect_Y        Vector Y buffer
+@return void</p>
+</section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$vect_Y</span>
@@ -1567,9 +2491,9 @@
         <a href="classes/numphp-core-blas.html#method_sdot" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">222</span>
+    <span class="phpdocumentor-element-found-in__line">308</span>
 </aside>
 
         <p class="phpdocumentor-summary">Calculate the inner product value between vectors.</p>
@@ -1635,7 +2559,7 @@
         <a href="classes/numphp-core-blas.html#method_setNumThreads" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">32</span>
 </aside>
@@ -1677,9 +2601,9 @@
         <a href="classes/numphp-core-blas.html#method_sgbmv" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">179</span>
+    <span class="phpdocumentor-element-found-in__line">251</span>
 </aside>
 
         <p class="phpdocumentor-summary">Compute the product of a general matrix and a vector stored in band format.</p>
@@ -1775,7 +2699,7 @@
         <a href="classes/numphp-core-blas.html#method_sgemm" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">71</span>
 </aside>
@@ -1866,9 +2790,9 @@
         <a href="classes/numphp-core-blas.html#method_sgemv" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">162</span>
+    <span class="phpdocumentor-element-found-in__line">214</span>
 </aside>
 
         <p class="phpdocumentor-summary">Compute the product of a general matrix and a vector.</p>
@@ -1943,9 +2867,9 @@
         <a href="classes/numphp-core-blas.html#method_sger" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">197</span>
+    <span class="phpdocumentor-element-found-in__line">283</span>
 </aside>
 
         <p class="phpdocumentor-summary">Compute the product of a column vector and a row vector. (Real number)
@@ -2005,9 +2929,9 @@
         <a href="classes/numphp-core-blas.html#method_smax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">244</span>
+    <span class="phpdocumentor-element-found-in__line">330</span>
 </aside>
 
         <p class="phpdocumentor-summary">Calculates the index of the element with the largest absolute value in the vector.</p>
@@ -2053,9 +2977,9 @@ ret := arg max |X(i)|</p>
         <a href="classes/numphp-core-blas.html#method_smin" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">266</span>
+    <span class="phpdocumentor-element-found-in__line">352</span>
 </aside>
 
         <p class="phpdocumentor-summary">Calculates the index of the element with the smallest absolute value in the vector.</p>
@@ -2100,9 +3024,9 @@ ret := arg min |X(i)|</p>
         <a href="classes/numphp-core-blas.html#method_snrm2" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">307</span>
+    <span class="phpdocumentor-element-found-in__line">431</span>
 </aside>
 
         <p class="phpdocumentor-summary">Compute the Euclidean norm of a vector.</p>
@@ -2146,9 +3070,9 @@ ret := arg min |X(i)|</p>
         <a href="classes/numphp-core-blas.html#method_srot" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">348</span>
+    <span class="phpdocumentor-element-found-in__line">513</span>
 </aside>
 
         <p class="phpdocumentor-summary">Rotate about a given point.</p>
@@ -2221,9 +3145,9 @@ Y(i) :=-s * X(i) + c * Y(i)</p>
         <a href="classes/numphp-core-blas.html#method_srotg" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">375</span>
+    <span class="phpdocumentor-element-found-in__line">566</span>
 </aside>
 
         <p class="phpdocumentor-summary">Give the point P (a, b).</p>
@@ -2304,9 +3228,9 @@ Also, if c = 0, | a | &lt;= | b | and c! = 0 and r! = 0, z = 1 is returned.</p>
         <a href="classes/numphp-core-blas.html#method_sscal" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">387</span>
+    <span class="phpdocumentor-element-found-in__line">590</span>
 </aside>
 
         <p class="phpdocumentor-summary">Multiply vector by scalar.</p>
@@ -2359,16 +3283,16 @@ Also, if c = 0, | a | &lt;= | b | and c! = 0 and r! = 0, z = 1 is returned.</p>
         <a href="classes/numphp-core-blas.html#method_sswap" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">282</span>
+    <span class="phpdocumentor-element-found-in__line">381</span>
 </aside>
 
         <p class="phpdocumentor-summary">Exchange the contents of the vector.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">sswap</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$v1</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$v2</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">sswap</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$v1</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$v2</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$inv1</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">1</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$inv2</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">1</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"><p>X := Y
 Y := X</p>
@@ -2388,6 +3312,22 @@ Y := X</p>
                 <span class="phpdocumentor-signature__argument__name">$v2</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/numphp-vector.html"><abbr title="\numphp\vector">vector</abbr></a></span>
                             </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$inv1</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">1</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$inv2</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">1</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
 
@@ -2414,9 +3354,9 @@ Y := X</p>
         <a href="classes/numphp-core-blas.html#method_ssymm" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">87</span>
+    <span class="phpdocumentor-element-found-in__line">104</span>
 </aside>
 
         <p class="phpdocumentor-summary">Product of symmetric matrix and general matrix
@@ -2478,9 +3418,9 @@ Y := X</p>
         <a href="classes/numphp-core-blas.html#method_ssyr2k" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">118</span>
+    <span class="phpdocumentor-element-found-in__line">166</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update rank 2k of symmetric matrix
@@ -2542,9 +3482,9 @@ Y := X</p>
         <a href="classes/numphp-core-blas.html#method_ssyrk" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/blas.php"><a href="files/core-blas.html"><abbr title="core/blas.php">blas.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/core/blas.php"><a href="files/src-core-blas.html"><abbr title="src/core/blas.php">blas.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">102</span>
+    <span class="phpdocumentor-element-found-in__line">134</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update rank n of symmetric matrix

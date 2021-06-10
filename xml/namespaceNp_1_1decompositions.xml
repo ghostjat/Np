@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespaceNp_1_1decompositions" kind="namespace" language="PHP">
+    <compoundname>Np::decompositions</compoundname>
+    <innerclass refid="classNp_1_1decompositions_1_1cholesky" prot="public">Np::decompositions::cholesky</innerclass>
+    <innerclass refid="classNp_1_1decompositions_1_1eigen" prot="public">Np::decompositions::eigen</innerclass>
+    <innerclass refid="classNp_1_1decompositions_1_1lu" prot="public">Np::decompositions::lu</innerclass>
+    <innerclass refid="classNp_1_1decompositions_1_1svd" prot="public">Np::decompositions::svd</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/ghost/projects/git/numphp/src/decompositions/cholesky.php" line="5" column="1"/>
+  </compounddef>
+</doxygen>

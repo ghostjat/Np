@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['s',['s',['../classNp_1_1decompositions_1_1svd.html#a7eb8ff10f4c1bfb7feb9f8dd8028a106',1,'Np::decompositions::svd']]],
+  ['scale',['scale',['../classNp_1_1core_1_1blas.html#afd03eea6b6d3c84d0fbfb2b29dea0edd',1,'Np\core\blas\scale()'],['../classNp_1_1matrix.html#a0b8dc642d875e14d7fd624e1d8fcc788',1,'Np\matrix\scale()']]],
+  ['scalecol',['scaleCol',['../classNp_1_1matrix.html#ae380080d678691e8444ef791114aad43',1,'Np::matrix']]],
+  ['scaledigonalcol',['scaleDigonalCol',['../classNp_1_1matrix.html#ae3dab3a8536f7ebe380f2963e8d45177',1,'Np::matrix']]],
+  ['scalerow',['scaleRow',['../classNp_1_1matrix.html#a3bfa4e86310d7c8b90dedf315c00a35d',1,'Np::matrix']]],
+  ['setdata',['setData',['../classNp_1_1matrix.html#a5d51ed60c87dd4ecce132e1601ee2bf0',1,'Np\matrix\setData()'],['../classNp_1_1vector.html#a1fcfc617c3b2651e29c609e1c8eca68f',1,'Np\vector\setData()']]],
+  ['sort',['sort',['../classNp_1_1core_1_1lapack.html#a533677386a4843e951ede97e080ed05e',1,'Np\core\lapack\sort()'],['../classNp_1_1vector.html#ab88c721c641c09f845440c38818b58e4',1,'Np\vector\sort()']]],
+  ['square',['square',['../classNp_1_1matrix.html#a34966332112d3821c9cf5842513cf7d4',1,'Np\matrix\square()'],['../classNp_1_1vector.html#af7eb2a26f100a9638e7be753dd3cdf26',1,'Np\vector\square()']]],
+  ['substractscalar',['substractScalar',['../classNp_1_1vector.html#a2102b4d22544551be497286ae806b2ec',1,'Np::vector']]],
+  ['subtract',['subtract',['../classNp_1_1matrix.html#a7dca7a134a3e6a4f528ffeafac1298a8',1,'Np\matrix\subtract()'],['../classNp_1_1vector.html#a6f5a453f2824e06fcaad4c2756928e56',1,'Np\vector\subtract()']]],
+  ['subtractcolumnvector',['subtractColumnVector',['../classNp_1_1matrix.html#aaaab226c7666ed327322576b454e8ab0',1,'Np::matrix']]],
+  ['subtractmatrix',['subtractMatrix',['../classNp_1_1matrix.html#aed551b96fde7f7b38953f719b7e98d95',1,'Np\matrix\subtractMatrix()'],['../classNp_1_1vector.html#a38c5131c6b672b07c456283b024bf6ee',1,'Np\vector\subtractMatrix()']]],
+  ['subtractvector',['subtractVector',['../classNp_1_1matrix.html#ae3b8d11db6f17d6484443ee1d3b84261',1,'Np\matrix\subtractVector()'],['../classNp_1_1vector.html#af3ce54ab7fb8dfd42b56e0376d00049a',1,'Np\vector\subtractVector()']]],
+  ['sum',['sum',['../classNp_1_1matrix.html#a76fae421309cedd08fb29dc50de7abd0',1,'Np\matrix\sum()'],['../classNp_1_1vector.html#a1274696da319a6b2716065b4dc6cda0b',1,'Np\vector\sum()']]],
+  ['sumrows',['sumRows',['../classNp_1_1matrix.html#a62d70577adbc2e2805a94cfb18c864f8',1,'Np::matrix']]],
+  ['svd',['svd',['../classNp_1_1matrix.html#afd77f766988a1b1f22062be7a2faf321',1,'Np::matrix']]],
+  ['swap',['swap',['../classNp_1_1core_1_1blas.html#a5f61bdfe31529eaa22d3d0c1b741831d',1,'Np::core::blas']]],
+  ['swapcols',['swapCols',['../classNp_1_1matrix.html#a3b52b4966943ca30a21f72b721fe6ab2',1,'Np::matrix']]],
+  ['swaprows',['swapRows',['../classNp_1_1matrix.html#a8e93f96b90755d4bacecdd6a65b21e62',1,'Np::matrix']]],
+  ['swapvalue',['swapValue',['../classNp_1_1matrix.html#a729852054ab3e31ce51d626a59a37216',1,'Np::matrix']]],
+  ['syev',['syev',['../classNp_1_1core_1_1lapack.html#af379f43ab68d41bc73a93797d7dd97ea',1,'Np::core::lapack']]],
+  ['symm',['symm',['../classNp_1_1core_1_1blas.html#a777f68aff0a727569885a406c842e53b',1,'Np::core::blas']]],
+  ['syr2k',['syr2k',['../classNp_1_1core_1_1blas.html#afbffdf0c98139c1f99f0e3ff165b9d79',1,'Np::core::blas']]],
+  ['syrk',['syrk',['../classNp_1_1core_1_1blas.html#a38f76804c76223c251edddb176e8793f',1,'Np::core::blas']]]
+];

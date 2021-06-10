@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classNp_1_1exceptions_1_1dimensionalityMismatch" kind="class" language="PHP" prot="public">
+    <compoundname>Np::exceptions::dimensionalityMismatch</compoundname>
+    <basecompoundref refid="classNp_1_1exceptions_1_1invalidArgumentException" prot="public" virt="non-virtual">Np\exceptions\invalidArgumentException</basecompoundref>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="8">
+        <label>NpInvalidArgException</label>
+      </node>
+      <node id="9">
+        <label>Np\exceptions\npException</label>
+        <link refid="interfaceNp_1_1exceptions_1_1npException"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Np\exceptions\dimensionalityMismatch</label>
+        <link refid="classNp_1_1exceptions_1_1dimensionalityMismatch"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>Np\exceptions\invalidArgumentException</label>
+        <link refid="classNp_1_1exceptions_1_1invalidArgumentException"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Throwable</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="13">
+        <label>NpInvalidArgException</label>
+      </node>
+      <node id="14">
+        <label>Np\exceptions\npException</label>
+        <link refid="interfaceNp_1_1exceptions_1_1npException"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Np\exceptions\dimensionalityMismatch</label>
+        <link refid="classNp_1_1exceptions_1_1dimensionalityMismatch"/>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>Np\exceptions\invalidArgumentException</label>
+        <link refid="classNp_1_1exceptions_1_1invalidArgumentException"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>Throwable</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/ghost/projects/git/numphp/src/exceptions/dimensionalityMismatch.php" line="5" column="1" bodyfile="/home/ghost/projects/git/numphp/src/exceptions/dimensionalityMismatch.php" bodystart="5" bodyend="7"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

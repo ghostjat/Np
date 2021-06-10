@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classNp_1_1decompositions_1_1eigen" kind="class" language="PHP" prot="public">
+    <compoundname>Np::decompositions::eigen</compoundname>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classNp_1_1decompositions_1_1eigen_1aac8f18d400a88daa5fe8739cef384430" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>Np\decompositions\eigen::$eignVal</definition>
+        <argsstring></argsstring>
+        <name>$eignVal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/decompositions/eigen.php" line="26" column="1" bodyfile="/home/ghost/projects/git/numphp/src/decompositions/eigen.php" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNp_1_1decompositions_1_1eigen_1a55f7bfb69e0a3b7f40ba8b3434a77cae" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>Np\decompositions\eigen::$eignVec</definition>
+        <argsstring></argsstring>
+        <name>$eignVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/decompositions/eigen.php" line="27" column="1" bodyfile="/home/ghost/projects/git/numphp/src/decompositions/eigen.php" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classNp_1_1decompositions_1_1eigen_1a83b597b150098ecd64f64a3a880665d0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\decompositions\eigen::factory</definition>
+        <argsstring>(\Np\matrix $m, bool $symmetric=false)</argsstring>
+        <name>factory</name>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>$symmetric</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/decompositions/eigen.php" line="29" column="1" bodyfile="/home/ghost/projects/git/numphp/src/decompositions/eigen.php" bodystart="29" bodyend="53"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classNp_1_1decompositions_1_1eigen_1ab1645040ef8233cb6f3f081fc354b887" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\decompositions\eigen::__construct</definition>
+        <argsstring>(vector $eignVal, matrix $eignVec)</argsstring>
+        <name>__construct</name>
+        <param>
+          <type><ref refid="classNp_1_1vector" kindref="compound">vector</ref></type>
+          <declname>$eignVal</declname>
+        </param>
+        <param>
+          <type><ref refid="classNp_1_1matrix" kindref="compound">matrix</ref></type>
+          <declname>$eignVec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>vector</parametertype>
+<parametername>$eignVal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>matrix</parametertype>
+<parametername>$eignVec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/decompositions/eigen.php" line="60" column="1" bodyfile="/home/ghost/projects/git/numphp/src/decompositions/eigen.php" bodystart="60" bodyend="63"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classNp_1_1decompositions_1_1eigen_1a4a7a26986385f7ec2a6f30f6a8e5e1f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\decompositions\eigen::eigenVal</definition>
+        <argsstring>()</argsstring>
+        <name>eigenVal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the eigenvalues of the eigen decomposition.</para><para><simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/decompositions/eigen.php" line="70" column="1" bodyfile="/home/ghost/projects/git/numphp/src/decompositions/eigen.php" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1decompositions_1_1eigen_1a5c1119606777442b947196606ba380da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\decompositions\eigen::eigenVec</definition>
+        <argsstring>()</argsstring>
+        <name>eigenVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the eigen vectors of the eigen decomposition.</para><para><simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/decompositions/eigen.php" line="79" column="1" bodyfile="/home/ghost/projects/git/numphp/src/decompositions/eigen.php" bodystart="79" bodyend="81"/>
+        <references refid="classNp_1_1matrix_1a233653837915e391000ef532abea9534" compoundref="matrix_8php" startline="680" endline="688">Np\matrix\transpose</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="27">
+        <label>Np\decompositions\eigen</label>
+        <link refid="classNp_1_1decompositions_1_1eigen"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/ghost/projects/git/numphp/src/decompositions/eigen.php" line="24" column="1" bodyfile="/home/ghost/projects/git/numphp/src/decompositions/eigen.php" bodystart="24" bodyend="83"/>
+    <listofallmembers>
+      <member refid="classNp_1_1decompositions_1_1eigen_1aac8f18d400a88daa5fe8739cef384430" prot="protected" virt="non-virtual"><scope>Np::decompositions::eigen</scope><name>$eignVal</name></member>
+      <member refid="classNp_1_1decompositions_1_1eigen_1a55f7bfb69e0a3b7f40ba8b3434a77cae" prot="protected" virt="non-virtual"><scope>Np::decompositions::eigen</scope><name>$eignVec</name></member>
+      <member refid="classNp_1_1decompositions_1_1eigen_1ab1645040ef8233cb6f3f081fc354b887" prot="protected" virt="non-virtual"><scope>Np::decompositions::eigen</scope><name>__construct</name></member>
+      <member refid="classNp_1_1decompositions_1_1eigen_1a4a7a26986385f7ec2a6f30f6a8e5e1f2" prot="public" virt="non-virtual"><scope>Np::decompositions::eigen</scope><name>eigenVal</name></member>
+      <member refid="classNp_1_1decompositions_1_1eigen_1a5c1119606777442b947196606ba380da" prot="public" virt="non-virtual"><scope>Np::decompositions::eigen</scope><name>eigenVec</name></member>
+      <member refid="classNp_1_1decompositions_1_1eigen_1a83b597b150098ecd64f64a3a880665d0" prot="public" virt="non-virtual"><scope>Np::decompositions::eigen</scope><name>factory</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

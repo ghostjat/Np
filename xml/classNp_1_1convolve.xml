@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classNp_1_1convolve" kind="class" language="PHP" prot="public">
+    <compoundname>Np::convolve</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classNp_1_1convolve_1a938d439f09f8ec176e0efbdae3cbcb12" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\convolve::conv1D</definition>
+        <argsstring>(\Np\vector $v, \Np\vector $k, int $stride=1)</argsstring>
+        <name>conv1D</name>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$v</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$k</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$stride</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>1D convolution between a vector v and kernel k, with a given stride.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$k</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$stride</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/convolve.php" line="29" column="1" bodyfile="/home/ghost/projects/git/numphp/src/convolve.php" bodystart="29" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1convolve_1a702e93ee0d78ad1ffdcec9106076aa02" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\convolve::conv2D</definition>
+        <argsstring>(\Np\matrix $ma, \Np\matrix $kb, int $stride=1)</argsstring>
+        <name>conv2D</name>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$ma</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$kb</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$stride</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>2D convolution between a matrix ma and kernel kb, with a given stride.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$ma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$kb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$stride</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/convolve.php" line="58" column="1" bodyfile="/home/ghost/projects/git/numphp/src/convolve.php" bodystart="58" bodyend="87"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="5">
+        <label>Np\convolve</label>
+        <link refid="classNp_1_1convolve"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/ghost/projects/git/numphp/src/convolve.php" line="18" column="1" bodyfile="/home/ghost/projects/git/numphp/src/convolve.php" bodystart="18" bodyend="88"/>
+    <listofallmembers>
+      <member refid="classNp_1_1convolve_1a938d439f09f8ec176e0efbdae3cbcb12" prot="public" virt="non-virtual"><scope>Np::convolve</scope><name>conv1D</name></member>
+      <member refid="classNp_1_1convolve_1a702e93ee0d78ad1ffdcec9106076aa02" prot="public" virt="non-virtual"><scope>Np::convolve</scope><name>conv2D</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

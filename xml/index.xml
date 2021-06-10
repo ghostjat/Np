@@ -1,0 +1,530 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.13">
+  <compound refid="classNp_1_1core_1_1blas" kind="class"><name>Np::core::blas</name>
+    <member refid="classNp_1_1core_1_1blas_1a6021d35af0a10315781ec41b28f41432" kind="variable"><name>CblasColMajor</name></member>
+    <member refid="classNp_1_1core_1_1blas_1a7e0c4c53585464566eb5484cc90180a5" kind="variable"><name>CblasConjTrans</name></member>
+    <member refid="classNp_1_1core_1_1blas_1ae7fcc35ae7b87ba34ef6b133963afb9c" kind="variable"><name>CblasLeft</name></member>
+    <member refid="classNp_1_1core_1_1blas_1a413c482b285957a526b1288f34ab24ce" kind="variable"><name>CblasLower</name></member>
+    <member refid="classNp_1_1core_1_1blas_1a1fd2e7bfcdaec878db9bc726fab81b13" kind="variable"><name>CblasNonUnit</name></member>
+    <member refid="classNp_1_1core_1_1blas_1ad0ec93bb01eaca89ec5b62f4dcbcf265" kind="variable"><name>CblasNoTrans</name></member>
+    <member refid="classNp_1_1core_1_1blas_1aa8be9a999f532f75850e9eed96747283" kind="variable"><name>CblasRight</name></member>
+    <member refid="classNp_1_1core_1_1blas_1a87baa4f0a16c1daa7e59a4d94bb68a7f" kind="variable"><name>CblasRowMajor</name></member>
+    <member refid="classNp_1_1core_1_1blas_1a3ab395864d65cad751170bbceab73c8f" kind="variable"><name>CblasTrans</name></member>
+    <member refid="classNp_1_1core_1_1blas_1aaca161ba93f97aae209082f96a6e32c6" kind="variable"><name>CblasUnit</name></member>
+    <member refid="classNp_1_1core_1_1blas_1a3a493cfabc5dcad5424663775390b135" kind="variable"><name>CblasUpper</name></member>
+    <member refid="classNp_1_1core_1_1blas_1ab361b7fab0e8da74bd67a2eeac0063c1" kind="variable"><name>$ffi_blas</name></member>
+    <member refid="classNp_1_1core_1_1blas_1ac1682dc0dd0f2730caf9b9cc0299e15d" kind="function"><name>asum</name></member>
+    <member refid="classNp_1_1core_1_1blas_1a2907728e992b447835664893c11a7ce1" kind="function"><name>axpy</name></member>
+    <member refid="classNp_1_1core_1_1blas_1acdee3027ce6e86df9091cfd4ae825422" kind="function"><name>copy</name></member>
+    <member refid="classNp_1_1core_1_1blas_1aaa1ac150f8ede1d08ea33f6a4d67682d" kind="function"><name>dot</name></member>
+    <member refid="classNp_1_1core_1_1blas_1ae30c9e1fc049dda8ce5743ffa4d58004" kind="function"><name>drotg</name></member>
+    <member refid="classNp_1_1core_1_1blas_1a58f6203f0c718887505ae3081bf3e593" kind="function"><name>gbmv</name></member>
+    <member refid="classNp_1_1core_1_1blas_1ab1979441403136fb591fcf7831f67509" kind="function"><name>gemm</name></member>
+    <member refid="classNp_1_1core_1_1blas_1a7f23dcde2b86bfca3affd257ddfcbb34" kind="function"><name>gemv</name></member>
+    <member refid="classNp_1_1core_1_1blas_1a89a456ac3ef28a266fca65ed0f1795f5" kind="function"><name>ger</name></member>
+    <member refid="classNp_1_1core_1_1blas_1a18cdbbd17dd5fb6e5b02b28716485803" kind="function"><name>getConfig</name></member>
+    <member refid="classNp_1_1core_1_1blas_1a5e8abdf302259da4879862892d449a1f" kind="function"><name>getCoreName</name></member>
+    <member refid="classNp_1_1core_1_1blas_1a4e19347c5dbd5c9bd4baa490c6b2d739" kind="function"><name>getNumParallel</name></member>
+    <member refid="classNp_1_1core_1_1blas_1ae2d63476af48c39f8b319f0584d2fe04" kind="function"><name>getNumPorcs</name></member>
+    <member refid="classNp_1_1core_1_1blas_1a3014ce8cc87a9d1f628b89feaa6d0d60" kind="function"><name>getNumThreads</name></member>
+    <member refid="classNp_1_1core_1_1blas_1a5f997637d5fb3e29bfdd1d003dee0821" kind="function"><name>init</name></member>
+    <member refid="classNp_1_1core_1_1blas_1a298d4d4196443fbdb149b0b2f4968d92" kind="function"><name>max</name></member>
+    <member refid="classNp_1_1core_1_1blas_1a0e287c77b69f0717e5e889578021cfab" kind="function"><name>min</name></member>
+    <member refid="classNp_1_1core_1_1blas_1a2f838562be527dea26a095a6cf0670a8" kind="function"><name>nrm2</name></member>
+    <member refid="classNp_1_1core_1_1blas_1aec1549c3b56ee06c1372336dfc41c854" kind="function"><name>rotate</name></member>
+    <member refid="classNp_1_1core_1_1blas_1afd03eea6b6d3c84d0fbfb2b29dea0edd" kind="function"><name>scale</name></member>
+    <member refid="classNp_1_1core_1_1blas_1a92064cf16fd2f88bf14fbc54ee4b5393" kind="function"><name>setNumThreads</name></member>
+    <member refid="classNp_1_1core_1_1blas_1a8afa6da4ad2aecfbd9f04c664d915b23" kind="function"><name>srotg</name></member>
+    <member refid="classNp_1_1core_1_1blas_1a5f61bdfe31529eaa22d3d0c1b741831d" kind="function"><name>swap</name></member>
+    <member refid="classNp_1_1core_1_1blas_1a777f68aff0a727569885a406c842e53b" kind="function"><name>symm</name></member>
+    <member refid="classNp_1_1core_1_1blas_1afbffdf0c98139c1f99f0e3ff165b9d79" kind="function"><name>syr2k</name></member>
+    <member refid="classNp_1_1core_1_1blas_1a38f76804c76223c251edddb176e8793f" kind="function"><name>syrk</name></member>
+  </compound>
+  <compound refid="classNp_1_1decompositions_1_1cholesky" kind="class"><name>Np::decompositions::cholesky</name>
+    <member refid="classNp_1_1decompositions_1_1cholesky_1a5885c1d3828f0c389b77313070f01355" kind="function"><name>factory</name></member>
+  </compound>
+  <compound refid="classNp_1_1convolve" kind="class"><name>Np::convolve</name>
+    <member refid="classNp_1_1convolve_1a938d439f09f8ec176e0efbdae3cbcb12" kind="function"><name>conv1D</name></member>
+    <member refid="classNp_1_1convolve_1a702e93ee0d78ad1ffdcec9106076aa02" kind="function"><name>conv2D</name></member>
+  </compound>
+  <compound refid="classNp_1_1exceptions_1_1dimensionalityMismatch" kind="class"><name>Np::exceptions::dimensionalityMismatch</name>
+  </compound>
+  <compound refid="classNp_1_1exceptions_1_1dtypeException" kind="class"><name>Np::exceptions::dtypeException</name>
+  </compound>
+  <compound refid="classNp_1_1decompositions_1_1eigen" kind="class"><name>Np::decompositions::eigen</name>
+    <member refid="classNp_1_1decompositions_1_1eigen_1aac8f18d400a88daa5fe8739cef384430" kind="variable"><name>$eignVal</name></member>
+    <member refid="classNp_1_1decompositions_1_1eigen_1a55f7bfb69e0a3b7f40ba8b3434a77cae" kind="variable"><name>$eignVec</name></member>
+    <member refid="classNp_1_1decompositions_1_1eigen_1a83b597b150098ecd64f64a3a880665d0" kind="function"><name>factory</name></member>
+    <member refid="classNp_1_1decompositions_1_1eigen_1ab1645040ef8233cb6f3f081fc354b887" kind="function"><name>__construct</name></member>
+    <member refid="classNp_1_1decompositions_1_1eigen_1a4a7a26986385f7ec2a6f30f6a8e5e1f2" kind="function"><name>eigenVal</name></member>
+    <member refid="classNp_1_1decompositions_1_1eigen_1a5c1119606777442b947196606ba380da" kind="function"><name>eigenVec</name></member>
+  </compound>
+  <compound refid="classNp_1_1exceptions_1_1invalidArgumentException" kind="class"><name>Np::exceptions::invalidArgumentException</name>
+  </compound>
+  <compound refid="classNp_1_1core_1_1lapack" kind="class"><name>Np::core::lapack</name>
+    <member refid="classNp_1_1core_1_1lapack_1a01239fed22c9c735e13a02e74dad05d4" kind="variable"><name>COL_MAJOR</name></member>
+    <member refid="classNp_1_1core_1_1lapack_1acdf7c7389e7d45c2ee1ee52437f956ca" kind="variable"><name>DECR</name></member>
+    <member refid="classNp_1_1core_1_1lapack_1a092bf0f19f7dcb1cb32e4cf34c0e928a" kind="variable"><name>INCR</name></member>
+    <member refid="classNp_1_1core_1_1lapack_1afc850b5058cf68604d3b923b3a609307" kind="variable"><name>Lower</name></member>
+    <member refid="classNp_1_1core_1_1lapack_1a0a92f38ae658d15fcb31e720c60d25d7" kind="variable"><name>ROW_MAJOR</name></member>
+    <member refid="classNp_1_1core_1_1lapack_1a5eac9840fbfa616b77fd5139efbba412" kind="variable"><name>Upper</name></member>
+    <member refid="classNp_1_1core_1_1lapack_1a74a7502cda4d0ac0b27f7b4a321d8f6a" kind="variable"><name>$ffi_lapack</name></member>
+    <member refid="classNp_1_1core_1_1lapack_1a1687226a965887584bbdbb11272d0fea" kind="function"><name>geev</name></member>
+    <member refid="classNp_1_1core_1_1lapack_1a1f2a85f0b6e387cafc98e9269114dca5" kind="function"><name>gesdd</name></member>
+    <member refid="classNp_1_1core_1_1lapack_1ab4d38b46b6cfad63cae6cd07cdc6e045" kind="function"><name>getrf</name></member>
+    <member refid="classNp_1_1core_1_1lapack_1aa64f2f6bbd2554ca6a8657af69f264db" kind="function"><name>getri</name></member>
+    <member refid="classNp_1_1core_1_1lapack_1a68ae2955615fb2b7c86a7850e80cda82" kind="function"><name>init</name></member>
+    <member refid="classNp_1_1core_1_1lapack_1a9e3bbce301906ed54cca74fc2dbda232" kind="function"><name>lange</name></member>
+    <member refid="classNp_1_1core_1_1lapack_1a545330e971d4922d4d46abdbd21a423d" kind="function"><name>potrf</name></member>
+    <member refid="classNp_1_1core_1_1lapack_1a8702ac8aad340008cdc6f7af2cff0561" kind="function"><name>sgels</name></member>
+    <member refid="classNp_1_1core_1_1lapack_1a533677386a4843e951ede97e080ed05e" kind="function"><name>sort</name></member>
+    <member refid="classNp_1_1core_1_1lapack_1af379f43ab68d41bc73a93797d7dd97ea" kind="function"><name>syev</name></member>
+  </compound>
+  <compound refid="classNp_1_1decompositions_1_1lu" kind="class"><name>Np::decompositions::lu</name>
+    <member refid="classNp_1_1decompositions_1_1lu_1a12939e49fe2dafdbaed5b350cf4f460a" kind="function"><name>factory</name></member>
+    <member refid="classNp_1_1decompositions_1_1lu_1ad10cede9d4078b6301265b7b2939a8a5" kind="function"><name>__construct</name></member>
+    <member refid="classNp_1_1decompositions_1_1lu_1aa3c9fc188549d42d590cef2fceed6648" kind="function"><name>l</name></member>
+    <member refid="classNp_1_1decompositions_1_1lu_1a28194b5a31536e8fc7ca6e75158db7ef" kind="function"><name>p</name></member>
+    <member refid="classNp_1_1decompositions_1_1lu_1af742f37f697ef79a14a72a7e3681795c" kind="function"><name>u</name></member>
+  </compound>
+  <compound refid="classNp_1_1matrix" kind="class"><name>Np::matrix</name>
+    <member refid="classNp_1_1matrix_1a061db2a3fabe835e3b31ab312952a059" kind="function"><name>ar</name></member>
+    <member refid="classNp_1_1matrix_1acc1733997f58af8643afd27fe12e8307" kind="function"><name>diagonal</name></member>
+    <member refid="classNp_1_1matrix_1a41010884ae9f834864b569d714ca0e25" kind="function"><name>factory</name></member>
+    <member refid="classNp_1_1matrix_1a6307a9566c2a149a19c7df7fa8300112" kind="function"><name>full</name></member>
+    <member refid="classNp_1_1matrix_1aaad5f30fb575ac664190489013cc2931" kind="function"><name>gaussian</name></member>
+    <member refid="classNp_1_1matrix_1a49b274567471149bc5fabbf2609f4665" kind="function"><name>identity</name></member>
+    <member refid="classNp_1_1matrix_1a74daf93954fa7e3ee50b976bb613c04a" kind="function"><name>is_zero</name></member>
+    <member refid="classNp_1_1matrix_1a99588b623abe9375f63512534b062324" kind="function"><name>null</name></member>
+    <member refid="classNp_1_1matrix_1a307b963ee70a5eeb1b72dc57e3d8e462" kind="function"><name>ones</name></member>
+    <member refid="classNp_1_1matrix_1a2c801ebcbba80cdd427166fafe9b17b2" kind="function"><name>poisson</name></member>
+    <member refid="classNp_1_1matrix_1a8f56013f8eefc541c9551696181abc56" kind="function"><name>randn</name></member>
+    <member refid="classNp_1_1matrix_1a7a964625519b115c907a00649a05a627" kind="function"><name>uniform</name></member>
+    <member refid="classNp_1_1matrix_1a808688babf7ca21d74e854c334e4fa4e" kind="function"><name>zeros</name></member>
+    <member refid="classNp_1_1matrix_1a8794ffff3baba16dd359863e3098ef96" kind="function"><name>__toString</name></member>
+    <member refid="classNp_1_1matrix_1ac5b3ec408f852e5fcd637467f209a993" kind="function"><name>addScaleRow</name></member>
+    <member refid="classNp_1_1matrix_1a2901e316bdf8d6152cecba0da9ae8451" kind="function"><name>argMax</name></member>
+    <member refid="classNp_1_1matrix_1aabbaabc55352b3cd8f08944192188987" kind="function"><name>argMin</name></member>
+    <member refid="classNp_1_1matrix_1abc68eb6d5cf79616d9d8074bee3227db" kind="function"><name>asArray</name></member>
+    <member refid="classNp_1_1matrix_1a8e984725c840764008a8b8f8789fd2c5" kind="function"><name>asVector</name></member>
+    <member refid="classNp_1_1matrix_1a2eb1ddb46be10ac5a9e1fffe066f5efe" kind="function"><name>cholesky</name></member>
+    <member refid="classNp_1_1matrix_1abe2dc5107f6f0e76125c9b51eb5f5b89" kind="function"><name>colAsVector</name></member>
+    <member refid="classNp_1_1matrix_1a8c0f5d5b9309ac0f71cee346d9ece148" kind="function"><name>convolve</name></member>
+    <member refid="classNp_1_1matrix_1a943220996690bc9a436f99b6379bc8bc" kind="function"><name>covariance</name></member>
+    <member refid="classNp_1_1matrix_1a00a657e75a9aa899f247fee9a9b0789a" kind="function"><name>det</name></member>
+    <member refid="classNp_1_1matrix_1a012ac4db9a66aacd63e0904b99b99263" kind="function"><name>diagonalAsVector</name></member>
+    <member refid="classNp_1_1matrix_1a8b5b3f587f3612d530f6b1675c666917" kind="function"><name>dignoalInterChange</name></member>
+    <member refid="classNp_1_1matrix_1a454e27fdc8957ea97c8df38f48ad0ec8" kind="function"><name>diminish_left</name></member>
+    <member refid="classNp_1_1matrix_1a397ad3f68b1c8bc2aef2b321021eb396" kind="function"><name>diminish_right</name></member>
+    <member refid="classNp_1_1matrix_1ad85b4b6695dc98b3aab72691cde7357f" kind="function"><name>divide</name></member>
+    <member refid="classNp_1_1matrix_1ad163d08a839f6ea680d0a08606bf9b45" kind="function"><name>eign</name></member>
+    <member refid="classNp_1_1matrix_1afa53f257d3c36c0a6d1645df5cfa72b5" kind="function"><name>equal</name></member>
+    <member refid="classNp_1_1matrix_1a89a949cc21f5be65af91d79722a9e298" kind="function"><name>getDiagonalVal</name></member>
+    <member refid="classNp_1_1matrix_1a96f30a3bf2395d3992f96e52f9500155" kind="function"><name>getDtype</name></member>
+    <member refid="classNp_1_1matrix_1a0c034e873e4d0512f44905ea364790ec" kind="function"><name>getShape</name></member>
+    <member refid="classNp_1_1matrix_1adf359011279dd9ffda343e6a30e84808" kind="function"><name>getSize</name></member>
+    <member refid="classNp_1_1matrix_1a2f47d1a281c4b4d94587ade04aa86ee5" kind="function"><name>greater</name></member>
+    <member refid="classNp_1_1matrix_1a04e4d395383a8ef603b3a9521386b263" kind="function"><name>has_ZeroRow</name></member>
+    <member refid="classNp_1_1matrix_1a3a87b36568543396243b313b29325a70" kind="function"><name>is_rowZero</name></member>
+    <member refid="classNp_1_1matrix_1adb337e32840446442dcf145107e26eba" kind="function"><name>isSquare</name></member>
+    <member refid="classNp_1_1matrix_1ab794b4308e964a51ed599ec1e39d8193" kind="function"><name>isSymmetric</name></member>
+    <member refid="classNp_1_1matrix_1a58736559314d5839f083e49a204c7416" kind="function"><name>joinAbove</name></member>
+    <member refid="classNp_1_1matrix_1a44ec9d32b9f64dab13473878dc503c22" kind="function"><name>joinBelow</name></member>
+    <member refid="classNp_1_1matrix_1a39501fac5b7d5e3d90cdf5364b33a267" kind="function"><name>joinLeft</name></member>
+    <member refid="classNp_1_1matrix_1a7f8422415aa5d57ce57516dc8f27d5ff" kind="function"><name>joinRight</name></member>
+    <member refid="classNp_1_1matrix_1a18e65823e636c00ca60efa9d2fb5bfce" kind="function"><name>less</name></member>
+    <member refid="classNp_1_1matrix_1a60b4bd54bb33969be84cbc804d6ba39d" kind="function"><name>lu</name></member>
+    <member refid="classNp_1_1matrix_1a95e2b0f464f99db3166b616c7b759f7a" kind="function"><name>mean</name></member>
+    <member refid="classNp_1_1matrix_1aa4c9e5cf34e979ae01e09ab34a6d2e53" kind="function"><name>median</name></member>
+    <member refid="classNp_1_1matrix_1a0b0bce0436d916be674bf8ea75243742" kind="function"><name>mod</name></member>
+    <member refid="classNp_1_1matrix_1a4730f50ca8780373872ca64529d9779d" kind="function"><name>multiply</name></member>
+    <member refid="classNp_1_1matrix_1a6a957d32b8f7b22dd5521e6a268e3ff3" kind="function"><name>normFrob</name></member>
+    <member refid="classNp_1_1matrix_1aebe0467b4b10792ae32c3061124be5ed" kind="function"><name>normINF</name></member>
+    <member refid="classNp_1_1matrix_1aacf8ef0384ecf2e05553ccce05d85ba4" kind="function"><name>normL1</name></member>
+    <member refid="classNp_1_1matrix_1aa7efbe6d610419f4592209f711bab88d" kind="function"><name>normL2</name></member>
+    <member refid="classNp_1_1matrix_1a35fc98b14083bc0ffcaf1c88e7868bed" kind="function"><name>pow</name></member>
+    <member refid="classNp_1_1matrix_1a4325bcea948a4261fd0d5119f42356e2" kind="function"><name>printMatrix</name></member>
+    <member refid="classNp_1_1matrix_1ac6ace30e5237e99f9fba4d5913c968ed" kind="function"><name>reciprocal</name></member>
+    <member refid="classNp_1_1matrix_1a0b9c2290f3926838992bd1131d1d1d2d" kind="function"><name>ref</name></member>
+    <member refid="classNp_1_1matrix_1a3d0f5f7752a523b09cf6649528b3f253" kind="function"><name>rowAsVector</name></member>
+    <member refid="classNp_1_1matrix_1a80ec1e3d0b5bd5fe49eae124252891a0" kind="function"><name>rref</name></member>
+    <member refid="classNp_1_1matrix_1a0b8dc642d875e14d7fd624e1d8fcc788" kind="function"><name>scale</name></member>
+    <member refid="classNp_1_1matrix_1ae380080d678691e8444ef791114aad43" kind="function"><name>scaleCol</name></member>
+    <member refid="classNp_1_1matrix_1ae3dab3a8536f7ebe380f2963e8d45177" kind="function"><name>scaleDigonalCol</name></member>
+    <member refid="classNp_1_1matrix_1a3bfa4e86310d7c8b90dedf315c00a35d" kind="function"><name>scaleRow</name></member>
+    <member refid="classNp_1_1matrix_1a5d51ed60c87dd4ecce132e1601ee2bf0" kind="function"><name>setData</name></member>
+    <member refid="classNp_1_1matrix_1a34966332112d3821c9cf5842513cf7d4" kind="function"><name>square</name></member>
+    <member refid="classNp_1_1matrix_1a7dca7a134a3e6a4f528ffeafac1298a8" kind="function"><name>subtract</name></member>
+    <member refid="classNp_1_1matrix_1aaaab226c7666ed327322576b454e8ab0" kind="function"><name>subtractColumnVector</name></member>
+    <member refid="classNp_1_1matrix_1a76fae421309cedd08fb29dc50de7abd0" kind="function"><name>sum</name></member>
+    <member refid="classNp_1_1matrix_1a62d70577adbc2e2805a94cfb18c864f8" kind="function"><name>sumRows</name></member>
+    <member refid="classNp_1_1matrix_1afd77f766988a1b1f22062be7a2faf321" kind="function"><name>svd</name></member>
+    <member refid="classNp_1_1matrix_1a3b52b4966943ca30a21f72b721fe6ab2" kind="function"><name>swapCols</name></member>
+    <member refid="classNp_1_1matrix_1a8e93f96b90755d4bacecdd6a65b21e62" kind="function"><name>swapRows</name></member>
+    <member refid="classNp_1_1matrix_1a729852054ab3e31ce51d626a59a37216" kind="function"><name>swapValue</name></member>
+    <member refid="classNp_1_1matrix_1a08effc2d81cf2efc1274dc60ed1491f5" kind="function"><name>trace</name></member>
+    <member refid="classNp_1_1matrix_1a233653837915e391000ef532abea9534" kind="function"><name>transpose</name></member>
+    <member refid="classNp_1_1matrix_1aa27380ef031b0e3a5127e2949012bd52" kind="function"><name>variance</name></member>
+    <member refid="classNp_1_1matrix_1afb8d1d1e4f16ce36f14f0b65e1bccbdd" kind="function"><name>__construct</name></member>
+    <member refid="classNp_1_1matrix_1a6356909261a9ad68f3e0ed8f88287906" kind="function"><name>divideMatrix</name></member>
+    <member refid="classNp_1_1matrix_1a707cfc187f7610370c4fded4dabdb7dc" kind="function"><name>divideScalar</name></member>
+    <member refid="classNp_1_1matrix_1a8375a56deb9f66360c83b8f33401cb7d" kind="function"><name>divideVector</name></member>
+    <member refid="classNp_1_1matrix_1ae5da528a839ff029963c37d973829f64" kind="function"><name>equalMatrix</name></member>
+    <member refid="classNp_1_1matrix_1a6b912edb5a1993ee665e801394e5a8e7" kind="function"><name>equalScalar</name></member>
+    <member refid="classNp_1_1matrix_1a316ff08a45b2c26a54d7b4ad9fb44e6d" kind="function"><name>equalVector</name></member>
+    <member refid="classNp_1_1matrix_1a0a15e08bcd094f5561f78003b078b696" kind="function"><name>greaterMatrix</name></member>
+    <member refid="classNp_1_1matrix_1adeb3e9e2beaad234f101a628df98ccec" kind="function"><name>greaterScalar</name></member>
+    <member refid="classNp_1_1matrix_1ab081d7381315cfa920f25ae616f8b7d7" kind="function"><name>greaterVector</name></member>
+    <member refid="classNp_1_1matrix_1a009bac516a358c22928c06d61644e1de" kind="function"><name>modMatrix</name></member>
+    <member refid="classNp_1_1matrix_1ab2ca57a1556bbaafd3536fcdf43b6263" kind="function"><name>modScalar</name></member>
+    <member refid="classNp_1_1matrix_1aa565ed5cef00c8f7a40fa191a0f07b62" kind="function"><name>modVector</name></member>
+    <member refid="classNp_1_1matrix_1a330bfef86ccd2b840e1ee8a8357e7a87" kind="function"><name>multiplyMatrix</name></member>
+    <member refid="classNp_1_1matrix_1a2b58a7803e48383cf33ab363f204d4aa" kind="function"><name>multiplyVector</name></member>
+    <member refid="classNp_1_1matrix_1a4548d039ea0c9220c4a9df01e40b1306" kind="function"><name>powMatrix</name></member>
+    <member refid="classNp_1_1matrix_1aabeb4c3cf891a28e646a1b9387bf03e6" kind="function"><name>powScalar</name></member>
+    <member refid="classNp_1_1matrix_1a57a8ffe2cc68e28bd6c4b1089ea9dfce" kind="function"><name>powVector</name></member>
+    <member refid="classNp_1_1matrix_1aed551b96fde7f7b38953f719b7e98d95" kind="function"><name>subtractMatrix</name></member>
+    <member refid="classNp_1_1matrix_1afcd14d07ec48c9412fb68ff90888520a" kind="function"><name>subtractScalar</name></member>
+    <member refid="classNp_1_1matrix_1ae3b8d11db6f17d6484443ee1d3b84261" kind="function"><name>subtractVector</name></member>
+    <member refid="classNp_1_1matrix_1a73497847ab0b977e38a4ea5a4b2b206e" kind="function"><name>sumMatrix</name></member>
+    <member refid="classNp_1_1matrix_1aa8d6de6aa46ad7f47a99754699b949cc" kind="function"><name>sumScalar</name></member>
+    <member refid="classNp_1_1matrix_1acdbf21510fdb1086dd43439035a42755" kind="function"><name>sumVector</name></member>
+    <member refid="classNp_1_1matrix_1aa4c77a28f2d3d3e7db42644a3cce1d98" kind="function"><name>flattenArray</name></member>
+  </compound>
+  <compound refid="classNp_1_1core_1_1nd" kind="class"><name>Np::core::nd</name>
+    <member refid="classNp_1_1core_1_1nd_1a1047cca77e15c6ef853a198e277a0f97" kind="variable"><name>$data</name></member>
+    <member refid="classNp_1_1core_1_1nd_1a5abc5ae3340c7f6ed5c2c8bfd94a2141" kind="variable"><name>DOUBLE</name></member>
+    <member refid="classNp_1_1core_1_1nd_1a8111f5c6304828ac4a237f37d7c3122b" kind="variable"><name>EPSILON</name></member>
+    <member refid="classNp_1_1core_1_1nd_1a64df2a8510737a561e4f24ced94be393" kind="variable"><name>FLOAT</name></member>
+    <member refid="classNp_1_1core_1_1nd_1a47f23f416b0fdb9661064a931e72d30c" kind="variable"><name>INT</name></member>
+    <member refid="classNp_1_1core_1_1nd_1ae6b40189201f85346be61ced3028eb2d" kind="variable"><name>TWO_PI</name></member>
+    <member refid="classNp_1_1core_1_1nd_1abc85d7a6814d7ded610948b4898e0339" kind="variable"><name>$_mem</name></member>
+    <member refid="classNp_1_1core_1_1nd_1a892ec28f47c788c88759bb851a0e69e8" kind="variable"><name>$_time</name></member>
+    <member refid="classNp_1_1core_1_1nd_1a1e703b85fabb38eeb5a6292c7518e506" kind="function"><name>checkDimensions</name></member>
+    <member refid="classNp_1_1core_1_1nd_1a9b45333b32d6f8158c85d254db029993" kind="function"><name>checkDtype</name></member>
+    <member refid="classNp_1_1core_1_1nd_1a73895489de029e9514558939c87dbbeb" kind="function"><name>checkShape</name></member>
+    <member refid="classNp_1_1core_1_1nd_1a03ade5ab6733e2900870ab557d922d8f" kind="function"><name>getMemory</name></member>
+    <member refid="classNp_1_1core_1_1nd_1a16af7a4464500d01322a99b970949a9e" kind="function"><name>time</name></member>
+    <member refid="classNp_1_1core_1_1nd_1a83e0eadca8d82d475427b8022b2f292f" kind="function"><name>__construct</name></member>
+    <member refid="classNp_1_1core_1_1nd_1a90d94bb4ead503ed65e1ee8ab42ea985" kind="function"><name>_dimensionaMisMatchErr</name></member>
+    <member refid="classNp_1_1core_1_1nd_1ac330c2040a9012c8c939c8a288c5aeb3" kind="function"><name>_dtypeErr</name></member>
+    <member refid="classNp_1_1core_1_1nd_1adf2b1feb2b6184c1ec5dde8261f95af5" kind="function"><name>_err</name></member>
+    <member refid="classNp_1_1core_1_1nd_1a791da280f8f30e070c5440568ee71d3f" kind="function"><name>_invalidArgument</name></member>
+    <member refid="classNp_1_1core_1_1nd_1ae2aa3f0e0934d8786c2c61994640700a" kind="function"><name>_ndDouble</name></member>
+    <member refid="classNp_1_1core_1_1nd_1a8390c8b280cbcbfc7eadbaff38440b0b" kind="function"><name>_ndFloat</name></member>
+    <member refid="classNp_1_1core_1_1nd_1a9c2cf5fa04310a48da88d919510eecc0" kind="function"><name>_ndInt</name></member>
+  </compound>
+  <compound refid="interfaceNp_1_1exceptions_1_1npException" kind="interface"><name>Np::exceptions::npException</name>
+  </compound>
+  <compound refid="classNp_1_1reductions_1_1ref" kind="class"><name>Np::reductions::ref</name>
+    <member refid="classNp_1_1reductions_1_1ref_1a5c705593b301c61edb93be153355ac14" kind="function"><name>factory</name></member>
+  </compound>
+  <compound refid="classNp_1_1reductions_1_1rref" kind="class"><name>Np::reductions::rref</name>
+    <member refid="classNp_1_1reductions_1_1rref_1ab4b17df6d73d5b8107b1e3ae16197172" kind="function"><name>factory</name></member>
+  </compound>
+  <compound refid="classNp_1_1exceptions_1_1runtimeException" kind="class"><name>Np::exceptions::runtimeException</name>
+  </compound>
+  <compound refid="classNp_1_1decompositions_1_1svd" kind="class"><name>Np::decompositions::svd</name>
+    <member refid="classNp_1_1decompositions_1_1svd_1ac8bda3519697c3b3e32f7808053f5675" kind="function"><name>factory</name></member>
+    <member refid="classNp_1_1decompositions_1_1svd_1a33d3812d91e5811ab099451990f700e5" kind="function"><name>__construct</name></member>
+    <member refid="classNp_1_1decompositions_1_1svd_1a7eb8ff10f4c1bfb7feb9f8dd8028a106" kind="function"><name>s</name></member>
+    <member refid="classNp_1_1decompositions_1_1svd_1adacefd3ebde9fea978c3259fffdb8d58" kind="function"><name>u</name></member>
+    <member refid="classNp_1_1decompositions_1_1svd_1a087992ca367b4733cdc686be6bd87b8b" kind="function"><name>v</name></member>
+    <member refid="classNp_1_1decompositions_1_1svd_1a658311a873bfe8443ffe6d9162cdae95" kind="function"><name>vt</name></member>
+  </compound>
+  <compound refid="classNp_1_1vector" kind="class"><name>Np::vector</name>
+    <member refid="classNp_1_1vector_1a321b5db5c101a97a4904f8dbafc2fd2b" kind="function"><name>ar</name></member>
+    <member refid="classNp_1_1vector_1ae273c5dfb35a12db0977326d765ea2e4" kind="function"><name>factory</name></member>
+    <member refid="classNp_1_1vector_1a98c901b06c1a84ddfb6891feb8cbbcde" kind="function"><name>full</name></member>
+    <member refid="classNp_1_1vector_1ab34501259447fb39fad747966d7abdec" kind="function"><name>gaussian</name></member>
+    <member refid="classNp_1_1vector_1a49110009eb344bb0072b596c64768a65" kind="function"><name>linspace</name></member>
+    <member refid="classNp_1_1vector_1a6edf88614f6198f52839a45cbc9516b9" kind="function"><name>null</name></member>
+    <member refid="classNp_1_1vector_1aa3506e77cfa02211825725683fdf0872" kind="function"><name>ones</name></member>
+    <member refid="classNp_1_1vector_1a7f05718d649e07e09ce12f2a879f3bc7" kind="function"><name>poisson</name></member>
+    <member refid="classNp_1_1vector_1a7bad2422e309d0afe808b814734edc26" kind="function"><name>randn</name></member>
+    <member refid="classNp_1_1vector_1a4c46c04b386b08536ba9fbd1da6cb85e" kind="function"><name>range</name></member>
+    <member refid="classNp_1_1vector_1ae82f1bb2d726470ca3caef0df0cd6cd2" kind="function"><name>uniform</name></member>
+    <member refid="classNp_1_1vector_1af69c6c5b02bfc712cdc8ce6f6b1b278f" kind="function"><name>zeros</name></member>
+    <member refid="classNp_1_1vector_1a9a47a62217b91473b3a4045de5979b5a" kind="function"><name>__toString</name></member>
+    <member refid="classNp_1_1vector_1a904759320b4157ca0dd801314bc16ad2" kind="function"><name>add</name></member>
+    <member refid="classNp_1_1vector_1ab7fca2ed871609d439639b1578ac796b" kind="function"><name>argMax</name></member>
+    <member refid="classNp_1_1vector_1a0e9e2514e25d2ed5bd69e52826313cf6" kind="function"><name>argMin</name></member>
+    <member refid="classNp_1_1vector_1ab5e12e9ecefe0d6a1c1aa9acf178c849" kind="function"><name>asArray</name></member>
+    <member refid="classNp_1_1vector_1a665adc8dff655feb5eb588c7456783fd" kind="function"><name>convolve</name></member>
+    <member refid="classNp_1_1vector_1a87ea5a8c3d0c6bf737e146f274828e33" kind="function"><name>divide</name></member>
+    <member refid="classNp_1_1vector_1a29f60ad2a0cce758f7472d36702d66a3" kind="function"><name>dotMatrix</name></member>
+    <member refid="classNp_1_1vector_1a867b9409f7132d7d745c0687ca8f6d9f" kind="function"><name>getDtype</name></member>
+    <member refid="classNp_1_1vector_1af26db43f20669c59aafaeb332be5430c" kind="function"><name>getSize</name></member>
+    <member refid="classNp_1_1vector_1a7996372ddb2aeabe132c1d517d309fb0" kind="function"><name>inner</name></member>
+    <member refid="classNp_1_1vector_1a75b477520c3e60af9211e31fd1f5208f" kind="function"><name>max</name></member>
+    <member refid="classNp_1_1vector_1adb515869a1fff77aa47340d5860c2bfe" kind="function"><name>mean</name></member>
+    <member refid="classNp_1_1vector_1a2b7fb0132187781a08f5fb32af53a2c8" kind="function"><name>median</name></member>
+    <member refid="classNp_1_1vector_1a1772599059a67a3dc2f366f147c4685f" kind="function"><name>min</name></member>
+    <member refid="classNp_1_1vector_1a53610b4dd3b191053c899e7f8bcb91e4" kind="function"><name>mod</name></member>
+    <member refid="classNp_1_1vector_1a15da7ba340a0387b503e0b1edf60e64a" kind="function"><name>multiply</name></member>
+    <member refid="classNp_1_1vector_1a86c0984ab50856d33564680d9aa1f33d" kind="function"><name>normL1</name></member>
+    <member refid="classNp_1_1vector_1ac8e403095bbf4cf3daec447054cf0492" kind="function"><name>normL2</name></member>
+    <member refid="classNp_1_1vector_1ad22e85c589bd619d046f425dc54cbce5" kind="function"><name>normMax</name></member>
+    <member refid="classNp_1_1vector_1a753e9edeb839e6a5149478e7d3211793" kind="function"><name>normP</name></member>
+    <member refid="classNp_1_1vector_1a3259bf0dadf7eed48f9e85a98f0dbc4f" kind="function"><name>pow</name></member>
+    <member refid="classNp_1_1vector_1a2115701918dc3db1bc9a7f2fc27c4c64" kind="function"><name>printVector</name></member>
+    <member refid="classNp_1_1vector_1affd0c31fb8677b04b869d64e10877027" kind="function"><name>product</name></member>
+    <member refid="classNp_1_1vector_1a7e36a800925e3bcedc88821d3b685583" kind="function"><name>reciprocal</name></member>
+    <member refid="classNp_1_1vector_1a1fcfc617c3b2651e29c609e1c8eca68f" kind="function"><name>setData</name></member>
+    <member refid="classNp_1_1vector_1ab88c721c641c09f845440c38818b58e4" kind="function"><name>sort</name></member>
+    <member refid="classNp_1_1vector_1af7eb2a26f100a9638e7be753dd3cdf26" kind="function"><name>square</name></member>
+    <member refid="classNp_1_1vector_1a6f5a453f2824e06fcaad4c2756928e56" kind="function"><name>subtract</name></member>
+    <member refid="classNp_1_1vector_1a1274696da319a6b2716065b4dc6cda0b" kind="function"><name>sum</name></member>
+    <member refid="classNp_1_1vector_1a43a4964b7763c5b06e7be255cce5a986" kind="function"><name>variance</name></member>
+    <member refid="classNp_1_1vector_1a71322a6cfd2ed8879d22b4fcd2933492" kind="function"><name>__construct</name></member>
+    <member refid="classNp_1_1vector_1a0d58a18ecd9b3ee28cd2f8722ec19cc9" kind="function"><name>addMatrix</name></member>
+    <member refid="classNp_1_1vector_1a91e11bcbf9d37b6d6b06d076a4ebcd0d" kind="function"><name>addScalar</name></member>
+    <member refid="classNp_1_1vector_1af4acc16a81e885aee7b55e4bd8d46cf1" kind="function"><name>addVector</name></member>
+    <member refid="classNp_1_1vector_1ac00870f4f2c4d5247344cd20dec39fe3" kind="function"><name>divideMatrix</name></member>
+    <member refid="classNp_1_1vector_1ae14510e79a7f79baa4908c5715e12b56" kind="function"><name>divideScalar</name></member>
+    <member refid="classNp_1_1vector_1a77913a26c6cc1a9bcbcae1832589a765" kind="function"><name>divideVector</name></member>
+    <member refid="classNp_1_1vector_1ab74b16defa5b23b458507a8c9da3ca3f" kind="function"><name>modMatrix</name></member>
+    <member refid="classNp_1_1vector_1a089b10043ab029f97710eb299271dc6b" kind="function"><name>modScalar</name></member>
+    <member refid="classNp_1_1vector_1aad28d49e1466e964b170aa9dee3818a7" kind="function"><name>modVector</name></member>
+    <member refid="classNp_1_1vector_1a5337af6cecc91301aa21e8d389a29593" kind="function"><name>multiplyMatrix</name></member>
+    <member refid="classNp_1_1vector_1aa73208685829e2714c09abed56dff189" kind="function"><name>multiplyScalar</name></member>
+    <member refid="classNp_1_1vector_1a819e51f21f7b2f25457990fa562ab9fd" kind="function"><name>multiplyVector</name></member>
+    <member refid="classNp_1_1vector_1ae07c60da3523240c6f3224e8a82ce29e" kind="function"><name>powMatrix</name></member>
+    <member refid="classNp_1_1vector_1ac6256209b0ce7dc2a35ee0a22ba1460d" kind="function"><name>powScalar</name></member>
+    <member refid="classNp_1_1vector_1a8de891a0c5d25ae53dd3f5421fe4627e" kind="function"><name>powVector</name></member>
+    <member refid="classNp_1_1vector_1a2102b4d22544551be497286ae806b2ec" kind="function"><name>substractScalar</name></member>
+    <member refid="classNp_1_1vector_1a38c5131c6b672b07c456283b024bf6ee" kind="function"><name>subtractMatrix</name></member>
+    <member refid="classNp_1_1vector_1af3ce54ab7fb8dfd42b56e0376d00049a" kind="function"><name>subtractVector</name></member>
+  </compound>
+  <compound refid="namespaceblas" kind="namespace"><name>blas</name>
+  </compound>
+  <compound refid="namespacedimensionalityMismatch" kind="namespace"><name>dimensionalityMismatch</name>
+  </compound>
+  <compound refid="namespaceinvalidArgumentException" kind="namespace"><name>invalidArgumentException</name>
+  </compound>
+  <compound refid="namespacelapack" kind="namespace"><name>lapack</name>
+  </compound>
+  <compound refid="namespacelinAlg" kind="namespace"><name>linAlg</name>
+  </compound>
+  <compound refid="namespaceNp" kind="namespace"><name>Np</name>
+  </compound>
+  <compound refid="namespaceNp_1_1core" kind="namespace"><name>Np::core</name>
+  </compound>
+  <compound refid="namespaceNp_1_1core_1_1blas" kind="namespace"><name>Np::core::blas</name>
+  </compound>
+  <compound refid="namespaceNp_1_1core_1_1lapack" kind="namespace"><name>Np::core::lapack</name>
+  </compound>
+  <compound refid="namespaceNp_1_1core_1_1nd" kind="namespace"><name>Np::core::nd</name>
+  </compound>
+  <compound refid="namespaceNp_1_1decompositions" kind="namespace"><name>Np::decompositions</name>
+  </compound>
+  <compound refid="namespaceNp_1_1decompositions_1_1cholesky" kind="namespace"><name>Np::decompositions::cholesky</name>
+  </compound>
+  <compound refid="namespaceNp_1_1decompositions_1_1eigen" kind="namespace"><name>Np::decompositions::eigen</name>
+  </compound>
+  <compound refid="namespaceNp_1_1decompositions_1_1lu" kind="namespace"><name>Np::decompositions::lu</name>
+  </compound>
+  <compound refid="namespaceNp_1_1decompositions_1_1svd" kind="namespace"><name>Np::decompositions::svd</name>
+  </compound>
+  <compound refid="namespaceNp_1_1exceptions" kind="namespace"><name>Np::exceptions</name>
+  </compound>
+  <compound refid="namespaceNp_1_1exceptions_1_1dtypeException" kind="namespace"><name>Np::exceptions::dtypeException</name>
+  </compound>
+  <compound refid="namespaceNp_1_1exceptions_1_1invalidArgumentException" kind="namespace"><name>Np::exceptions::invalidArgumentException</name>
+  </compound>
+  <compound refid="namespaceNp_1_1matrix" kind="namespace"><name>Np::matrix</name>
+  </compound>
+  <compound refid="namespaceNp_1_1reductions" kind="namespace"><name>Np::reductions</name>
+  </compound>
+  <compound refid="namespaceNp_1_1reductions_1_1ref" kind="namespace"><name>Np::reductions::ref</name>
+  </compound>
+  <compound refid="namespaceNp_1_1reductions_1_1rref" kind="namespace"><name>Np::reductions::rref</name>
+  </compound>
+  <compound refid="namespaceNp_1_1vector" kind="namespace"><name>Np::vector</name>
+  </compound>
+  <compound refid="namespaceops" kind="namespace"><name>ops</name>
+  </compound>
+  <compound refid="namespaceruntimeException" kind="namespace"><name>runtimeException</name>
+  </compound>
+  <compound refid="namespaceThrowable" kind="namespace"><name>Throwable</name>
+  </compound>
+  <compound refid="convolve_8php" kind="file"><name>convolve.php</name>
+  </compound>
+  <compound refid="blas_8h" kind="file"><name>blas.h</name>
+    <member refid="blas_8h_1ac75d3f61ae195a12c3fe42db82462ff0" kind="define"><name>FFI_LIB</name></member>
+    <member refid="blas_8h_1a512ba25653eaf59b6f3c414769a6b23f" kind="define"><name>FFI_SCOPE</name></member>
+    <member refid="blas_8h_1a314ed63bbb67a36c991ed4325b852adb" kind="typedef"><name>CBLAS_INDEX_t</name></member>
+    <member refid="blas_8h_1ac4a360a9f1b8ddd5fcb0c16260e0ac2a" kind="function"><name>cblas_dasum</name></member>
+    <member refid="blas_8h_1ab4a1f56c3fb097ae0879b1ff3746a5f4" kind="function"><name>cblas_daxpy</name></member>
+    <member refid="blas_8h_1aae785f77866cecf54f5e337a009e21b8" kind="function"><name>cblas_dcopy</name></member>
+    <member refid="blas_8h_1a1c8aaf7ce5af2e91cdd4e33332fb3317" kind="function"><name>cblas_ddot</name></member>
+    <member refid="blas_8h_1a31d8c3e7739c0c9d84afa74ad17a1e72" kind="function"><name>cblas_dgbmv</name></member>
+    <member refid="blas_8h_1acbc643095eb54edbffb0c5e9080a2450" kind="function"><name>cblas_dgemm</name></member>
+    <member refid="blas_8h_1a74d1a65503a1fa90943cdf9d8f847aab" kind="function"><name>cblas_dgemv</name></member>
+    <member refid="blas_8h_1a25061b48077f91aaebb54b3d11c79da4" kind="function"><name>cblas_dger</name></member>
+    <member refid="blas_8h_1a2e7d995100f18f9d4707e8f71cd00da6" kind="function"><name>cblas_dnrm2</name></member>
+    <member refid="blas_8h_1a8f5293b831f93954d064444c74135df9" kind="function"><name>cblas_domatcopy</name></member>
+    <member refid="blas_8h_1a8102f0292cc6db05c69cefd9b77e2b3b" kind="function"><name>cblas_drot</name></member>
+    <member refid="blas_8h_1ae9c72609641108287193098b5e3016fb" kind="function"><name>cblas_drotg</name></member>
+    <member refid="blas_8h_1a7dce66b70dbad84e35fcf4a8786492ff" kind="function"><name>cblas_drotm</name></member>
+    <member refid="blas_8h_1a2d97f5e685f485bb5616ad0112a1cd8c" kind="function"><name>cblas_drotmg</name></member>
+    <member refid="blas_8h_1af1b07c9df631554b91b91f81c8f09135" kind="function"><name>cblas_dsbmv</name></member>
+    <member refid="blas_8h_1ab41b816dce4c54a31f759386d1424ac3" kind="function"><name>cblas_dscal</name></member>
+    <member refid="blas_8h_1acc2f49b23e7aad1f8bbb02224dd34dc4" kind="function"><name>cblas_dsdot</name></member>
+    <member refid="blas_8h_1af7ec9d9b3027b4f9d72346949314d24b" kind="function"><name>cblas_dspmv</name></member>
+    <member refid="blas_8h_1a61007c84271e1ff94ea6598d95332f36" kind="function"><name>cblas_dspr</name></member>
+    <member refid="blas_8h_1a71c339afe97d115e6b191753e7731a10" kind="function"><name>cblas_dspr2</name></member>
+    <member refid="blas_8h_1aa479b791c388bb4c9ec37824275b0ec4" kind="function"><name>cblas_dswap</name></member>
+    <member refid="blas_8h_1a6778e5e13450b4b9985a61de94eef045" kind="function"><name>cblas_dsymm</name></member>
+    <member refid="blas_8h_1aa59eb41caf8302dfed0797e6144741a3" kind="function"><name>cblas_dsymv</name></member>
+    <member refid="blas_8h_1a28d8aa0fc741511260d4339c68980a0a" kind="function"><name>cblas_dsyr</name></member>
+    <member refid="blas_8h_1adcdcdd812d0126f420c24201626484f1" kind="function"><name>cblas_dsyr2</name></member>
+    <member refid="blas_8h_1a73988537ff847b73be3c54a99dde88e6" kind="function"><name>cblas_dsyr2k</name></member>
+    <member refid="blas_8h_1afc41a66179be1471cfa8baa68217f87d" kind="function"><name>cblas_dsyrk</name></member>
+    <member refid="blas_8h_1a7f9abd5965daec11dea9219271f93335" kind="function"><name>cblas_dtbmv</name></member>
+    <member refid="blas_8h_1a348a8cb9f3a8401fac805eec1d2fd4e2" kind="function"><name>cblas_dtbsv</name></member>
+    <member refid="blas_8h_1a33d71705b46527d8a6a8a62750c1c96c" kind="function"><name>cblas_dtpmv</name></member>
+    <member refid="blas_8h_1a8e24e9ca80f853cdd8497283bd3af87c" kind="function"><name>cblas_dtpsv</name></member>
+    <member refid="blas_8h_1ac1f92b814c44c4c1fafd5823c2de07fe" kind="function"><name>cblas_dtrmm</name></member>
+    <member refid="blas_8h_1a2abc4975ee06333580834a385a4e9c2f" kind="function"><name>cblas_dtrmv</name></member>
+    <member refid="blas_8h_1acb9dff4064ae8370ae85430f36c64cbf" kind="function"><name>cblas_dtrsm</name></member>
+    <member refid="blas_8h_1aa8f7fe6c62ac1e6d1fa12036e20b6a8d" kind="function"><name>cblas_dtrsv</name></member>
+    <member refid="blas_8h_1a6f6d9214851e831dd4d6d57976ac438b" kind="function"><name>cblas_idamax</name></member>
+    <member refid="blas_8h_1ab6ee4aa597e85bc711821f489a560dfd" kind="function"><name>cblas_idamin</name></member>
+    <member refid="blas_8h_1ac60350d59b0b7b8cd99fad7a8ea140ff" kind="function"><name>cblas_isamax</name></member>
+    <member refid="blas_8h_1a0a22887279b739ec1d356b65ced5d149" kind="function"><name>cblas_isamin</name></member>
+    <member refid="blas_8h_1ac6a3fe684fd62b637ac65329a3bf04a0" kind="function"><name>cblas_sasum</name></member>
+    <member refid="blas_8h_1a92219ca56e84fb1db72003d7614a62e8" kind="function"><name>cblas_saxpy</name></member>
+    <member refid="blas_8h_1a42fd5b4f4605edd4d1662ac09aad284d" kind="function"><name>cblas_scopy</name></member>
+    <member refid="blas_8h_1ac4fa969a8243124ef0f623defee2db4e" kind="function"><name>cblas_sdot</name></member>
+    <member refid="blas_8h_1a903cbe0c2a837f3d4eea87c1a773dadf" kind="function"><name>cblas_sdsdot</name></member>
+    <member refid="blas_8h_1af53f5f54faab73437b7a61ea0fb068c3" kind="function"><name>cblas_sgbmv</name></member>
+    <member refid="blas_8h_1a7d42dfcb6073c56391fee28494809cc5" kind="function"><name>cblas_sgemm</name></member>
+    <member refid="blas_8h_1a1a16541ba817ecefd70cc0371aa48668" kind="function"><name>cblas_sgemv</name></member>
+    <member refid="blas_8h_1afc42130a6fef266cd2ed72eec1736af0" kind="function"><name>cblas_sger</name></member>
+    <member refid="blas_8h_1a3bca0a31bfa68c9ed3f05d29421cc202" kind="function"><name>cblas_snrm2</name></member>
+    <member refid="blas_8h_1a36aa7211aed2026dcc555b22a9ccc651" kind="function"><name>cblas_somatcopy</name></member>
+    <member refid="blas_8h_1ae3b8195cf878a0649b3391722a1c4517" kind="function"><name>cblas_srot</name></member>
+    <member refid="blas_8h_1aa9c8e8c02791bc4c1ea56d509bff5c82" kind="function"><name>cblas_srotg</name></member>
+    <member refid="blas_8h_1adf521dc2a6f8a06ad8624c18865abd02" kind="function"><name>cblas_srotm</name></member>
+    <member refid="blas_8h_1a39ccc24876547d238424c6e45883c42d" kind="function"><name>cblas_srotmg</name></member>
+    <member refid="blas_8h_1ad23e3ebccc72659a7551b9d1545348ba" kind="function"><name>cblas_ssbmv</name></member>
+    <member refid="blas_8h_1a5b3ca82c14437efc3929439e43e42d71" kind="function"><name>cblas_sscal</name></member>
+    <member refid="blas_8h_1acd3221efa4a868f349c7ec653f61f2f2" kind="function"><name>cblas_sspmv</name></member>
+    <member refid="blas_8h_1a1dd5f14ada77aaaf57c92ca86e53bd48" kind="function"><name>cblas_sspr</name></member>
+    <member refid="blas_8h_1ab6922dff40e7d7e807ab332702c3c9c1" kind="function"><name>cblas_sspr2</name></member>
+    <member refid="blas_8h_1a5e148e8153da1b5c26b56a3e62ae4949" kind="function"><name>cblas_sswap</name></member>
+    <member refid="blas_8h_1aff12dc9eefab6f5d8f3a254551006250" kind="function"><name>cblas_ssymm</name></member>
+    <member refid="blas_8h_1a979ecf947869765e4ab834e435acda06" kind="function"><name>cblas_ssymv</name></member>
+    <member refid="blas_8h_1a53e64ceafe9b8f3cf2b8e919be9f3703" kind="function"><name>cblas_ssyr</name></member>
+    <member refid="blas_8h_1a5e5244ef9c8f9967f57ac1e74bef8f14" kind="function"><name>cblas_ssyr2</name></member>
+    <member refid="blas_8h_1a2ccc1bd38141a6777aaaa6ae454b0361" kind="function"><name>cblas_ssyr2k</name></member>
+    <member refid="blas_8h_1a051d1897649fd8d6ed9e3bce535e1b61" kind="function"><name>cblas_ssyrk</name></member>
+    <member refid="blas_8h_1ace634161595926af2be1231c0469217d" kind="function"><name>cblas_stbmv</name></member>
+    <member refid="blas_8h_1a35eede3bdb7f9bc65496509141ca0e46" kind="function"><name>cblas_stbsv</name></member>
+    <member refid="blas_8h_1a8314096fc86d8df406de09b26087d5da" kind="function"><name>cblas_stpmv</name></member>
+    <member refid="blas_8h_1a54e9d5609eda9e93705701b39cecda34" kind="function"><name>cblas_stpsv</name></member>
+    <member refid="blas_8h_1a96848c2dd359ac0bbfca8bd905c965d1" kind="function"><name>cblas_strmm</name></member>
+    <member refid="blas_8h_1ab6cd9998d9e431a65a15cacc3e12b052" kind="function"><name>cblas_strmv</name></member>
+    <member refid="blas_8h_1a8b9090a4c0baddb2e20b013df3389a80" kind="function"><name>cblas_strsm</name></member>
+    <member refid="blas_8h_1a2798be7347823849df32f2f107f188c5" kind="function"><name>cblas_strsv</name></member>
+    <member refid="blas_8h_1af0ddc7c1a8b45db7535a699a33040f1d" kind="function"><name>goto_set_num_threads</name></member>
+    <member refid="blas_8h_1a68ff68a07c8940011bc4f19835bcdf08" kind="function"><name>openblas_get_config</name></member>
+    <member refid="blas_8h_1a4478d22b2aa279bc88d46722ace3c193" kind="function"><name>openblas_get_corename</name></member>
+    <member refid="blas_8h_1a1ed8f612abd6afd684555424cca627af" kind="function"><name>openblas_get_num_procs</name></member>
+    <member refid="blas_8h_1ad46c55ce19ae682e7d16f097fe1d2883" kind="function"><name>openblas_get_num_threads</name></member>
+    <member refid="blas_8h_1a9f9abcf616041ffbac62a93cf9b84285" kind="function"><name>openblas_get_parallel</name></member>
+    <member refid="blas_8h_1aa406a94b91fca1119d42385c388ff1ff" kind="function"><name>openblas_set_num_threads</name></member>
+  </compound>
+  <compound refid="blas_8php" kind="file"><name>blas.php</name>
+  </compound>
+  <compound refid="lapack_8h" kind="file"><name>lapack.h</name>
+    <member refid="lapack_8h_1ac75d3f61ae195a12c3fe42db82462ff0" kind="define"><name>FFI_LIB</name></member>
+    <member refid="lapack_8h_1a512ba25653eaf59b6f3c414769a6b23f" kind="define"><name>FFI_SCOPE</name></member>
+    <member refid="lapack_8h_1ac813e54ba484fea39ec6939c49de5225" kind="function"><name>LAPACKE_dgebal</name></member>
+    <member refid="lapack_8h_1ab91fa6deb275f4df1ea6ce41bd38ccf8" kind="function"><name>LAPACKE_dgeev</name></member>
+    <member refid="lapack_8h_1a8e9111664c40d0f831747d5124974fcb" kind="function"><name>LAPACKE_dgels</name></member>
+    <member refid="lapack_8h_1a979a3dbd4aac55101a87cdc7577999f7" kind="function"><name>LAPACKE_dgesdd</name></member>
+    <member refid="lapack_8h_1ae231d6611ab10540e29e67ba8dd6ae31" kind="function"><name>LAPACKE_dgetrf</name></member>
+    <member refid="lapack_8h_1abad99b4284ac60967f1f5671ea019716" kind="function"><name>LAPACKE_dgetri</name></member>
+    <member refid="lapack_8h_1a22899f22622a6224e974718307402ee1" kind="function"><name>LAPACKE_dlange</name></member>
+    <member refid="lapack_8h_1a2b6ad64b668e3601f41cee1d8215a686" kind="function"><name>LAPACKE_dlasrt</name></member>
+    <member refid="lapack_8h_1a65839700d05d09d9385dcfe0369ee811" kind="function"><name>LAPACKE_dpotrf</name></member>
+    <member refid="lapack_8h_1a88e7bb1bfd8f355c50bec0f80a025971" kind="function"><name>LAPACKE_dsyev</name></member>
+    <member refid="lapack_8h_1a7f4d8a3bc52390debb9db02aee1dab6b" kind="function"><name>LAPACKE_sbdsdc</name></member>
+    <member refid="lapack_8h_1a021a7032112925e68edd6073170531cc" kind="function"><name>LAPACKE_sbdsvdx</name></member>
+    <member refid="lapack_8h_1ae18d73da68f72393be20695861ef5b6f" kind="function"><name>LAPACKE_sdisna</name></member>
+    <member refid="lapack_8h_1a4ef1e9bb395848ceacbf375b387f6fcb" kind="function"><name>LAPACKE_sgbbrd</name></member>
+    <member refid="lapack_8h_1a116d48b94f1a768bf2df05c7722da3c3" kind="function"><name>LAPACKE_sgbcon</name></member>
+    <member refid="lapack_8h_1a3ed4e444f0192a30900431c010f0e82f" kind="function"><name>LAPACKE_sgbequ</name></member>
+    <member refid="lapack_8h_1a0b4427da11fbc27d903dfb098142283f" kind="function"><name>LAPACKE_sgbequb</name></member>
+    <member refid="lapack_8h_1a5ec41d8d0889c3b7ab3205b7fb24fbb2" kind="function"><name>LAPACKE_sgbrfs</name></member>
+    <member refid="lapack_8h_1ade0a872ebb32e6de365db57992d3ffb5" kind="function"><name>LAPACKE_sgbsv</name></member>
+    <member refid="lapack_8h_1a541baa26013b8cd22c3e446c4c66bbd3" kind="function"><name>LAPACKE_sgbsvx</name></member>
+    <member refid="lapack_8h_1a54fab49f6968389f9bd7b14d738addb5" kind="function"><name>LAPACKE_sgbtrf</name></member>
+    <member refid="lapack_8h_1aafaf05c5a68c707c82fcb917cde50860" kind="function"><name>LAPACKE_sgbtrs</name></member>
+    <member refid="lapack_8h_1a023cfc183d10c3e3daae933dd2931129" kind="function"><name>LAPACKE_sgebak</name></member>
+    <member refid="lapack_8h_1a50c748da199ffd8a6acac433312ae047" kind="function"><name>LAPACKE_sgebal</name></member>
+    <member refid="lapack_8h_1a49a960cb3ae802220d0f9bd811f16129" kind="function"><name>LAPACKE_sgebrd</name></member>
+    <member refid="lapack_8h_1a2a7bd2488aa8d78d689c9758a2479598" kind="function"><name>LAPACKE_sgecon</name></member>
+    <member refid="lapack_8h_1afca2a117c010ba4bb2361508cc6d72c1" kind="function"><name>LAPACKE_sgeequ</name></member>
+    <member refid="lapack_8h_1a0f236dadb0dad44f12304105c852e2dc" kind="function"><name>LAPACKE_sgeequb</name></member>
+    <member refid="lapack_8h_1a85700ecdaae1e71eecda4ece8f716a98" kind="function"><name>LAPACKE_sgeev</name></member>
+    <member refid="lapack_8h_1a5dafeef15c289591cb5c998ed8d5d23a" kind="function"><name>LAPACKE_sgelq2</name></member>
+    <member refid="lapack_8h_1a95d2e6e9b7ad7ce0574f36c298dcba4c" kind="function"><name>LAPACKE_sgels</name></member>
+    <member refid="lapack_8h_1a8eedd71d67af52d71a5ae5fb199559fa" kind="function"><name>LAPACKE_sgelsd</name></member>
+    <member refid="lapack_8h_1a180826095cb31f8e5e510d49e5c2ee5b" kind="function"><name>LAPACKE_sgelsy</name></member>
+    <member refid="lapack_8h_1a3309a65a6899a5bf4729424ba50f0f66" kind="function"><name>LAPACKE_sgesdd</name></member>
+    <member refid="lapack_8h_1a93ff0c2c3ed0e67f3ac1ca48c241e97e" kind="function"><name>LAPACKE_sgetrf</name></member>
+    <member refid="lapack_8h_1a2f5ae356ed31c7276dbbd1a2c2f7dfe3" kind="function"><name>LAPACKE_sgetri</name></member>
+    <member refid="lapack_8h_1a8ef375775f2fb056476fd0a45b7d3b22" kind="function"><name>LAPACKE_slange</name></member>
+    <member refid="lapack_8h_1a75de8af0b77379e510b0af43c987d75b" kind="function"><name>LAPACKE_slasrt</name></member>
+    <member refid="lapack_8h_1a2a0155e0efabcf822177261cca483b4b" kind="function"><name>LAPACKE_spotrf</name></member>
+    <member refid="lapack_8h_1a9f4fab2668b3308db954654fbb2cc710" kind="function"><name>LAPACKE_sspsv</name></member>
+    <member refid="lapack_8h_1a352b1051e4b2c0c076698c51ed30a3de" kind="function"><name>LAPACKE_ssyev</name></member>
+  </compound>
+  <compound refid="lapack_8php" kind="file"><name>lapack.php</name>
+  </compound>
+  <compound refid="nd_8php" kind="file"><name>nd.php</name>
+  </compound>
+  <compound refid="cholesky_8php" kind="file"><name>cholesky.php</name>
+  </compound>
+  <compound refid="eigen_8php" kind="file"><name>eigen.php</name>
+  </compound>
+  <compound refid="lu_8php" kind="file"><name>lu.php</name>
+  </compound>
+  <compound refid="svd_8php" kind="file"><name>svd.php</name>
+  </compound>
+  <compound refid="dimensionalityMismatch_8php" kind="file"><name>dimensionalityMismatch.php</name>
+  </compound>
+  <compound refid="dtypeException_8php" kind="file"><name>dtypeException.php</name>
+  </compound>
+  <compound refid="invalidArgumentException_8php" kind="file"><name>invalidArgumentException.php</name>
+  </compound>
+  <compound refid="npException_8php" kind="file"><name>npException.php</name>
+  </compound>
+  <compound refid="runtimeException_8php" kind="file"><name>runtimeException.php</name>
+  </compound>
+  <compound refid="linAlg_8php" kind="file"><name>linAlg.php</name>
+  </compound>
+  <compound refid="matrix_8php" kind="file"><name>matrix.php</name>
+  </compound>
+  <compound refid="ops_8php" kind="file"><name>ops.php</name>
+  </compound>
+  <compound refid="ref_8php" kind="file"><name>ref.php</name>
+  </compound>
+  <compound refid="rref_8php" kind="file"><name>rref.php</name>
+  </compound>
+  <compound refid="vector_8php" kind="file"><name>vector.php</name>
+  </compound>
+  <compound refid="dir_aebb8dcc11953d78e620bbef0b9e2183" kind="dir"><name>/home/ghost/projects/git/numphp/src/core</name>
+  </compound>
+  <compound refid="dir_d0006e8f74480d93972bee1bd7e7773b" kind="dir"><name>/home/ghost/projects/git/numphp/src/decompositions</name>
+  </compound>
+  <compound refid="dir_6e33d6500a76933db4361f663e54ab12" kind="dir"><name>/home/ghost/projects/git/numphp/src/exceptions</name>
+  </compound>
+  <compound refid="dir_488a33708a2424608dead1afd03824f0" kind="dir"><name>/home/ghost/projects/git/numphp/src/reductions</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>/home/ghost/projects/git/numphp/src</name>
+  </compound>
+</doxygenindex>

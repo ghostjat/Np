@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classNp_1_1exceptions_1_1dtypeException" kind="class" language="PHP" prot="public">
+    <compoundname>Np::exceptions::dtypeException</compoundname>
+    <basecompoundref refid="classNp_1_1exceptions_1_1invalidArgumentException" prot="public" virt="non-virtual">Np\exceptions\invalidArgumentException</basecompoundref>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Description of <ref refid="classNp_1_1exceptions_1_1dtypeException" kindref="compound">dtypeException</ref></para><para><simplesect kind="author"><para>ghost </para></simplesect>
+</para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="18">
+        <label>NpInvalidArgException</label>
+      </node>
+      <node id="19">
+        <label>Np\exceptions\npException</label>
+        <link refid="interfaceNp_1_1exceptions_1_1npException"/>
+        <childnode refid="20" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>Np\exceptions\dtypeException</label>
+        <link refid="classNp_1_1exceptions_1_1dtypeException"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>Np\exceptions\invalidArgumentException</label>
+        <link refid="classNp_1_1exceptions_1_1invalidArgumentException"/>
+        <childnode refid="18" relation="public-inheritance">
+        </childnode>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>Throwable</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="23">
+        <label>NpInvalidArgException</label>
+      </node>
+      <node id="24">
+        <label>Np\exceptions\npException</label>
+        <link refid="interfaceNp_1_1exceptions_1_1npException"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>Np\exceptions\dtypeException</label>
+        <link refid="classNp_1_1exceptions_1_1dtypeException"/>
+        <childnode refid="22" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>Np\exceptions\invalidArgumentException</label>
+        <link refid="classNp_1_1exceptions_1_1invalidArgumentException"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+        <childnode refid="24" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>Throwable</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/ghost/projects/git/numphp/src/exceptions/dtypeException.php" line="11" column="1" bodyfile="/home/ghost/projects/git/numphp/src/exceptions/dtypeException.php" bodystart="11" bodyend="13"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

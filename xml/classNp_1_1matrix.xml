@@ -1,0 +1,2765 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classNp_1_1matrix" kind="class" language="PHP" prot="public">
+    <compoundname>Np::matrix</compoundname>
+    <basecompoundref refid="classNp_1_1core_1_1nd" prot="public" virt="non-virtual">Np\core\nd</basecompoundref>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classNp_1_1matrix_1a061db2a3fabe835e3b31ab312952a059" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\matrix::ar</definition>
+        <argsstring>(array $data, int $dtype=self::FLOAT)</argsstring>
+        <name>ar</name>
+        <param>
+          <type>array</type>
+          <declname>$data</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$dtype</declname>
+          <defval>self::FLOAT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>create 2d matrix using php array <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>array</parametertype>
+<parametername>$data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$dtype</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>matrix data type float|double </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="47" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="47" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1acc1733997f58af8643afd27fe12e8307" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\matrix::diagonal</definition>
+        <argsstring>(array $elements, int $dtype=self::FLOAT)</argsstring>
+        <name>diagonal</name>
+        <param>
+          <type>array</type>
+          <declname>$elements</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$dtype</declname>
+          <defval>self::FLOAT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>create a diagonal 2d matrix with given 1d array; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>array</parametertype>
+<parametername>$elements</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="153" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="153" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a41010884ae9f834864b569d714ca0e25" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\matrix::factory</definition>
+        <argsstring>(int $row, int $col, int $dtype=self::FLOAT)</argsstring>
+        <name>factory</name>
+        <param>
+          <type>int</type>
+          <declname>$row</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$col</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$dtype</declname>
+          <defval>self::FLOAT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>create empty 2d matrix for given data type <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$row</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>num of rows </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$col</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>num of cols </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$dtype</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>matrix data type float|double </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="37" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="37" bodyend="39"/>
+        <referencedby refid="classNp_1_1decompositions_1_1svd_1ac8bda3519697c3b3e32f7808053f5675" compoundref="svd_8php" startline="29" endline="43">Np\decompositions\svd\factory</referencedby>
+        <referencedby refid="classNp_1_1decompositions_1_1lu_1a12939e49fe2dafdbaed5b350cf4f460a" compoundref="lu_8php" startline="32" endline="74">Np\decompositions\lu\factory</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a6307a9566c2a149a19c7df7fa8300112" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\matrix::full</definition>
+        <argsstring>(int $row, int $col, $val, int $dtype=self::FLOAT)</argsstring>
+        <name>full</name>
+        <param>
+          <type>int</type>
+          <declname>$row</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$col</declname>
+        </param>
+        <param>
+          <declname>$val</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$dtype</declname>
+          <defval>self::FLOAT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>create a 2d matrix with given scalar value <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$row</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$col</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametertype>double</parametertype>
+<parametername>$val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="140" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="140" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1aaad5f30fb575ac664190489013cc2931" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\matrix::gaussian</definition>
+        <argsstring>(int $row, int $col, int $dtype=self::FLOAT)</argsstring>
+        <name>gaussian</name>
+        <param>
+          <type>int</type>
+          <declname>$row</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$col</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$dtype</declname>
+          <defval>self::FLOAT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return a standard normally distributed random matrix i.e values between -1 and 1. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$row</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$col</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$dtype</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Description </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="196" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="196" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a49b274567471149bc5fabbf2609f4665" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\matrix::identity</definition>
+        <argsstring>(int $n, int $dtype=self::FLOAT)</argsstring>
+        <name>identity</name>
+        <param>
+          <type>int</type>
+          <declname>$n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$dtype</declname>
+          <defval>self::FLOAT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>create an identity matrix with the given dimensions. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$dtype</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="233" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="233" bodyend="245"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a74daf93954fa7e3ee50b976bb613c04a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\matrix::is_zero</definition>
+        <argsstring>($d)</argsstring>
+        <name>is_zero</name>
+        <param>
+          <declname>$d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametername>$d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="642" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="642" bodyend="647"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a99588b623abe9375f63512534b062324" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\matrix::null</definition>
+        <argsstring>(int $row, int $col, int $dtype=self::FLOAT)</argsstring>
+        <name>null</name>
+        <param>
+          <type>int</type>
+          <declname>$row</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$col</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$dtype</declname>
+          <defval>self::FLOAT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>create a null like 2d matrix <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$row</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$col</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="125" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="125" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a307b963ee70a5eeb1b72dc57e3d8e462" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\matrix::ones</definition>
+        <argsstring>(int $row, int $col, int $dtype=self::FLOAT)</argsstring>
+        <name>ones</name>
+        <param>
+          <type>int</type>
+          <declname>$row</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$col</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$dtype</declname>
+          <defval>self::FLOAT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>create one like 2d matrix <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$row</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$col</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="64" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="64" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a2c801ebcbba80cdd427166fafe9b17b2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\matrix::poisson</definition>
+        <argsstring>(int $row, int $col, float $lambda=1.0, int $dtype=self::FLOAT)</argsstring>
+        <name>poisson</name>
+        <param>
+          <type>int</type>
+          <declname>$row</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$col</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>$lambda</declname>
+          <defval>1.0</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$dtype</declname>
+          <defval>self::FLOAT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Generate a m x n matrix with elements from a Poisson distribution. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$row</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$col</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>float</parametertype>
+<parametername>$lambda</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$dtype</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="170" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="170" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a8f56013f8eefc541c9551696181abc56" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\matrix::randn</definition>
+        <argsstring>(int $row, int $col, int $dtype=self::FLOAT)</argsstring>
+        <name>randn</name>
+        <param>
+          <type>int</type>
+          <declname>$row</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$col</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$dtype</declname>
+          <defval>self::FLOAT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create Matrix with random values <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$row</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$col</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$dtype</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Float|Double </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="79" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="79" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a7a964625519b115c907a00649a05a627" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\matrix::uniform</definition>
+        <argsstring>(int $row, int $col, int $dtype=self::FLOAT)</argsstring>
+        <name>uniform</name>
+        <param>
+          <type>int</type>
+          <declname>$row</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$col</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$dtype</declname>
+          <defval>self::FLOAT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return 2d matrix with uniform values <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$row</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$col</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$dtype</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="95" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="95" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a808688babf7ca21d74e854c334e4fa4e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\matrix::zeros</definition>
+        <argsstring>(int $row, int $col, int $dtype=self::FLOAT)</argsstring>
+        <name>zeros</name>
+        <param>
+          <type>int</type>
+          <declname>$row</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$col</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$dtype</declname>
+          <defval>self::FLOAT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return a zero matrix with the given dimensions. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$row</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$col</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$dtype</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="111" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="111" bodyend="117"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classNp_1_1matrix_1a8794ffff3baba16dd359863e3098ef96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::__toString</definition>
+        <argsstring>()</argsstring>
+        <name>__toString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1400" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1400" bodyend="1402"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1ac5b3ec408f852e5fcd637467f209a993" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::addScaleRow</definition>
+        <argsstring>(int $r1, int $r2, float $c)</argsstring>
+        <name>addScaleRow</name>
+        <param>
+          <type>int</type>
+          <declname>$r1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$r2</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>$c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$r1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$r2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>float</parametertype>
+<parametername>$c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="791" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="791" bodyend="795"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a2901e316bdf8d6152cecba0da9ae8451" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::argMax</definition>
+        <argsstring>()</argsstring>
+        <name>argMax</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the index of the maximum element in every row of the matrix. <simplesect kind="return"><para>int </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="949" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="949" bodyend="955"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1aabbaabc55352b3cd8f08944192188987" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::argMin</definition>
+        <argsstring>()</argsstring>
+        <name>argMin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the index of the minimum element in every row of the matrix. <simplesect kind="return"><para>int </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="961" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="961" bodyend="968"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1abc68eb6d5cf79616d9d8074bee3227db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::asArray</definition>
+        <argsstring>()</argsstring>
+        <name>asArray</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the elements of the matrix in a 2-d array. <simplesect kind="return"><para>array </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1088" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1088" bodyend="1096"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a8e984725c840764008a8b8f8789fd2c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::asVector</definition>
+        <argsstring>()</argsstring>
+        <name>asVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flatten i.e unravel the matrix into a vector.</para><para><simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1076" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1076" bodyend="1082"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a2eb1ddb46be10ac5a9e1fffe066f5efe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::cholesky</definition>
+        <argsstring>()</argsstring>
+        <name>cholesky</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the lower triangular matrix of the Cholesky decomposition.</para><para><simplesect kind="return"><para>matrix|null </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="901" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="901" bodyend="903"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1abe2dc5107f6f0e76125c9b51eb5f5b89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::colAsVector</definition>
+        <argsstring>(int $index)</argsstring>
+        <name>colAsVector</name>
+        <param>
+          <type>int</type>
+          <declname>$index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return a col as vector from the matrix. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1048" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1048" bodyend="1054"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a8c0f5d5b9309ac0f71cee346d9ece148" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::convolve</definition>
+        <argsstring>(matrix $m, int $stride=1)</argsstring>
+        <name>convolve</name>
+        <param>
+          <type><ref refid="classNp_1_1matrix" kindref="compound">matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$stride</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>2D convolution between a matrix ma and kernel kb, with a given stride. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$stride</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="253" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="253" bodyend="255"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a943220996690bc9a436f99b6379bc8bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::covariance</definition>
+        <argsstring>(vector|null $mean=null)</argsstring>
+        <name>covariance</name>
+        <param>
+          <type><ref refid="classNp_1_1vector" kindref="compound">vector</ref>|<ref refid="classNp_1_1matrix_1a99588b623abe9375f63512534b062324" kindref="member">null</ref></type>
+          <declname>$mean</declname>
+          <defval><ref refid="classNp_1_1matrix_1a99588b623abe9375f63512534b062324" kindref="member">null</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compute the covariance matrix.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>vector</parametertype>
+<parametertype>null</parametertype>
+<parametername>$mean</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1232" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1232" bodyend="1245"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a00a657e75a9aa899f247fee9a9b0789a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::det</definition>
+        <argsstring>()</argsstring>
+        <name>det</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculate the determinant of the matrix. <simplesect kind="return"><para>float </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="261" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="261" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a012ac4db9a66aacd63e0904b99b99263" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::diagonalAsVector</definition>
+        <argsstring>()</argsstring>
+        <name>diagonalAsVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the diagonal elements of a square matrix as a vector. <simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1060" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1060" bodyend="1069"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a8b5b3f587f3612d530f6b1675c666917" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::dignoalInterChange</definition>
+        <argsstring>()</argsstring>
+        <name>dignoalInterChange</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>dignoalInterChange </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="296" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="296" bodyend="303"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a454e27fdc8957ea97c8df38f48ad0ec8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::diminish_left</definition>
+        <argsstring>(int $cols)</argsstring>
+        <name>diminish_left</name>
+        <param>
+          <type>int</type>
+          <declname>$cols</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$cols</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="920" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="920" bodyend="928"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a397ad3f68b1c8bc2aef2b321021eb396" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::diminish_right</definition>
+        <argsstring>(int $cols)</argsstring>
+        <name>diminish_right</name>
+        <param>
+          <type>int</type>
+          <declname>$cols</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$cols</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="935" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="935" bodyend="943"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1ad85b4b6695dc98b3aab72691cde7357f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::divide</definition>
+        <argsstring>(int|float|matrix|vector $d)</argsstring>
+        <name>divide</name>
+        <param>
+          <type>int|float|<ref refid="classNp_1_1matrix" kindref="compound">matrix</ref>|<ref refid="classNp_1_1vector" kindref="compound">vector</ref></type>
+          <declname>$d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the division of two elements, element-wise. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametertype>matrix</parametertype>
+<parametername>$d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="496" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="496" bodyend="504"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1ad163d08a839f6ea680d0a08606bf9b45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::eign</definition>
+        <argsstring>(bool $symmetric=false)</argsstring>
+        <name>eign</name>
+        <param>
+          <type>bool</type>
+          <declname>$symmetric</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compute the eigen decomposition of a general matrix. return the eigenvalues and eigenvectors as object</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>bool</parametertype>
+<parametername>$symmetric</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>eigen </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1128" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1128" bodyend="1130"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1afa53f257d3c36c0a6d1645df5cfa72b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::equal</definition>
+        <argsstring>(int|float|matrix|vector $d)</argsstring>
+        <name>equal</name>
+        <param>
+          <type>int|float|<ref refid="classNp_1_1matrix" kindref="compound">matrix</ref>|<ref refid="classNp_1_1vector" kindref="compound">vector</ref></type>
+          <declname>$d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametertype>matrix</parametertype>
+<parametertype>vector</parametertype>
+<parametername>$d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1260" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1260" bodyend="1268"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a89a949cc21f5be65af91d79722a9e298" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::getDiagonalVal</definition>
+        <argsstring>(int $i)</argsstring>
+        <name>getDiagonalVal</name>
+        <param>
+          <type>int</type>
+          <declname>$i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>get a diagonal value from matrix <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>float </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1103" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1103" bodyend="1107"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a96f30a3bf2395d3992f96e52f9500155" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::getDtype</definition>
+        <argsstring>()</argsstring>
+        <name>getDtype</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>get the matrix data type <simplesect kind="return"><para>int </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="999" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="999" bodyend="1001"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a0c034e873e4d0512f44905ea364790ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::getShape</definition>
+        <argsstring>()</argsstring>
+        <name>getShape</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>get the shape of matrix <simplesect kind="return"><para>object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1007" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1007" bodyend="1009"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1adf359011279dd9ffda343e6a30e84808" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::getSize</definition>
+        <argsstring>()</argsstring>
+        <name>getSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>get the number of elements in the matrix. <simplesect kind="return"><para>int </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1015" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1015" bodyend="1017"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a2f47d1a281c4b4d94587ade04aa86ee5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::greater</definition>
+        <argsstring>(int|float|matrix|vector $d)</argsstring>
+        <name>greater</name>
+        <param>
+          <type>int|float|<ref refid="classNp_1_1matrix" kindref="compound">matrix</ref>|<ref refid="classNp_1_1vector" kindref="compound">vector</ref></type>
+          <declname>$d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametertype>matrix</parametertype>
+<parametertype>vector</parametertype>
+<parametername>$d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1305" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1305" bodyend="1313"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a04e4d395383a8ef603b3a9521386b263" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::has_ZeroRow</definition>
+        <argsstring>()</argsstring>
+        <name>has_ZeroRow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>bool </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="667" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="667" bodyend="674"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a3a87b36568543396243b313b29325a70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::is_rowZero</definition>
+        <argsstring>(int $row)</argsstring>
+        <name>is_rowZero</name>
+        <param>
+          <type>int</type>
+          <declname>$row</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>is row zero <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$row</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="654" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="654" bodyend="661"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1adb337e32840446442dcf145107e26eba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::isSquare</definition>
+        <argsstring>()</argsstring>
+        <name>isSquare</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>is matrix squred <simplesect kind="return"><para>bool </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1023" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1023" bodyend="1028"/>
+        <referencedby refid="classNp_1_1decompositions_1_1cholesky_1a5885c1d3828f0c389b77313070f01355" compoundref="cholesky_8php" startline="30" endline="45">Np\decompositions\cholesky\factory</referencedby>
+        <referencedby refid="classNp_1_1decompositions_1_1lu_1a12939e49fe2dafdbaed5b350cf4f460a" compoundref="lu_8php" startline="32" endline="74">Np\decompositions\lu\factory</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1ab794b4308e964a51ed599ec1e39d8193" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::isSymmetric</definition>
+        <argsstring>()</argsstring>
+        <name>isSymmetric</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Is the matrix symmetric i.e. is it equal to its own transpose?</para><para><simplesect kind="return"><para>bool </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1372" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1372" bodyend="1385"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a58736559314d5839f083e49a204c7416" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::joinAbove</definition>
+        <argsstring>(matrix $m)</argsstring>
+        <name>joinAbove</name>
+        <param>
+          <type><ref refid="classNp_1_1matrix" kindref="compound">matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Join matrix m Above this matrix. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="847" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="847" bodyend="862"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a44ec9d32b9f64dab13473878dc503c22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::joinBelow</definition>
+        <argsstring>(matrix $m)</argsstring>
+        <name>joinBelow</name>
+        <param>
+          <type><ref refid="classNp_1_1matrix" kindref="compound">matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Join matrix m below this matrix. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="869" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="869" bodyend="884"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a39501fac5b7d5e3d90cdf5364b33a267" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::joinLeft</definition>
+        <argsstring>(matrix $m)</argsstring>
+        <name>joinLeft</name>
+        <param>
+          <type><ref refid="classNp_1_1matrix" kindref="compound">matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Attach given matrix to the left of this matrix.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="803" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="803" bodyend="818"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a7f8422415aa5d57ce57516dc8f27d5ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::joinRight</definition>
+        <argsstring>(matrix $m)</argsstring>
+        <name>joinRight</name>
+        <param>
+          <type><ref refid="classNp_1_1matrix" kindref="compound">matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Join matrix m to the Right of this matrix. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="825" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="825" bodyend="840"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a18e65823e636c00ca60efa9d2fb5bfce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::less</definition>
+        <argsstring>(int|float|matrix $m)</argsstring>
+        <name>less</name>
+        <param>
+          <type>int|float|<ref refid="classNp_1_1matrix" kindref="compound">matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametertype>matrix</parametertype>
+<parametername>$m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1350" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1350" bodyend="1365"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a60b4bd54bb33969be84cbc804d6ba39d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::lu</definition>
+        <argsstring>()</argsstring>
+        <name>lu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compute the LU factorization of matrix. return lower, upper, and permutation matrices as object.</para><para><simplesect kind="return"><para>lu </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1139" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1139" bodyend="1141"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a95e2b0f464f99db3166b616c7b759f7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::mean</definition>
+        <argsstring>()</argsstring>
+        <name>mean</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compute the means of each row and return them in a vector.</para><para><simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1180" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1180" bodyend="1182"/>
+        <references refid="classNp_1_1vector_1a87ea5a8c3d0c6bf737e146f274828e33" compoundref="vector_8php" startline="288" endline="296">Np\vector\divide</references>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1aa4c9e5cf34e979ae01e09ab34a6d2e53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::median</definition>
+        <argsstring>()</argsstring>
+        <name>median</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the median vector of this matrix. <simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1209" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1209" bodyend="1224"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a0b0bce0436d916be674bf8ea75243742" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::mod</definition>
+        <argsstring>(int|float|matrix|vector $d)</argsstring>
+        <name>mod</name>
+        <param>
+          <type>int|float|<ref refid="classNp_1_1matrix" kindref="compound">matrix</ref>|<ref refid="classNp_1_1vector" kindref="compound">vector</ref></type>
+          <declname>$d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculate the modulus i.e remainder of division between this matrix and another matrix. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametertype>matrix</parametertype>
+<parametertype>vector</parametertype>
+<parametername>$d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="588" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="588" bodyend="596"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a4730f50ca8780373872ca64529d9779d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::multiply</definition>
+        <argsstring>(int|float|matrix|vector $m)</argsstring>
+        <name>multiply</name>
+        <param>
+          <type>int|float|<ref refid="classNp_1_1matrix" kindref="compound">matrix</ref>|<ref refid="classNp_1_1vector" kindref="compound">vector</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>multiply this matrix with another matrix|scalar element-wise Matrix Scalar multiplication <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametertype>matrix</parametertype>
+<parametertype>vector</parametertype>
+<parametername>$m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix|vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="313" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="313" bodyend="321"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a6a957d32b8f7b22dd5521e6a268e3ff3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::normFrob</definition>
+        <argsstring>()</argsstring>
+        <name>normFrob</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the Frobenius norm of the matrix. <simplesect kind="return"><para>float </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1171" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1171" bodyend="1173"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1aebe0467b4b10792ae32c3061124be5ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::normINF</definition>
+        <argsstring>()</argsstring>
+        <name>normINF</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the L1 norm of the matrix. <simplesect kind="return"><para>float </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1163" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1163" bodyend="1165"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1aacf8ef0384ecf2e05553ccce05d85ba4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::normL1</definition>
+        <argsstring>()</argsstring>
+        <name>normL1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the L1 norm of the matrix. <simplesect kind="return"><para>float </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1147" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1147" bodyend="1149"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1aa7efbe6d610419f4592209f711bab88d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::normL2</definition>
+        <argsstring>()</argsstring>
+        <name>normL2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the L2 norm of the matrix. <simplesect kind="return"><para>float </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1155" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1155" bodyend="1157"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a35fc98b14083bc0ffcaf1c88e7868bed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::pow</definition>
+        <argsstring>(int|float|matrix|vector $d)</argsstring>
+        <name>pow</name>
+        <param>
+          <type>int|float|<ref refid="classNp_1_1matrix" kindref="compound">matrix</ref>|<ref refid="classNp_1_1vector" kindref="compound">vector</ref></type>
+          <declname>$d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Raise this matrix to the power of the element-wise entry in another matrix.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametertype>matrix</parametertype>
+<parametername>$m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="543" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="543" bodyend="551"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a4325bcea948a4261fd0d5119f42356e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::printMatrix</definition>
+        <argsstring>()</argsstring>
+        <name>printMatrix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>print the matrix in consol </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1390" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1390" bodyend="1398"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1ac6ace30e5237e99f9fba4d5913c968ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::reciprocal</definition>
+        <argsstring>()</argsstring>
+        <name>reciprocal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the element-wise reciprocal of the matrix.</para><para><simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="633" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="633" bodyend="635"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a0b9c2290f3926838992bd1131d1d1d2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::ref</definition>
+        <argsstring>()</argsstring>
+        <name>ref</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculate the row echelon form of the matrix. Return the reduced matrix.</para><para><simplesect kind="return"><para>matrix|null </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="892" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="892" bodyend="894"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a3d0f5f7752a523b09cf6649528b3f253" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::rowAsVector</definition>
+        <argsstring>(int $index)</argsstring>
+        <name>rowAsVector</name>
+        <param>
+          <type>int</type>
+          <declname>$index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return a row as vector from the matrix. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1035" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1035" bodyend="1041"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a80ec1e3d0b5bd5fe49eae124252891a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::rref</definition>
+        <argsstring>()</argsstring>
+        <name>rref</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>FIXME-----------<mdash/> RREF The reduced row echelon form (RREF) of a matrix. <simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="911" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="911" bodyend="913"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a0b8dc642d875e14d7fd624e1d8fcc788" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::scale</definition>
+        <argsstring>(int|float $scalar)</argsstring>
+        <name>scale</name>
+        <param>
+          <type>int|float</type>
+          <declname>$scalar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametername>$scalar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="732" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="732" bodyend="743"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1ae380080d678691e8444ef791114aad43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::scaleCol</definition>
+        <argsstring>(int $col, int|float $c)</argsstring>
+        <name>scaleCol</name>
+        <param>
+          <type>int</type>
+          <declname>$col</declname>
+        </param>
+        <param>
+          <type>int|float</type>
+          <declname>$c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>scale all the elements of <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$col</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametername>$c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="761" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="761" bodyend="765"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1ae3dab3a8536f7ebe380f2963e8d45177" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::scaleDigonalCol</definition>
+        <argsstring>(int|float $c, bool $lDig=true)</argsstring>
+        <name>scaleDigonalCol</name>
+        <param>
+          <type>int|float</type>
+          <declname>$c</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>$lDig</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Scale digonally <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametername>$c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>bool</parametertype>
+<parametername>$lDig</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="772" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="772" bodyend="783"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a3bfa4e86310d7c8b90dedf315c00a35d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::scaleRow</definition>
+        <argsstring>(int $row, int|float $c)</argsstring>
+        <name>scaleRow</name>
+        <param>
+          <type>int</type>
+          <declname>$row</declname>
+        </param>
+        <param>
+          <type>int|float</type>
+          <declname>$c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>scale all the elements of a row <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$row</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametername>$c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="750" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="750" bodyend="754"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a5d51ed60c87dd4ecce132e1601ee2bf0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::setData</definition>
+        <argsstring>(int|float|array $data, bool $dignoal=false)</argsstring>
+        <name>setData</name>
+        <param>
+          <type>int|float|array</type>
+          <declname>$data</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>$dignoal</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set given data in matrix <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametertype>array</parametertype>
+<parametername>$data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>bool</parametertype>
+<parametername>$dignoal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="976" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="976" bodyend="993"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a34966332112d3821c9cf5842513cf7d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::square</definition>
+        <argsstring>()</argsstring>
+        <name>square</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Square of matrix <simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1251" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1251" bodyend="1253"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a7dca7a134a3e6a4f528ffeafac1298a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::subtract</definition>
+        <argsstring>(int|float|matrix|vector $d)</argsstring>
+        <name>subtract</name>
+        <param>
+          <type>int|float|<ref refid="classNp_1_1matrix" kindref="compound">matrix</ref>|<ref refid="classNp_1_1vector" kindref="compound">vector</ref></type>
+          <declname>$d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>subtract another matrix, vector or a scalar to this matrix <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametertype>matrix</parametertype>
+<parametertype>vector</parametertype>
+<parametername>$d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>matrix|$scalar to subtract this matrix </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="424" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="424" bodyend="432"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1aaaab226c7666ed327322576b454e8ab0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::subtractColumnVector</definition>
+        <argsstring>(vector $v)</argsstring>
+        <name>subtractColumnVector</name>
+        <param>
+          <type><ref refid="classNp_1_1vector" kindref="compound">vector</ref></type>
+          <declname>$v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>vector</parametertype>
+<parametername>$v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="479" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="479" bodyend="489"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a76fae421309cedd08fb29dc50de7abd0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::sum</definition>
+        <argsstring>(int|float|matrix|vector $m)</argsstring>
+        <name>sum</name>
+        <param>
+          <type>int|float|<ref refid="classNp_1_1matrix" kindref="compound">matrix</ref>|<ref refid="classNp_1_1vector" kindref="compound">vector</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sum of two matrix, vector or a scalar to current matrix</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametertype>matrix</parametertype>
+<parametertype>vector</parametertype>
+<parametername>$m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="379" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="379" bodyend="387"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a62d70577adbc2e2805a94cfb18c864f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::sumRows</definition>
+        <argsstring>()</argsstring>
+        <name>sumRows</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sum of Rows of matrix <simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="361" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="361" bodyend="371"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1afd77f766988a1b1f22062be7a2faf321" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::svd</definition>
+        <argsstring>()</argsstring>
+        <name>svd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compute the singular value decomposition of a matrix and return an object of the singular values and unitary matrices</para><para><simplesect kind="return"><para>object (u,s,v) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1117" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1117" bodyend="1119"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a3b52b4966943ca30a21f72b721fe6ab2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::swapCols</definition>
+        <argsstring>(int $c1, int $c2)</argsstring>
+        <name>swapCols</name>
+        <param>
+          <type>int</type>
+          <declname>$c1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$c2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>swap specific cols in matrix <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$c1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$c2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="719" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="719" bodyend="725"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a8e93f96b90755d4bacecdd6a65b21e62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::swapRows</definition>
+        <argsstring>(int $r1, int $r2)</argsstring>
+        <name>swapRows</name>
+        <param>
+          <type>int</type>
+          <declname>$r1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$r2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>swap specific rows in matrix <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$r1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$r2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="706" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="706" bodyend="712"/>
+        <referencedby refid="classNp_1_1reductions_1_1rref_1ab4b17df6d73d5b8107b1e3ae16197172" compoundref="rref_8php" startline="26" endline="61">Np\reductions\rref\factory</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a729852054ab3e31ce51d626a59a37216" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::swapValue</definition>
+        <argsstring>(int $i1, int $i2)</argsstring>
+        <name>swapValue</name>
+        <param>
+          <type>int</type>
+          <declname>$i1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$i2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>swap specific values in matrix <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$i1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$i2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="695" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="695" bodyend="699"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a08effc2d81cf2efc1274dc60ed1491f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::trace</definition>
+        <argsstring>()</argsstring>
+        <name>trace</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the trace of the matrix i.e the sum of all diagonal elements of a square matrix. <simplesect kind="return"><para>float </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="278" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="278" bodyend="291"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a233653837915e391000ef532abea9534" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::transpose</definition>
+        <argsstring>()</argsstring>
+        <name>transpose</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Transpose the matrix i.e row become cols and cols become rows. <simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="680" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="680" bodyend="688"/>
+        <referencedby refid="classNp_1_1decompositions_1_1eigen_1a5c1119606777442b947196606ba380da" compoundref="eigen_8php" startline="79" endline="81">Np\decompositions\eigen\eigenVec</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1aa27380ef031b0e3a5127e2949012bd52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::variance</definition>
+        <argsstring>(vector|null $mean=null)</argsstring>
+        <name>variance</name>
+        <param>
+          <type><ref refid="classNp_1_1vector" kindref="compound">vector</ref>|<ref refid="classNp_1_1matrix_1a99588b623abe9375f63512534b062324" kindref="member">null</ref></type>
+          <declname>$mean</declname>
+          <defval><ref refid="classNp_1_1matrix_1a99588b623abe9375f63512534b062324" kindref="member">null</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compute the row variance of the matrix.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>vector</parametertype>
+<parametertype>null</parametertype>
+<parametername>$mean</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1190" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1190" bodyend="1203"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classNp_1_1matrix_1afb8d1d1e4f16ce36f14f0b65e1bccbdd" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::__construct</definition>
+        <argsstring>(public int $row, public int $col, int $dtype=self::Float)</argsstring>
+        <name>__construct</name>
+        <param>
+          <type>public int</type>
+          <declname>$row</declname>
+        </param>
+        <param>
+          <type>public int</type>
+          <declname>$col</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$dtype</declname>
+          <defval>self::Float</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$row</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$col</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$dtype</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>$this </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1423" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1423" bodyend="1429"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a6356909261a9ad68f3e0ed8f88287906" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::divideMatrix</definition>
+        <argsstring>(matrix $m)</argsstring>
+        <name>divideMatrix</name>
+        <param>
+          <type><ref refid="classNp_1_1matrix" kindref="compound">matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="506" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="506" bodyend="514"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a707cfc187f7610370c4fded4dabdb7dc" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::divideScalar</definition>
+        <argsstring>(int|float $s)</argsstring>
+        <name>divideScalar</name>
+        <param>
+          <type>int|float</type>
+          <declname>$s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="528" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="528" bodyend="534"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a8375a56deb9f66360c83b8f33401cb7d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::divideVector</definition>
+        <argsstring>(vector $v)</argsstring>
+        <name>divideVector</name>
+        <param>
+          <type><ref refid="classNp_1_1vector" kindref="compound">vector</ref></type>
+          <declname>$v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="516" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="516" bodyend="526"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1ae5da528a839ff029963c37d973829f64" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::equalMatrix</definition>
+        <argsstring>(matrix $m)</argsstring>
+        <name>equalMatrix</name>
+        <param>
+          <type><ref refid="classNp_1_1matrix" kindref="compound">matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1270" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1270" bodyend="1278"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a6b912edb5a1993ee665e801394e5a8e7" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::equalScalar</definition>
+        <argsstring>(int|float $s)</argsstring>
+        <name>equalScalar</name>
+        <param>
+          <type>int|float</type>
+          <declname>$s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1292" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1292" bodyend="1298"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a316ff08a45b2c26a54d7b4ad9fb44e6d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::equalVector</definition>
+        <argsstring>(vector $v)</argsstring>
+        <name>equalVector</name>
+        <param>
+          <type><ref refid="classNp_1_1vector" kindref="compound">vector</ref></type>
+          <declname>$v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1280" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1280" bodyend="1290"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a0a15e08bcd094f5561f78003b078b696" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::greaterMatrix</definition>
+        <argsstring>(matrix $m)</argsstring>
+        <name>greaterMatrix</name>
+        <param>
+          <type><ref refid="classNp_1_1matrix" kindref="compound">matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1315" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1315" bodyend="1323"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1adeb3e9e2beaad234f101a628df98ccec" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::greaterScalar</definition>
+        <argsstring>(int|float $s)</argsstring>
+        <name>greaterScalar</name>
+        <param>
+          <type>int|float</type>
+          <declname>$s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1337" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1337" bodyend="1343"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1ab081d7381315cfa920f25ae616f8b7d7" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::greaterVector</definition>
+        <argsstring>(vector $v)</argsstring>
+        <name>greaterVector</name>
+        <param>
+          <type><ref refid="classNp_1_1vector" kindref="compound">vector</ref></type>
+          <declname>$v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1325" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1325" bodyend="1335"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a009bac516a358c22928c06d61644e1de" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::modMatrix</definition>
+        <argsstring>(matrix $m)</argsstring>
+        <name>modMatrix</name>
+        <param>
+          <type><ref refid="classNp_1_1matrix" kindref="compound">matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="598" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="598" bodyend="606"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1ab2ca57a1556bbaafd3536fcdf43b6263" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::modScalar</definition>
+        <argsstring>(int|float $s)</argsstring>
+        <name>modScalar</name>
+        <param>
+          <type>int|float</type>
+          <declname>$s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="620" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="620" bodyend="626"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1aa565ed5cef00c8f7a40fa191a0f07b62" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::modVector</definition>
+        <argsstring>(vector $v)</argsstring>
+        <name>modVector</name>
+        <param>
+          <type><ref refid="classNp_1_1vector" kindref="compound">vector</ref></type>
+          <declname>$v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="608" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="608" bodyend="618"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a330bfef86ccd2b840e1ee8a8357e7a87" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::multiplyMatrix</definition>
+        <argsstring>(matrix $m)</argsstring>
+        <name>multiplyMatrix</name>
+        <param>
+          <type><ref refid="classNp_1_1matrix" kindref="compound">matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="345" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="345" bodyend="355"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a2b58a7803e48383cf33ab363f204d4aa" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::multiplyVector</definition>
+        <argsstring>(vector $v)</argsstring>
+        <name>multiplyVector</name>
+        <param>
+          <type><ref refid="classNp_1_1vector" kindref="compound">vector</ref></type>
+          <declname>$v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="328" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="328" bodyend="338"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a4548d039ea0c9220c4a9df01e40b1306" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::powMatrix</definition>
+        <argsstring>(matrix $m)</argsstring>
+        <name>powMatrix</name>
+        <param>
+          <type><ref refid="classNp_1_1matrix" kindref="compound">matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="553" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="553" bodyend="561"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1aabeb4c3cf891a28e646a1b9387bf03e6" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::powScalar</definition>
+        <argsstring>(int|float $s)</argsstring>
+        <name>powScalar</name>
+        <param>
+          <type>int|float</type>
+          <declname>$s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="575" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="575" bodyend="581"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a57a8ffe2cc68e28bd6c4b1089ea9dfce" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::powVector</definition>
+        <argsstring>(vector $v)</argsstring>
+        <name>powVector</name>
+        <param>
+          <type><ref refid="classNp_1_1vector" kindref="compound">vector</ref></type>
+          <declname>$v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="563" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="563" bodyend="573"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1aed551b96fde7f7b38953f719b7e98d95" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::subtractMatrix</definition>
+        <argsstring>(matrix $m)</argsstring>
+        <name>subtractMatrix</name>
+        <param>
+          <type><ref refid="classNp_1_1matrix" kindref="compound">matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>matrix</parametertype>
+<parametername>$m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="447" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="447" bodyend="455"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1afcd14d07ec48c9412fb68ff90888520a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::subtractScalar</definition>
+        <argsstring>(int|float $s)</argsstring>
+        <name>subtractScalar</name>
+        <param>
+          <type>int|float</type>
+          <declname>$s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="434" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="434" bodyend="440"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1ae3b8d11db6f17d6484443ee1d3b84261" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::subtractVector</definition>
+        <argsstring>(vector $v)</argsstring>
+        <name>subtractVector</name>
+        <param>
+          <type><ref refid="classNp_1_1vector" kindref="compound">vector</ref></type>
+          <declname>$v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>vector</parametertype>
+<parametername>$v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="462" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="462" bodyend="472"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1a73497847ab0b977e38a4ea5a4b2b206e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::sumMatrix</definition>
+        <argsstring>(matrix $m)</argsstring>
+        <name>sumMatrix</name>
+        <param>
+          <type><ref refid="classNp_1_1matrix" kindref="compound">matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="397" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="397" bodyend="405"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1aa8d6de6aa46ad7f47a99754699b949cc" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::sumScalar</definition>
+        <argsstring>(int|float $s)</argsstring>
+        <name>sumScalar</name>
+        <param>
+          <type>int|float</type>
+          <declname>$s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="389" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="389" bodyend="395"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1matrix_1acdbf21510fdb1086dd43439035a42755" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::sumVector</definition>
+        <argsstring>(vector $v)</argsstring>
+        <name>sumVector</name>
+        <param>
+          <type><ref refid="classNp_1_1vector" kindref="compound">vector</ref></type>
+          <declname>$v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="407" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="407" bodyend="417"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classNp_1_1matrix_1aa4c77a28f2d3d3e7db42644a3cce1d98" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\matrix::flattenArray</definition>
+        <argsstring>(array $ar)</argsstring>
+        <name>flattenArray</name>
+        <param>
+          <type>array</type>
+          <declname>$ar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="1404" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="1404" bodyend="1414"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="42">
+        <label>Np\matrix</label>
+        <link refid="classNp_1_1matrix"/>
+        <childnode refid="43" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>Np\core\nd</label>
+        <link refid="classNp_1_1core_1_1nd"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="44">
+        <label>Np\matrix</label>
+        <link refid="classNp_1_1matrix"/>
+        <childnode refid="45" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>Np\core\nd</label>
+        <link refid="classNp_1_1core_1_1nd"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/ghost/projects/git/numphp/src/matrix.php" line="27" column="1" bodyfile="/home/ghost/projects/git/numphp/src/matrix.php" bodystart="27" bodyend="1430"/>
+    <listofallmembers>
+      <member refid="classNp_1_1core_1_1nd_1abc85d7a6814d7ded610948b4898e0339" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>$_mem</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a892ec28f47c788c88759bb851a0e69e8" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>$_time</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a1047cca77e15c6ef853a198e277a0f97" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>$data</name></member>
+      <member refid="classNp_1_1matrix_1afb8d1d1e4f16ce36f14f0b65e1bccbdd" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>__construct</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a83e0eadca8d82d475427b8022b2f292f" prot="protected" virt="non-virtual" ambiguityscope="Np::core::nd::"><scope>Np::matrix</scope><name>__construct</name></member>
+      <member refid="classNp_1_1matrix_1a8794ffff3baba16dd359863e3098ef96" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>__toString</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a90d94bb4ead503ed65e1ee8ab42ea985" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>_dimensionaMisMatchErr</name></member>
+      <member refid="classNp_1_1core_1_1nd_1ac330c2040a9012c8c939c8a288c5aeb3" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>_dtypeErr</name></member>
+      <member refid="classNp_1_1core_1_1nd_1adf2b1feb2b6184c1ec5dde8261f95af5" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>_err</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a791da280f8f30e070c5440568ee71d3f" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>_invalidArgument</name></member>
+      <member refid="classNp_1_1core_1_1nd_1ae2aa3f0e0934d8786c2c61994640700a" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>_ndDouble</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a8390c8b280cbcbfc7eadbaff38440b0b" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>_ndFloat</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a9c2cf5fa04310a48da88d919510eecc0" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>_ndInt</name></member>
+      <member refid="classNp_1_1matrix_1ac5b3ec408f852e5fcd637467f209a993" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>addScaleRow</name></member>
+      <member refid="classNp_1_1matrix_1a061db2a3fabe835e3b31ab312952a059" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>ar</name></member>
+      <member refid="classNp_1_1matrix_1a2901e316bdf8d6152cecba0da9ae8451" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>argMax</name></member>
+      <member refid="classNp_1_1matrix_1aabbaabc55352b3cd8f08944192188987" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>argMin</name></member>
+      <member refid="classNp_1_1matrix_1abc68eb6d5cf79616d9d8074bee3227db" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>asArray</name></member>
+      <member refid="classNp_1_1matrix_1a8e984725c840764008a8b8f8789fd2c5" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>asVector</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a1e703b85fabb38eeb5a6292c7518e506" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>checkDimensions</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a9b45333b32d6f8158c85d254db029993" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>checkDtype</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a73895489de029e9514558939c87dbbeb" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>checkShape</name></member>
+      <member refid="classNp_1_1matrix_1a2eb1ddb46be10ac5a9e1fffe066f5efe" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>cholesky</name></member>
+      <member refid="classNp_1_1matrix_1abe2dc5107f6f0e76125c9b51eb5f5b89" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>colAsVector</name></member>
+      <member refid="classNp_1_1matrix_1a8c0f5d5b9309ac0f71cee346d9ece148" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>convolve</name></member>
+      <member refid="classNp_1_1matrix_1a943220996690bc9a436f99b6379bc8bc" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>covariance</name></member>
+      <member refid="classNp_1_1matrix_1a00a657e75a9aa899f247fee9a9b0789a" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>det</name></member>
+      <member refid="classNp_1_1matrix_1acc1733997f58af8643afd27fe12e8307" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>diagonal</name></member>
+      <member refid="classNp_1_1matrix_1a012ac4db9a66aacd63e0904b99b99263" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>diagonalAsVector</name></member>
+      <member refid="classNp_1_1matrix_1a8b5b3f587f3612d530f6b1675c666917" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>dignoalInterChange</name></member>
+      <member refid="classNp_1_1matrix_1a454e27fdc8957ea97c8df38f48ad0ec8" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>diminish_left</name></member>
+      <member refid="classNp_1_1matrix_1a397ad3f68b1c8bc2aef2b321021eb396" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>diminish_right</name></member>
+      <member refid="classNp_1_1matrix_1ad85b4b6695dc98b3aab72691cde7357f" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>divide</name></member>
+      <member refid="classNp_1_1matrix_1a6356909261a9ad68f3e0ed8f88287906" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>divideMatrix</name></member>
+      <member refid="classNp_1_1matrix_1a707cfc187f7610370c4fded4dabdb7dc" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>divideScalar</name></member>
+      <member refid="classNp_1_1matrix_1a8375a56deb9f66360c83b8f33401cb7d" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>divideVector</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a5abc5ae3340c7f6ed5c2c8bfd94a2141" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>DOUBLE</name></member>
+      <member refid="classNp_1_1matrix_1ad163d08a839f6ea680d0a08606bf9b45" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>eign</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a8111f5c6304828ac4a237f37d7c3122b" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>EPSILON</name></member>
+      <member refid="classNp_1_1matrix_1afa53f257d3c36c0a6d1645df5cfa72b5" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>equal</name></member>
+      <member refid="classNp_1_1matrix_1ae5da528a839ff029963c37d973829f64" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>equalMatrix</name></member>
+      <member refid="classNp_1_1matrix_1a6b912edb5a1993ee665e801394e5a8e7" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>equalScalar</name></member>
+      <member refid="classNp_1_1matrix_1a316ff08a45b2c26a54d7b4ad9fb44e6d" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>equalVector</name></member>
+      <member refid="classNp_1_1matrix_1a41010884ae9f834864b569d714ca0e25" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>factory</name></member>
+      <member refid="classNp_1_1matrix_1aa4c77a28f2d3d3e7db42644a3cce1d98" prot="private" virt="non-virtual"><scope>Np::matrix</scope><name>flattenArray</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a64df2a8510737a561e4f24ced94be393" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>FLOAT</name></member>
+      <member refid="classNp_1_1matrix_1a6307a9566c2a149a19c7df7fa8300112" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>full</name></member>
+      <member refid="classNp_1_1matrix_1aaad5f30fb575ac664190489013cc2931" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>gaussian</name></member>
+      <member refid="classNp_1_1matrix_1a89a949cc21f5be65af91d79722a9e298" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>getDiagonalVal</name></member>
+      <member refid="classNp_1_1matrix_1a96f30a3bf2395d3992f96e52f9500155" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>getDtype</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a03ade5ab6733e2900870ab557d922d8f" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>getMemory</name></member>
+      <member refid="classNp_1_1matrix_1a0c034e873e4d0512f44905ea364790ec" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>getShape</name></member>
+      <member refid="classNp_1_1matrix_1adf359011279dd9ffda343e6a30e84808" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>getSize</name></member>
+      <member refid="classNp_1_1matrix_1a2f47d1a281c4b4d94587ade04aa86ee5" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>greater</name></member>
+      <member refid="classNp_1_1matrix_1a0a15e08bcd094f5561f78003b078b696" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>greaterMatrix</name></member>
+      <member refid="classNp_1_1matrix_1adeb3e9e2beaad234f101a628df98ccec" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>greaterScalar</name></member>
+      <member refid="classNp_1_1matrix_1ab081d7381315cfa920f25ae616f8b7d7" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>greaterVector</name></member>
+      <member refid="classNp_1_1matrix_1a04e4d395383a8ef603b3a9521386b263" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>has_ZeroRow</name></member>
+      <member refid="classNp_1_1matrix_1a49b274567471149bc5fabbf2609f4665" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>identity</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a47f23f416b0fdb9661064a931e72d30c" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>INT</name></member>
+      <member refid="classNp_1_1matrix_1a3a87b36568543396243b313b29325a70" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>is_rowZero</name></member>
+      <member refid="classNp_1_1matrix_1a74daf93954fa7e3ee50b976bb613c04a" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>is_zero</name></member>
+      <member refid="classNp_1_1matrix_1adb337e32840446442dcf145107e26eba" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>isSquare</name></member>
+      <member refid="classNp_1_1matrix_1ab794b4308e964a51ed599ec1e39d8193" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>isSymmetric</name></member>
+      <member refid="classNp_1_1matrix_1a58736559314d5839f083e49a204c7416" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>joinAbove</name></member>
+      <member refid="classNp_1_1matrix_1a44ec9d32b9f64dab13473878dc503c22" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>joinBelow</name></member>
+      <member refid="classNp_1_1matrix_1a39501fac5b7d5e3d90cdf5364b33a267" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>joinLeft</name></member>
+      <member refid="classNp_1_1matrix_1a7f8422415aa5d57ce57516dc8f27d5ff" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>joinRight</name></member>
+      <member refid="classNp_1_1matrix_1a18e65823e636c00ca60efa9d2fb5bfce" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>less</name></member>
+      <member refid="classNp_1_1matrix_1a60b4bd54bb33969be84cbc804d6ba39d" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>lu</name></member>
+      <member refid="classNp_1_1matrix_1a95e2b0f464f99db3166b616c7b759f7a" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>mean</name></member>
+      <member refid="classNp_1_1matrix_1aa4c9e5cf34e979ae01e09ab34a6d2e53" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>median</name></member>
+      <member refid="classNp_1_1matrix_1a0b0bce0436d916be674bf8ea75243742" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>mod</name></member>
+      <member refid="classNp_1_1matrix_1a009bac516a358c22928c06d61644e1de" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>modMatrix</name></member>
+      <member refid="classNp_1_1matrix_1ab2ca57a1556bbaafd3536fcdf43b6263" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>modScalar</name></member>
+      <member refid="classNp_1_1matrix_1aa565ed5cef00c8f7a40fa191a0f07b62" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>modVector</name></member>
+      <member refid="classNp_1_1matrix_1a4730f50ca8780373872ca64529d9779d" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>multiply</name></member>
+      <member refid="classNp_1_1matrix_1a330bfef86ccd2b840e1ee8a8357e7a87" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>multiplyMatrix</name></member>
+      <member refid="classNp_1_1matrix_1a2b58a7803e48383cf33ab363f204d4aa" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>multiplyVector</name></member>
+      <member refid="classNp_1_1matrix_1a6a957d32b8f7b22dd5521e6a268e3ff3" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>normFrob</name></member>
+      <member refid="classNp_1_1matrix_1aebe0467b4b10792ae32c3061124be5ed" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>normINF</name></member>
+      <member refid="classNp_1_1matrix_1aacf8ef0384ecf2e05553ccce05d85ba4" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>normL1</name></member>
+      <member refid="classNp_1_1matrix_1aa7efbe6d610419f4592209f711bab88d" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>normL2</name></member>
+      <member refid="classNp_1_1matrix_1a99588b623abe9375f63512534b062324" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>null</name></member>
+      <member refid="classNp_1_1matrix_1a307b963ee70a5eeb1b72dc57e3d8e462" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>ones</name></member>
+      <member refid="classNp_1_1matrix_1a2c801ebcbba80cdd427166fafe9b17b2" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>poisson</name></member>
+      <member refid="classNp_1_1matrix_1a35fc98b14083bc0ffcaf1c88e7868bed" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>pow</name></member>
+      <member refid="classNp_1_1matrix_1a4548d039ea0c9220c4a9df01e40b1306" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>powMatrix</name></member>
+      <member refid="classNp_1_1matrix_1aabeb4c3cf891a28e646a1b9387bf03e6" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>powScalar</name></member>
+      <member refid="classNp_1_1matrix_1a57a8ffe2cc68e28bd6c4b1089ea9dfce" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>powVector</name></member>
+      <member refid="classNp_1_1matrix_1a4325bcea948a4261fd0d5119f42356e2" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>printMatrix</name></member>
+      <member refid="classNp_1_1matrix_1a8f56013f8eefc541c9551696181abc56" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>randn</name></member>
+      <member refid="classNp_1_1matrix_1ac6ace30e5237e99f9fba4d5913c968ed" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>reciprocal</name></member>
+      <member refid="classNp_1_1matrix_1a0b9c2290f3926838992bd1131d1d1d2d" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>ref</name></member>
+      <member refid="classNp_1_1matrix_1a3d0f5f7752a523b09cf6649528b3f253" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>rowAsVector</name></member>
+      <member refid="classNp_1_1matrix_1a80ec1e3d0b5bd5fe49eae124252891a0" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>rref</name></member>
+      <member refid="classNp_1_1matrix_1a0b8dc642d875e14d7fd624e1d8fcc788" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>scale</name></member>
+      <member refid="classNp_1_1matrix_1ae380080d678691e8444ef791114aad43" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>scaleCol</name></member>
+      <member refid="classNp_1_1matrix_1ae3dab3a8536f7ebe380f2963e8d45177" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>scaleDigonalCol</name></member>
+      <member refid="classNp_1_1matrix_1a3bfa4e86310d7c8b90dedf315c00a35d" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>scaleRow</name></member>
+      <member refid="classNp_1_1matrix_1a5d51ed60c87dd4ecce132e1601ee2bf0" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>setData</name></member>
+      <member refid="classNp_1_1matrix_1a34966332112d3821c9cf5842513cf7d4" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>square</name></member>
+      <member refid="classNp_1_1matrix_1a7dca7a134a3e6a4f528ffeafac1298a8" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>subtract</name></member>
+      <member refid="classNp_1_1matrix_1aaaab226c7666ed327322576b454e8ab0" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>subtractColumnVector</name></member>
+      <member refid="classNp_1_1matrix_1aed551b96fde7f7b38953f719b7e98d95" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>subtractMatrix</name></member>
+      <member refid="classNp_1_1matrix_1afcd14d07ec48c9412fb68ff90888520a" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>subtractScalar</name></member>
+      <member refid="classNp_1_1matrix_1ae3b8d11db6f17d6484443ee1d3b84261" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>subtractVector</name></member>
+      <member refid="classNp_1_1matrix_1a76fae421309cedd08fb29dc50de7abd0" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>sum</name></member>
+      <member refid="classNp_1_1matrix_1a73497847ab0b977e38a4ea5a4b2b206e" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>sumMatrix</name></member>
+      <member refid="classNp_1_1matrix_1a62d70577adbc2e2805a94cfb18c864f8" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>sumRows</name></member>
+      <member refid="classNp_1_1matrix_1aa8d6de6aa46ad7f47a99754699b949cc" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>sumScalar</name></member>
+      <member refid="classNp_1_1matrix_1acdbf21510fdb1086dd43439035a42755" prot="protected" virt="non-virtual"><scope>Np::matrix</scope><name>sumVector</name></member>
+      <member refid="classNp_1_1matrix_1afd77f766988a1b1f22062be7a2faf321" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>svd</name></member>
+      <member refid="classNp_1_1matrix_1a3b52b4966943ca30a21f72b721fe6ab2" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>swapCols</name></member>
+      <member refid="classNp_1_1matrix_1a8e93f96b90755d4bacecdd6a65b21e62" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>swapRows</name></member>
+      <member refid="classNp_1_1matrix_1a729852054ab3e31ce51d626a59a37216" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>swapValue</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a16af7a4464500d01322a99b970949a9e" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>time</name></member>
+      <member refid="classNp_1_1matrix_1a08effc2d81cf2efc1274dc60ed1491f5" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>trace</name></member>
+      <member refid="classNp_1_1matrix_1a233653837915e391000ef532abea9534" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>transpose</name></member>
+      <member refid="classNp_1_1core_1_1nd_1ae6b40189201f85346be61ced3028eb2d" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>TWO_PI</name></member>
+      <member refid="classNp_1_1matrix_1a7a964625519b115c907a00649a05a627" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>uniform</name></member>
+      <member refid="classNp_1_1matrix_1aa27380ef031b0e3a5127e2949012bd52" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>variance</name></member>
+      <member refid="classNp_1_1matrix_1a808688babf7ca21d74e854c334e4fa4e" prot="public" virt="non-virtual"><scope>Np::matrix</scope><name>zeros</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

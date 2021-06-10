@@ -1,0 +1,1245 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classNp_1_1core_1_1blas" kind="class" language="PHP" prot="public">
+    <compoundname>Np::core::blas</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classNp_1_1core_1_1blas_1a6021d35af0a10315781ec41b28f41432" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const Np\core\blas::CblasColMajor</definition>
+        <argsstring></argsstring>
+        <name>CblasColMajor</name>
+        <initializer>= 102</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="21" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNp_1_1core_1_1blas_1a7e0c4c53585464566eb5484cc90180a5" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const Np\core\blas::CblasConjTrans</definition>
+        <argsstring></argsstring>
+        <name>CblasConjTrans</name>
+        <initializer>= 113</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="22" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNp_1_1core_1_1blas_1ae7fcc35ae7b87ba34ef6b133963afb9c" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const Np\core\blas::CblasLeft</definition>
+        <argsstring></argsstring>
+        <name>CblasLeft</name>
+        <initializer>= 141</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="18" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNp_1_1core_1_1blas_1a413c482b285957a526b1288f34ab24ce" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const Np\core\blas::CblasLower</definition>
+        <argsstring></argsstring>
+        <name>CblasLower</name>
+        <initializer>= 122</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="19" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNp_1_1core_1_1blas_1a1fd2e7bfcdaec878db9bc726fab81b13" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const Np\core\blas::CblasNonUnit</definition>
+        <argsstring></argsstring>
+        <name>CblasNonUnit</name>
+        <initializer>= 131</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="20" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNp_1_1core_1_1blas_1ad0ec93bb01eaca89ec5b62f4dcbcf265" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const Np\core\blas::CblasNoTrans</definition>
+        <argsstring></argsstring>
+        <name>CblasNoTrans</name>
+        <initializer>= 111</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="22" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNp_1_1core_1_1blas_1aa8be9a999f532f75850e9eed96747283" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const Np\core\blas::CblasRight</definition>
+        <argsstring></argsstring>
+        <name>CblasRight</name>
+        <initializer>= 142</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="18" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNp_1_1core_1_1blas_1a87baa4f0a16c1daa7e59a4d94bb68a7f" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const Np\core\blas::CblasRowMajor</definition>
+        <argsstring></argsstring>
+        <name>CblasRowMajor</name>
+        <initializer>= 101</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="21" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNp_1_1core_1_1blas_1a3ab395864d65cad751170bbceab73c8f" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const Np\core\blas::CblasTrans</definition>
+        <argsstring></argsstring>
+        <name>CblasTrans</name>
+        <initializer>= 112</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="22" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNp_1_1core_1_1blas_1aaca161ba93f97aae209082f96a6e32c6" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const Np\core\blas::CblasUnit</definition>
+        <argsstring></argsstring>
+        <name>CblasUnit</name>
+        <initializer>= 132</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="20" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNp_1_1core_1_1blas_1a3a493cfabc5dcad5424663775390b135" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const Np\core\blas::CblasUpper</definition>
+        <argsstring></argsstring>
+        <name>CblasUpper</name>
+        <initializer>= 121</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="19" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classNp_1_1core_1_1blas_1ab361b7fab0e8da74bd67a2eeac0063c1" prot="public" static="yes" mutable="no">
+        <type>static</type>
+        <definition>Np\core\blas::$ffi_blas</definition>
+        <argsstring></argsstring>
+        <name>$ffi_blas</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="24" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classNp_1_1core_1_1blas_1ac1682dc0dd0f2730caf9b9cc0299e15d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\blas::asum</definition>
+        <argsstring>(\Np\vector $v)</argsstring>
+        <name>asum</name>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculates the sum of the absolute values of each component of the vector. ret := |x_1| + ... + |x_n| <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector X buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>float </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="322" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="322" bodyend="328"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1blas_1a2907728e992b447835664893c11a7ce1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\blas::axpy</definition>
+        <argsstring>(float $alpha, \Np\vector $vect_X, \Np\vector $vect_Y)</argsstring>
+        <name>axpy</name>
+        <param>
+          <type>float</type>
+          <declname>$alpha</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$vect_X</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$vect_Y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add vectors Y := alpha * X + Y <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>float</parametertype>
+<parametername>$alpha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coefficient of scalar multiple of X vector </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$vect_X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector X buffer </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$vect_Y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector Y buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="306" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="306" bodyend="314"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1blas_1acdee3027ce6e86df9091cfd4ae825422" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\blas::copy</definition>
+        <argsstring>(\Np\vector $vect_X, \Np\vector $vect_Y, int $invX=1, int $invY=1)</argsstring>
+        <name>copy</name>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$vect_X</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$vect_Y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$invX</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$invY</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Copy the vector from X to Y. Y := X <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$vect_X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector X buffer </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$vect_Y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector Y buffer </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$invX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$invY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="274" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="274" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1blas_1aaa1ac150f8ede1d08ea33f6a4d67682d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\blas::dot</definition>
+        <argsstring>(\Np\vector $v1, \Np\vector $v2)</argsstring>
+        <name>dot</name>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$v1</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Double <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$v1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$v2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="208" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="208" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1blas_1ae30c9e1fc049dda8ce5743ffa4d58004" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\blas::drotg</definition>
+        <argsstring>(float $a, float $b, float $c, float $s)</argsstring>
+        <name>drotg</name>
+        <param>
+          <type>float</type>
+          <declname>$a</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>$b</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>$c</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>$s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Give the point P (a, b). Rotate this point to givens and calculate the parameters a, b, c, and s to make the y coordinate zero. Conditions description: c * a + s * b = r -s * a + c * b = 0 r = ||(a,b)|| c^2 + s^2 = 1 z=s if |a| &gt; |b| z=1/c if |a| &lt;= |b| and c != 0 and r != 0 Find r, z, c, s that satisfies the above description. However, when r = 0, z = 0, c = 1, and s = 0 are returned. Also, if c = 0, | a | &lt;= | b | and c! = 0 and r! = 0, z = 1 is returned. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>float</parametertype>
+<parametername>$a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X-coordinate of P: The calculated r value is stored and returned </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>float</parametertype>
+<parametername>$b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Y-coordinate of P: The calculated z value is stored and returned </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>float</parametertype>
+<parametername>$c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Stores the calculated value of c </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>float</parametertype>
+<parametername>$s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Stores the calculated value of s </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="370" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="370" bodyend="373"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1blas_1a58f6203f0c718887505ae3081bf3e593" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\blas::gbmv</definition>
+        <argsstring>(int $KL, int $KU, float $alpha, float $beta, \Np\matrix $matrix, \Np\vector $vector, \Np\vector $mvr)</argsstring>
+        <name>gbmv</name>
+        <param>
+          <type>int</type>
+          <declname>$KL</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$KU</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>$alpha</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>$beta</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$matrix</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$vector</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$mvr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compute the product of a general matrix and a vector stored in band format. y := alpha * Ax + beta * y <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$KL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of elements in the lower left part </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$KU</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of elements in the upper right part </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>double</parametertype>
+<parametername>$alpha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coefficient of scalar multiple of vector </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>double</parametertype>
+<parametername>$beta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coefficient of scalar multiple of mvr </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$matrix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$vector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$mvr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="168" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="168" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1blas_1ab1979441403136fb591fcf7831f67509" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\blas::gemm</definition>
+        <argsstring>(\Np\matrix $m1, \Np\matrix $m2, \Np\matrix $mr, int $trans1=self::CblasNoTrans, int $trans2=self::CblasNoTrans)</argsstring>
+        <name>gemm</name>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$m1</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$m2</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$mr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$trans1</declname>
+          <defval>self::CblasNoTrans</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$trans2</declname>
+          <defval>self::CblasNoTrans</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Product of general matrix and general matrix C := alpha * AB + beta * C  Float <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$m1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$m2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$mr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="72" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="72" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1blas_1a7f23dcde2b86bfca3affd257ddfcbb34" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\blas::gemv</definition>
+        <argsstring>(\Np\matrix $m, \Np\vector $v, \Np\vector $mvr)</argsstring>
+        <name>gemv</name>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$v</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$mvr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Double <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$mvr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="147" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="147" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1blas_1a89a456ac3ef28a266fca65ed0f1795f5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\blas::ger</definition>
+        <argsstring>(\Np\vector $v1, \Np\vector $v2, \Np\matrix $m)</argsstring>
+        <name>ger</name>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$v1</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$v2</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compute the product of a column vector and a row vector. (Real number) A := alpha * x y^t + A <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$v1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$v2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="192" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="192" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1blas_1a18cdbbd17dd5fb6e5b02b28716485803" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\blas::getConfig</definition>
+        <argsstring>()</argsstring>
+        <name>getConfig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="48" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1blas_1a5e8abdf302259da4879862892d449a1f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\blas::getCoreName</definition>
+        <argsstring>()</argsstring>
+        <name>getCoreName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="53" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="53" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1blas_1a4e19347c5dbd5c9bd4baa490c6b2d739" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\blas::getNumParallel</definition>
+        <argsstring>()</argsstring>
+        <name>getNumParallel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="58" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="58" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1blas_1ae2d63476af48c39f8b319f0584d2fe04" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\blas::getNumPorcs</definition>
+        <argsstring>()</argsstring>
+        <name>getNumPorcs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="43" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="43" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1blas_1a3014ce8cc87a9d1f628b89feaa6d0d60" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\blas::getNumThreads</definition>
+        <argsstring>()</argsstring>
+        <name>getNumThreads</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="38" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="38" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1blas_1a5f997637d5fb3e29bfdd1d003dee0821" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\blas::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="26" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="26" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1blas_1a298d4d4196443fbdb149b0b2f4968d92" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\blas::max</definition>
+        <argsstring>(\Np\vector $v)</argsstring>
+        <name>max</name>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculates the index of the element with the largest absolute value in the vector. Note that this subscript starts from 1. If 0 is returned, n is invalid. ret := arg max |X(i)|</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int index of the element(Note that start from 0 according to cblas) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="224" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="224" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1blas_1a0e287c77b69f0717e5e889578021cfab" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\blas::min</definition>
+        <argsstring>(\Np\vector $v)</argsstring>
+        <name>min</name>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculates the index of the element with the smallest absolute value in the vector. Note that this subscript starts from 1. If 0 is returned, n is invalid. ret := arg min |X(i)|</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="240" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="240" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1blas_1a2f838562be527dea26a095a6cf0670a8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\blas::nrm2</definition>
+        <argsstring>(\Np\vector $v)</argsstring>
+        <name>nrm2</name>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compute the Euclidean norm of a vector. ret := ||X|| <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>float </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="290" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="290" bodyend="296"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1blas_1aec1549c3b56ee06c1372336dfc41c854" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\blas::rotate</definition>
+        <argsstring>(\Np\vector $v1, \Np\vector $v2, float $c, float $s)</argsstring>
+        <name>rotate</name>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$v1</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$v2</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>$c</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>$s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rotate about a given point. X(i) := c * X(i) + s * Y(i) Y(i) :=-s * X(i) + c * Y(i) <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$v1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector X buffer </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$v2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector Y buffer </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>float</parametertype>
+<parametername>$c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value of cos A(Value obtained with rotg function.) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>float</parametertype>
+<parametername>$s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value of sin A(Value obtained with rotg function.) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="340" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="340" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1blas_1afd03eea6b6d3c84d0fbfb2b29dea0edd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\blas::scale</definition>
+        <argsstring>(float $alpha, \Np\vector|\Np\matrix $v)</argsstring>
+        <name>scale</name>
+        <param>
+          <type>float</type>
+          <declname>$alpha</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref>|\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Multiply vector by scalar.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>float</parametertype>
+<parametername>$alpha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coefficient of scalar multiple of V vector </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="387" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="387" bodyend="393"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1blas_1a92064cf16fd2f88bf14fbc54ee4b5393" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\blas::setNumThreads</definition>
+        <argsstring>(int $num_threads)</argsstring>
+        <name>setNumThreads</name>
+        <param>
+          <type>int</type>
+          <declname>$num_threads</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="33" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="33" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1blas_1a8afa6da4ad2aecfbd9f04c664d915b23" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\blas::srotg</definition>
+        <argsstring>(float $a, float $b, float $c, float $s)</argsstring>
+        <name>srotg</name>
+        <param>
+          <type>float</type>
+          <declname>$a</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>$b</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>$c</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>$s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="375" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="375" bodyend="378"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1blas_1a5f61bdfe31529eaa22d3d0c1b741831d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\blas::swap</definition>
+        <argsstring>(\Np\vector $v1, \Np\vector $v2, int $inv1=1, int $inv2=1)</argsstring>
+        <name>swap</name>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$v1</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$v2</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$inv1</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$inv2</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Exchange the contents of the vector. X := Y Y := X <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$v1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$v2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$inv1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$inv2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="257" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="257" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1blas_1a777f68aff0a727569885a406c842e53b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\blas::symm</definition>
+        <argsstring>(\Np\matrix $m1, \Np\matrix $m2, \Np\matrix $mr)</argsstring>
+        <name>symm</name>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$m1</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$m2</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$mr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Product of symmetric matrix and general matrix C := alpha * AB + beta * C or C := alpha * BA + beta * C</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$m1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$m2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$mr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="90" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="90" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1blas_1afbffdf0c98139c1f99f0e3ff165b9d79" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\blas::syr2k</definition>
+        <argsstring>(\Np\matrix $m1, \Np\matrix $m2, \Np\matrix $mr)</argsstring>
+        <name>syr2k</name>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$m1</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$m2</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$mr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Update rank 2k of symmetric matrix C := alpha * A B^T + alpha B A^T + beta * C or C := alpha * B^T A + alpha A^T B + beta * C</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$m1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$m2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$mr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="129" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="129" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1blas_1a38f76804c76223c251edddb176e8793f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\blas::syrk</definition>
+        <argsstring>(\Np\matrix $m1, \Np\matrix $m2)</argsstring>
+        <name>syrk</name>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$m1</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$m2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Update rank n of symmetric matrix C := alpha * A A^T + beta * C or C := alpha * A^T A + beta * C</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$m1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$m2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="109" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="109" bodyend="117"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Np\core\blas</label>
+        <link refid="classNp_1_1core_1_1blas"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="16" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/blas.php" bodystart="16" bodyend="395"/>
+    <listofallmembers>
+      <member refid="classNp_1_1core_1_1blas_1ab361b7fab0e8da74bd67a2eeac0063c1" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>$ffi_blas</name></member>
+      <member refid="classNp_1_1core_1_1blas_1ac1682dc0dd0f2730caf9b9cc0299e15d" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>asum</name></member>
+      <member refid="classNp_1_1core_1_1blas_1a2907728e992b447835664893c11a7ce1" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>axpy</name></member>
+      <member refid="classNp_1_1core_1_1blas_1a6021d35af0a10315781ec41b28f41432" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>CblasColMajor</name></member>
+      <member refid="classNp_1_1core_1_1blas_1a7e0c4c53585464566eb5484cc90180a5" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>CblasConjTrans</name></member>
+      <member refid="classNp_1_1core_1_1blas_1ae7fcc35ae7b87ba34ef6b133963afb9c" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>CblasLeft</name></member>
+      <member refid="classNp_1_1core_1_1blas_1a413c482b285957a526b1288f34ab24ce" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>CblasLower</name></member>
+      <member refid="classNp_1_1core_1_1blas_1a1fd2e7bfcdaec878db9bc726fab81b13" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>CblasNonUnit</name></member>
+      <member refid="classNp_1_1core_1_1blas_1ad0ec93bb01eaca89ec5b62f4dcbcf265" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>CblasNoTrans</name></member>
+      <member refid="classNp_1_1core_1_1blas_1aa8be9a999f532f75850e9eed96747283" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>CblasRight</name></member>
+      <member refid="classNp_1_1core_1_1blas_1a87baa4f0a16c1daa7e59a4d94bb68a7f" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>CblasRowMajor</name></member>
+      <member refid="classNp_1_1core_1_1blas_1a3ab395864d65cad751170bbceab73c8f" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>CblasTrans</name></member>
+      <member refid="classNp_1_1core_1_1blas_1aaca161ba93f97aae209082f96a6e32c6" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>CblasUnit</name></member>
+      <member refid="classNp_1_1core_1_1blas_1a3a493cfabc5dcad5424663775390b135" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>CblasUpper</name></member>
+      <member refid="classNp_1_1core_1_1blas_1acdee3027ce6e86df9091cfd4ae825422" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>copy</name></member>
+      <member refid="classNp_1_1core_1_1blas_1aaa1ac150f8ede1d08ea33f6a4d67682d" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>dot</name></member>
+      <member refid="classNp_1_1core_1_1blas_1ae30c9e1fc049dda8ce5743ffa4d58004" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>drotg</name></member>
+      <member refid="classNp_1_1core_1_1blas_1a58f6203f0c718887505ae3081bf3e593" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>gbmv</name></member>
+      <member refid="classNp_1_1core_1_1blas_1ab1979441403136fb591fcf7831f67509" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>gemm</name></member>
+      <member refid="classNp_1_1core_1_1blas_1a7f23dcde2b86bfca3affd257ddfcbb34" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>gemv</name></member>
+      <member refid="classNp_1_1core_1_1blas_1a89a456ac3ef28a266fca65ed0f1795f5" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>ger</name></member>
+      <member refid="classNp_1_1core_1_1blas_1a18cdbbd17dd5fb6e5b02b28716485803" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>getConfig</name></member>
+      <member refid="classNp_1_1core_1_1blas_1a5e8abdf302259da4879862892d449a1f" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>getCoreName</name></member>
+      <member refid="classNp_1_1core_1_1blas_1a4e19347c5dbd5c9bd4baa490c6b2d739" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>getNumParallel</name></member>
+      <member refid="classNp_1_1core_1_1blas_1ae2d63476af48c39f8b319f0584d2fe04" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>getNumPorcs</name></member>
+      <member refid="classNp_1_1core_1_1blas_1a3014ce8cc87a9d1f628b89feaa6d0d60" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>getNumThreads</name></member>
+      <member refid="classNp_1_1core_1_1blas_1a5f997637d5fb3e29bfdd1d003dee0821" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>init</name></member>
+      <member refid="classNp_1_1core_1_1blas_1a298d4d4196443fbdb149b0b2f4968d92" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>max</name></member>
+      <member refid="classNp_1_1core_1_1blas_1a0e287c77b69f0717e5e889578021cfab" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>min</name></member>
+      <member refid="classNp_1_1core_1_1blas_1a2f838562be527dea26a095a6cf0670a8" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>nrm2</name></member>
+      <member refid="classNp_1_1core_1_1blas_1aec1549c3b56ee06c1372336dfc41c854" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>rotate</name></member>
+      <member refid="classNp_1_1core_1_1blas_1afd03eea6b6d3c84d0fbfb2b29dea0edd" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>scale</name></member>
+      <member refid="classNp_1_1core_1_1blas_1a92064cf16fd2f88bf14fbc54ee4b5393" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>setNumThreads</name></member>
+      <member refid="classNp_1_1core_1_1blas_1a8afa6da4ad2aecfbd9f04c664d915b23" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>srotg</name></member>
+      <member refid="classNp_1_1core_1_1blas_1a5f61bdfe31529eaa22d3d0c1b741831d" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>swap</name></member>
+      <member refid="classNp_1_1core_1_1blas_1a777f68aff0a727569885a406c842e53b" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>symm</name></member>
+      <member refid="classNp_1_1core_1_1blas_1afbffdf0c98139c1f99f0e3ff165b9d79" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>syr2k</name></member>
+      <member refid="classNp_1_1core_1_1blas_1a38f76804c76223c251edddb176e8793f" prot="public" virt="non-virtual"><scope>Np::core::blas</scope><name>syrk</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

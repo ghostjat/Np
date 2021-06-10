@@ -1,0 +1,407 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classNp_1_1core_1_1nd" kind="class" language="PHP" prot="public">
+    <compoundname>Np::core::nd</compoundname>
+    <derivedcompoundref refid="classNp_1_1matrix" prot="public" virt="non-virtual">Np\matrix</derivedcompoundref>
+    <derivedcompoundref refid="classNp_1_1vector" prot="public" virt="non-virtual">Np\vector</derivedcompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classNp_1_1core_1_1nd_1a1047cca77e15c6ef853a198e277a0f97" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>Np\core\nd::$data</definition>
+        <argsstring></argsstring>
+        <name>$data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/nd.php" line="32" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/nd.php" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNp_1_1core_1_1nd_1a5abc5ae3340c7f6ed5c2c8bfd94a2141" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const Np\core\nd::DOUBLE</definition>
+        <argsstring></argsstring>
+        <name>DOUBLE</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/nd.php" line="30" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/nd.php" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNp_1_1core_1_1nd_1a8111f5c6304828ac4a237f37d7c3122b" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const Np\core\nd::EPSILON</definition>
+        <argsstring></argsstring>
+        <name>EPSILON</name>
+        <initializer>= 1e-8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/nd.php" line="29" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/nd.php" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNp_1_1core_1_1nd_1a64df2a8510737a561e4f24ced94be393" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const Np\core\nd::FLOAT</definition>
+        <argsstring></argsstring>
+        <name>FLOAT</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/nd.php" line="30" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/nd.php" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNp_1_1core_1_1nd_1a47f23f416b0fdb9661064a931e72d30c" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const Np\core\nd::INT</definition>
+        <argsstring></argsstring>
+        <name>INT</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/nd.php" line="30" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/nd.php" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNp_1_1core_1_1nd_1ae6b40189201f85346be61ced3028eb2d" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const Np\core\nd::TWO_PI</definition>
+        <argsstring></argsstring>
+        <name>TWO_PI</name>
+        <initializer>= 2. * M_PI</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/nd.php" line="29" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/nd.php" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classNp_1_1core_1_1nd_1abc85d7a6814d7ded610948b4898e0339" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>Np\core\nd::$_mem</definition>
+        <argsstring></argsstring>
+        <name>$_mem</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/nd.php" line="33" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/nd.php" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNp_1_1core_1_1nd_1a892ec28f47c788c88759bb851a0e69e8" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>Np\core\nd::$_time</definition>
+        <argsstring></argsstring>
+        <name>$_time</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/nd.php" line="33" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/nd.php" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classNp_1_1core_1_1nd_1a1e703b85fabb38eeb5a6292c7518e506" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\core\nd::checkDimensions</definition>
+        <argsstring>(\Np\matrix|\Np\vector $Obj1, \Np\matrix $Obj2)</argsstring>
+        <name>checkDimensions</name>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref>|\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$Obj1</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$Obj2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/nd.php" line="35" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/nd.php" bodystart="35" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1nd_1a9b45333b32d6f8158c85d254db029993" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\core\nd::checkDtype</definition>
+        <argsstring>(\Np\matrix|\Np\vector $Obj1, \Np\matrix|\Np\vector $Obj2)</argsstring>
+        <name>checkDtype</name>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref>|\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$Obj1</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref>|\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$Obj2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/nd.php" line="42" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/nd.php" bodystart="42" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1nd_1a73895489de029e9514558939c87dbbeb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\core\nd::checkShape</definition>
+        <argsstring>(\Np\matrix|\Np\vector $Obj1, \Np\matrix|\Np\vector $Obj2)</argsstring>
+        <name>checkShape</name>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref>|\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$Obj1</declname>
+        </param>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref>|\<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$Obj2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/nd.php" line="49" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/nd.php" bodystart="49" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1nd_1a03ade5ab6733e2900870ab557d922d8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\core\nd::getMemory</definition>
+        <argsstring>()</argsstring>
+        <name>getMemory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>set memory dog, get total memory </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/nd.php" line="128" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/nd.php" bodystart="128" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1nd_1a16af7a4464500d01322a99b970949a9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\core\nd::time</definition>
+        <argsstring>()</argsstring>
+        <name>time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>set Timer, get total time </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/nd.php" line="117" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/nd.php" bodystart="117" bodyend="123"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classNp_1_1core_1_1nd_1a83e0eadca8d82d475427b8022b2f292f" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\core\nd::__construct</definition>
+        <argsstring>(public int $ndim, public int $dtype=self::FLOAT)</argsstring>
+        <name>__construct</name>
+        <param>
+          <type>public int</type>
+          <declname>$ndim</declname>
+        </param>
+        <param>
+          <type>public int</type>
+          <declname>$dtype</declname>
+          <defval>self::FLOAT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/nd.php" line="68" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/nd.php" bodystart="68" bodyend="84"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-func">
+      <memberdef kind="function" id="classNp_1_1core_1_1nd_1a90d94bb4ead503ed65e1ee8ab42ea985" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\nd::_dimensionaMisMatchErr</definition>
+        <argsstring>($msg)</argsstring>
+        <name>_dimensionaMisMatchErr</name>
+        <param>
+          <declname>$msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/nd.php" line="110" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/nd.php" bodystart="110" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1nd_1ac330c2040a9012c8c939c8a288c5aeb3" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\nd::_dtypeErr</definition>
+        <argsstring>($msg)</argsstring>
+        <name>_dtypeErr</name>
+        <param>
+          <declname>$msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/nd.php" line="106" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/nd.php" bodystart="106" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1nd_1adf2b1feb2b6184c1ec5dde8261f95af5" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\nd::_err</definition>
+        <argsstring>($msg)</argsstring>
+        <name>_err</name>
+        <param>
+          <declname>$msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/nd.php" line="98" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/nd.php" bodystart="98" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1nd_1a791da280f8f30e070c5440568ee71d3f" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\nd::_invalidArgument</definition>
+        <argsstring>($argument)</argsstring>
+        <name>_invalidArgument</name>
+        <param>
+          <declname>$argument</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/nd.php" line="102" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/nd.php" bodystart="102" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1nd_1ae2aa3f0e0934d8786c2c61994640700a" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\nd::_ndDouble</definition>
+        <argsstring>(int $size)</argsstring>
+        <name>_ndDouble</name>
+        <param>
+          <type>int</type>
+          <declname>$size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/nd.php" line="90" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/nd.php" bodystart="90" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1nd_1a8390c8b280cbcbfc7eadbaff38440b0b" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\nd::_ndFloat</definition>
+        <argsstring>(int $size)</argsstring>
+        <name>_ndFloat</name>
+        <param>
+          <type>int</type>
+          <declname>$size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/nd.php" line="86" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/nd.php" bodystart="86" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1core_1_1nd_1a9c2cf5fa04310a48da88d919510eecc0" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\core\nd::_ndInt</definition>
+        <argsstring>(int $size)</argsstring>
+        <name>_ndInt</name>
+        <param>
+          <type>int</type>
+          <declname>$size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/nd.php" line="94" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/nd.php" bodystart="94" bodyend="96"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="47">
+        <label>Np\matrix</label>
+        <link refid="classNp_1_1matrix"/>
+        <childnode refid="46" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>Np\core\nd</label>
+        <link refid="classNp_1_1core_1_1nd"/>
+      </node>
+      <node id="48">
+        <label>Np\vector</label>
+        <link refid="classNp_1_1vector"/>
+        <childnode refid="46" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="49">
+        <label>Np\core\nd</label>
+        <link refid="classNp_1_1core_1_1nd"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/ghost/projects/git/numphp/src/core/nd.php" line="27" column="1" bodyfile="/home/ghost/projects/git/numphp/src/core/nd.php" bodystart="27" bodyend="138"/>
+    <listofallmembers>
+      <member refid="classNp_1_1core_1_1nd_1abc85d7a6814d7ded610948b4898e0339" prot="protected" virt="non-virtual"><scope>Np::core::nd</scope><name>$_mem</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a892ec28f47c788c88759bb851a0e69e8" prot="protected" virt="non-virtual"><scope>Np::core::nd</scope><name>$_time</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a1047cca77e15c6ef853a198e277a0f97" prot="public" virt="non-virtual"><scope>Np::core::nd</scope><name>$data</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a83e0eadca8d82d475427b8022b2f292f" prot="protected" virt="non-virtual"><scope>Np::core::nd</scope><name>__construct</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a90d94bb4ead503ed65e1ee8ab42ea985" prot="protected" virt="non-virtual"><scope>Np::core::nd</scope><name>_dimensionaMisMatchErr</name></member>
+      <member refid="classNp_1_1core_1_1nd_1ac330c2040a9012c8c939c8a288c5aeb3" prot="protected" virt="non-virtual"><scope>Np::core::nd</scope><name>_dtypeErr</name></member>
+      <member refid="classNp_1_1core_1_1nd_1adf2b1feb2b6184c1ec5dde8261f95af5" prot="protected" virt="non-virtual"><scope>Np::core::nd</scope><name>_err</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a791da280f8f30e070c5440568ee71d3f" prot="protected" virt="non-virtual"><scope>Np::core::nd</scope><name>_invalidArgument</name></member>
+      <member refid="classNp_1_1core_1_1nd_1ae2aa3f0e0934d8786c2c61994640700a" prot="protected" virt="non-virtual"><scope>Np::core::nd</scope><name>_ndDouble</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a8390c8b280cbcbfc7eadbaff38440b0b" prot="protected" virt="non-virtual"><scope>Np::core::nd</scope><name>_ndFloat</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a9c2cf5fa04310a48da88d919510eecc0" prot="protected" virt="non-virtual"><scope>Np::core::nd</scope><name>_ndInt</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a1e703b85fabb38eeb5a6292c7518e506" prot="public" virt="non-virtual"><scope>Np::core::nd</scope><name>checkDimensions</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a9b45333b32d6f8158c85d254db029993" prot="public" virt="non-virtual"><scope>Np::core::nd</scope><name>checkDtype</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a73895489de029e9514558939c87dbbeb" prot="public" virt="non-virtual"><scope>Np::core::nd</scope><name>checkShape</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a5abc5ae3340c7f6ed5c2c8bfd94a2141" prot="public" virt="non-virtual"><scope>Np::core::nd</scope><name>DOUBLE</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a8111f5c6304828ac4a237f37d7c3122b" prot="public" virt="non-virtual"><scope>Np::core::nd</scope><name>EPSILON</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a64df2a8510737a561e4f24ced94be393" prot="public" virt="non-virtual"><scope>Np::core::nd</scope><name>FLOAT</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a03ade5ab6733e2900870ab557d922d8f" prot="public" virt="non-virtual"><scope>Np::core::nd</scope><name>getMemory</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a47f23f416b0fdb9661064a931e72d30c" prot="public" virt="non-virtual"><scope>Np::core::nd</scope><name>INT</name></member>
+      <member refid="classNp_1_1core_1_1nd_1a16af7a4464500d01322a99b970949a9e" prot="public" virt="non-virtual"><scope>Np::core::nd</scope><name>time</name></member>
+      <member refid="classNp_1_1core_1_1nd_1ae6b40189201f85346be61ced3028eb2d" prot="public" virt="non-virtual"><scope>Np::core::nd</scope><name>TWO_PI</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

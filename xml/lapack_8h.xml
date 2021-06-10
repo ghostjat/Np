@@ -1,0 +1,2233 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="lapack_8h" kind="file" language="C++">
+    <compoundname>lapack.h</compoundname>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="lapack_8h_1ac75d3f61ae195a12c3fe42db82462ff0" prot="public" static="no">
+        <name>FFI_LIB</name>
+        <initializer>&quot;liblapacke.so&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="2" column="9" bodyfile="/home/ghost/projects/git/numphp/src/core/lapack.h" bodystart="2" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="lapack_8h_1a512ba25653eaf59b6f3c414769a6b23f" prot="public" static="no">
+        <name>FFI_SCOPE</name>
+        <initializer>&quot;lapack&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="1" column="9" bodyfile="/home/ghost/projects/git/numphp/src/core/lapack.h" bodystart="1" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="lapack_8h_1ac813e54ba484fea39ec6939c49de5225" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_dgebal</definition>
+        <argsstring>(int matrix_layout, char job, int n, double *a, int lda, int *ilo, int *ihi, double *scale)</argsstring>
+        <name>LAPACKE_dgebal</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>job</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>ilo</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>ihi</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="38" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1ab91fa6deb275f4df1ea6ce41bd38ccf8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_dgeev</definition>
+        <argsstring>(int matrix_layout, char jobvl, char jobvr, int n, double *a, int lda, double *wr, double *wi, double *vl, int ldvl, double *vr, int ldvr)</argsstring>
+        <name>LAPACKE_dgeev</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>jobvl</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>jobvr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>wr</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>wi</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>vl</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldvl</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>vr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldvr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="24" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a8e9111664c40d0f831747d5124974fcb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_dgels</definition>
+        <argsstring>(int matrix_order, char trans, int m, int n, int nrhs, double *a, int lda, double *b, int ldb)</argsstring>
+        <name>LAPACKE_dgels</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_order</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>trans</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nrhs</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="35" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a979a3dbd4aac55101a87cdc7577999f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_dgesdd</definition>
+        <argsstring>(int matrix_layout, char jobz, int m, int n, double *a, int lda, double *s, double *u, int ldu, double *vt, int ldvt)</argsstring>
+        <name>LAPACKE_dgesdd</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>jobz</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>u</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldu</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>vt</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldvt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="16" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1ae231d6611ab10540e29e67ba8dd6ae31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_dgetrf</definition>
+        <argsstring>(int matrix_layout, int m, int n, double *a, int lda, int *ipiv)</argsstring>
+        <name>LAPACKE_dgetrf</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>ipiv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="6" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1abad99b4284ac60967f1f5671ea019716" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_dgetri</definition>
+        <argsstring>(int matrix_layout, int n, double *a, int lda, const int *ipiv)</argsstring>
+        <name>LAPACKE_dgetri</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>ipiv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="10" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a22899f22622a6224e974718307402ee1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float LAPACKE_dlange</definition>
+        <argsstring>(int matrix_layout, char norm, int m, int n, const double *a, int lda)</argsstring>
+        <name>LAPACKE_dlange</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>norm</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>const double *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lda</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="126" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a2b6ad64b668e3601f41cee1d8215a686" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_dlasrt</definition>
+        <argsstring>(char id, int n, double *d)</argsstring>
+        <name>LAPACKE_dlasrt</name>
+        <param>
+          <type>char</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="132" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a65839700d05d09d9385dcfe0369ee811" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_dpotrf</definition>
+        <argsstring>(int matrix_layout, char uplo, int n, double *a, int lda)</argsstring>
+        <name>LAPACKE_dpotrf</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>uplo</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lda</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="116" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a88e7bb1bfd8f355c50bec0f80a025971" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_dsyev</definition>
+        <argsstring>(int matrix_layout, char jobz, char uplo, int n, double *a, int lda, double *w)</argsstring>
+        <name>LAPACKE_dsyev</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>jobz</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>uplo</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="30" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a7f4d8a3bc52390debb9db02aee1dab6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_sbdsdc</definition>
+        <argsstring>(int matrix_layout, char uplo, char compq, int n, float *d, float *e, float *u, int ldu, float *vt, int ldvt, float *q, int *iq)</argsstring>
+        <name>LAPACKE_sbdsdc</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>uplo</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>compq</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>u</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldu</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>vt</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldvt</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>iq</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="40" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a021a7032112925e68edd6073170531cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_sbdsvdx</definition>
+        <argsstring>(int matrix_layout, char uplo, char jobz, char range, int n, float *d, float *e, float vl, float vu, int il, int iu, int *ns, float *s, float *z, int ldz, int *superb)</argsstring>
+        <name>LAPACKE_sbdsvdx</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>uplo</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>jobz</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>range</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>vl</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>vu</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>il</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>iu</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>ns</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>z</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldz</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>superb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="44" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1ae18d73da68f72393be20695861ef5b6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_sdisna</definition>
+        <argsstring>(char job, int m, int n, const float *d, float *sep)</argsstring>
+        <name>LAPACKE_sdisna</name>
+        <param>
+          <type>char</type>
+          <declname>job</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>const float *</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>sep</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="50" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a4ef1e9bb395848ceacbf375b387f6fcb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_sgbbrd</definition>
+        <argsstring>(int matrix_layout, char vect, int m, int n, int ncc, int kl, int ku, float *ab, int ldab, float *d, float *e, float *q, int ldq, float *pt, int ldpt, float *c, int ldc)</argsstring>
+        <name>LAPACKE_sgbbrd</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>vect</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncc</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>kl</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ku</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>ab</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldab</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldq</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>pt</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldpt</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="52" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a116d48b94f1a768bf2df05c7722da3c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_sgbcon</definition>
+        <argsstring>(int matrix_layout, char norm, int n, int kl, int ku, const float *ab, int ldab, const int *ipiv, float anorm, float *rcond)</argsstring>
+        <name>LAPACKE_sgbcon</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>norm</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>kl</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ku</declname>
+        </param>
+        <param>
+          <type>const float *</type>
+          <declname>ab</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldab</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>ipiv</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>anorm</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>rcond</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="57" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a3ed4e444f0192a30900431c010f0e82f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_sgbequ</definition>
+        <argsstring>(int matrix_layout, int m, int n, int kl, int ku, const float *ab, int ldab, float *r, float *c, float *rowcnd, float *colcnd, float *amax)</argsstring>
+        <name>LAPACKE_sgbequ</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>kl</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ku</declname>
+        </param>
+        <param>
+          <type>const float *</type>
+          <declname>ab</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldab</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>rowcnd</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>colcnd</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>amax</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="61" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a0b4427da11fbc27d903dfb098142283f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_sgbequb</definition>
+        <argsstring>(int matrix_layout, int m, int n, int kl, int ku, const float *ab, int ldab, float *r, float *c, float *rowcnd, float *colcnd, float *amax)</argsstring>
+        <name>LAPACKE_sgbequb</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>kl</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ku</declname>
+        </param>
+        <param>
+          <type>const float *</type>
+          <declname>ab</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldab</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>rowcnd</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>colcnd</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>amax</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="65" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a5ec41d8d0889c3b7ab3205b7fb24fbb2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_sgbrfs</definition>
+        <argsstring>(int matrix_layout, char trans, int n, int kl, int ku, int nrhs, const float *ab, int ldab, const float *afb, int ldafb, const int *ipiv, const float *b, int ldb, float *x, int ldx, float *ferr, float *berr)</argsstring>
+        <name>LAPACKE_sgbrfs</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>trans</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>kl</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ku</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nrhs</declname>
+        </param>
+        <param>
+          <type>const float *</type>
+          <declname>ab</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldab</declname>
+        </param>
+        <param>
+          <type>const float *</type>
+          <declname>afb</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldafb</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>ipiv</declname>
+        </param>
+        <param>
+          <type>const float *</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldb</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldx</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>ferr</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>berr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="69" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1ade0a872ebb32e6de365db57992d3ffb5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_sgbsv</definition>
+        <argsstring>(int matrix_layout, int n, int kl, int ku, int nrhs, float *ab, int ldab, int *ipiv, float *b, int ldb)</argsstring>
+        <name>LAPACKE_sgbsv</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>kl</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ku</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nrhs</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>ab</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldab</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>ipiv</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="75" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a541baa26013b8cd22c3e446c4c66bbd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_sgbsvx</definition>
+        <argsstring>(int matrix_layout, char fact, char trans, int n, int kl, int ku, int nrhs, float *ab, int ldab, float *afb, int ldafb, int *ipiv, char *equed, float *r, float *c, float *b, int ldb, float *x, int ldx, float *rcond, float *ferr, float *berr, float *rpivot)</argsstring>
+        <name>LAPACKE_sgbsvx</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>fact</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>trans</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>kl</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ku</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nrhs</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>ab</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldab</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>afb</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldafb</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>ipiv</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>equed</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldb</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldx</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>rcond</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>ferr</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>berr</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>rpivot</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="79" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a54fab49f6968389f9bd7b14d738addb5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_sgbtrf</definition>
+        <argsstring>(int matrix_layout, int m, int n, int kl, int ku, float *ab, int ldab, int *ipiv)</argsstring>
+        <name>LAPACKE_sgbtrf</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>kl</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ku</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>ab</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldab</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>ipiv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="87" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1aafaf05c5a68c707c82fcb917cde50860" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_sgbtrs</definition>
+        <argsstring>(int matrix_layout, char trans, int n, int kl, int ku, int nrhs, const float *ab, int ldab, const int *ipiv, float *b, int ldb)</argsstring>
+        <name>LAPACKE_sgbtrs</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>trans</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>kl</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ku</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nrhs</declname>
+        </param>
+        <param>
+          <type>const float *</type>
+          <declname>ab</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldab</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>ipiv</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="90" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a023cfc183d10c3e3daae933dd2931129" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_sgebak</definition>
+        <argsstring>(int matrix_layout, char job, char side, int n, int ilo, int ihi, const float *scale, int m, float *v, int ldv)</argsstring>
+        <name>LAPACKE_sgebak</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>job</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>side</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ilo</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ihi</declname>
+        </param>
+        <param>
+          <type>const float *</type>
+          <declname>scale</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="94" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a50c748da199ffd8a6acac433312ae047" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_sgebal</definition>
+        <argsstring>(int matrix_layout, char job, int n, float *a, int lda, int *ilo, int *ihi, float *scale)</argsstring>
+        <name>LAPACKE_sgebal</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>job</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>ilo</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>ihi</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="97" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a49a960cb3ae802220d0f9bd811f16129" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_sgebrd</definition>
+        <argsstring>(int matrix_layout, int m, int n, float *a, int lda, float *d, float *e, float *tauq, float *taup)</argsstring>
+        <name>LAPACKE_sgebrd</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>tauq</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>taup</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="100" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a2a7bd2488aa8d78d689c9758a2479598" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_sgecon</definition>
+        <argsstring>(int matrix_layout, char norm, int n, const float *a, int lda, float anorm, float *rcond)</argsstring>
+        <name>LAPACKE_sgecon</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>norm</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>const float *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>anorm</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>rcond</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="103" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1afca2a117c010ba4bb2361508cc6d72c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_sgeequ</definition>
+        <argsstring>(int matrix_layout, int m, int n, const float *a, int lda, float *r, float *c, float *rowcnd, float *colcnd, float *amax)</argsstring>
+        <name>LAPACKE_sgeequ</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>const float *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>rowcnd</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>colcnd</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>amax</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="106" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a0f236dadb0dad44f12304105c852e2dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_sgeequb</definition>
+        <argsstring>(int matrix_layout, int m, int n, const float *a, int lda, float *r, float *c, float *rowcnd, float *colcnd, float *amax)</argsstring>
+        <name>LAPACKE_sgeequb</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>const float *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>rowcnd</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>colcnd</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>amax</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="109" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a85700ecdaae1e71eecda4ece8f716a98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_sgeev</definition>
+        <argsstring>(int matrix_layout, char jobvl, char jobvr, int n, float *a, int lda, float *wr, float *wi, float *vl, int ldvl, float *vr, int ldvr)</argsstring>
+        <name>LAPACKE_sgeev</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>jobvl</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>jobvr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>wr</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>wi</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>vl</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldvl</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>vr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldvr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="20" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a5dafeef15c289591cb5c998ed8d5d23a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_sgelq2</definition>
+        <argsstring>(int matrix_layout, int m, int n, float *a, int lda, float *tau)</argsstring>
+        <name>LAPACKE_sgelq2</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>tau</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="112" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a95d2e6e9b7ad7ce0574f36c298dcba4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_sgels</definition>
+        <argsstring>(int matrix_order, char trans, int m, int n, int nrhs, float *a, int lda, float *b, int ldb)</argsstring>
+        <name>LAPACKE_sgels</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_order</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>trans</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nrhs</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="32" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a8eedd71d67af52d71a5ae5fb199559fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LAPACKE_sgelsd</definition>
+        <argsstring>(int m, int n, int nrhs, float *a, int lda, float *b, int ldb, float *s, float *rcond, int rank, float *work, int lwork, int iwork, int info)</argsstring>
+        <name>LAPACKE_sgelsd</name>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nrhs</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldb</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>rcond</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>rank</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>work</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lwork</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>iwork</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="120" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a180826095cb31f8e5e510d49e5c2ee5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_sgelsy</definition>
+        <argsstring>(int matrix_order, int m, int n, int nrhs, float *a, int lda, float *b, int ldb, int *jpvt, float rcond, int *rank)</argsstring>
+        <name>LAPACKE_sgelsy</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_order</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nrhs</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldb</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>jpvt</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>rcond</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>rank</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="118" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a3309a65a6899a5bf4729424ba50f0f66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_sgesdd</definition>
+        <argsstring>(int matrix_layout, char jobz, int m, int n, float *a, int lda, float *s, float *u, int ldu, float *vt, int ldvt)</argsstring>
+        <name>LAPACKE_sgesdd</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>jobz</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>u</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldu</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>vt</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldvt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="12" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a93ff0c2c3ed0e67f3ac1ca48c241e97e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_sgetrf</definition>
+        <argsstring>(int matrix_layout, int m, int n, float *a, int lda, int *ipiv)</argsstring>
+        <name>LAPACKE_sgetrf</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>ipiv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="4" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a2f5ae356ed31c7276dbbd1a2c2f7dfe3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_sgetri</definition>
+        <argsstring>(int matrix_layout, int n, float *a, int lda, const int *ipiv)</argsstring>
+        <name>LAPACKE_sgetri</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>ipiv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="8" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a8ef375775f2fb056476fd0a45b7d3b22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float LAPACKE_slange</definition>
+        <argsstring>(int matrix_layout, char norm, int m, int n, const float *a, int lda)</argsstring>
+        <name>LAPACKE_slange</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>norm</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>const float *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lda</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="124" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a75de8af0b77379e510b0af43c987d75b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_slasrt</definition>
+        <argsstring>(char id, int n, float *d)</argsstring>
+        <name>LAPACKE_slasrt</name>
+        <param>
+          <type>char</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="131" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a2a0155e0efabcf822177261cca483b4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_spotrf</definition>
+        <argsstring>(int matrix_order, char uplo, int n, float *a, int lda)</argsstring>
+        <name>LAPACKE_spotrf</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_order</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>uplo</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lda</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="114" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a9f4fab2668b3308db954654fbb2cc710" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_sspsv</definition>
+        <argsstring>(int matrix_layout, char uplo, int n, int nrhs, float *ap, int *ipiv, float *b, int ldb)</argsstring>
+        <name>LAPACKE_sspsv</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>uplo</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nrhs</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>ap</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>ipiv</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ldb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="128" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="lapack_8h_1a352b1051e4b2c0c076698c51ed30a3de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LAPACKE_ssyev</definition>
+        <argsstring>(int matrix_layout, char jobz, char uplo, int n, float *a, int lda, float *w)</argsstring>
+        <name>LAPACKE_ssyev</name>
+        <param>
+          <type>int</type>
+          <declname>matrix_layout</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>jobz</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>uplo</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/core/lapack.h" line="28" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#define<sp/>FFI_SCOPE<sp/>&quot;lapack&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FFI_LIB<sp/>&quot;liblapacke.so&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_sgetrf(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lda,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ipiv<sp/>);</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_dgetrf(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lda,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ipiv<sp/>);</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_sgetri(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>a,</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lda,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ipiv<sp/>);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_dgetri(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>a,</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lda,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ipiv<sp/>);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_sgesdd(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>jobz,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m,</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lda,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>s,</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>u,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldu,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>vt,</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldvt<sp/>);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_dgesdd(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>jobz,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m,</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lda,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>s,</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>u,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldu,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>vt,</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldvt<sp/>);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_sgeev(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>jobvl,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>jobvr,</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lda,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>wr,</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>wi,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>vl,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldvl,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>vr,</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldvr<sp/>);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_dgeev(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>jobvl,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>jobvr,</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lda,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>wr,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>wi,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>vl,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldvl,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>vr,</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldvr<sp/>);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_ssyev(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>jobz,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>uplo,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lda,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>w<sp/>);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_dsyev(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>jobz,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>uplo,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lda,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>w<sp/>);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_sgels(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_order,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>trans,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nrhs,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>a,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lda,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>b,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldb<sp/>);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_dgels(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_order,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>trans,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m,</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nrhs,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>a,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lda,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>b,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldb<sp/>);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_dgebal(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>job,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>a,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lda,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ilo,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ihi,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>scale<sp/>);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_sbdsdc(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>uplo,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>compq,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>d,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>e,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>u,</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldu,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>vt,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldvt,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>q,</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>iq<sp/>);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_sbdsvdx(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>uplo,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>jobz,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>range,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>d,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>e,</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>vl,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>vu,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>il,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iu,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ns,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>s,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>z,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldz,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>superb<sp/>);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_sdisna(<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>job,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>d,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>sep<sp/>);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_sgbbrd(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>vect,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncc,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>kl,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ku,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>ab,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldab,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>d,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>e,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>q,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldq,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>pt,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldpt,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>c,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldc<sp/>);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_sgbcon(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>norm,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>kl,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ku,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>ab,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldab,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ipiv,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>anorm,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>rcond<sp/>);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_sgbequ(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>kl,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ku,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>ab,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldab,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>r,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>c,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>rowcnd,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>colcnd,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>amax<sp/>);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_sgbequb(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>kl,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ku,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>ab,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldab,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>r,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>c,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>rowcnd,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>colcnd,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>amax<sp/>);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_sgbrfs(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>trans,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>kl,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ku,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nrhs,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>ab,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldab,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>afb,</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldafb,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ipiv,</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>b,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldb,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>x,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldx,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>ferr,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>berr<sp/>);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_sgbsv(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>kl,</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ku,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nrhs,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>ab,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldab,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ipiv,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>b,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldb<sp/>);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_sgbsvx(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>fact,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>trans,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>kl,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ku,</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nrhs,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>ab,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldab,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>afb,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldafb,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ipiv,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>equed,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>r,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>c,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>b,</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldb,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldx,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>rcond,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>ferr,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>berr,</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>rpivot<sp/>);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_sgbtrf(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>kl,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ku,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>ab,</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldab,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ipiv<sp/>);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_sgbtrs(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>trans,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>kl,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ku,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nrhs,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>ab,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldab,</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ipiv,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>b,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldb<sp/>);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_sgebak(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>job,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>side,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ilo,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ihi,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>scale,</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>v,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldv<sp/>);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_sgebal(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>job,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>a,</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lda,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ilo,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ihi,</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>scale<sp/>);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_sgebrd(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lda,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>d,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>e,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>tauq,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>taup<sp/>);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_sgecon(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>norm,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lda,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>anorm,</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>rcond<sp/>);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_sgeequ(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lda,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>r,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>c,</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>rowcnd,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>colcnd,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>amax<sp/>);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_sgeequb(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lda,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>r,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>c,</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>rowcnd,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>colcnd,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>amax<sp/>);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_sgelq2(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lda,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>tau<sp/>);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_spotrf(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_order,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>uplo,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>a,</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lda<sp/>);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_dpotrf(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>uplo,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>a,</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lda<sp/>);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_sgelsy(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_order,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nrhs,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lda,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>b,</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldb,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>jpvt,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>rcond,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>rank<sp/>);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>LAPACKE_sgelsd(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nrhs,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>a,</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lda,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>b,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldb,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>s,</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>rcond,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rank,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>work,</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lwork,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iwork,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>info<sp/>);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>LAPACKE_slange(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>norm,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m,</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lda);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>LAPACKE_dlange(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>norm,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m,</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lda);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_sspsv(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matrix_layout,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>uplo,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nrhs,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>ap,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ipiv,</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>b,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ldb<sp/>);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_slasrt(<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>d<sp/>);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LAPACKE_dlasrt(<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>d<sp/>);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/ghost/projects/git/numphp/src/core/lapack.h"/>
+  </compounddef>
+</doxygen>

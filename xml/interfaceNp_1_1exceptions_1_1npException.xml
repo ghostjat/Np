@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="interfaceNp_1_1exceptions_1_1npException" kind="interface" language="PHP" prot="public">
+    <compoundname>Np::exceptions::npException</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Throwable</basecompoundref>
+    <derivedcompoundref refid="classNp_1_1exceptions_1_1invalidArgumentException" prot="public" virt="non-virtual">Np\exceptions\invalidArgumentException</derivedcompoundref>
+    <derivedcompoundref refid="classNp_1_1exceptions_1_1runtimeException" prot="public" virt="non-virtual">Np\exceptions\runtimeException</derivedcompoundref>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="50">
+        <label>Np\exceptions\npException</label>
+        <link refid="interfaceNp_1_1exceptions_1_1npException"/>
+        <childnode refid="51" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>Np\exceptions\dimensionalityMismatch</label>
+        <link refid="classNp_1_1exceptions_1_1dimensionalityMismatch"/>
+        <childnode refid="52" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>Np\exceptions\dtypeException</label>
+        <link refid="classNp_1_1exceptions_1_1dtypeException"/>
+        <childnode refid="52" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>Np\exceptions\invalidArgumentException</label>
+        <link refid="classNp_1_1exceptions_1_1invalidArgumentException"/>
+        <childnode refid="50" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>Throwable</label>
+      </node>
+      <node id="55">
+        <label>Np\exceptions\runtimeException</label>
+        <link refid="classNp_1_1exceptions_1_1runtimeException"/>
+        <childnode refid="50" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="56">
+        <label>Np\exceptions\npException</label>
+        <link refid="interfaceNp_1_1exceptions_1_1npException"/>
+        <childnode refid="57" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>Throwable</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/ghost/projects/git/numphp/src/exceptions/npException.php" line="7" column="1" bodyfile="/home/ghost/projects/git/numphp/src/exceptions/npException.php" bodystart="7" bodyend="9"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

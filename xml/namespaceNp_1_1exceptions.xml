@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespaceNp_1_1exceptions" kind="namespace" language="PHP">
+    <compoundname>Np::exceptions</compoundname>
+    <innerclass refid="classNp_1_1exceptions_1_1dimensionalityMismatch" prot="public">Np::exceptions::dimensionalityMismatch</innerclass>
+    <innerclass refid="classNp_1_1exceptions_1_1dtypeException" prot="public">Np::exceptions::dtypeException</innerclass>
+    <innerclass refid="classNp_1_1exceptions_1_1invalidArgumentException" prot="public">Np::exceptions::invalidArgumentException</innerclass>
+    <innerclass refid="interfaceNp_1_1exceptions_1_1npException" prot="public">Np::exceptions::npException</innerclass>
+    <innerclass refid="classNp_1_1exceptions_1_1runtimeException" prot="public">Np::exceptions::runtimeException</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/ghost/projects/git/numphp/src/exceptions/dimensionalityMismatch.php" line="3" column="1"/>
+  </compounddef>
+</doxygen>

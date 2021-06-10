@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespaceNumPhp" kind="namespace" language="PHP">
+    <compoundname>NumPhp</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>php interface for OpenBLAS</para><para>php interface for LAPACK</para><para>A fast lite memory efficient Scientific Computing for php Matrix </para><para>A fast lite memory efficient Scientific Computing in php Vector (rank-1)</para><para><simplesect kind="version"><para>0.0.1.alpha </para></simplesect>
+</para>    </detaileddescription>
+    <location file="/home/ghost/projects/git/numphp/src/core/blas.php" line="8" column="1"/>
+  </compounddef>
+</doxygen>

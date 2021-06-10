@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespaceNp" kind="namespace" language="PHP">
+    <compoundname>Np</compoundname>
+    <innerclass refid="classNp_1_1convolve" prot="public">Np::convolve</innerclass>
+    <innerclass refid="classNp_1_1matrix" prot="public">Np::matrix</innerclass>
+    <innerclass refid="classNp_1_1vector" prot="public">Np::vector</innerclass>
+    <innernamespace refid="namespaceNp_1_1core">Np::core</innernamespace>
+    <innernamespace refid="namespaceNp_1_1decompositions">Np::decompositions</innernamespace>
+    <innernamespace refid="namespaceNp_1_1exceptions">Np::exceptions</innernamespace>
+    <innernamespace refid="namespaceNp_1_1reductions">Np::reductions</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Convolve</para><para>1D &amp; 2D SignalProcessing in pure php</para><para>OpenBlas</para><para>php interface for OpenBLAS</para><para>Lapack</para><para>php interface for LAPACK</para><para>ND</para><para>A fast lite memory efficient Scientific Computing for php</para><para><simplesect kind="version"><para>V0.0.1</para></simplesect>
+Cholesky</para><para>An efficient decomposition of a square positive definite matrix into a lower triangular matrix and its conjugate transpose.</para><para>Eigen</para><para>The Eigen decompositon or (Spectral decomposition) is a matrix factorization resulting in a matrix of eigenvectors and a corresponding array of eigenvalues.</para><para>LU</para><para>The LU decomposition is a factorization of a Matrix as the product of a lower and upper triangular matrix as well as a permutation matrix.</para><para>SVD Compute the singular value decomposition of a matrix and return an object of the singular values and unitary matrices</para><para>Linear Algebra</para><para>A fast lite memory efficient Scientific Computing for php</para><para>Matrix A fast lite memory efficient Scientific Computing for php</para><para>Operations A fast lite &amp; memory efficient Scientific Computing for php</para><para>REF</para><para>The row echelon form (REF) of a matrix.</para><para>RREF</para><para>The reduced row echelon form (RREF) of a matrix.</para><para>A fast lite memory efficient Scientific Computing in php Vector (rank-1)</para><para><simplesect kind="version"><para>V0.0.1 </para></simplesect>
+</para>    </detaileddescription>
+    <location file="/home/ghost/projects/git/numphp/src/convolve.php" line="4" column="1"/>
+  </compounddef>
+</doxygen>

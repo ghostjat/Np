@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classNp_1_1decompositions_1_1svd" kind="class" language="PHP" prot="public">
+    <compoundname>Np::decompositions::svd</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classNp_1_1decompositions_1_1svd_1ac8bda3519697c3b3e32f7808053f5675" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\decompositions\svd::factory</definition>
+        <argsstring>(\Np\matrix $m)</argsstring>
+        <name>factory</name>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>matrix</parametertype>
+<parametername>$m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>self </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/decompositions/svd.php" line="29" column="1" bodyfile="/home/ghost/projects/git/numphp/src/decompositions/svd.php" bodystart="29" bodyend="43"/>
+        <references refid="classNp_1_1vector_1ae273c5dfb35a12db0977326d765ea2e4" compoundref="vector_8php" startline="37" endline="39">Np\vector\factory</references>
+        <references refid="classNp_1_1matrix_1a41010884ae9f834864b569d714ca0e25" compoundref="matrix_8php" startline="37" endline="39">Np\matrix\factory</references>
+        <references refid="classNp_1_1core_1_1lapack_1a1f2a85f0b6e387cafc98e9269114dca5" compoundref="lapack_8php" startline="71" endline="77">Np\core\lapack\gesdd</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classNp_1_1decompositions_1_1svd_1a33d3812d91e5811ab099451990f700e5" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\decompositions\svd::__construct</definition>
+        <argsstring>(protected \Np\matrix $u, protected \Np\matrix $v, protected \Np\vector $s)</argsstring>
+        <name>__construct</name>
+        <param>
+          <type>protected \<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$u</declname>
+        </param>
+        <param>
+          <type>protected \<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$v</declname>
+        </param>
+        <param>
+          <type>protected \<ref refid="classNp_1_1vector" kindref="compound">Np\vector</ref></type>
+          <declname>$s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$u</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>\Np\vector</parametertype>
+<parametername>$s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/decompositions/svd.php" line="51" column="1" bodyfile="/home/ghost/projects/git/numphp/src/decompositions/svd.php" bodystart="51" bodyend="53"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classNp_1_1decompositions_1_1svd_1a7eb8ff10f4c1bfb7feb9f8dd8028a106" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\decompositions\svd::s</definition>
+        <argsstring>()</argsstring>
+        <name>s</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the singular values of matrix.</para><para><simplesect kind="return"><para>vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/decompositions/svd.php" line="69" column="1" bodyfile="/home/ghost/projects/git/numphp/src/decompositions/svd.php" bodystart="69" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1decompositions_1_1svd_1adacefd3ebde9fea978c3259fffdb8d58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\decompositions\svd::u</definition>
+        <argsstring>()</argsstring>
+        <name>u</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the U matrix.</para><para><simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/decompositions/svd.php" line="60" column="1" bodyfile="/home/ghost/projects/git/numphp/src/decompositions/svd.php" bodystart="60" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1decompositions_1_1svd_1a087992ca367b4733cdc686be6bd87b8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\decompositions\svd::v</definition>
+        <argsstring>()</argsstring>
+        <name>v</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the V matrix.</para><para><simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/decompositions/svd.php" line="78" column="1" bodyfile="/home/ghost/projects/git/numphp/src/decompositions/svd.php" bodystart="78" bodyend="80"/>
+        <referencedby refid="classNp_1_1decompositions_1_1svd_1a658311a873bfe8443ffe6d9162cdae95" compoundref="svd_8php" startline="87" endline="89">Np\decompositions\svd\vt</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classNp_1_1decompositions_1_1svd_1a658311a873bfe8443ffe6d9162cdae95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Np\decompositions\svd::vt</definition>
+        <argsstring>()</argsstring>
+        <name>vt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the V transposed matrix.</para><para><simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/decompositions/svd.php" line="87" column="1" bodyfile="/home/ghost/projects/git/numphp/src/decompositions/svd.php" bodystart="87" bodyend="89"/>
+        <references refid="classNp_1_1decompositions_1_1svd_1a087992ca367b4733cdc686be6bd87b8b" compoundref="svd_8php" startline="78" endline="80">Np\decompositions\svd\v</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="71">
+        <label>Np\decompositions\svd</label>
+        <link refid="classNp_1_1decompositions_1_1svd"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/ghost/projects/git/numphp/src/decompositions/svd.php" line="22" column="1" bodyfile="/home/ghost/projects/git/numphp/src/decompositions/svd.php" bodystart="22" bodyend="91"/>
+    <listofallmembers>
+      <member refid="classNp_1_1decompositions_1_1svd_1a33d3812d91e5811ab099451990f700e5" prot="protected" virt="non-virtual"><scope>Np::decompositions::svd</scope><name>__construct</name></member>
+      <member refid="classNp_1_1decompositions_1_1svd_1ac8bda3519697c3b3e32f7808053f5675" prot="public" virt="non-virtual"><scope>Np::decompositions::svd</scope><name>factory</name></member>
+      <member refid="classNp_1_1decompositions_1_1svd_1a7eb8ff10f4c1bfb7feb9f8dd8028a106" prot="public" virt="non-virtual"><scope>Np::decompositions::svd</scope><name>s</name></member>
+      <member refid="classNp_1_1decompositions_1_1svd_1adacefd3ebde9fea978c3259fffdb8d58" prot="public" virt="non-virtual"><scope>Np::decompositions::svd</scope><name>u</name></member>
+      <member refid="classNp_1_1decompositions_1_1svd_1a087992ca367b4733cdc686be6bd87b8b" prot="public" virt="non-virtual"><scope>Np::decompositions::svd</scope><name>v</name></member>
+      <member refid="classNp_1_1decompositions_1_1svd_1a658311a873bfe8443ffe6d9162cdae95" prot="public" virt="non-virtual"><scope>Np::decompositions::svd</scope><name>vt</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacenumphp" kind="namespace" language="PHP">
+    <compoundname>numphp</compoundname>
+    <innerclass refid="classnumphp_1_1convolve" prot="public">numphp::convolve</innerclass>
+    <innerclass refid="classnumphp_1_1matrix" prot="public">numphp::matrix</innerclass>
+    <innerclass refid="classnumphp_1_1vector" prot="public">numphp::vector</innerclass>
+    <innernamespace refid="namespacenumphp_1_1core">numphp::core</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/ghost/projects/git/numphp/src/convolve.php" line="4" column="1"/>
+  </compounddef>
+</doxygen>

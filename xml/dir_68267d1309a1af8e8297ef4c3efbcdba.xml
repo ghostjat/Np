@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>/home/ghost/projects/git/numphp/src</compoundname>
+    <innerdir refid="dir_aebb8dcc11953d78e620bbef0b9e2183">/home/ghost/projects/git/numphp/src/core</innerdir>
+    <innerdir refid="dir_d0006e8f74480d93972bee1bd7e7773b">/home/ghost/projects/git/numphp/src/decompositions</innerdir>
+    <innerdir refid="dir_6e33d6500a76933db4361f663e54ab12">/home/ghost/projects/git/numphp/src/exceptions</innerdir>
+    <innerdir refid="dir_488a33708a2424608dead1afd03824f0">/home/ghost/projects/git/numphp/src/reductions</innerdir>
+    <innerfile refid="convolve_8php">convolve.php</innerfile>
+    <innerfile refid="linAlg_8php">linAlg.php</innerfile>
+    <innerfile refid="matrix_8php">matrix.php</innerfile>
+    <innerfile refid="ops_8php">ops.php</innerfile>
+    <innerfile refid="vector_8php">vector.php</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/ghost/projects/git/numphp/src/"/>
+  </compounddef>
+</doxygen>

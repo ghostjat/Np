@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="ref_8php" kind="file" language="PHP">
+    <compoundname>ref.php</compoundname>
+    <innerclass refid="classNp_1_1reductions_1_1ref" prot="public">Np::reductions::ref</innerclass>
+    <innernamespace refid="namespaceNp">Np</innernamespace>
+    <innernamespace refid="namespaceNp_1_1reductions">Np::reductions</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal">declare(strict_types=1);</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceNp_1_1reductions" kindref="compound">Np\reductions</ref>;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">use<sp/><ref refid="namespaceNp_1_1matrix" kindref="compound">Np\matrix</ref>;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">use<sp/><ref refid="namespaceNp_1_1vector" kindref="compound">Np\vector</ref>;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">use<sp/><ref refid="namespaceNp_1_1core_1_1lapack" kindref="compound">Np\core\lapack</ref>;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="classNp_1_1reductions_1_1ref" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classNp_1_1reductions_1_1ref" kindref="compound">ref</ref><sp/>{<sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="28" refid="classNp_1_1reductions_1_1ref_1a5c705593b301c61edb93be153355ac14" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="classNp_1_1reductions_1_1ref_1a5c705593b301c61edb93be153355ac14" kindref="member">factory</ref>(\<ref refid="namespaceNp" kindref="compound">Np</ref>\<ref refid="classNp_1_1matrix" kindref="compound">matrix</ref><sp/>$m):<sp/><ref refid="classNp_1_1matrix" kindref="compound">matrix</ref>|null<sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$ipiv<sp/>=<sp/><ref refid="classNp_1_1vector_1ae273c5dfb35a12db0977326d765ea2e4" kindref="member">vector::factory</ref>(min($m-&gt;row,<sp/>$m-&gt;col),<sp/>vector::INT);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$ar<sp/>=<sp/>$m-&gt;copy();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$lp<sp/>=<sp/><ref refid="classNp_1_1core_1_1lapack_1ab4d38b46b6cfad63cae6cd07cdc6e045" kindref="member">lapack::getrf</ref>($ar,<sp/>$ipiv);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>($lp<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>null;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>$ar;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/ghost/projects/git/numphp/src/reductions/ref.php"/>
+  </compounddef>
+</doxygen>

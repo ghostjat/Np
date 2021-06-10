@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classNp_1_1decompositions_1_1cholesky" kind="class" language="PHP" prot="public">
+    <compoundname>Np::decompositions::cholesky</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classNp_1_1decompositions_1_1cholesky_1a5885c1d3828f0c389b77313070f01355" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\decompositions\cholesky::factory</definition>
+        <argsstring>(matrix $m)</argsstring>
+        <name>factory</name>
+        <param>
+          <type><ref refid="classNp_1_1matrix" kindref="compound">matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>matrix</parametertype>
+<parametername>$m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix|null </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/decompositions/cholesky.php" line="30" column="1" bodyfile="/home/ghost/projects/git/numphp/src/decompositions/cholesky.php" bodystart="30" bodyend="45"/>
+        <references refid="classNp_1_1matrix_1adb337e32840446442dcf145107e26eba" compoundref="matrix_8php" startline="1023" endline="1028">Np\matrix\isSquare</references>
+        <references refid="classNp_1_1core_1_1lapack_1a545330e971d4922d4d46abdbd21a423d" compoundref="lapack_8php" startline="86" endline="92">Np\core\lapack\potrf</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>Np\decompositions\cholesky</label>
+        <link refid="classNp_1_1decompositions_1_1cholesky"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/ghost/projects/git/numphp/src/decompositions/cholesky.php" line="22" column="1" bodyfile="/home/ghost/projects/git/numphp/src/decompositions/cholesky.php" bodystart="22" bodyend="47"/>
+    <listofallmembers>
+      <member refid="classNp_1_1decompositions_1_1cholesky_1a5885c1d3828f0c389b77313070f01355" prot="public" virt="non-virtual"><scope>Np::decompositions::cholesky</scope><name>factory</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

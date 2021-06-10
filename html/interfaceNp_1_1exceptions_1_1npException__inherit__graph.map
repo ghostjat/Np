@@ -1,0 +1,6 @@
+<map id="Np\exceptions\npException" name="Np\exceptions\npException">
+<area shape="rect" id="node3" href="$classNp_1_1exceptions_1_1invalidArgumentException.html" title="{Np\\exceptions\\invalidArgument\lException\n||}" alt="" coords="111,256,314,348"/>
+<area shape="rect" id="node6" href="$classNp_1_1exceptions_1_1runtimeException.html" title="{Np\\exceptions\\runtimeException\n||}" alt="" coords="338,263,549,341"/>
+<area shape="rect" id="node4" href="$classNp_1_1exceptions_1_1dimensionalityMismatch.html" title="{Np\\exceptions\\dimensionality\lMismatch\n||}" alt="" coords="5,396,199,488"/>
+<area shape="rect" id="node5" href="$classNp_1_1exceptions_1_1dtypeException.html" title="{Np\\exceptions\\dtypeException\n||}" alt="" coords="223,403,423,481"/>
+</map>

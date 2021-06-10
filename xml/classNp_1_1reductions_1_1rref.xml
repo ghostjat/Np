@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classNp_1_1reductions_1_1rref" kind="class" language="PHP" prot="public">
+    <compoundname>Np::reductions::rref</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classNp_1_1reductions_1_1rref_1ab4b17df6d73d5b8107b1e3ae16197172" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static Np\reductions\rref::factory</definition>
+        <argsstring>(\Np\matrix $m)</argsstring>
+        <name>factory</name>
+        <param>
+          <type>\<ref refid="classNp_1_1matrix" kindref="compound">Np\matrix</ref></type>
+          <declname>$m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>\Np\matrix</parametertype>
+<parametername>$m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matrix </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ghost/projects/git/numphp/src/reductions/rref.php" line="26" column="1" bodyfile="/home/ghost/projects/git/numphp/src/reductions/rref.php" bodystart="26" bodyend="61"/>
+        <references refid="classNp_1_1matrix_1a8e93f96b90755d4bacecdd6a65b21e62" compoundref="matrix_8php" startline="706" endline="712">Np\matrix\swapRows</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="61">
+        <label>Np\reductions\rref</label>
+        <link refid="classNp_1_1reductions_1_1rref"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/ghost/projects/git/numphp/src/reductions/rref.php" line="19" column="1" bodyfile="/home/ghost/projects/git/numphp/src/reductions/rref.php" bodystart="19" bodyend="63"/>
+    <listofallmembers>
+      <member refid="classNp_1_1reductions_1_1rref_1ab4b17df6d73d5b8107b1e3ae16197172" prot="public" virt="non-virtual"><scope>Np::reductions::rref</scope><name>factory</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

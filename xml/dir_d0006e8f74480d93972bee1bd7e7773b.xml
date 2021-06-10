@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_d0006e8f74480d93972bee1bd7e7773b" kind="dir">
+    <compoundname>/home/ghost/projects/git/numphp/src/decompositions</compoundname>
+    <innerfile refid="cholesky_8php">cholesky.php</innerfile>
+    <innerfile refid="eigen_8php">eigen.php</innerfile>
+    <innerfile refid="lu_8php">lu.php</innerfile>
+    <innerfile refid="svd_8php">svd.php</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/ghost/projects/git/numphp/src/decompositions/"/>
+  </compounddef>
+</doxygen>

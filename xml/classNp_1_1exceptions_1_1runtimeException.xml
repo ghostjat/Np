@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classNp_1_1exceptions_1_1runtimeException" kind="class" language="PHP" prot="public">
+    <compoundname>Np::exceptions::runtimeException</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">npRuntime</basecompoundref>
+    <basecompoundref refid="interfaceNp_1_1exceptions_1_1npException" prot="public" virt="non-virtual">Np\exceptions\npException</basecompoundref>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="63">
+        <label>npRuntime</label>
+      </node>
+      <node id="64">
+        <label>Np\exceptions\npException</label>
+        <link refid="interfaceNp_1_1exceptions_1_1npException"/>
+        <childnode refid="65" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="65">
+        <label>Throwable</label>
+      </node>
+      <node id="62">
+        <label>Np\exceptions\runtimeException</label>
+        <link refid="classNp_1_1exceptions_1_1runtimeException"/>
+        <childnode refid="63" relation="public-inheritance">
+        </childnode>
+        <childnode refid="64" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="67">
+        <label>npRuntime</label>
+      </node>
+      <node id="68">
+        <label>Np\exceptions\npException</label>
+        <link refid="interfaceNp_1_1exceptions_1_1npException"/>
+        <childnode refid="69" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>Throwable</label>
+      </node>
+      <node id="66">
+        <label>Np\exceptions\runtimeException</label>
+        <link refid="classNp_1_1exceptions_1_1runtimeException"/>
+        <childnode refid="67" relation="public-inheritance">
+        </childnode>
+        <childnode refid="68" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/ghost/projects/git/numphp/src/exceptions/runtimeException.php" line="7" column="1" bodyfile="/home/ghost/projects/git/numphp/src/exceptions/runtimeException.php" bodystart="7" bodyend="9"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

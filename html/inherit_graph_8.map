@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$interfaceNp_1_1exceptions_1_1npException.html" title="Np\\exceptions\\npException" alt="" coords="136,82,319,109"/>
+<area shape="rect" id="node3" href="$classNp_1_1exceptions_1_1invalidArgumentException.html" title="Np\\exceptions\\invalidArgument\lException" alt="" coords="371,35,573,76"/>
+<area shape="rect" id="node6" href="$classNp_1_1exceptions_1_1runtimeException.html" title="Np\\exceptions\\runtimeException" alt="" coords="367,111,577,138"/>
+<area shape="rect" id="node4" href="$classNp_1_1exceptions_1_1dimensionalityMismatch.html" title="Np\\exceptions\\dimensionality\lMismatch" alt="" coords="629,5,822,47"/>
+<area shape="rect" id="node5" href="$classNp_1_1exceptions_1_1dtypeException.html" title="Np\\exceptions\\dtypeException" alt="" coords="625,71,825,98"/>
+</map>

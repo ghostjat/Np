@@ -1,1044 +1,1589 @@
 Search.appendIndex(
     [
                 {
-            "fqsen": "\\numphp\\convolve",
+            "fqsen": "\\Np\\convolve",
             "name": "convolve",
-            "summary": "A\u0020fast\u0020lite\u0020memory\u0020efficient\u0020Scientific\u0020Computing\u0020for\u0020php\nConvolve",
-            "url": "classes/numphp-convolve.html"
+            "summary": "Convolve",
+            "url": "classes/Np-convolve.html"
         },                {
-            "fqsen": "\\numphp\\convolve\u003A\u003Aconv1D\u0028\u0029",
+            "fqsen": "\\Np\\convolve\u003A\u003Aconv1D\u0028\u0029",
             "name": "conv1D",
-            "summary": "1D\u0020convolution\u0020between\u0020a\u0020vector\u0020va\u0020and\u0020kernel\u0020kb,\u0020with\u0020a\u0020given\u0020stride.",
-            "url": "classes/numphp-convolve.html#method_conv1D"
+            "summary": "1D\u0020convolution\u0020between\u0020a\u0020vector\u0020v\u0020and\u0020kernel\u0020k,\u0020with\u0020a\u0020given\u0020stride.",
+            "url": "classes/Np-convolve.html#method_conv1D"
         },                {
-            "fqsen": "\\numphp\\convolve\u003A\u003Aconv2D\u0028\u0029",
+            "fqsen": "\\Np\\convolve\u003A\u003Aconv2D\u0028\u0029",
             "name": "conv2D",
             "summary": "2D\u0020convolution\u0020between\u0020a\u0020matrix\u0020ma\u0020and\u0020kernel\u0020kb,\u0020with\u0020a\u0020given\u0020stride.",
-            "url": "classes/numphp-convolve.html#method_conv2D"
+            "url": "classes/Np-convolve.html#method_conv2D"
         },                {
-            "fqsen": "\\numphp\\core\\blas",
+            "fqsen": "\\Np\\core\\blas",
             "name": "blas",
-            "summary": "php\u0020interface\u0020for\u0020OpenBLAS",
-            "url": "classes/numphp-core-blas.html"
+            "summary": "OpenBlas",
+            "url": "classes/Np-core-blas.html"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003Ainit\u0028\u0029",
+            "fqsen": "\\Np\\core\\blas\u003A\u003Ainit\u0028\u0029",
             "name": "init",
             "summary": "",
-            "url": "classes/numphp-core-blas.html#method_init"
+            "url": "classes/Np-core-blas.html#method_init"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003AsetNumThreads\u0028\u0029",
+            "fqsen": "\\Np\\core\\blas\u003A\u003AsetNumThreads\u0028\u0029",
             "name": "setNumThreads",
             "summary": "",
-            "url": "classes/numphp-core-blas.html#method_setNumThreads"
+            "url": "classes/Np-core-blas.html#method_setNumThreads"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003AgetNumThreads\u0028\u0029",
+            "fqsen": "\\Np\\core\\blas\u003A\u003AgetNumThreads\u0028\u0029",
             "name": "getNumThreads",
             "summary": "",
-            "url": "classes/numphp-core-blas.html#method_getNumThreads"
+            "url": "classes/Np-core-blas.html#method_getNumThreads"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003AgetNumPorcs\u0028\u0029",
+            "fqsen": "\\Np\\core\\blas\u003A\u003AgetNumPorcs\u0028\u0029",
             "name": "getNumPorcs",
             "summary": "",
-            "url": "classes/numphp-core-blas.html#method_getNumPorcs"
+            "url": "classes/Np-core-blas.html#method_getNumPorcs"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003AgetConfig\u0028\u0029",
+            "fqsen": "\\Np\\core\\blas\u003A\u003AgetConfig\u0028\u0029",
             "name": "getConfig",
             "summary": "",
-            "url": "classes/numphp-core-blas.html#method_getConfig"
+            "url": "classes/Np-core-blas.html#method_getConfig"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003AgetCoreName\u0028\u0029",
+            "fqsen": "\\Np\\core\\blas\u003A\u003AgetCoreName\u0028\u0029",
             "name": "getCoreName",
             "summary": "",
-            "url": "classes/numphp-core-blas.html#method_getCoreName"
+            "url": "classes/Np-core-blas.html#method_getCoreName"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003AgetNumParallel\u0028\u0029",
+            "fqsen": "\\Np\\core\\blas\u003A\u003AgetNumParallel\u0028\u0029",
             "name": "getNumParallel",
             "summary": "",
-            "url": "classes/numphp-core-blas.html#method_getNumParallel"
+            "url": "classes/Np-core-blas.html#method_getNumParallel"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003Asgemm\u0028\u0029",
-            "name": "sgemm",
+            "fqsen": "\\Np\\core\\blas\u003A\u003Agemm\u0028\u0029",
+            "name": "gemm",
             "summary": "Product\u0020of\u0020general\u0020matrix\u0020and\u0020general\u0020matrix\n\u0020\u0020\u0020C\u0020\u003A\u003D\u0020alpha\u0020\u002A\u0020AB\u0020\u002B\u0020beta\u0020\u002A\u0020C",
-            "url": "classes/numphp-core-blas.html#method_sgemm"
+            "url": "classes/Np-core-blas.html#method_gemm"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003Assymm\u0028\u0029",
-            "name": "ssymm",
+            "fqsen": "\\Np\\core\\blas\u003A\u003Asymm\u0028\u0029",
+            "name": "symm",
             "summary": "Product\u0020of\u0020symmetric\u0020matrix\u0020and\u0020general\u0020matrix\n\u0020\u0020\u0020C\u0020\u003A\u003D\u0020alpha\u0020\u002A\u0020AB\u0020\u002B\u0020beta\u0020\u002A\u0020C\n\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020or\n\u0020\u0020\u0020C\u0020\u003A\u003D\u0020alpha\u0020\u002A\u0020BA\u0020\u002B\u0020beta\u0020\u002A\u0020C",
-            "url": "classes/numphp-core-blas.html#method_ssymm"
+            "url": "classes/Np-core-blas.html#method_symm"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003Assyrk\u0028\u0029",
-            "name": "ssyrk",
+            "fqsen": "\\Np\\core\\blas\u003A\u003Asyrk\u0028\u0029",
+            "name": "syrk",
             "summary": "Update\u0020rank\u0020n\u0020of\u0020symmetric\u0020matrix\n\u0020\u0020\u0020C\u0020\u003A\u003D\u0020alpha\u0020\u002A\u0020A\u0020A\u005ET\u0020\u002B\u0020beta\u0020\u002A\u0020C\n\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020or\n\u0020\u0020\u0020C\u0020\u003A\u003D\u0020alpha\u0020\u002A\u0020A\u005ET\u0020A\u0020\u002B\u0020beta\u0020\u002A\u0020C",
-            "url": "classes/numphp-core-blas.html#method_ssyrk"
+            "url": "classes/Np-core-blas.html#method_syrk"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003Assyr2k\u0028\u0029",
-            "name": "ssyr2k",
+            "fqsen": "\\Np\\core\\blas\u003A\u003Asyr2k\u0028\u0029",
+            "name": "syr2k",
             "summary": "Update\u0020rank\u00202k\u0020of\u0020symmetric\u0020matrix\n\u0020\u0020\u0020C\u0020\u003A\u003D\u0020alpha\u0020\u002A\u0020A\u0020B\u005ET\u0020\u002B\u0020alpha\u0020B\u0020A\u005ET\u0020\u002B\u0020beta\u0020\u002A\u0020C\n\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020or\n\u0020\u0020\u0020C\u0020\u003A\u003D\u0020alpha\u0020\u002A\u0020B\u005ET\u0020A\u0020\u002B\u0020alpha\u0020A\u005ET\u0020B\u0020\u002B\u0020beta\u0020\u002A\u0020C",
-            "url": "classes/numphp-core-blas.html#method_ssyr2k"
+            "url": "classes/Np-core-blas.html#method_syr2k"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003Adgemm\u0028\u0029",
-            "name": "dgemm",
+            "fqsen": "\\Np\\core\\blas\u003A\u003Agemv\u0028\u0029",
+            "name": "gemv",
             "summary": "",
-            "url": "classes/numphp-core-blas.html#method_dgemm"
+            "url": "classes/Np-core-blas.html#method_gemv"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003Adgemv\u0028\u0029",
-            "name": "dgemv",
-            "summary": "",
-            "url": "classes/numphp-core-blas.html#method_dgemv"
-        },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003Asgemv\u0028\u0029",
-            "name": "sgemv",
-            "summary": "Compute\u0020the\u0020product\u0020of\u0020a\u0020general\u0020matrix\u0020and\u0020a\u0020vector.",
-            "url": "classes/numphp-core-blas.html#method_sgemv"
-        },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003Asgbmv\u0028\u0029",
-            "name": "sgbmv",
+            "fqsen": "\\Np\\core\\blas\u003A\u003Agbmv\u0028\u0029",
+            "name": "gbmv",
             "summary": "Compute\u0020the\u0020product\u0020of\u0020a\u0020general\u0020matrix\u0020and\u0020a\u0020vector\u0020stored\u0020in\u0020band\u0020format.",
-            "url": "classes/numphp-core-blas.html#method_sgbmv"
+            "url": "classes/Np-core-blas.html#method_gbmv"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003Asger\u0028\u0029",
-            "name": "sger",
+            "fqsen": "\\Np\\core\\blas\u003A\u003Ager\u0028\u0029",
+            "name": "ger",
             "summary": "Compute\u0020the\u0020product\u0020of\u0020a\u0020column\u0020vector\u0020and\u0020a\u0020row\u0020vector.\u0020\u0028Real\u0020number\u0029\n\u0020\u0020\u0020A\u0020\u003A\u003D\u0020alpha\u0020\u002A\u0020x\u0020y\u005Et\u0020\u002B\u0020A",
-            "url": "classes/numphp-core-blas.html#method_sger"
+            "url": "classes/Np-core-blas.html#method_ger"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003Addot\u0028\u0029",
-            "name": "ddot",
+            "fqsen": "\\Np\\core\\blas\u003A\u003Adot\u0028\u0029",
+            "name": "dot",
             "summary": "",
-            "url": "classes/numphp-core-blas.html#method_ddot"
+            "url": "classes/Np-core-blas.html#method_dot"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003Asdot\u0028\u0029",
-            "name": "sdot",
-            "summary": "Calculate\u0020the\u0020inner\u0020product\u0020value\u0020between\u0020vectors.",
-            "url": "classes/numphp-core-blas.html#method_sdot"
-        },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003Admax\u0028\u0029",
-            "name": "dmax",
-            "summary": "",
-            "url": "classes/numphp-core-blas.html#method_dmax"
-        },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003Asmax\u0028\u0029",
-            "name": "smax",
+            "fqsen": "\\Np\\core\\blas\u003A\u003Amax\u0028\u0029",
+            "name": "max",
             "summary": "Calculates\u0020the\u0020index\u0020of\u0020the\u0020element\u0020with\u0020the\u0020largest\u0020absolute\u0020value\u0020in\u0020the\u0020vector.",
-            "url": "classes/numphp-core-blas.html#method_smax"
+            "url": "classes/Np-core-blas.html#method_max"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003Admin\u0028\u0029",
-            "name": "dmin",
-            "summary": "",
-            "url": "classes/numphp-core-blas.html#method_dmin"
-        },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003Asmin\u0028\u0029",
-            "name": "smin",
+            "fqsen": "\\Np\\core\\blas\u003A\u003Amin\u0028\u0029",
+            "name": "min",
             "summary": "Calculates\u0020the\u0020index\u0020of\u0020the\u0020element\u0020with\u0020the\u0020smallest\u0020absolute\u0020value\u0020in\u0020the\u0020vector.",
-            "url": "classes/numphp-core-blas.html#method_smin"
+            "url": "classes/Np-core-blas.html#method_min"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003Adswap\u0028\u0029",
-            "name": "dswap",
-            "summary": "",
-            "url": "classes/numphp-core-blas.html#method_dswap"
-        },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003Asswap\u0028\u0029",
-            "name": "sswap",
+            "fqsen": "\\Np\\core\\blas\u003A\u003Aswap\u0028\u0029",
+            "name": "swap",
             "summary": "Exchange\u0020the\u0020contents\u0020of\u0020the\u0020vector.",
-            "url": "classes/numphp-core-blas.html#method_sswap"
+            "url": "classes/Np-core-blas.html#method_swap"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003Ascopy\u0028\u0029",
-            "name": "scopy",
+            "fqsen": "\\Np\\core\\blas\u003A\u003Acopy\u0028\u0029",
+            "name": "copy",
             "summary": "Copy\u0020the\u0020vector\u0020from\u0020X\u0020to\u0020Y.",
-            "url": "classes/numphp-core-blas.html#method_scopy"
+            "url": "classes/Np-core-blas.html#method_copy"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003Asnrm2\u0028\u0029",
-            "name": "snrm2",
+            "fqsen": "\\Np\\core\\blas\u003A\u003Anrm2\u0028\u0029",
+            "name": "nrm2",
             "summary": "Compute\u0020the\u0020Euclidean\u0020norm\u0020of\u0020a\u0020vector.",
-            "url": "classes/numphp-core-blas.html#method_snrm2"
+            "url": "classes/Np-core-blas.html#method_nrm2"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003Aaxpy\u0028\u0029",
+            "fqsen": "\\Np\\core\\blas\u003A\u003Aaxpy\u0028\u0029",
             "name": "axpy",
             "summary": "Add\u0020vectors\n\u0020\u0020\u0020Y\u0020\u003A\u003D\u0020alpha\u0020\u002A\u0020X\u0020\u002B\u0020Y",
-            "url": "classes/numphp-core-blas.html#method_axpy"
+            "url": "classes/Np-core-blas.html#method_axpy"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003Aasum\u0028\u0029",
+            "fqsen": "\\Np\\core\\blas\u003A\u003Aasum\u0028\u0029",
             "name": "asum",
             "summary": "Calculates\u0020the\u0020sum\u0020of\u0020the\u0020absolute\u0020values\u0020of\u0020each\u0020component\u0020of\u0020the\u0020vector.",
-            "url": "classes/numphp-core-blas.html#method_asum"
+            "url": "classes/Np-core-blas.html#method_asum"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003Asrot\u0028\u0029",
-            "name": "srot",
+            "fqsen": "\\Np\\core\\blas\u003A\u003Arotate\u0028\u0029",
+            "name": "rotate",
             "summary": "Rotate\u0020about\u0020a\u0020given\u0020point.",
-            "url": "classes/numphp-core-blas.html#method_srot"
+            "url": "classes/Np-core-blas.html#method_rotate"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003Asrotg\u0028\u0029",
-            "name": "srotg",
+            "fqsen": "\\Np\\core\\blas\u003A\u003Adrotg\u0028\u0029",
+            "name": "drotg",
             "summary": "Give\u0020the\u0020point\u0020P\u0020\u0028a,\u0020b\u0029.",
-            "url": "classes/numphp-core-blas.html#method_srotg"
+            "url": "classes/Np-core-blas.html#method_drotg"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003Asscal\u0028\u0029",
-            "name": "sscal",
+            "fqsen": "\\Np\\core\\blas\u003A\u003Asrotg\u0028\u0029",
+            "name": "srotg",
+            "summary": "",
+            "url": "classes/Np-core-blas.html#method_srotg"
+        },                {
+            "fqsen": "\\Np\\core\\blas\u003A\u003Ascale\u0028\u0029",
+            "name": "scale",
             "summary": "Multiply\u0020vector\u0020by\u0020scalar.",
-            "url": "classes/numphp-core-blas.html#method_sscal"
+            "url": "classes/Np-core-blas.html#method_scale"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003ACblasLeft",
+            "fqsen": "\\Np\\core\\blas\u003A\u003ACblasLeft",
             "name": "CblasLeft",
             "summary": "",
-            "url": "classes/numphp-core-blas.html#constant_CblasLeft"
+            "url": "classes/Np-core-blas.html#constant_CblasLeft"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003ACblasRight",
+            "fqsen": "\\Np\\core\\blas\u003A\u003ACblasRight",
             "name": "CblasRight",
             "summary": "",
-            "url": "classes/numphp-core-blas.html#constant_CblasRight"
+            "url": "classes/Np-core-blas.html#constant_CblasRight"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003ACblasUpper",
+            "fqsen": "\\Np\\core\\blas\u003A\u003ACblasUpper",
             "name": "CblasUpper",
             "summary": "",
-            "url": "classes/numphp-core-blas.html#constant_CblasUpper"
+            "url": "classes/Np-core-blas.html#constant_CblasUpper"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003ACblasLower",
+            "fqsen": "\\Np\\core\\blas\u003A\u003ACblasLower",
             "name": "CblasLower",
             "summary": "",
-            "url": "classes/numphp-core-blas.html#constant_CblasLower"
+            "url": "classes/Np-core-blas.html#constant_CblasLower"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003ACblasNonUnit",
+            "fqsen": "\\Np\\core\\blas\u003A\u003ACblasNonUnit",
             "name": "CblasNonUnit",
             "summary": "",
-            "url": "classes/numphp-core-blas.html#constant_CblasNonUnit"
+            "url": "classes/Np-core-blas.html#constant_CblasNonUnit"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003ACblasUnit",
+            "fqsen": "\\Np\\core\\blas\u003A\u003ACblasUnit",
             "name": "CblasUnit",
             "summary": "",
-            "url": "classes/numphp-core-blas.html#constant_CblasUnit"
+            "url": "classes/Np-core-blas.html#constant_CblasUnit"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003ACblasRowMajor",
+            "fqsen": "\\Np\\core\\blas\u003A\u003ACblasRowMajor",
             "name": "CblasRowMajor",
             "summary": "",
-            "url": "classes/numphp-core-blas.html#constant_CblasRowMajor"
+            "url": "classes/Np-core-blas.html#constant_CblasRowMajor"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003ACblasColMajor",
+            "fqsen": "\\Np\\core\\blas\u003A\u003ACblasColMajor",
             "name": "CblasColMajor",
             "summary": "",
-            "url": "classes/numphp-core-blas.html#constant_CblasColMajor"
+            "url": "classes/Np-core-blas.html#constant_CblasColMajor"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003ACblasNoTrans",
+            "fqsen": "\\Np\\core\\blas\u003A\u003ACblasNoTrans",
             "name": "CblasNoTrans",
             "summary": "",
-            "url": "classes/numphp-core-blas.html#constant_CblasNoTrans"
+            "url": "classes/Np-core-blas.html#constant_CblasNoTrans"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003ACblasTrans",
+            "fqsen": "\\Np\\core\\blas\u003A\u003ACblasTrans",
             "name": "CblasTrans",
             "summary": "",
-            "url": "classes/numphp-core-blas.html#constant_CblasTrans"
+            "url": "classes/Np-core-blas.html#constant_CblasTrans"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003ACblasConjTrans",
+            "fqsen": "\\Np\\core\\blas\u003A\u003ACblasConjTrans",
             "name": "CblasConjTrans",
             "summary": "",
-            "url": "classes/numphp-core-blas.html#constant_CblasConjTrans"
+            "url": "classes/Np-core-blas.html#constant_CblasConjTrans"
         },                {
-            "fqsen": "\\numphp\\core\\blas\u003A\u003A\u0024ffi_blas",
+            "fqsen": "\\Np\\core\\blas\u003A\u003A\u0024ffi_blas",
             "name": "ffi_blas",
             "summary": "",
-            "url": "classes/numphp-core-blas.html#property_ffi_blas"
+            "url": "classes/Np-core-blas.html#property_ffi_blas"
         },                {
-            "fqsen": "\\numphp\\core\\lapack",
+            "fqsen": "\\Np\\core\\lapack",
             "name": "lapack",
-            "summary": "php\u0020interface\u0020for\u0020LAPACK",
-            "url": "classes/numphp-core-lapack.html"
+            "summary": "Lapack",
+            "url": "classes/Np-core-lapack.html"
         },                {
-            "fqsen": "\\numphp\\core\\lapack\u003A\u003Ainit\u0028\u0029",
+            "fqsen": "\\Np\\core\\lapack\u003A\u003Ainit\u0028\u0029",
             "name": "init",
             "summary": "",
-            "url": "classes/numphp-core-lapack.html#method_init"
+            "url": "classes/Np-core-lapack.html#method_init"
         },                {
-            "fqsen": "\\numphp\\core\\lapack\u003A\u003Asgetrf\u0028\u0029",
-            "name": "sgetrf",
+            "fqsen": "\\Np\\core\\lapack\u003A\u003Agetrf\u0028\u0029",
+            "name": "getrf",
             "summary": "",
-            "url": "classes/numphp-core-lapack.html#method_sgetrf"
+            "url": "classes/Np-core-lapack.html#method_getrf"
         },                {
-            "fqsen": "\\numphp\\core\\lapack\u003A\u003Asgetri\u0028\u0029",
-            "name": "sgetri",
+            "fqsen": "\\Np\\core\\lapack\u003A\u003Agetri\u0028\u0029",
+            "name": "getri",
             "summary": "",
-            "url": "classes/numphp-core-lapack.html#method_sgetri"
+            "url": "classes/Np-core-lapack.html#method_getri"
         },                {
-            "fqsen": "\\numphp\\core\\lapack\u003A\u003Asgesdd\u0028\u0029",
-            "name": "sgesdd",
+            "fqsen": "\\Np\\core\\lapack\u003A\u003Agesdd\u0028\u0029",
+            "name": "gesdd",
             "summary": "",
-            "url": "classes/numphp-core-lapack.html#method_sgesdd"
+            "url": "classes/Np-core-lapack.html#method_gesdd"
         },                {
-            "fqsen": "\\numphp\\core\\lapack\u003A\u003Aspotrf\u0028\u0029",
-            "name": "spotrf",
+            "fqsen": "\\Np\\core\\lapack\u003A\u003Apotrf\u0028\u0029",
+            "name": "potrf",
             "summary": "",
-            "url": "classes/numphp-core-lapack.html#method_spotrf"
+            "url": "classes/Np-core-lapack.html#method_potrf"
         },                {
-            "fqsen": "\\numphp\\core\\lapack\u003A\u003Asgeev\u0028\u0029",
-            "name": "sgeev",
+            "fqsen": "\\Np\\core\\lapack\u003A\u003Ageev\u0028\u0029",
+            "name": "geev",
             "summary": "",
-            "url": "classes/numphp-core-lapack.html#method_sgeev"
+            "url": "classes/Np-core-lapack.html#method_geev"
         },                {
-            "fqsen": "\\numphp\\core\\lapack\u003A\u003Assyev\u0028\u0029",
-            "name": "ssyev",
+            "fqsen": "\\Np\\core\\lapack\u003A\u003Asyev\u0028\u0029",
+            "name": "syev",
             "summary": "",
-            "url": "classes/numphp-core-lapack.html#method_ssyev"
+            "url": "classes/Np-core-lapack.html#method_syev"
         },                {
-            "fqsen": "\\numphp\\core\\lapack\u003A\u003Aslange\u0028\u0029",
-            "name": "slange",
+            "fqsen": "\\Np\\core\\lapack\u003A\u003Alange\u0028\u0029",
+            "name": "lange",
             "summary": "",
-            "url": "classes/numphp-core-lapack.html#method_slange"
+            "url": "classes/Np-core-lapack.html#method_lange"
         },                {
-            "fqsen": "\\numphp\\core\\lapack\u003A\u003Asgels\u0028\u0029",
+            "fqsen": "\\Np\\core\\lapack\u003A\u003Asort\u0028\u0029",
+            "name": "sort",
+            "summary": "",
+            "url": "classes/Np-core-lapack.html#method_sort"
+        },                {
+            "fqsen": "\\Np\\core\\lapack\u003A\u003Asgels\u0028\u0029",
             "name": "sgels",
             "summary": "",
-            "url": "classes/numphp-core-lapack.html#method_sgels"
+            "url": "classes/Np-core-lapack.html#method_sgels"
         },                {
-            "fqsen": "\\numphp\\core\\lapack\u003A\u003AROW_MAJOR",
+            "fqsen": "\\Np\\core\\lapack\u003A\u003AROW_MAJOR",
             "name": "ROW_MAJOR",
             "summary": "",
-            "url": "classes/numphp-core-lapack.html#constant_ROW_MAJOR"
+            "url": "classes/Np-core-lapack.html#constant_ROW_MAJOR"
         },                {
-            "fqsen": "\\numphp\\core\\lapack\u003A\u003ACOL_MAJOR",
+            "fqsen": "\\Np\\core\\lapack\u003A\u003ACOL_MAJOR",
             "name": "COL_MAJOR",
             "summary": "",
-            "url": "classes/numphp-core-lapack.html#constant_COL_MAJOR"
+            "url": "classes/Np-core-lapack.html#constant_COL_MAJOR"
         },                {
-            "fqsen": "\\numphp\\core\\lapack\u003A\u003AUpper",
+            "fqsen": "\\Np\\core\\lapack\u003A\u003AUpper",
             "name": "Upper",
             "summary": "",
-            "url": "classes/numphp-core-lapack.html#constant_Upper"
+            "url": "classes/Np-core-lapack.html#constant_Upper"
         },                {
-            "fqsen": "\\numphp\\core\\lapack\u003A\u003ALower",
+            "fqsen": "\\Np\\core\\lapack\u003A\u003ALower",
             "name": "Lower",
             "summary": "",
-            "url": "classes/numphp-core-lapack.html#constant_Lower"
+            "url": "classes/Np-core-lapack.html#constant_Lower"
         },                {
-            "fqsen": "\\numphp\\core\\lapack\u003A\u003A\u0024ffi_lapack",
+            "fqsen": "\\Np\\core\\lapack\u003A\u003AINCR",
+            "name": "INCR",
+            "summary": "",
+            "url": "classes/Np-core-lapack.html#constant_INCR"
+        },                {
+            "fqsen": "\\Np\\core\\lapack\u003A\u003ADECR",
+            "name": "DECR",
+            "summary": "",
+            "url": "classes/Np-core-lapack.html#constant_DECR"
+        },                {
+            "fqsen": "\\Np\\core\\lapack\u003A\u003A\u0024ffi_lapack",
             "name": "ffi_lapack",
             "summary": "",
-            "url": "classes/numphp-core-lapack.html#property_ffi_lapack"
+            "url": "classes/Np-core-lapack.html#property_ffi_lapack"
         },                {
-            "fqsen": "\\numphp\\matrix",
+            "fqsen": "\\Np\\matrix",
             "name": "matrix",
-            "summary": "A\u0020fast\u0020lite\u0020memory\u0020efficient\u0020Scientific\u0020Computing\u0020for\u0020php\nMatrix",
-            "url": "classes/numphp-matrix.html"
+            "summary": "Matrix\nA\u0020fast\u0020lite\u0020memory\u0020efficient\u0020Scientific\u0020Computing\u0020for\u0020php",
+            "url": "classes/Np-matrix.html"
         },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Afactory\u0028\u0029",
+            "fqsen": "\\Np\\matrix\u003A\u003Afactory\u0028\u0029",
             "name": "factory",
             "summary": "create\u0020empty\u00202d\u0020matrix\u0020for\u0020given\u0020data\u0020type",
-            "url": "classes/numphp-matrix.html#method_factory"
+            "url": "classes/Np-matrix.html#method_factory"
         },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Aar\u0028\u0029",
+            "fqsen": "\\Np\\matrix\u003A\u003Aar\u0028\u0029",
             "name": "ar",
             "summary": "create\u00202d\u0020matrix\u0020using\u0020php\u0020array",
-            "url": "classes/numphp-matrix.html#method_ar"
+            "url": "classes/Np-matrix.html#method_ar"
         },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Arandn\u0028\u0029",
-            "name": "randn",
-            "summary": "Create\u0020Matrix\u0020with\u0020random\u0020values",
-            "url": "classes/numphp-matrix.html#method_randn"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Auniform\u0028\u0029",
-            "name": "uniform",
-            "summary": "Return\u00202d\u0020matrix\u0020with\u0020uniform\u0020values",
-            "url": "classes/numphp-matrix.html#method_uniform"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Azeros\u0028\u0029",
-            "name": "zeros",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method_zeros"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Aones\u0028\u0029",
+            "fqsen": "\\Np\\matrix\u003A\u003Aones\u0028\u0029",
             "name": "ones",
             "summary": "create\u0020one\u0020like\u00202d\u0020matrix",
-            "url": "classes/numphp-matrix.html#method_ones"
+            "url": "classes/Np-matrix.html#method_ones"
         },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Anull\u0028\u0029",
+            "fqsen": "\\Np\\matrix\u003A\u003Arandn\u0028\u0029",
+            "name": "randn",
+            "summary": "Create\u0020Matrix\u0020with\u0020random\u0020values",
+            "url": "classes/Np-matrix.html#method_randn"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Auniform\u0028\u0029",
+            "name": "uniform",
+            "summary": "Return\u00202d\u0020matrix\u0020with\u0020uniform\u0020values",
+            "url": "classes/Np-matrix.html#method_uniform"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Azeros\u0028\u0029",
+            "name": "zeros",
+            "summary": "Return\u0020a\u0020zero\u0020matrix\u0020with\u0020the\u0020given\u0020dimensions.",
+            "url": "classes/Np-matrix.html#method_zeros"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Anull\u0028\u0029",
             "name": "null",
             "summary": "create\u0020a\u0020null\u0020like\u00202d\u0020matrix",
-            "url": "classes/numphp-matrix.html#method_null"
+            "url": "classes/Np-matrix.html#method_null"
         },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Afull\u0028\u0029",
+            "fqsen": "\\Np\\matrix\u003A\u003Afull\u0028\u0029",
             "name": "full",
             "summary": "create\u0020a\u00202d\u0020matrix\u0020with\u0020given\u0020scalar\u0020value",
-            "url": "classes/numphp-matrix.html#method_full"
+            "url": "classes/Np-matrix.html#method_full"
         },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Adiagonal\u0028\u0029",
+            "fqsen": "\\Np\\matrix\u003A\u003Adiagonal\u0028\u0029",
             "name": "diagonal",
             "summary": "create\u0020a\u0020diagonal\u00202d\u0020matrix\u0020with\u0020given\u00201d\u0020array\u003B",
-            "url": "classes/numphp-matrix.html#method_diagonal"
+            "url": "classes/Np-matrix.html#method_diagonal"
         },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Apoisson\u0028\u0029",
+            "fqsen": "\\Np\\matrix\u003A\u003Apoisson\u0028\u0029",
             "name": "poisson",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method_poisson"
+            "summary": "Generate\u0020a\u0020m\u0020x\u0020n\u0020matrix\u0020with\u0020elements\u0020from\u0020a\u0020Poisson\u0020distribution.",
+            "url": "classes/Np-matrix.html#method_poisson"
         },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Agaussian\u0028\u0029",
+            "fqsen": "\\Np\\matrix\u003A\u003Agaussian\u0028\u0029",
             "name": "gaussian",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method_gaussian"
+            "summary": "Return\u0020a\u0020standard\u0020normally\u0020distributed\u0020random\u0020matrix\u0020i.e\u0020values\nbetween\u0020\u002D1\u0020and\u00201.",
+            "url": "classes/Np-matrix.html#method_gaussian"
         },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Aidentity\u0028\u0029",
+            "fqsen": "\\Np\\matrix\u003A\u003Aidentity\u0028\u0029",
             "name": "identity",
             "summary": "create\u0020an\u0020identity\u0020matrix\u0020with\u0020the\u0020given\u0020dimensions.",
-            "url": "classes/numphp-matrix.html#method_identity"
+            "url": "classes/Np-matrix.html#method_identity"
         },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Aconvolve\u0028\u0029",
+            "fqsen": "\\Np\\matrix\u003A\u003Aconvolve\u0028\u0029",
             "name": "convolve",
             "summary": "2D\u0020convolution\u0020between\u0020a\u0020matrix\u0020ma\u0020and\u0020kernel\u0020kb,\u0020with\u0020a\u0020given\u0020stride.",
-            "url": "classes/numphp-matrix.html#method_convolve"
+            "url": "classes/Np-matrix.html#method_convolve"
         },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Atrace\u0028\u0029",
+            "fqsen": "\\Np\\matrix\u003A\u003Adet\u0028\u0029",
+            "name": "det",
+            "summary": "Calculate\u0020the\u0020determinant\u0020of\u0020the\u0020matrix.",
+            "url": "classes/Np-matrix.html#method_det"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Atrace\u0028\u0029",
             "name": "trace",
-            "summary": "trace",
-            "url": "classes/numphp-matrix.html#method_trace"
+            "summary": "Return\u0020the\u0020trace\u0020of\u0020the\u0020matrix\u0020i.e\u0020the\u0020sum\u0020of\u0020all\u0020diagonal\u0020elements\u0020of\u0020a\u0020square\u0020matrix.",
+            "url": "classes/Np-matrix.html#method_trace"
         },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AdignoalInterChange\u0028\u0029",
+            "fqsen": "\\Np\\matrix\u003A\u003AdignoalInterChange\u0028\u0029",
             "name": "dignoalInterChange",
             "summary": "dignoalInterChange",
-            "url": "classes/numphp-matrix.html#method_dignoalInterChange"
+            "url": "classes/Np-matrix.html#method_dignoalInterChange"
         },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AdotMatrix\u0028\u0029",
-            "name": "dotMatrix",
-            "summary": "get\u0020matrix\u0020dot\u0020product",
-            "url": "classes/numphp-matrix.html#method_dotMatrix"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AmulMatrixVector\u0028\u0029",
-            "name": "mulMatrixVector",
-            "summary": "get\u0020multiplication\u0020of\u0020matrix\u0020vector",
-            "url": "classes/numphp-matrix.html#method_mulMatrixVector"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Amultiply\u0028\u0029",
+            "fqsen": "\\Np\\matrix\u003A\u003Amultiply\u0028\u0029",
             "name": "multiply",
             "summary": "multiply\u0020this\u0020matrix\u0020with\u0020another\u0020matrix\u007Cscalar\u0020element\u002Dwise\nMatrix\u0020Scalar\\Matrix\u0020multiplication",
-            "url": "classes/numphp-matrix.html#method_multiply"
+            "url": "classes/Np-matrix.html#method_multiply"
         },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AmultiplyMatrix\u0028\u0029",
-            "name": "multiplyMatrix",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method_multiplyMatrix"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AmultiplyVector\u0028\u0029",
+            "fqsen": "\\Np\\matrix\u003A\u003AmultiplyVector\u0028\u0029",
             "name": "multiplyVector",
             "summary": "",
-            "url": "classes/numphp-matrix.html#method_multiplyVector"
+            "url": "classes/Np-matrix.html#method_multiplyVector"
         },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AmultiplyScalar\u0028\u0029",
-            "name": "multiplyScalar",
+            "fqsen": "\\Np\\matrix\u003A\u003AmultiplyMatrix\u0028\u0029",
+            "name": "multiplyMatrix",
             "summary": "",
-            "url": "classes/numphp-matrix.html#method_multiplyScalar"
+            "url": "classes/Np-matrix.html#method_multiplyMatrix"
         },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Asum\u0028\u0029",
+            "fqsen": "\\Np\\matrix\u003A\u003AsumRows\u0028\u0029",
+            "name": "sumRows",
+            "summary": "Sum\u0020of\u0020Rows\u0020of\u0020matrix",
+            "url": "classes/Np-matrix.html#method_sumRows"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Asum\u0028\u0029",
             "name": "sum",
-            "summary": "\/\u002A\u002A\nSum\u0020of\u0020two\u0020matrix\u0020or\u0020a\u0020scalar\u0020to\u0020current\u0020matrix",
-            "url": "classes/numphp-matrix.html#method_sum"
+            "summary": "Sum\u0020of\u0020two\u0020matrix,\u0020vector\u0020or\u0020a\u0020scalar\u0020to\u0020current\u0020matrix",
+            "url": "classes/Np-matrix.html#method_sum"
         },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Asubtract\u0028\u0029",
-            "name": "subtract",
-            "summary": "subtract\u0020another\u0020matrix\u0020or\u0020a\u0020scalar\u0020to\u0020this\u0020matrix",
-            "url": "classes/numphp-matrix.html#method_subtract"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Asquare\u0028\u0029",
-            "name": "square",
+            "fqsen": "\\Np\\matrix\u003A\u003AsumScalar\u0028\u0029",
+            "name": "sumScalar",
             "summary": "",
-            "url": "classes/numphp-matrix.html#method_square"
+            "url": "classes/Np-matrix.html#method_sumScalar"
         },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Ais_zero\u0028\u0029",
-            "name": "is_zero",
+            "fqsen": "\\Np\\matrix\u003A\u003AsumMatrix\u0028\u0029",
+            "name": "sumMatrix",
             "summary": "",
-            "url": "classes/numphp-matrix.html#method_is_zero"
+            "url": "classes/Np-matrix.html#method_sumMatrix"
         },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Ais_rowZero\u0028\u0029",
-            "name": "is_rowZero",
-            "summary": "is\u0020row\u0020zero",
-            "url": "classes/numphp-matrix.html#method_is_rowZero"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Ahas_ZeroRow\u0028\u0029",
-            "name": "has_ZeroRow",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method_has_ZeroRow"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Atranspose\u0028\u0029",
-            "name": "transpose",
-            "summary": "transpose\u0020the\u0020matrix",
-            "url": "classes/numphp-matrix.html#method_transpose"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AswapValue\u0028\u0029",
-            "name": "swapValue",
-            "summary": "swap\u0020specific\u0020values\u0020in\u0020tensor",
-            "url": "classes/numphp-matrix.html#method_swapValue"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AswapRows\u0028\u0029",
-            "name": "swapRows",
-            "summary": "swap\u0020specific\u0020rows\u0020in\u0020tensor",
-            "url": "classes/numphp-matrix.html#method_swapRows"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AswapCols\u0028\u0029",
-            "name": "swapCols",
-            "summary": "swap\u0020specific\u0020cols\u0020in\u0020tensor",
-            "url": "classes/numphp-matrix.html#method_swapCols"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Ascale\u0028\u0029",
-            "name": "scale",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method_scale"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AscaleRow\u0028\u0029",
-            "name": "scaleRow",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method_scaleRow"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AaddScaleRow\u0028\u0029",
-            "name": "addScaleRow",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method_addScaleRow"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Aaugment\u0028\u0029",
-            "name": "augment",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method_augment"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Aref\u0028\u0029",
-            "name": "ref",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method_ref"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Acholesky\u0028\u0029",
-            "name": "cholesky",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method_cholesky"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Arref\u0028\u0029",
-            "name": "rref",
-            "summary": "RREF\nThe\u0020reduced\u0020row\u0020echelon\u0020form\u0020\u0028RREF\u0029\u0020of\u0020a\u0020matrix.",
-            "url": "classes/numphp-matrix.html#method_rref"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Adeterminant\u0028\u0029",
-            "name": "determinant",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method_determinant"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AcopyMatrix\u0028\u0029",
-            "name": "copyMatrix",
-            "summary": "make\u0020copy\u0020of\u0020the\u0020matrix",
-            "url": "classes/numphp-matrix.html#method_copyMatrix"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Adiminish_left\u0028\u0029",
-            "name": "diminish_left",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method_diminish_left"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Adiminish_right\u0028\u0029",
-            "name": "diminish_right",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method_diminish_right"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AargMax\u0028\u0029",
-            "name": "argMax",
-            "summary": "Return\u0020the\u0020index\u0020of\u0020the\u0020maximum\u0020element\u0020in\u0020every\u0020row\u0020of\u0020the\u0020matrix.",
-            "url": "classes/numphp-matrix.html#method_argMax"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AargMin\u0028\u0029",
-            "name": "argMin",
-            "summary": "Return\u0020the\u0020index\u0020of\u0020the\u0020minimum\u0020element\u0020in\u0020every\u0020row\u0020of\u0020the\u0020matrix.",
-            "url": "classes/numphp-matrix.html#method_argMin"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AsetData\u0028\u0029",
-            "name": "setData",
-            "summary": "Set\u0020given\u0020data\u0020in\u0020matrix",
-            "url": "classes/numphp-matrix.html#method_setData"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AgetShape\u0028\u0029",
-            "name": "getShape",
-            "summary": "get\u0020the\u0020shape\u0020of\u0020matrix",
-            "url": "classes/numphp-matrix.html#method_getShape"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AisSquare\u0028\u0029",
-            "name": "isSquare",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method_isSquare"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AgetDtype\u0028\u0029",
-            "name": "getDtype",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method_getDtype"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003ArowAsVector\u0028\u0029",
-            "name": "rowAsVector",
-            "summary": "Return\u0020a\u0020row\u0020as\u0020vector\u0020from\u0020the\u0020matrix.",
-            "url": "classes/numphp-matrix.html#method_rowAsVector"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AcolAsVector\u0028\u0029",
-            "name": "colAsVector",
-            "summary": "Return\u0020a\u0020col\u0020as\u0020vector\u0020from\u0020the\u0020matrix.",
-            "url": "classes/numphp-matrix.html#method_colAsVector"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AdiagonalAsVector\u0028\u0029",
-            "name": "diagonalAsVector",
-            "summary": "Return\u0020the\u0020diagonal\u0020elements\u0020of\u0020a\u0020square\u0020matrix\u0020as\u0020a\u0020vector.",
-            "url": "classes/numphp-matrix.html#method_diagonalAsVector"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AgetDiagonalVal\u0028\u0029",
-            "name": "getDiagonalVal",
-            "summary": "get\u0020a\u0020diagonal\u0020value\u0020from\u0020matrix",
-            "url": "classes/numphp-matrix.html#method_getDiagonalVal"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Ainverse\u0028\u0029",
-            "name": "inverse",
-            "summary": "Compute\u0020the\u0020multiplicative\u0020inverse\u0020of\u0020the\u0020matrix.",
-            "url": "classes/numphp-matrix.html#method_inverse"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003ApseudoInverse\u0028\u0029",
-            "name": "pseudoInverse",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method_pseudoInverse"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Asvd\u0028\u0029",
-            "name": "svd",
-            "summary": "Compute\u0020the\u0020singular\u0020value\u0020decomposition\u0020of\u0020a\u0020matrix\u0020and\nreturn\u0020an\u0020object\u0020of\u0020the\u0020singular\u0020values\u0020and\u0020unitary\u0020matrices",
-            "url": "classes/numphp-matrix.html#method_svd"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Aeign\u0028\u0029",
-            "name": "eign",
-            "summary": "Compute\u0020the\u0020eigen\u0020decomposition\u0020of\u0020a\u0020general\u0020matrix.",
-            "url": "classes/numphp-matrix.html#method_eign"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Alu\u0028\u0029",
-            "name": "lu",
-            "summary": "Compute\u0020the\u0020LU\u0020factorization\u0020of\u0020matrix.",
-            "url": "classes/numphp-matrix.html#method_lu"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AnormL1\u0028\u0029",
-            "name": "normL1",
-            "summary": "Return\u0020the\u0020L1\u0020norm\u0020of\u0020the\u0020matrix.",
-            "url": "classes/numphp-matrix.html#method_normL1"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AnormL2\u0028\u0029",
-            "name": "normL2",
-            "summary": "Return\u0020the\u0020L2\u0020norm\u0020of\u0020the\u0020matrix.",
-            "url": "classes/numphp-matrix.html#method_normL2"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AnormINF\u0028\u0029",
-            "name": "normINF",
-            "summary": "Return\u0020the\u0020L1\u0020norm\u0020of\u0020the\u0020matrix.",
-            "url": "classes/numphp-matrix.html#method_normINF"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AnormFrob\u0028\u0029",
-            "name": "normFrob",
-            "summary": "Return\u0020the\u0020Frobenius\u0020norm\u0020of\u0020the\u0020matrix.",
-            "url": "classes/numphp-matrix.html#method_normFrob"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Adeterminate\u0028\u0029",
-            "name": "determinate",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method_determinate"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Amap\u0028\u0029",
-            "name": "map",
-            "summary": "Run\u0020a\u0020function\u0020over\u0020all\u0020of\u0020the\u0020elements\u0020in\u0020the\u0020matrix.",
-            "url": "classes/numphp-matrix.html#method_map"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Aabs\u0028\u0029",
-            "name": "abs",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method_abs"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AisSymmetric\u0028\u0029",
-            "name": "isSymmetric",
-            "summary": "Is\u0020the\u0020matrix\u0020symmetric\u0020i.e.\u0020is\u0020it\u0020equal\u0020to\u0020its\u0020own\u0020transpose\u003F",
-            "url": "classes/numphp-matrix.html#method_isSymmetric"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Aflatten\u0028\u0029",
-            "name": "flatten",
-            "summary": "Flatten\u0020i.e\u0020unravel\u0020the\u0020matrix\u0020into\u0020a\u0020vector.",
-            "url": "classes/numphp-matrix.html#method_flatten"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AprintMatrix\u0028\u0029",
-            "name": "printMatrix",
-            "summary": "print\u0020the\u0020matrix\u0020in\u0020consol",
-            "url": "classes/numphp-matrix.html#method_printMatrix"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003A__toString\u0028\u0029",
-            "name": "__toString",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method___toString"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AcheckShape\u0028\u0029",
-            "name": "checkShape",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method_checkShape"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AcheckDimensions\u0028\u0029",
-            "name": "checkDimensions",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method_checkDimensions"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AcheckDtype\u0028\u0029",
-            "name": "checkDtype",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method_checkDtype"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Ac_FloatMatrix\u0028\u0029",
-            "name": "c_FloatMatrix",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method_c_FloatMatrix"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Ac_DoubleMatrix\u0028\u0029",
-            "name": "c_DoubleMatrix",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method_c_DoubleMatrix"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Ac_IntMatrix\u0028\u0029",
-            "name": "c_IntMatrix",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method_c_IntMatrix"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method___construct"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AasArray\u0028\u0029",
-            "name": "asArray",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method_asArray"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003A_err\u0028\u0029",
-            "name": "_err",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method__err"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003A_invalidArgument\u0028\u0029",
-            "name": "_invalidArgument",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#method__invalidArgument"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003Atime\u0028\u0029",
-            "name": "time",
-            "summary": "set\u0020Timer,\u0020get\u0020total\u0020time",
-            "url": "classes/numphp-matrix.html#method_time"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AgetMemory\u0028\u0029",
-            "name": "getMemory",
-            "summary": "set\u0020memory\u0020dog,\u0020get\u0020total\u0020memory",
-            "url": "classes/numphp-matrix.html#method_getMemory"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003ATWO_PI",
-            "name": "TWO_PI",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#constant_TWO_PI"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AEPSILON",
-            "name": "EPSILON",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#constant_EPSILON"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AFLOAT",
-            "name": "FLOAT",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#constant_FLOAT"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003ADOUBLE",
-            "name": "DOUBLE",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#constant_DOUBLE"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003AINT",
-            "name": "INT",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#constant_INT"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003A\u0024data",
-            "name": "data",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#property_data"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003A\u0024row",
-            "name": "row",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#property_row"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003A\u0024col",
-            "name": "col",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#property_col"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003A\u0024dtype",
-            "name": "dtype",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#property_dtype"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003A\u0024_time",
-            "name": "_time",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#property__time"
-        },                {
-            "fqsen": "\\numphp\\matrix\u003A\u003A\u0024_mem",
-            "name": "_mem",
-            "summary": "",
-            "url": "classes/numphp-matrix.html#property__mem"
-        },                {
-            "fqsen": "\\numphp\\vector",
-            "name": "vector",
-            "summary": "A\u0020fast\u0020lite\u0020memory\u0020efficient\u0020Scientific\u0020Computing\u0020in\u0020php\nVector\u0020\u0028rank\u002D1\u0029",
-            "url": "classes/numphp-vector.html"
-        },                {
-            "fqsen": "\\numphp\\vector\u003A\u003Afactory\u0028\u0029",
-            "name": "factory",
-            "summary": "",
-            "url": "classes/numphp-vector.html#method_factory"
-        },                {
-            "fqsen": "\\numphp\\vector\u003A\u003Aar\u0028\u0029",
-            "name": "ar",
-            "summary": "create\u0020vector\u0020using\u0020php\u0020array",
-            "url": "classes/numphp-vector.html#method_ar"
-        },                {
-            "fqsen": "\\numphp\\vector\u003A\u003Arandn\u0028\u0029",
-            "name": "randn",
-            "summary": "Return\u0020vector\u0020with\u0020random\u0020values",
-            "url": "classes/numphp-vector.html#method_randn"
-        },                {
-            "fqsen": "\\numphp\\vector\u003A\u003Auniform\u0028\u0029",
-            "name": "uniform",
-            "summary": "Return\u0020vector\u0020with\u0020uniform\u0020values",
-            "url": "classes/numphp-vector.html#method_uniform"
-        },                {
-            "fqsen": "\\numphp\\vector\u003A\u003Azeros\u0028\u0029",
-            "name": "zeros",
-            "summary": "",
-            "url": "classes/numphp-vector.html#method_zeros"
-        },                {
-            "fqsen": "\\numphp\\vector\u003A\u003Aones\u0028\u0029",
-            "name": "ones",
-            "summary": "create\u0020one\u0020like\u0020vector",
-            "url": "classes/numphp-vector.html#method_ones"
-        },                {
-            "fqsen": "\\numphp\\vector\u003A\u003Anull\u0028\u0029",
-            "name": "null",
-            "summary": "create\u0020a\u0020null\u0020like\u0020vector",
-            "url": "classes/numphp-vector.html#method_null"
-        },                {
-            "fqsen": "\\numphp\\vector\u003A\u003Afull\u0028\u0029",
-            "name": "full",
-            "summary": "create\u0020a\u0020vector\u0020with\u0020given\u0020scalar\u0020value",
-            "url": "classes/numphp-vector.html#method_full"
-        },                {
-            "fqsen": "\\numphp\\vector\u003A\u003Arange\u0028\u0029",
-            "name": "range",
-            "summary": "Return\u0020evenly\u0020spaced\u0020values\u0020within\u0020a\u0020given\u0020interval.",
-            "url": "classes/numphp-vector.html#method_range"
-        },                {
-            "fqsen": "\\numphp\\vector\u003A\u003Agaussian\u0028\u0029",
-            "name": "gaussian",
-            "summary": "Return\u0020a\u0020Gaussian\u0020random\u0020vector\u0020with\u0020mean\u00200\nand\u0020unit\u0020variance.",
-            "url": "classes/numphp-vector.html#method_gaussian"
-        },                {
-            "fqsen": "\\numphp\\vector\u003A\u003Apoisson\u0028\u0029",
-            "name": "poisson",
-            "summary": "Generate\u0020a\u0020vector\u0020with\u0020n\u0020elements\u0020from\u0020a\u0020Poisson\u0020distribution.",
-            "url": "classes/numphp-vector.html#method_poisson"
-        },                {
-            "fqsen": "\\numphp\\vector\u003A\u003Alinspace\u0028\u0029",
-            "name": "linspace",
-            "summary": "Return\u0020a\u0020vector\u0020of\u0020n\u0020evenly\u0020spaced\u0020numbers\u0020between\u0020minimum\u0020and\u0020maximum.",
-            "url": "classes/numphp-vector.html#method_linspace"
-        },                {
-            "fqsen": "\\numphp\\vector\u003A\u003AcopyVector\u0028\u0029",
-            "name": "copyVector",
-            "summary": "make\u0020a\u0020copy\u0020of\u0020vector",
-            "url": "classes/numphp-vector.html#method_copyVector"
-        },                {
-            "fqsen": "\\numphp\\vector\u003A\u003AdotVector\u0028\u0029",
-            "name": "dotVector",
-            "summary": "vector\u002Dvector\u0020dot\u0020product",
-            "url": "classes/numphp-vector.html#method_dotVector"
-        },                {
-            "fqsen": "\\numphp\\vector\u003A\u003AmulVectorMatrix\u0028\u0029",
-            "name": "mulVectorMatrix",
-            "summary": "Compute\u0020the\u0020vector\u002Dmatrix\u0020product\u0020of\u0020this\u0020vector\u0020and\u0020matrix\u0020.",
-            "url": "classes/numphp-vector.html#method_mulVectorMatrix"
-        },                {
-            "fqsen": "\\numphp\\vector\u003A\u003AaddMatrix\u0028\u0029",
-            "name": "addMatrix",
-            "summary": "",
-            "url": "classes/numphp-vector.html#method_addMatrix"
-        },                {
-            "fqsen": "\\numphp\\vector\u003A\u003AdivideMatrix\u0028\u0029",
-            "name": "divideMatrix",
-            "summary": "",
-            "url": "classes/numphp-vector.html#method_divideMatrix"
-        },                {
-            "fqsen": "\\numphp\\vector\u003A\u003AmultiplyMatrix\u0028\u0029",
-            "name": "multiplyMatrix",
-            "summary": "",
-            "url": "classes/numphp-vector.html#method_multiplyMatrix"
-        },                {
-            "fqsen": "\\numphp\\vector\u003A\u003AdivVector\u0028\u0029",
-            "name": "divVector",
-            "summary": "",
-            "url": "classes/numphp-vector.html#method_divVector"
-        },                {
-            "fqsen": "\\numphp\\vector\u003A\u003AmultiplyVector\u0028\u0029",
-            "name": "multiplyVector",
-            "summary": "",
-            "url": "classes/numphp-vector.html#method_multiplyVector"
-        },                {
-            "fqsen": "\\numphp\\vector\u003A\u003AsumVector\u0028\u0029",
+            "fqsen": "\\Np\\matrix\u003A\u003AsumVector\u0028\u0029",
             "name": "sumVector",
             "summary": "",
-            "url": "classes/numphp-vector.html#method_sumVector"
+            "url": "classes/Np-matrix.html#method_sumVector"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003ApowVector\u0028\u0029",
-            "name": "powVector",
+            "fqsen": "\\Np\\matrix\u003A\u003Asubtract\u0028\u0029",
+            "name": "subtract",
+            "summary": "subtract\u0020another\u0020matrix,\u0020vector\u0020or\u0020a\u0020scalar\u0020to\u0020this\u0020matrix",
+            "url": "classes/Np-matrix.html#method_subtract"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AsubtractScalar\u0028\u0029",
+            "name": "subtractScalar",
             "summary": "",
-            "url": "classes/numphp-vector.html#method_powVector"
+            "url": "classes/Np-matrix.html#method_subtractScalar"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003AmodVector\u0028\u0029",
-            "name": "modVector",
+            "fqsen": "\\Np\\matrix\u003A\u003AsubtractMatrix\u0028\u0029",
+            "name": "subtractMatrix",
             "summary": "",
-            "url": "classes/numphp-vector.html#method_modVector"
+            "url": "classes/Np-matrix.html#method_subtractMatrix"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003AsubtractVector\u0028\u0029",
+            "fqsen": "\\Np\\matrix\u003A\u003AsubtractVector\u0028\u0029",
             "name": "subtractVector",
             "summary": "",
-            "url": "classes/numphp-vector.html#method_subtractVector"
+            "url": "classes/Np-matrix.html#method_subtractVector"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003Aconvolve\u0028\u0029",
-            "name": "convolve",
+            "fqsen": "\\Np\\matrix\u003A\u003AsubtractColumnVector\u0028\u0029",
+            "name": "subtractColumnVector",
             "summary": "",
-            "url": "classes/numphp-vector.html#method_convolve"
+            "url": "classes/Np-matrix.html#method_subtractColumnVector"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003Ainner\u0028\u0029",
-            "name": "inner",
-            "summary": "Return\u0020the\u0020inner\u0020product\u0020of\u0020two\u0020vectors.",
-            "url": "classes/numphp-vector.html#method_inner"
+            "fqsen": "\\Np\\matrix\u003A\u003Adivide\u0028\u0029",
+            "name": "divide",
+            "summary": "Return\u0020the\u0020division\u0020of\u0020two\u0020elements,\u0020element\u002Dwise.",
+            "url": "classes/Np-matrix.html#method_divide"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003Al1_norm\u0028\u0029",
-            "name": "l1_norm",
+            "fqsen": "\\Np\\matrix\u003A\u003AdivideMatrix\u0028\u0029",
+            "name": "divideMatrix",
             "summary": "",
-            "url": "classes/numphp-vector.html#method_l1_norm"
+            "url": "classes/Np-matrix.html#method_divideMatrix"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003Al2_norm\u0028\u0029",
-            "name": "l2_norm",
+            "fqsen": "\\Np\\matrix\u003A\u003AdivideVector\u0028\u0029",
+            "name": "divideVector",
             "summary": "",
-            "url": "classes/numphp-vector.html#method_l2_norm"
+            "url": "classes/Np-matrix.html#method_divideVector"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003Amaximum\u0028\u0029",
-            "name": "maximum",
-            "summary": "Return\u0020the\u0020element\u002Dwise\u0020maximum\u0020of\u0020given\u0020vector\u0020with\u0020current\u0020vector",
-            "url": "classes/numphp-vector.html#method_maximum"
+            "fqsen": "\\Np\\matrix\u003A\u003AdivideScalar\u0028\u0029",
+            "name": "divideScalar",
+            "summary": "",
+            "url": "classes/Np-matrix.html#method_divideScalar"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003Aminium\u0028\u0029",
-            "name": "minium",
-            "summary": "Return\u0020the\u0020element\u002Dwise\u0020minium\u0020of\u0020given\u0020vector\u0020with\u0020current\u0020vector",
-            "url": "classes/numphp-vector.html#method_minium"
+            "fqsen": "\\Np\\matrix\u003A\u003Apow\u0028\u0029",
+            "name": "pow",
+            "summary": "Raise\u0020this\u0020matrix\u0020to\u0020the\u0020power\u0020of\u0020the\u0020element\u002Dwise\u0020entry\u0020in\u0020another\u0020matrix.",
+            "url": "classes/Np-matrix.html#method_pow"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003AsetData\u0028\u0029",
+            "fqsen": "\\Np\\matrix\u003A\u003ApowMatrix\u0028\u0029",
+            "name": "powMatrix",
+            "summary": "",
+            "url": "classes/Np-matrix.html#method_powMatrix"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003ApowVector\u0028\u0029",
+            "name": "powVector",
+            "summary": "",
+            "url": "classes/Np-matrix.html#method_powVector"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003ApowScalar\u0028\u0029",
+            "name": "powScalar",
+            "summary": "",
+            "url": "classes/Np-matrix.html#method_powScalar"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Amod\u0028\u0029",
+            "name": "mod",
+            "summary": "Calculate\u0020the\u0020modulus\u0020i.e\u0020remainder\u0020of\u0020division\u0020between\u0020this\u0020matrix\u0020and\u0020another\u0020matrix.",
+            "url": "classes/Np-matrix.html#method_mod"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AmodMatrix\u0028\u0029",
+            "name": "modMatrix",
+            "summary": "",
+            "url": "classes/Np-matrix.html#method_modMatrix"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AmodVector\u0028\u0029",
+            "name": "modVector",
+            "summary": "",
+            "url": "classes/Np-matrix.html#method_modVector"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AmodScalar\u0028\u0029",
+            "name": "modScalar",
+            "summary": "",
+            "url": "classes/Np-matrix.html#method_modScalar"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Areciprocal\u0028\u0029",
+            "name": "reciprocal",
+            "summary": "Return\u0020the\u0020element\u002Dwise\u0020reciprocal\u0020of\u0020the\u0020matrix.",
+            "url": "classes/Np-matrix.html#method_reciprocal"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Ais_zero\u0028\u0029",
+            "name": "is_zero",
+            "summary": "",
+            "url": "classes/Np-matrix.html#method_is_zero"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Ais_rowZero\u0028\u0029",
+            "name": "is_rowZero",
+            "summary": "is\u0020row\u0020zero",
+            "url": "classes/Np-matrix.html#method_is_rowZero"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Ahas_ZeroRow\u0028\u0029",
+            "name": "has_ZeroRow",
+            "summary": "",
+            "url": "classes/Np-matrix.html#method_has_ZeroRow"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Atranspose\u0028\u0029",
+            "name": "transpose",
+            "summary": "Transpose\u0020the\u0020matrix\u0020i.e\u0020row\u0020become\u0020cols\u0020and\u0020cols\u0020become\u0020rows.",
+            "url": "classes/Np-matrix.html#method_transpose"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AswapValue\u0028\u0029",
+            "name": "swapValue",
+            "summary": "swap\u0020specific\u0020values\u0020in\u0020matrix",
+            "url": "classes/Np-matrix.html#method_swapValue"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AswapRows\u0028\u0029",
+            "name": "swapRows",
+            "summary": "swap\u0020specific\u0020rows\u0020in\u0020matrix",
+            "url": "classes/Np-matrix.html#method_swapRows"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AswapCols\u0028\u0029",
+            "name": "swapCols",
+            "summary": "swap\u0020specific\u0020cols\u0020in\u0020matrix",
+            "url": "classes/Np-matrix.html#method_swapCols"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Ascale\u0028\u0029",
+            "name": "scale",
+            "summary": "",
+            "url": "classes/Np-matrix.html#method_scale"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AscaleRow\u0028\u0029",
+            "name": "scaleRow",
+            "summary": "scale\u0020all\u0020the\u0020elements\u0020of\u0020a\u0020row",
+            "url": "classes/Np-matrix.html#method_scaleRow"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AscaleCol\u0028\u0029",
+            "name": "scaleCol",
+            "summary": "scale\u0020all\u0020the\u0020elements\u0020of",
+            "url": "classes/Np-matrix.html#method_scaleCol"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AscaleDigonalCol\u0028\u0029",
+            "name": "scaleDigonalCol",
+            "summary": "Scale\u0020digonally",
+            "url": "classes/Np-matrix.html#method_scaleDigonalCol"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AaddScaleRow\u0028\u0029",
+            "name": "addScaleRow",
+            "summary": "",
+            "url": "classes/Np-matrix.html#method_addScaleRow"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AjoinLeft\u0028\u0029",
+            "name": "joinLeft",
+            "summary": "Attach\u0020given\u0020matrix\u0020to\u0020the\u0020left\u0020of\u0020this\u0020matrix.",
+            "url": "classes/Np-matrix.html#method_joinLeft"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AjoinRight\u0028\u0029",
+            "name": "joinRight",
+            "summary": "Join\u0020matrix\u0020m\u0020to\u0020the\u0020Right\u0020of\u0020this\u0020matrix.",
+            "url": "classes/Np-matrix.html#method_joinRight"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AjoinAbove\u0028\u0029",
+            "name": "joinAbove",
+            "summary": "Join\u0020matrix\u0020m\u0020Above\u0020this\u0020matrix.",
+            "url": "classes/Np-matrix.html#method_joinAbove"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AjoinBelow\u0028\u0029",
+            "name": "joinBelow",
+            "summary": "Join\u0020matrix\u0020m\u0020below\u0020this\u0020matrix.",
+            "url": "classes/Np-matrix.html#method_joinBelow"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Aref\u0028\u0029",
+            "name": "ref",
+            "summary": "Calculate\u0020the\u0020row\u0020echelon\u0020form\u0020of\u0020the\u0020matrix.",
+            "url": "classes/Np-matrix.html#method_ref"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Acholesky\u0028\u0029",
+            "name": "cholesky",
+            "summary": "Return\u0020the\u0020lower\u0020triangular\u0020matrix\u0020of\u0020the\u0020Cholesky\u0020decomposition.",
+            "url": "classes/Np-matrix.html#method_cholesky"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Arref\u0028\u0029",
+            "name": "rref",
+            "summary": "FIXME\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\nRREF\nThe\u0020reduced\u0020row\u0020echelon\u0020form\u0020\u0028RREF\u0029\u0020of\u0020a\u0020matrix.",
+            "url": "classes/Np-matrix.html#method_rref"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Adiminish_left\u0028\u0029",
+            "name": "diminish_left",
+            "summary": "",
+            "url": "classes/Np-matrix.html#method_diminish_left"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Adiminish_right\u0028\u0029",
+            "name": "diminish_right",
+            "summary": "",
+            "url": "classes/Np-matrix.html#method_diminish_right"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AargMax\u0028\u0029",
+            "name": "argMax",
+            "summary": "Return\u0020the\u0020index\u0020of\u0020the\u0020maximum\u0020element\u0020in\u0020every\u0020row\u0020of\u0020the\u0020matrix.",
+            "url": "classes/Np-matrix.html#method_argMax"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AargMin\u0028\u0029",
+            "name": "argMin",
+            "summary": "Return\u0020the\u0020index\u0020of\u0020the\u0020minimum\u0020element\u0020in\u0020every\u0020row\u0020of\u0020the\u0020matrix.",
+            "url": "classes/Np-matrix.html#method_argMin"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AsetData\u0028\u0029",
             "name": "setData",
-            "summary": "set\u0020data\u0020to\u0020vector",
-            "url": "classes/numphp-vector.html#method_setData"
+            "summary": "Set\u0020given\u0020data\u0020in\u0020matrix",
+            "url": "classes/Np-matrix.html#method_setData"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003AgetShape\u0028\u0029",
+            "fqsen": "\\Np\\matrix\u003A\u003AgetDtype\u0028\u0029",
+            "name": "getDtype",
+            "summary": "get\u0020the\u0020matrix\u0020data\u0020type",
+            "url": "classes/Np-matrix.html#method_getDtype"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AgetShape\u0028\u0029",
             "name": "getShape",
             "summary": "get\u0020the\u0020shape\u0020of\u0020matrix",
-            "url": "classes/numphp-vector.html#method_getShape"
+            "url": "classes/Np-matrix.html#method_getShape"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003AgetDtype\u0028\u0029",
-            "name": "getDtype",
+            "fqsen": "\\Np\\matrix\u003A\u003AgetSize\u0028\u0029",
+            "name": "getSize",
+            "summary": "get\u0020the\u0020number\u0020of\u0020elements\u0020in\u0020the\u0020matrix.",
+            "url": "classes/Np-matrix.html#method_getSize"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AisSquare\u0028\u0029",
+            "name": "isSquare",
+            "summary": "is\u0020matrix\u0020squred",
+            "url": "classes/Np-matrix.html#method_isSquare"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003ArowAsVector\u0028\u0029",
+            "name": "rowAsVector",
+            "summary": "Return\u0020a\u0020row\u0020as\u0020vector\u0020from\u0020the\u0020matrix.",
+            "url": "classes/Np-matrix.html#method_rowAsVector"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AcolAsVector\u0028\u0029",
+            "name": "colAsVector",
+            "summary": "Return\u0020a\u0020col\u0020as\u0020vector\u0020from\u0020the\u0020matrix.",
+            "url": "classes/Np-matrix.html#method_colAsVector"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AdiagonalAsVector\u0028\u0029",
+            "name": "diagonalAsVector",
+            "summary": "Return\u0020the\u0020diagonal\u0020elements\u0020of\u0020a\u0020square\u0020matrix\u0020as\u0020a\u0020vector.",
+            "url": "classes/Np-matrix.html#method_diagonalAsVector"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AasVector\u0028\u0029",
+            "name": "asVector",
+            "summary": "Flatten\u0020i.e\u0020unravel\u0020the\u0020matrix\u0020into\u0020a\u0020vector.",
+            "url": "classes/Np-matrix.html#method_asVector"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AasArray\u0028\u0029",
+            "name": "asArray",
+            "summary": "Return\u0020the\u0020elements\u0020of\u0020the\u0020matrix\u0020in\u0020a\u00202\u002Dd\u0020array.",
+            "url": "classes/Np-matrix.html#method_asArray"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AgetDiagonalVal\u0028\u0029",
+            "name": "getDiagonalVal",
+            "summary": "get\u0020a\u0020diagonal\u0020value\u0020from\u0020matrix",
+            "url": "classes/Np-matrix.html#method_getDiagonalVal"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Asvd\u0028\u0029",
+            "name": "svd",
+            "summary": "Compute\u0020the\u0020singular\u0020value\u0020decomposition\u0020of\u0020a\u0020matrix\u0020and\nreturn\u0020an\u0020object\u0020of\u0020the\u0020singular\u0020values\u0020and\u0020unitary\u0020matrices",
+            "url": "classes/Np-matrix.html#method_svd"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Aeign\u0028\u0029",
+            "name": "eign",
+            "summary": "Compute\u0020the\u0020eigen\u0020decomposition\u0020of\u0020a\u0020general\u0020matrix.",
+            "url": "classes/Np-matrix.html#method_eign"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Alu\u0028\u0029",
+            "name": "lu",
+            "summary": "Compute\u0020the\u0020LU\u0020factorization\u0020of\u0020matrix.",
+            "url": "classes/Np-matrix.html#method_lu"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AnormL1\u0028\u0029",
+            "name": "normL1",
+            "summary": "Return\u0020the\u0020L1\u0020norm\u0020of\u0020the\u0020matrix.",
+            "url": "classes/Np-matrix.html#method_normL1"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AnormL2\u0028\u0029",
+            "name": "normL2",
+            "summary": "Return\u0020the\u0020L2\u0020norm\u0020of\u0020the\u0020matrix.",
+            "url": "classes/Np-matrix.html#method_normL2"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AnormINF\u0028\u0029",
+            "name": "normINF",
+            "summary": "Return\u0020the\u0020L1\u0020norm\u0020of\u0020the\u0020matrix.",
+            "url": "classes/Np-matrix.html#method_normINF"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AnormFrob\u0028\u0029",
+            "name": "normFrob",
+            "summary": "Return\u0020the\u0020Frobenius\u0020norm\u0020of\u0020the\u0020matrix.",
+            "url": "classes/Np-matrix.html#method_normFrob"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Amean\u0028\u0029",
+            "name": "mean",
+            "summary": "Compute\u0020the\u0020means\u0020of\u0020each\u0020row\u0020and\u0020return\u0020them\u0020in\u0020a\u0020vector.",
+            "url": "classes/Np-matrix.html#method_mean"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Avariance\u0028\u0029",
+            "name": "variance",
+            "summary": "Compute\u0020the\u0020row\u0020variance\u0020of\u0020the\u0020matrix.",
+            "url": "classes/Np-matrix.html#method_variance"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Amedian\u0028\u0029",
+            "name": "median",
+            "summary": "Return\u0020the\u0020median\u0020vector\u0020of\u0020this\u0020matrix.",
+            "url": "classes/Np-matrix.html#method_median"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Acovariance\u0028\u0029",
+            "name": "covariance",
+            "summary": "Compute\u0020the\u0020covariance\u0020matrix.",
+            "url": "classes/Np-matrix.html#method_covariance"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Asquare\u0028\u0029",
+            "name": "square",
+            "summary": "Square\u0020of\u0020matrix",
+            "url": "classes/Np-matrix.html#method_square"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Aequal\u0028\u0029",
+            "name": "equal",
             "summary": "",
-            "url": "classes/numphp-vector.html#method_getDtype"
+            "url": "classes/Np-matrix.html#method_equal"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003AprintVector\u0028\u0029",
-            "name": "printVector",
+            "fqsen": "\\Np\\matrix\u003A\u003AequalMatrix\u0028\u0029",
+            "name": "equalMatrix",
             "summary": "",
-            "url": "classes/numphp-vector.html#method_printVector"
+            "url": "classes/Np-matrix.html#method_equalMatrix"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003A__toString\u0028\u0029",
+            "fqsen": "\\Np\\matrix\u003A\u003AequalVector\u0028\u0029",
+            "name": "equalVector",
+            "summary": "",
+            "url": "classes/Np-matrix.html#method_equalVector"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AequalScalar\u0028\u0029",
+            "name": "equalScalar",
+            "summary": "",
+            "url": "classes/Np-matrix.html#method_equalScalar"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Agreater\u0028\u0029",
+            "name": "greater",
+            "summary": "",
+            "url": "classes/Np-matrix.html#method_greater"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AgreaterMatrix\u0028\u0029",
+            "name": "greaterMatrix",
+            "summary": "",
+            "url": "classes/Np-matrix.html#method_greaterMatrix"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AgreaterVector\u0028\u0029",
+            "name": "greaterVector",
+            "summary": "",
+            "url": "classes/Np-matrix.html#method_greaterVector"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AgreaterScalar\u0028\u0029",
+            "name": "greaterScalar",
+            "summary": "",
+            "url": "classes/Np-matrix.html#method_greaterScalar"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003Aless\u0028\u0029",
+            "name": "less",
+            "summary": "",
+            "url": "classes/Np-matrix.html#method_less"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AisSymmetric\u0028\u0029",
+            "name": "isSymmetric",
+            "summary": "Is\u0020the\u0020matrix\u0020symmetric\u0020i.e.\u0020is\u0020it\u0020equal\u0020to\u0020its\u0020own\u0020transpose\u003F",
+            "url": "classes/Np-matrix.html#method_isSymmetric"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003AprintMatrix\u0028\u0029",
+            "name": "printMatrix",
+            "summary": "print\u0020the\u0020matrix\u0020in\u0020consol",
+            "url": "classes/Np-matrix.html#method_printMatrix"
+        },                {
+            "fqsen": "\\Np\\matrix\u003A\u003A__toString\u0028\u0029",
             "name": "__toString",
             "summary": "",
-            "url": "classes/numphp-vector.html#method___toString"
+            "url": "classes/Np-matrix.html#method___toString"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003AcheckDimensions\u0028\u0029",
-            "name": "checkDimensions",
+            "fqsen": "\\Np\\matrix\u003A\u003AflattenArray\u0028\u0029",
+            "name": "flattenArray",
             "summary": "",
-            "url": "classes/numphp-vector.html#method_checkDimensions"
+            "url": "classes/Np-matrix.html#method_flattenArray"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003AcheckDtype\u0028\u0029",
-            "name": "checkDtype",
-            "summary": "",
-            "url": "classes/numphp-vector.html#method_checkDtype"
-        },                {
-            "fqsen": "\\numphp\\vector\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\Np\\matrix\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/numphp-vector.html#method___construct"
+            "url": "classes/Np-matrix.html#method___construct"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003AasArray\u0028\u0029",
+            "fqsen": "\\Np\\vector",
+            "name": "vector",
+            "summary": "A\u0020fast\u0020lite\u0020memory\u0020efficient\u0020Scientific\u0020Computing\u0020in\u0020php\nVector\u0020\u0028rank\u002D1\u0029",
+            "url": "classes/Np-vector.html"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Afactory\u0028\u0029",
+            "name": "factory",
+            "summary": "Factory\u0020method\u0020to\u0020build\u0020a\u0020new\u0020vector.",
+            "url": "classes/Np-vector.html#method_factory"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Aar\u0028\u0029",
+            "name": "ar",
+            "summary": "Build\u0020a\u0020new\u0020vector\u0020from\u0020a\u0020php\u0020array.",
+            "url": "classes/Np-vector.html#method_ar"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Arandn\u0028\u0029",
+            "name": "randn",
+            "summary": "Return\u0020vector\u0020with\u0020random\u0020values",
+            "url": "classes/Np-vector.html#method_randn"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Auniform\u0028\u0029",
+            "name": "uniform",
+            "summary": "Return\u0020vector\u0020with\u0020uniform\u0020values",
+            "url": "classes/Np-vector.html#method_uniform"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Azeros\u0028\u0029",
+            "name": "zeros",
+            "summary": "Build\u0020a\u0020vector\u0020of\u0020zeros\u0020with\u0020n\u0020elements.",
+            "url": "classes/Np-vector.html#method_zeros"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Aones\u0028\u0029",
+            "name": "ones",
+            "summary": "create\u0020one\u0020like\u0020vector",
+            "url": "classes/Np-vector.html#method_ones"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Anull\u0028\u0029",
+            "name": "null",
+            "summary": "create\u0020a\u0020null\u0020like\u0020vector",
+            "url": "classes/Np-vector.html#method_null"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Afull\u0028\u0029",
+            "name": "full",
+            "summary": "create\u0020a\u0020vector\u0020with\u0020given\u0020scalar\u0020value",
+            "url": "classes/Np-vector.html#method_full"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Arange\u0028\u0029",
+            "name": "range",
+            "summary": "Return\u0020evenly\u0020spaced\u0020values\u0020within\u0020a\u0020given\u0020interval.",
+            "url": "classes/Np-vector.html#method_range"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Agaussian\u0028\u0029",
+            "name": "gaussian",
+            "summary": "Return\u0020a\u0020Gaussian\u0020random\u0020vector\u0020with\u0020mean\u00200\nand\u0020unit\u0020variance.",
+            "url": "classes/Np-vector.html#method_gaussian"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Apoisson\u0028\u0029",
+            "name": "poisson",
+            "summary": "Generate\u0020a\u0020vector\u0020with\u0020n\u0020elements\u0020from\u0020a\u0020Poisson\u0020distribution.",
+            "url": "classes/Np-vector.html#method_poisson"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Alinspace\u0028\u0029",
+            "name": "linspace",
+            "summary": "Return\u0020a\u0020vector\u0020of\u0020n\u0020evenly\u0020spaced\u0020numbers\u0020between\u0020minimum\u0020and\u0020maximum.",
+            "url": "classes/Np-vector.html#method_linspace"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003AargMin\u0028\u0029",
+            "name": "argMin",
+            "summary": "Return\u0020the\u0020index\u0020of\u0020the\u0020minimum\u0020element\u0020in\u0020the\u0020vector.",
+            "url": "classes/Np-vector.html#method_argMin"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003AargMax\u0028\u0029",
+            "name": "argMax",
+            "summary": "Return\u0020the\u0020index\u0020of\u0020the\u0020maximum\u0020element\u0020in\u0020the\u0020vector.",
+            "url": "classes/Np-vector.html#method_argMax"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Asum\u0028\u0029",
+            "name": "sum",
+            "summary": "The\u0020sum\u0020of\u0020the\u0020vector.",
+            "url": "classes/Np-vector.html#method_sum"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Aproduct\u0028\u0029",
+            "name": "product",
+            "summary": "Return\u0020the\u0020product\u0020of\u0020the\u0020vector.",
+            "url": "classes/Np-vector.html#method_product"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003AdotMatrix\u0028\u0029",
+            "name": "dotMatrix",
+            "summary": "Compute\u0020the\u0020vector\u002Dmatrix\u0020dot\u0020product\u0020of\u0020this\u0020vector\u0020and\u0020matrix\u0020.",
+            "url": "classes/Np-vector.html#method_dotMatrix"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Adivide\u0028\u0029",
+            "name": "divide",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_divide"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003AdivideMatrix\u0028\u0029",
+            "name": "divideMatrix",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_divideMatrix"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003AdivideVector\u0028\u0029",
+            "name": "divideVector",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_divideVector"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003AdivideScalar\u0028\u0029",
+            "name": "divideScalar",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_divideScalar"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Amultiply\u0028\u0029",
+            "name": "multiply",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_multiply"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003AmultiplyMatrix\u0028\u0029",
+            "name": "multiplyMatrix",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_multiplyMatrix"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003AmultiplyVector\u0028\u0029",
+            "name": "multiplyVector",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_multiplyVector"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003AmultiplyScalar\u0028\u0029",
+            "name": "multiplyScalar",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_multiplyScalar"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Aadd\u0028\u0029",
+            "name": "add",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_add"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003AaddMatrix\u0028\u0029",
+            "name": "addMatrix",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_addMatrix"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003AaddVector\u0028\u0029",
+            "name": "addVector",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_addVector"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003AaddScalar\u0028\u0029",
+            "name": "addScalar",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_addScalar"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Apow\u0028\u0029",
+            "name": "pow",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_pow"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003ApowMatrix\u0028\u0029",
+            "name": "powMatrix",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_powMatrix"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003ApowVector\u0028\u0029",
+            "name": "powVector",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_powVector"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003ApowScalar\u0028\u0029",
+            "name": "powScalar",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_powScalar"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Amod\u0028\u0029",
+            "name": "mod",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_mod"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003AmodMatrix\u0028\u0029",
+            "name": "modMatrix",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_modMatrix"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003AmodVector\u0028\u0029",
+            "name": "modVector",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_modVector"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003AmodScalar\u0028\u0029",
+            "name": "modScalar",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_modScalar"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Asubtract\u0028\u0029",
+            "name": "subtract",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_subtract"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003AsubtractMatrix\u0028\u0029",
+            "name": "subtractMatrix",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_subtractMatrix"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003AsubtractVector\u0028\u0029",
+            "name": "subtractVector",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_subtractVector"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003AsubstractScalar\u0028\u0029",
+            "name": "substractScalar",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_substractScalar"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Aconvolve\u0028\u0029",
+            "name": "convolve",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_convolve"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Amax\u0028\u0029",
+            "name": "max",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_max"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Amin\u0028\u0029",
+            "name": "min",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_min"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Ainner\u0028\u0029",
+            "name": "inner",
+            "summary": "Return\u0020the\u0020inner\u0020product\u0020of\u0020two\u0020vectors.",
+            "url": "classes/Np-vector.html#method_inner"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003AnormL1\u0028\u0029",
+            "name": "normL1",
+            "summary": "Calculate\u0020the\u0020L1\u0020norm\u0020of\u0020the\u0020vector.",
+            "url": "classes/Np-vector.html#method_normL1"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003AnormL2\u0028\u0029",
+            "name": "normL2",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_normL2"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003AnormMax\u0028\u0029",
+            "name": "normMax",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_normMax"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003AnormP\u0028\u0029",
+            "name": "normP",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_normP"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Areciprocal\u0028\u0029",
+            "name": "reciprocal",
+            "summary": "Return\u0020the\u0020reciprocal\u0020of\u0020the\u0020vector\u0020element\u002Dwise.",
+            "url": "classes/Np-vector.html#method_reciprocal"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Amean\u0028\u0029",
+            "name": "mean",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_mean"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Amedian\u0028\u0029",
+            "name": "median",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_median"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Avariance\u0028\u0029",
+            "name": "variance",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_variance"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Asquare\u0028\u0029",
+            "name": "square",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_square"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003Asort\u0028\u0029",
+            "name": "sort",
+            "summary": "sort\u0020the\u0020vector",
+            "url": "classes/Np-vector.html#method_sort"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003AsetData\u0028\u0029",
+            "name": "setData",
+            "summary": "set\u0020data\u0020to\u0020vector",
+            "url": "classes/Np-vector.html#method_setData"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003AgetSize\u0028\u0029",
+            "name": "getSize",
+            "summary": "get\u0020the\u0020size\u0020of\u0020vector",
+            "url": "classes/Np-vector.html#method_getSize"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003AgetDtype\u0028\u0029",
+            "name": "getDtype",
+            "summary": "",
+            "url": "classes/Np-vector.html#method_getDtype"
+        },                {
+            "fqsen": "\\Np\\vector\u003A\u003AasArray\u0028\u0029",
             "name": "asArray",
             "summary": "",
-            "url": "classes/numphp-vector.html#method_asArray"
+            "url": "classes/Np-vector.html#method_asArray"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003Ac_FloatVector\u0028\u0029",
-            "name": "c_FloatVector",
+            "fqsen": "\\Np\\vector\u003A\u003AprintVector\u0028\u0029",
+            "name": "printVector",
             "summary": "",
-            "url": "classes/numphp-vector.html#method_c_FloatVector"
+            "url": "classes/Np-vector.html#method_printVector"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003Ac_IntVector\u0028\u0029",
-            "name": "c_IntVector",
+            "fqsen": "\\Np\\vector\u003A\u003A__toString\u0028\u0029",
+            "name": "__toString",
             "summary": "",
-            "url": "classes/numphp-vector.html#method_c_IntVector"
+            "url": "classes/Np-vector.html#method___toString"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003Ac_DoubleVector\u0028\u0029",
-            "name": "c_DoubleVector",
+            "fqsen": "\\Np\\vector\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
             "summary": "",
-            "url": "classes/numphp-vector.html#method_c_DoubleVector"
+            "url": "classes/Np-vector.html#method___construct"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003A_err\u0028\u0029",
+            "fqsen": "\\Np\\core\\nd",
+            "name": "nd",
+            "summary": "ND",
+            "url": "classes/Np-core-nd.html"
+        },                {
+            "fqsen": "\\Np\\core\\nd\u003A\u003AcheckDimensions\u0028\u0029",
+            "name": "checkDimensions",
+            "summary": "",
+            "url": "classes/Np-core-nd.html#method_checkDimensions"
+        },                {
+            "fqsen": "\\Np\\core\\nd\u003A\u003AcheckDtype\u0028\u0029",
+            "name": "checkDtype",
+            "summary": "",
+            "url": "classes/Np-core-nd.html#method_checkDtype"
+        },                {
+            "fqsen": "\\Np\\core\\nd\u003A\u003AcheckShape\u0028\u0029",
+            "name": "checkShape",
+            "summary": "",
+            "url": "classes/Np-core-nd.html#method_checkShape"
+        },                {
+            "fqsen": "\\Np\\core\\nd\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Np-core-nd.html#method___construct"
+        },                {
+            "fqsen": "\\Np\\core\\nd\u003A\u003A_ndFloat\u0028\u0029",
+            "name": "_ndFloat",
+            "summary": "",
+            "url": "classes/Np-core-nd.html#method__ndFloat"
+        },                {
+            "fqsen": "\\Np\\core\\nd\u003A\u003A_ndDouble\u0028\u0029",
+            "name": "_ndDouble",
+            "summary": "",
+            "url": "classes/Np-core-nd.html#method__ndDouble"
+        },                {
+            "fqsen": "\\Np\\core\\nd\u003A\u003A_ndInt\u0028\u0029",
+            "name": "_ndInt",
+            "summary": "",
+            "url": "classes/Np-core-nd.html#method__ndInt"
+        },                {
+            "fqsen": "\\Np\\core\\nd\u003A\u003A_err\u0028\u0029",
             "name": "_err",
             "summary": "",
-            "url": "classes/numphp-vector.html#method__err"
+            "url": "classes/Np-core-nd.html#method__err"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003A_invalidArgument\u0028\u0029",
+            "fqsen": "\\Np\\core\\nd\u003A\u003A_invalidArgument\u0028\u0029",
             "name": "_invalidArgument",
             "summary": "",
-            "url": "classes/numphp-vector.html#method__invalidArgument"
+            "url": "classes/Np-core-nd.html#method__invalidArgument"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003AINT",
-            "name": "INT",
+            "fqsen": "\\Np\\core\\nd\u003A\u003A_dtypeErr\u0028\u0029",
+            "name": "_dtypeErr",
             "summary": "",
-            "url": "classes/numphp-vector.html#constant_INT"
+            "url": "classes/Np-core-nd.html#method__dtypeErr"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003AFLOAT",
+            "fqsen": "\\Np\\core\\nd\u003A\u003A_dimensionaMisMatchErr\u0028\u0029",
+            "name": "_dimensionaMisMatchErr",
+            "summary": "",
+            "url": "classes/Np-core-nd.html#method__dimensionaMisMatchErr"
+        },                {
+            "fqsen": "\\Np\\core\\nd\u003A\u003Atime\u0028\u0029",
+            "name": "time",
+            "summary": "set\u0020Timer,\u0020get\u0020total\u0020time",
+            "url": "classes/Np-core-nd.html#method_time"
+        },                {
+            "fqsen": "\\Np\\core\\nd\u003A\u003AgetMemory\u0028\u0029",
+            "name": "getMemory",
+            "summary": "set\u0020memory\u0020dog,\u0020get\u0020total\u0020memory",
+            "url": "classes/Np-core-nd.html#method_getMemory"
+        },                {
+            "fqsen": "\\Np\\core\\nd\u003A\u003ATWO_PI",
+            "name": "TWO_PI",
+            "summary": "",
+            "url": "classes/Np-core-nd.html#constant_TWO_PI"
+        },                {
+            "fqsen": "\\Np\\core\\nd\u003A\u003AEPSILON",
+            "name": "EPSILON",
+            "summary": "",
+            "url": "classes/Np-core-nd.html#constant_EPSILON"
+        },                {
+            "fqsen": "\\Np\\core\\nd\u003A\u003AFLOAT",
             "name": "FLOAT",
             "summary": "",
-            "url": "classes/numphp-vector.html#constant_FLOAT"
+            "url": "classes/Np-core-nd.html#constant_FLOAT"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003ADOUBLE",
+            "fqsen": "\\Np\\core\\nd\u003A\u003ADOUBLE",
             "name": "DOUBLE",
             "summary": "",
-            "url": "classes/numphp-vector.html#constant_DOUBLE"
+            "url": "classes/Np-core-nd.html#constant_DOUBLE"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003A\u0024data",
+            "fqsen": "\\Np\\core\\nd\u003A\u003AINT",
+            "name": "INT",
+            "summary": "",
+            "url": "classes/Np-core-nd.html#constant_INT"
+        },                {
+            "fqsen": "\\Np\\core\\nd\u003A\u003A\u0024data",
             "name": "data",
             "summary": "",
-            "url": "classes/numphp-vector.html#property_data"
+            "url": "classes/Np-core-nd.html#property_data"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003A\u0024col",
-            "name": "col",
+            "fqsen": "\\Np\\core\\nd\u003A\u003A\u0024_time",
+            "name": "_time",
             "summary": "",
-            "url": "classes/numphp-vector.html#property_col"
+            "url": "classes/Np-core-nd.html#property__time"
         },                {
-            "fqsen": "\\numphp\\vector\u003A\u003A\u0024dtype",
-            "name": "dtype",
+            "fqsen": "\\Np\\core\\nd\u003A\u003A\u0024_mem",
+            "name": "_mem",
             "summary": "",
-            "url": "classes/numphp-vector.html#property_dtype"
+            "url": "classes/Np-core-nd.html#property__mem"
+        },                {
+            "fqsen": "\\Np\\decompositions\\cholesky",
+            "name": "cholesky",
+            "summary": "Cholesky",
+            "url": "classes/Np-decompositions-cholesky.html"
+        },                {
+            "fqsen": "\\Np\\decompositions\\cholesky\u003A\u003Afactory\u0028\u0029",
+            "name": "factory",
+            "summary": "",
+            "url": "classes/Np-decompositions-cholesky.html#method_factory"
+        },                {
+            "fqsen": "\\Np\\decompositions\\eigen",
+            "name": "eigen",
+            "summary": "Eigen",
+            "url": "classes/Np-decompositions-eigen.html"
+        },                {
+            "fqsen": "\\Np\\decompositions\\eigen\u003A\u003Afactory\u0028\u0029",
+            "name": "factory",
+            "summary": "",
+            "url": "classes/Np-decompositions-eigen.html#method_factory"
+        },                {
+            "fqsen": "\\Np\\decompositions\\eigen\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Np-decompositions-eigen.html#method___construct"
+        },                {
+            "fqsen": "\\Np\\decompositions\\eigen\u003A\u003AeigenVal\u0028\u0029",
+            "name": "eigenVal",
+            "summary": "Return\u0020the\u0020eigenvalues\u0020of\u0020the\u0020eigen\u0020decomposition.",
+            "url": "classes/Np-decompositions-eigen.html#method_eigenVal"
+        },                {
+            "fqsen": "\\Np\\decompositions\\eigen\u003A\u003AeigenVec\u0028\u0029",
+            "name": "eigenVec",
+            "summary": "Return\u0020the\u0020eigen\u0020vectors\u0020of\u0020the\u0020eigen\u0020decomposition.",
+            "url": "classes/Np-decompositions-eigen.html#method_eigenVec"
+        },                {
+            "fqsen": "\\Np\\decompositions\\eigen\u003A\u003A\u0024eignVal",
+            "name": "eignVal",
+            "summary": "",
+            "url": "classes/Np-decompositions-eigen.html#property_eignVal"
+        },                {
+            "fqsen": "\\Np\\decompositions\\eigen\u003A\u003A\u0024eignVec",
+            "name": "eignVec",
+            "summary": "",
+            "url": "classes/Np-decompositions-eigen.html#property_eignVec"
+        },                {
+            "fqsen": "\\Np\\decompositions\\lu",
+            "name": "lu",
+            "summary": "LU",
+            "url": "classes/Np-decompositions-lu.html"
+        },                {
+            "fqsen": "\\Np\\decompositions\\lu\u003A\u003Afactory\u0028\u0029",
+            "name": "factory",
+            "summary": "",
+            "url": "classes/Np-decompositions-lu.html#method_factory"
+        },                {
+            "fqsen": "\\Np\\decompositions\\lu\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Np-decompositions-lu.html#method___construct"
+        },                {
+            "fqsen": "\\Np\\decompositions\\lu\u003A\u003Al\u0028\u0029",
+            "name": "l",
+            "summary": "Return\u0020the\u0020lower\u0020triangular\u0020matrix.",
+            "url": "classes/Np-decompositions-lu.html#method_l"
+        },                {
+            "fqsen": "\\Np\\decompositions\\lu\u003A\u003Au\u0028\u0029",
+            "name": "u",
+            "summary": "Return\u0020the\u0020upper\u0020triangular\u0020matrix.",
+            "url": "classes/Np-decompositions-lu.html#method_u"
+        },                {
+            "fqsen": "\\Np\\decompositions\\lu\u003A\u003Ap\u0028\u0029",
+            "name": "p",
+            "summary": "Return\u0020the\u0020permutation\u0020matrix.",
+            "url": "classes/Np-decompositions-lu.html#method_p"
+        },                {
+            "fqsen": "\\Np\\decompositions\\svd",
+            "name": "svd",
+            "summary": "SVD\nCompute\u0020the\u0020singular\u0020value\u0020decomposition\u0020of\u0020a\u0020matrix\u0020and\nreturn\u0020an\u0020object\u0020of\u0020the\u0020singular\u0020values\u0020and\u0020unitary\u0020matrices",
+            "url": "classes/Np-decompositions-svd.html"
+        },                {
+            "fqsen": "\\Np\\decompositions\\svd\u003A\u003Afactory\u0028\u0029",
+            "name": "factory",
+            "summary": "",
+            "url": "classes/Np-decompositions-svd.html#method_factory"
+        },                {
+            "fqsen": "\\Np\\decompositions\\svd\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Np-decompositions-svd.html#method___construct"
+        },                {
+            "fqsen": "\\Np\\decompositions\\svd\u003A\u003Au\u0028\u0029",
+            "name": "u",
+            "summary": "Return\u0020the\u0020U\u0020matrix.",
+            "url": "classes/Np-decompositions-svd.html#method_u"
+        },                {
+            "fqsen": "\\Np\\decompositions\\svd\u003A\u003As\u0028\u0029",
+            "name": "s",
+            "summary": "Return\u0020the\u0020singular\u0020values\u0020of\u0020matrix.",
+            "url": "classes/Np-decompositions-svd.html#method_s"
+        },                {
+            "fqsen": "\\Np\\decompositions\\svd\u003A\u003Av\u0028\u0029",
+            "name": "v",
+            "summary": "Return\u0020the\u0020V\u0020matrix.",
+            "url": "classes/Np-decompositions-svd.html#method_v"
+        },                {
+            "fqsen": "\\Np\\decompositions\\svd\u003A\u003Avt\u0028\u0029",
+            "name": "vt",
+            "summary": "Return\u0020the\u0020V\u0020transposed\u0020matrix.",
+            "url": "classes/Np-decompositions-svd.html#method_vt"
+        },                {
+            "fqsen": "\\Np\\exceptions\\dimensionalityMismatch",
+            "name": "dimensionalityMismatch",
+            "summary": "",
+            "url": "classes/Np-exceptions-dimensionalityMismatch.html"
+        },                {
+            "fqsen": "\\Np\\exceptions\\dtypeException",
+            "name": "dtypeException",
+            "summary": "Description\u0020of\u0020dtypeException",
+            "url": "classes/Np-exceptions-dtypeException.html"
+        },                {
+            "fqsen": "\\Np\\exceptions\\invalidArgumentException",
+            "name": "invalidArgumentException",
+            "summary": "",
+            "url": "classes/Np-exceptions-invalidArgumentException.html"
+        },                {
+            "fqsen": "\\Np\\exceptions\\npException",
+            "name": "npException",
+            "summary": "",
+            "url": "classes/Np-exceptions-npException.html"
+        },                {
+            "fqsen": "\\Np\\exceptions\\runtimeException",
+            "name": "runtimeException",
+            "summary": "",
+            "url": "classes/Np-exceptions-runtimeException.html"
+        },                {
+            "fqsen": "\\Np\\linAlg",
+            "name": "linAlg",
+            "summary": "Linear\u0020Algebra",
+            "url": "classes/Np-linAlg.html"
+        },                {
+            "fqsen": "\\Np\\linAlg\u003A\u003Adot\u0028\u0029",
+            "name": "dot",
+            "summary": "get\u0020dot\u0020product\u0020of\u0020m.m\u0020\u007C\u0020m.v\u0020\u007C\u0020v.v",
+            "url": "classes/Np-linAlg.html#method_dot"
+        },                {
+            "fqsen": "\\Np\\linAlg\u003A\u003AdotMatrix\u0028\u0029",
+            "name": "dotMatrix",
+            "summary": "get\u0020matrix\u0020\u0026\u0020matrix\u0020dot\u0020product",
+            "url": "classes/Np-linAlg.html#method_dotMatrix"
+        },                {
+            "fqsen": "\\Np\\linAlg\u003A\u003AdotVector\u0028\u0029",
+            "name": "dotVector",
+            "summary": "get\u0020dot\u0020product\u0020of\u0020matrix\u0020\u0026\u0020a\u0020vector",
+            "url": "classes/Np-linAlg.html#method_dotVector"
+        },                {
+            "fqsen": "\\Np\\linAlg\u003A\u003Ainverse\u0028\u0029",
+            "name": "inverse",
+            "summary": "FIXEME\u003A\u002DBug\u0020noticed\u0020on\u002010\/06\/21\nCompute\u0020the\u0020multiplicative\u0020inverse\u0020of\u0020the\u0020matrix.",
+            "url": "classes/Np-linAlg.html#method_inverse"
+        },                {
+            "fqsen": "\\Np\\linAlg\u003A\u003ApseudoInverse\u0028\u0029",
+            "name": "pseudoInverse",
+            "summary": "FIXEME\u003A\u002DBug\u0020noticed\u0020on\u002010\/06\/21\nCompute\u0020the\u0020\u0028Moore\u002DPenrose\u0029\u0020pseudo\u0020inverse\u0020of\u0020the\u0020general\u0020matrix.",
+            "url": "classes/Np-linAlg.html#method_pseudoInverse"
+        },                {
+            "fqsen": "\\Np\\ops",
+            "name": "ops",
+            "summary": "Operations\nA\u0020fast\u0020lite\u0020\u0026\u0020memory\u0020efficient\u0020Scientific\u0020Computing\u0020for\u0020php",
+            "url": "classes/Np-ops.html"
+        },                {
+            "fqsen": "\\Np\\ops\u003A\u003Amax\u0028\u0029",
+            "name": "max",
+            "summary": "Return\u0020the\u0020element\u002Dwise\u0020maximum\u0020of\u0020two\u0020matrices\u007C\u0020two\u0020vectors.",
+            "url": "classes/Np-ops.html#method_max"
+        },                {
+            "fqsen": "\\Np\\ops\u003A\u003Amin\u0028\u0029",
+            "name": "min",
+            "summary": "Return\u0020the\u0020element\u002Dwise\u0020minimum\u0020of\u0020two\u0020matrices\u007Ctwo\u0020vectors.",
+            "url": "classes/Np-ops.html#method_min"
+        },                {
+            "fqsen": "\\Np\\ops\u003A\u003Amap\u0028\u0029",
+            "name": "map",
+            "summary": "Run\u0020a\u0020function\u0020over\u0020all\u0020of\u0020the\u0020elements\u0020in\u0020the\u0020matrix\u007Cvector.",
+            "url": "classes/Np-ops.html#method_map"
+        },                {
+            "fqsen": "\\Np\\ops\u003A\u003Aabs\u0028\u0029",
+            "name": "abs",
+            "summary": "",
+            "url": "classes/Np-ops.html#method_abs"
+        },                {
+            "fqsen": "\\Np\\ops\u003A\u003Asqrt\u0028\u0029",
+            "name": "sqrt",
+            "summary": "",
+            "url": "classes/Np-ops.html#method_sqrt"
+        },                {
+            "fqsen": "\\Np\\ops\u003A\u003Aexp\u0028\u0029",
+            "name": "exp",
+            "summary": "",
+            "url": "classes/Np-ops.html#method_exp"
+        },                {
+            "fqsen": "\\Np\\ops\u003A\u003Aexp1\u0028\u0029",
+            "name": "exp1",
+            "summary": "",
+            "url": "classes/Np-ops.html#method_exp1"
+        },                {
+            "fqsen": "\\Np\\ops\u003A\u003Alog\u0028\u0029",
+            "name": "log",
+            "summary": "",
+            "url": "classes/Np-ops.html#method_log"
+        },                {
+            "fqsen": "\\Np\\ops\u003A\u003Alog1p\u0028\u0029",
+            "name": "log1p",
+            "summary": "",
+            "url": "classes/Np-ops.html#method_log1p"
+        },                {
+            "fqsen": "\\Np\\ops\u003A\u003Asin\u0028\u0029",
+            "name": "sin",
+            "summary": "",
+            "url": "classes/Np-ops.html#method_sin"
+        },                {
+            "fqsen": "\\Np\\ops\u003A\u003Aasin\u0028\u0029",
+            "name": "asin",
+            "summary": "",
+            "url": "classes/Np-ops.html#method_asin"
+        },                {
+            "fqsen": "\\Np\\ops\u003A\u003Acos\u0028\u0029",
+            "name": "cos",
+            "summary": "",
+            "url": "classes/Np-ops.html#method_cos"
+        },                {
+            "fqsen": "\\Np\\ops\u003A\u003Aacos\u0028\u0029",
+            "name": "acos",
+            "summary": "",
+            "url": "classes/Np-ops.html#method_acos"
+        },                {
+            "fqsen": "\\Np\\ops\u003A\u003Atan\u0028\u0029",
+            "name": "tan",
+            "summary": "",
+            "url": "classes/Np-ops.html#method_tan"
+        },                {
+            "fqsen": "\\Np\\ops\u003A\u003Aatan\u0028\u0029",
+            "name": "atan",
+            "summary": "",
+            "url": "classes/Np-ops.html#method_atan"
+        },                {
+            "fqsen": "\\Np\\ops\u003A\u003AradToDeg\u0028\u0029",
+            "name": "radToDeg",
+            "summary": "",
+            "url": "classes/Np-ops.html#method_radToDeg"
+        },                {
+            "fqsen": "\\Np\\ops\u003A\u003AdegToRad\u0028\u0029",
+            "name": "degToRad",
+            "summary": "",
+            "url": "classes/Np-ops.html#method_degToRad"
+        },                {
+            "fqsen": "\\Np\\ops\u003A\u003Afloor\u0028\u0029",
+            "name": "floor",
+            "summary": "",
+            "url": "classes/Np-ops.html#method_floor"
+        },                {
+            "fqsen": "\\Np\\ops\u003A\u003Aceil\u0028\u0029",
+            "name": "ceil",
+            "summary": "",
+            "url": "classes/Np-ops.html#method_ceil"
+        },                {
+            "fqsen": "\\Np\\ops\u003A\u003Afree\u0028\u0029",
+            "name": "free",
+            "summary": "",
+            "url": "classes/Np-ops.html#method_free"
+        },                {
+            "fqsen": "\\Np\\ops\u003A\u003Acopy\u0028\u0029",
+            "name": "copy",
+            "summary": "make\u0020a\u0020copy\u0020of\u0020matrix\u007Cvector\u003B",
+            "url": "classes/Np-ops.html#method_copy"
+        },                {
+            "fqsen": "\\Np\\ops\u003A\u003Aclip\u0028\u0029",
+            "name": "clip",
+            "summary": "Clip\u0020the\u0020elements\u0020in\u0020the\u0020matrix\u0020to\u0020be\u0020between\u0020given\u0020minimum\u0020and\u0020maximum\nand\u0020return\u0020a\u0020new\u0020matrix.",
+            "url": "classes/Np-ops.html#method_clip"
+        },                {
+            "fqsen": "\\Np\\ops\u003A\u003AclipLower\u0028\u0029",
+            "name": "clipLower",
+            "summary": "Clip\u0020the\u0020matrix\u007Cvector\u0020to\u0020be\u0020lower\u0020bounded\u0020by\u0020a\u0020given\u0020minimum.",
+            "url": "classes/Np-ops.html#method_clipLower"
+        },                {
+            "fqsen": "\\Np\\ops\u003A\u003AclipUpper\u0028\u0029",
+            "name": "clipUpper",
+            "summary": "Clip\u0020the\u0020matrix\u007Cvector\u0020to\u0020be\u0020upper\u0020bounded\u0020by\u0020a\u0020given\u0020maximum.",
+            "url": "classes/Np-ops.html#method_clipUpper"
+        },                {
+            "fqsen": "\\Np\\ops\u003A\u003Areshape\u0028\u0029",
+            "name": "reshape",
+            "summary": "return\u0020a\u0020reshaped\u0020data\u0020buffer\u0020as\u0020matrix",
+            "url": "classes/Np-ops.html#method_reshape"
+        },                {
+            "fqsen": "\\Np\\reductions\\ref",
+            "name": "ref",
+            "summary": "REF",
+            "url": "classes/Np-reductions-ref.html"
+        },                {
+            "fqsen": "\\Np\\reductions\\ref\u003A\u003Afactory\u0028\u0029",
+            "name": "factory",
+            "summary": "",
+            "url": "classes/Np-reductions-ref.html#method_factory"
+        },                {
+            "fqsen": "\\Np\\reductions\\rref",
+            "name": "rref",
+            "summary": "RREF",
+            "url": "classes/Np-reductions-rref.html"
+        },                {
+            "fqsen": "\\Np\\reductions\\rref\u003A\u003Afactory\u0028\u0029",
+            "name": "factory",
+            "summary": "",
+            "url": "classes/Np-reductions-rref.html#method_factory"
         },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
             "url": "namespaces/default.html"
         },                {
-            "fqsen": "\\numphp",
-            "name": "numphp",
+            "fqsen": "\\Np",
+            "name": "Np",
             "summary": "",
-            "url": "namespaces/numphp.html"
+            "url": "namespaces/np.html"
         },                {
-            "fqsen": "\\numphp\\core",
+            "fqsen": "\\Np\\core",
             "name": "core",
             "summary": "",
-            "url": "namespaces/numphp-core.html"
+            "url": "namespaces/np-core.html"
+        },                {
+            "fqsen": "\\Np\\decompositions",
+            "name": "decompositions",
+            "summary": "",
+            "url": "namespaces/np-decompositions.html"
+        },                {
+            "fqsen": "\\Np\\exceptions",
+            "name": "exceptions",
+            "summary": "",
+            "url": "namespaces/np-exceptions.html"
+        },                {
+            "fqsen": "\\Np\\reductions",
+            "name": "reductions",
+            "summary": "",
+            "url": "namespaces/np-reductions.html"
         }            ]
 );
