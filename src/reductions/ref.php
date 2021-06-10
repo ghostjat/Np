@@ -10,7 +10,8 @@ use Np\core\lapack;
  * REF
  *
  * The row echelon form (REF) of a matrix.
- *
+ * 
+ * @package Np
  * @category Scientific Computing
  * @author ghost (Shubham Chaudhary)
  * @email ghost.jat@gmail.com

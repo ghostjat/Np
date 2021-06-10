@@ -18,7 +18,7 @@ use Np\decompositions\cholesky;
  * Matrix
  * A fast lite memory efficient Scientific Computing for php
  * 
- * @package   NumPhp
+ * @package   Np
  * @category  Scientific Computing
  * @author    ghost (Shubham Chaudhary)
  * @email     ghost.jat@gmail.com

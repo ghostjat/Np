@@ -3,9 +3,11 @@
 namespace Np\core;
 
 /**
+ * Lapack
+ * 
  * php interface for LAPACK
  * 
- * @package NumPhp
+ * @package Np
  * @category Scientific Computing
  * @author ghost (Shubham Chaudhary)
  * @email ghost.jat@gmail.com

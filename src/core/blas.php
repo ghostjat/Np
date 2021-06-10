@@ -3,9 +3,11 @@
 namespace Np\core;
 
 /**
+ * OpenBlas
+ * 
  * php interface for OpenBLAS
  * 
- * @package NumPhp
+ * @package Np
  * @category Scientific Computing
  * @author ghost (Shubham Chaudhary)
  * @email ghost.jat@gmail.com

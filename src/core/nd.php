@@ -13,9 +13,11 @@ use Np\exceptions\{
 
 /**
  * ND
+ * 
  * A fast lite memory efficient Scientific Computing for php
  * 
- * @package   NumPhp
+ * @package   Np
+ * @version   V0.0.1
  * @category  Scientific Computing
  * @author    ghost (Shubham Chaudhary)
  * @email     ghost.jat@gmail.com

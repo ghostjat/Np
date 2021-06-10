@@ -15,7 +15,7 @@ use Np\exceptions\invalidArgumentException;
  * The Eigen decompositon or (Spectral decomposition) is a matrix factorization resulting in a matrix of eigenvectors and a
  * corresponding array of eigenvalues.
  * 
- * @package NumPhp
+ * @package Np
  * @category Scientific Library
  * @author ghost (Shubham Chaudhary)
  * @email ghost.jat@gmail.com

@@ -13,7 +13,7 @@ use Np\core\lapack;
  * An efficient decomposition of a square positive definite matrix into a
  * lower triangular matrix and its conjugate transpose.
  * 
- * @package NumPhp
+ * @package Np
  * @category Scientific Library
  * @author ghost (Shubham Chaudhary)
  * @email ghost.jat@gmail.com

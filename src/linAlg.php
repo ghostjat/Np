@@ -6,9 +6,10 @@ use Np\core\blas;
 use Np\core\lapack;
 /**
  * Linear Algebra
+ * 
  * A fast lite memory efficient Scientific Computing for php
  * 
- * @package   NP
+ * @package   Np
  * @category  Scientific Computing
  * @author    ghost (Shubham Chaudhary)
  * @email     ghost.jat@gmail.com

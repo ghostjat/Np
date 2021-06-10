@@ -16,9 +16,9 @@ use Np\exceptions\{
 /** A fast lite memory efficient Scientific Computing in php
  * Vector (rank-1)
  * 
- * @package NumPhp
- * @version V0.0.alpha
- * @category Php Scientific Library
+ * @package Np
+ * @version V0.0.1
+ * @category Scientific Library for PHP
  * @author ghost (Shubham Chaudhary)
  * @email ghost.jat@gmail.com
  * @copyright (c) 2020-2021, Shubham Chaudhary

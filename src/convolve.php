@@ -4,6 +4,17 @@ declare(strict_types=1);
 namespace Np;
 use Np\exceptions\dtypeException;
 
+/**
+ * Convolve
+ * 
+ * 1D & 2D SignalProcessing in pure php
+ * 
+ * @package Np
+ * @category  Scientific Computing
+ * @author    ghost (Shubham Chaudhary)
+ * @email     ghost.jat@gmail.com
+ * @copyright (c) 2020-2021, Shubham Chaudhary
+ */
 class convolve {
     
     /**

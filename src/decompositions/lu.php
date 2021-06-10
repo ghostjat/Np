@@ -15,7 +15,7 @@ use Np\exceptions\invalidArgumentException;
  * The LU decomposition is a factorization of a Matrix as the product of a
  * lower and upper triangular matrix as well as a permutation matrix.
  *
- * @package NumPhp
+ * @package Np
  * @category Scientific Library
  * @author ghost (Shubham Chaudhary)
  * @email ghost.jat@gmail.com

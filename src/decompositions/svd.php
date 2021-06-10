@@ -13,8 +13,8 @@ use Np\core\lapack;
  * Compute the singular value decomposition of a matrix and 
  * return an object of the singular values and unitary matrices
  * 
- * @package NumPhp
- * @category Scientific Library
+ * @package Np
+ * @category Scientific Library for Php
  * @author ghost (Shubham Chaudhary)
  * @email ghost.jat@gmail.com
  * @copyright (c) 2020-2021, Shubham Chaudhary

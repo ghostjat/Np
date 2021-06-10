@@ -8,7 +8,8 @@ use Np\matrix;
  * RREF
  *
  * The reduced row echelon form (RREF) of a matrix.
- *
+ * 
+ * @package Np
  * @category Scientific Computing
  * @author ghost (Shubham Chaudhary)
  * @email ghost.jat@gmail.com
