@@ -89,47 +89,47 @@ trait ops {
         return $ar;
     }
 
-    public function log1p(): matrix {
+    public function log1p(): matrix|vector {
         return $this->map('log1p');
     }
 
-    public function sin(): matrix {
+    public function sin(): matrix|vector {
         return $this->map('sin');
     }
 
-    public function asin(): matrix {
+    public function asin(): matrix|vector {
         return $this->map('asin');
     }
 
-    public function cos(): matrix {
+    public function cos(): matrix|vector {
         return $this->map('cos');
     }
 
-    public function acos(): matrix {
+    public function acos(): matrix|vector {
         return $this->map('acos');
     }
 
-    public function tan(): matrix {
+    public function tan(): matrix|vector {
         return $this->map('tan');
     }
 
-    public function atan(): matrix {
+    public function atan(): matrix|vector {
         return $this->map('atan');
     }
 
-    public function radToDeg(): matrix {
+    public function radToDeg(): matrix|vector {
         return $this->map('rad2deg');
     }
 
-    public function degToRad(): matrix {
+    public function degToRad(): matrix|vector {
         return $this->map('deg2rad');
     }
 
-    public function floor(): matrix {
+    public function floor(): matrix|vector {
         return $this->map('floor');
     }
 
-    public function ceil(): matrix {
+    public function ceil(): matrix|vector {
         return $this->map('ceil');
     }
     
@@ -188,7 +188,7 @@ trait ops {
      * @param float $min
      * @return matrix
      */
-    public function clipLower(float $min): matrix {
+    public function clipLower(float $min): matrix|vector {
         if ($this instanceof matrix) {
             $ar = self::factory($this->row, $this->col, $this->dtype);
         } else {
