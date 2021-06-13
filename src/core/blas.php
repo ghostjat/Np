@@ -72,9 +72,9 @@ class blas {
     public static function gemm(\Np\matrix $m1, \Np\matrix $m2, \Np\matrix $mr, int $trans1 = self::CblasNoTrans, int $trans2 = self::CblasNoTrans) {
         self::init();
         if ($m1->dtype == \Np\matrix::FLOAT) {
-            self::$ffi_blas->cblas_sgemm(self::CblasRowMajor, $trans1, $trans2, $m1->row, $m2->col, $m1->col, 1.0, $m1->data, $m1->col, $m2->data, $m2->col, 0.0, $mr->data, $mr->col);
+            return self::$ffi_blas->cblas_sgemm(self::CblasRowMajor, $trans1, $trans2, $m1->row, $m2->col, $m1->col, 1.0, $m1->data, $m1->col, $m2->data, $m2->col, 0.0, $mr->data, $mr->col);
         }
-        self::$ffi_blas->cblas_dgemm(self::CblasRowMajor, $trans1, $trans2, $m1->row, $m2->col, $m1->col, 1.0, $m1->data, $m1->col, $m2->data, $m2->col, 0.0, $mr->data, $mr->col);
+        return self::$ffi_blas->cblas_dgemm(self::CblasRowMajor, $trans1, $trans2, $m1->row, $m2->col, $m1->col, 1.0, $m1->data, $m1->col, $m2->data, $m2->col, 0.0, $mr->data, $mr->col);
     }
 
     /**
@@ -90,10 +90,10 @@ class blas {
     public static function symm(\Np\matrix $m1, \Np\matrix $m2, \Np\matrix $mr) {
         self::init();
         if ($m1->dtype == \Np\matrix::DOUBLE) {
-            self::$ffi_blas->cblas_dsymm(self::CblasRowMajor, self::CblasLeft, self::CblasUpper, $m1->row,
+            return self::$ffi_blas->cblas_dsymm(self::CblasRowMajor, self::CblasLeft, self::CblasUpper, $m1->row,
                     $m2->col, 1.0, $m1->data, $m1->row, $m2->data, $m2->row, 0.0, $mr->data, $mr->row);
         }
-        self::$ffi_blas->cblas_ssymm(self::CblasRowMajor, self::CblasLeft, self::CblasUpper, $m1->row,
+        return self::$ffi_blas->cblas_ssymm(self::CblasRowMajor, self::CblasLeft, self::CblasUpper, $m1->row,
                 $m2->col, 1.0, $m1->data, $m1->row, $m2->data, $m2->row, 0.0, $mr->data, $mr->row);
     }
 
@@ -129,10 +129,10 @@ class blas {
     public static function syr2k(\Np\matrix $m1, \Np\matrix $m2, \Np\matrix $mr) {
         self::init();
         if ($m1->dtype == \Np\matrix::DOUBLE) {
-            self::$ffi_blas->cblas_dsyr2k(self::CblasRowMajor, self::CblasLower, self::CblasNoTrans,
+            return self::$ffi_blas->cblas_dsyr2k(self::CblasRowMajor, self::CblasLower, self::CblasNoTrans,
                     $m1->col, $m2->row, 1.0, $m1->data, $m1->row, $m2->data, $m2->row, 0.0, $mr->data, $mr->row);
         }
-        self::$ffi_blas->cblas_ssyr2k(self::CblasRowMajor, self::CblasLower, self::CblasNoTrans, $m1->col, $m2->row, 1.0, $m1->data, $m1->row,
+        return self::$ffi_blas->cblas_ssyr2k(self::CblasRowMajor, self::CblasLower, self::CblasNoTrans, $m1->col, $m2->row, 1.0, $m1->data, $m1->row,
                 $m2->data, $m2->row, 0.0, $mr->data, $mr->row);
     }
 
@@ -257,9 +257,9 @@ class blas {
     public static function swap(\Np\vector $v1, \Np\vector $v2, int $inv1 = 1, int $inv2 = 1) {
         self::init();
         if ($v1->dtype == \Np\vector::DOUBLE) {
-            self::$ffi_blas->cblas_dswap($v1->col, $v1->data, $inv1, $v2->data, $inv2);
+            return self::$ffi_blas->cblas_dswap($v1->col, $v1->data, $inv1, $v2->data, $inv2);
         }
-        self::$ffi_blas->cblas_sswap($v1->col, $v1->data, $inv1, $v2->data, $inv2);
+        return self::$ffi_blas->cblas_sswap($v1->col, $v1->data, $inv1, $v2->data, $inv2);
     }
 
     /**

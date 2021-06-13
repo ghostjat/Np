@@ -741,6 +741,19 @@ use Np\exceptions\{
     public function square(): vector {
         return $this->multiplyVector($this);
     }
+    
+    public function pop(): mixed {
+        $ar = $this->asArray();
+        \FFI::free($this->data);
+        $val = array_shift($ar);
+        $v = self::ar($ar);
+        $this->col = $v->col;
+        $this->ndim = $v->ndim;
+        $this->data = $v->data;
+        unset($v);
+        unset($ar);
+        return $val;
+    }
 
     /**
      * sort the vector 
