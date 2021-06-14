@@ -45,7 +45,7 @@ trait linAlg {
      */
     protected function dotMatrix(matrix $matrix): matrix {
         if ($this->checkDtype($this, $matrix) && $this->checkDimensions($this,$matrix)) {
-            $ar = self::factory($this->row, $this->col, $this->dtype);
+            $ar = self::factory($this->row, $matrix->col, $this->dtype);
             blas::gemm($this, $matrix, $ar);
             return $ar;
         }

@@ -681,7 +681,7 @@ class matrix extends nd{
         $ar = self::factory($this->col, $this->row, $this->dtype);
         for ($i = 0; $i < $ar->row; ++$i) {
             for ($j = 0; $j < $ar->col; ++$j) {
-                $ar->data[$i * $ar->col + $j] = $this->data[$j * $ar->col + $i];
+                $ar->data[$i * $ar->col + $j] = $this->data[$j * $this->col + $i];
             }
         }
         return $ar;
@@ -973,25 +973,24 @@ class matrix extends nd{
      * @param bool $dignoal
      * @return void
      */
-    public function setData(int|float|array $data, bool $dignoal = false): void {
-        if ($dignoal == false) {
-            if (is_array($data) && is_array($data[0])) {
-                $f = $this->flattenArray($data);
-                foreach ($f as $k => $v) {
-                    $this->data[$k] = $v;
-                }
-            } elseif (is_numeric($data)) {
-                for ($i = 0; $i < $this->ndim; ++$i) {
-                    $this->data[$i] = $data;
-                }
+    public function setData(int|float|array $data): void {
+
+        if (is_array($data) && is_array($data[0])) {
+            $f = $this->flattenArray($data);
+            foreach ($f as $k => $v) {
+                $this->data[$k] = $v;
             }
-        } elseif (is_numeric($data) || is_array($data) && !is_array($data[0])) {
-            for ($i = 0; $i < $this->row; ++$i) {
-                $this->data[$i * $this->col * $i] = $data;
+        } elseif (is_numeric($data)) {
+            for ($i = 0; $i < $this->ndim; ++$i) {
+                $this->data[$i] = $data;
+            }
+        } elseif (is_array($data) && !is_array($data[0])) {
+            foreach ($data as $i => $v) {
+                $this->data[$i] = $v;
             }
         }
     }
-    
+
     /**
      * get the matrix data type
      * @return int

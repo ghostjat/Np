@@ -152,8 +152,25 @@ class lapack {
         return self::$ffi_lapack->LAPACKE_dlasrt($id, $v->col, $v->data);
     }
 
-    public static function sgels() {
+    /**
+     * 
+     * The routine solves overdetermined or underdetermined real linear systems
+     * involving an m-by-n matrix M, or its transpose, using a QR or LQ
+     * factorization of M. It is assumed that M has full rank.
+     * @param \Np\matrix $m
+     * @param \Np\matrix|\Np\vector $b
+     * @param int $matLayout
+     * @param string $trans
+     * @return type
+     */
+    public static function gels(\Np\matrix $m, \Np\matrix|\Np\vector $b, int $matLayout = self::ROW_MAJOR,string $trans = 'N') {
         self::init();
+        if($m->dtype == \Np\matrix::FLOAT){
+            return self::$ffi_lapack->LAPACKE_sgels( $matLayout, $trans, $m->row, $m->col, $b->col, $m->data,
+                          $m->col, $b->data, $b->col );
+        }
+        return self::$ffi_lapack->LAPACKE_dgels( $matLayout, $trans, $m->row, $m->col, $b->col, $m->data,
+                          $m->col, $b->data, $b->col );
     }
 
 }
