@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace Np\reductions;
+namespace Np\linAlgb\reductions;
 
 use Np\matrix;
 
@@ -59,5 +59,4 @@ class rref {
         }
         return $ar;
     }
-
 }

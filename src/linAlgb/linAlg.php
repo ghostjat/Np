@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
-namespace Np;
+namespace Np\linAlgb;
 
-use Np\core\blas;
-use Np\core\lapack;
+use Np\core\{blas,lapack};
+use Np\matrix, Np\vector;
 /**
  * Linear Algebra
  * 
- * A fast lite memory efficient Scientific Computing for php
+ * 
  * 
  * @package   Np
  * @category  Scientific Computing
@@ -26,16 +26,12 @@ trait linAlg {
      */
     public function dot(matrix|vector $d): matrix|vector {
         if ($this instanceof matrix) {
-            if ($d instanceof self) {
+            if ($d instanceof matrix) {
                 return $this->dotMatrix($d);
-            } else {
-                return $this->dotVector($d);
             }
-        } else {
-            if ($this->checkDtype($this, $d) && $d instanceof vector) {
-                return blas::dot($this, $d);
-            }
+            return $this->dotVector($d);
         }
+        return blas::dot($this, $d);
     }
 
     /**
@@ -44,8 +40,8 @@ trait linAlg {
      * @return \Np\matrix
      */
     protected function dotMatrix(matrix $matrix): matrix {
-        if ($this->checkDtype($this, $matrix) && $this->checkDimensions($this,$matrix)) {
-            $ar = self::factory($this->row, $matrix->col, $this->dtype);
+        if ($this->checkDimensions($this,$matrix)) {
+            $ar = self::factory($this->row, $matrix->col);
             blas::gemm($this, $matrix, $ar);
             return $ar;
         }
@@ -57,37 +53,37 @@ trait linAlg {
      * @return \Np\vector
      */
     protected function dotVector(vector $vector): vector {
-        if ($this->checkDtype($this, $vector) && $this->checkDimensions($vector, $this)) {
-            $mvr = vector::factory($this->col, $this->dtype);
+        if ($this->checkDimensions($vector, $this)) {
+            $mvr = vector::factory($this->col);
             blas::gemv($this, $vector, $mvr);
             return $mvr;
         }
     }
     
     /**
-     * FIXEME:-Bug noticed on 10/06/21
+     * 
      * Compute the multiplicative inverse of the matrix.
      * @return matrix|null
      */
     public function inverse(): matrix|null {
-        if (!$this->isSquare()) {
-            self::_err('Error::invalid Size of matrix!');
+        if ($this->isSquare()) {
+            $imat = $this->copy();
+            $ipiv = vector::factory($this->row, vector::INT);
+            $lp = lapack::getrf($imat, $ipiv);
+            if ($lp != 0) {
+                return null;
+            }
+            $lp = lapack::getri($imat, $ipiv);
+            if ($lp != 0) {
+                return null;
+            }
+            unset($ipiv);
+            unset($lp);
+            return $imat;
         }
-        $imat = $this->copy();
-        $ipiv = vector::factory($this->row, vector::INT);
-        $lp = lapack::getrf($imat, $ipiv);
-        if ($lp != 0) {
-            return null;
-        }
-        $lp = lapack::getri($imat, $ipiv);
-        if ($lp != 0) {
-            return null;
-        }
-        unset($ipiv);
-        unset($lp);
-        return $imat;
+        self::_err('Error::invalid Size of matrix!');
     }
-    
+
     /**
      * FIXEME:-Bug noticed on 10/06/21
      * Compute the (Moore-Penrose) pseudo inverse of the general matrix.
@@ -95,9 +91,9 @@ trait linAlg {
      */
     public function pseudoInverse(): matrix|null {
         $k = min($this->row, $this->col);
-        $s = vector::factory($k, $this->dtype);
-        $u = self::factory($this->row, $this->row, $this->dtype);
-        $vt = self::factory($this->col, $this->col, $this->dtype);
+        $s = vector::factory($k);
+        $u = self::factory($this->row, $this->row);
+        $vt = self::factory($this->col, $this->col);
         $imat = $this->copy();
         $lp = lapack::gesdd($imat, $s, $u, $vt);
         if ($lp != 0) {

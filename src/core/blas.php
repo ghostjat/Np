@@ -71,9 +71,6 @@ class blas {
      */
     public static function gemm(\Np\matrix $m1, \Np\matrix $m2, \Np\matrix $mr, int $trans1 = self::CblasNoTrans, int $trans2 = self::CblasNoTrans) {
         self::init();
-        if ($m1->dtype == \Np\matrix::FLOAT) {
-            return self::$ffi_blas->cblas_sgemm(self::CblasRowMajor, $trans1, $trans2, $m1->row, $m2->col, $m1->col, 1.0, $m1->data, $m1->col, $m2->data, $m2->col, 0.0, $mr->data, $mr->col);
-        }
         return self::$ffi_blas->cblas_dgemm(self::CblasRowMajor, $trans1, $trans2, $m1->row, $m2->col, $m1->col, 1.0, $m1->data, $m1->col, $m2->data, $m2->col, 0.0, $mr->data, $mr->col);
     }
 
@@ -89,12 +86,8 @@ class blas {
      */
     public static function symm(\Np\matrix $m1, \Np\matrix $m2, \Np\matrix $mr) {
         self::init();
-        if ($m1->dtype == \Np\matrix::DOUBLE) {
-            return self::$ffi_blas->cblas_dsymm(self::CblasRowMajor, self::CblasLeft, self::CblasUpper, $m1->row,
-                    $m2->col, 1.0, $m1->data, $m1->row, $m2->data, $m2->row, 0.0, $mr->data, $mr->row);
-        }
-        return self::$ffi_blas->cblas_ssymm(self::CblasRowMajor, self::CblasLeft, self::CblasUpper, $m1->row,
-                $m2->col, 1.0, $m1->data, $m1->row, $m2->data, $m2->row, 0.0, $mr->data, $mr->row);
+        return self::$ffi_blas->cblas_dsymm(self::CblasRowMajor, self::CblasLeft, self::CblasUpper, $m1->row,
+                        $m2->col, 1.0, $m1->data, $m1->row, $m2->data, $m2->row, 0.0, $mr->data, $mr->row);
     }
 
     /**
@@ -108,11 +101,7 @@ class blas {
      */
     public static function syrk(\Np\matrix $m1, \Np\matrix $m2) {
         self::init();
-        if ($m1->dtype == \Np\matrix::DOUBLE) {
-            return self::$ffi_blas->cblas_dsyrk(self::CblasRowMajor, self::CblasUpper,
-                            self::CblasNoTrans, $m1->row, $m2->col, 1.0, $m1->data, $m1->row, 0.0, $m2->data, $m2->row);
-        }
-        return self::$ffi_blas->cblas_ssyrk(self::CblasRowMajor, self::CblasUpper,
+        return self::$ffi_blas->cblas_dsyrk(self::CblasRowMajor, self::CblasUpper,
                         self::CblasNoTrans, $m1->row, $m2->col, 1.0, $m1->data, $m1->row, 0.0, $m2->data, $m2->row);
     }
 
@@ -128,12 +117,8 @@ class blas {
      */
     public static function syr2k(\Np\matrix $m1, \Np\matrix $m2, \Np\matrix $mr) {
         self::init();
-        if ($m1->dtype == \Np\matrix::DOUBLE) {
-            return self::$ffi_blas->cblas_dsyr2k(self::CblasRowMajor, self::CblasLower, self::CblasNoTrans,
-                    $m1->col, $m2->row, 1.0, $m1->data, $m1->row, $m2->data, $m2->row, 0.0, $mr->data, $mr->row);
-        }
-        return self::$ffi_blas->cblas_ssyr2k(self::CblasRowMajor, self::CblasLower, self::CblasNoTrans, $m1->col, $m2->row, 1.0, $m1->data, $m1->row,
-                $m2->data, $m2->row, 0.0, $mr->data, $mr->row);
+        return self::$ffi_blas->cblas_dsyr2k(self::CblasRowMajor, self::CblasLower, self::CblasNoTrans,
+                        $m1->col, $m2->row, 1.0, $m1->data, $m1->row, $m2->data, $m2->row, 0.0, $mr->data, $mr->row);
     }
 
     /**
@@ -146,12 +131,8 @@ class blas {
      */
     public static function gemv(\Np\matrix $m, \Np\vector $v, \Np\vector $mvr) {
         self::init();
-        if ($m->dtype == \Np\matrix::DOUBLE) {
-            return self::$ffi_blas->cblas_dgemv(self::CblasRowMajor, self::CblasNoTrans, $m->row, $m->col,
-                            1.0, $m->data, $m->row, $v->data, 1, 1.0, $mvr->data, 1);
-        }
-        return self::$ffi_blas->cblas_sgemv(self::CblasRowMajor, self::CblasNoTrans, $m->col, $m->row,
-                        1.0, $m->data, $m->row, $v->data, 1, 0.0, $mvr->data, 1);
+        return self::$ffi_blas->cblas_dgemv(self::CblasRowMajor, self::CblasNoTrans, $m->row, $m->col,
+                        1.0, $m->data, $m->row, $v->data, 1, 1.0, $mvr->data, 1);
     }
 
     /**
@@ -167,14 +148,7 @@ class blas {
      */
     public static function gbmv(int $KL, int $KU, float $alpha, float $beta, \Np\matrix $matrix, \Np\vector $vector, \Np\vector $mvr) {
         self::init();
-        if ($matrix->dtype == \Np\matrix::DOUBLE) {
-            return self::$ffi_blas->cblas_dgbmv(self::CblasRowMajor,
-                            self::CblasNoTrans, $matrix->row, $matrix->col,
-                            $KL, $KU, $alpha,
-                            $matrix->data, $matrix->row, $vector->data,
-                            1, $beta, $mvr->data, 1);
-        }
-        return self::$ffi_blas->cblas_sgbmv(self::CblasRowMajor,
+        return self::$ffi_blas->cblas_dgbmv(self::CblasRowMajor,
                         self::CblasNoTrans, $matrix->row, $matrix->col,
                         $KL, $KU, $alpha,
                         $matrix->data, $matrix->row, $vector->data,
@@ -191,11 +165,7 @@ class blas {
      */
     public static function ger(\Np\vector $v1, \Np\vector $v2, \Np\matrix $m) {
         self::init();
-        if ($m->dtype == \Np\matrix::DOUBLE) {
-            return self::$ffi_blas->cblas_dger(self::CblasRowMajor, $v1->col, $v2->col,
-                            1.0, $v1->data, 1, $v2->data, 1, $m->data, $m->row);
-        }
-        return self::$ffi_blas->cblas_sger(self::CblasRowMajor, $v1->col, $v2->col,
+        return self::$ffi_blas->cblas_dger(self::CblasRowMajor, $v1->col, $v2->col,
                         1.0, $v1->data, 1, $v2->data, 1, $m->data, $m->row);
     }
 
@@ -207,10 +177,7 @@ class blas {
      */
     public static function dot(\Np\vector $v1, \Np\vector $v2) {
         self::init();
-        if ($v1->dtype == \Np\vector::DOUBLE) {
-            return self::$ffi_blas->cblas_ddot($v1->col, $v1->data, 1, $v2->data, 1);
-        }
-        return self::$ffi_blas->cblas_sdot($v1->col, $v1->data, 1, $v2->data, 1);
+        return self::$ffi_blas->cblas_ddot($v1->col, $v1->data, 1, $v2->data, 1);
     }
 
     /**
@@ -223,9 +190,6 @@ class blas {
      */
     public static function max(\Np\vector $v) {
         self::init();
-        if ($v->dtype == \Np\vector::FLOAT) {
-            return self::$ffi_blas->cblas_isamax($v->col, $v->data, 1);
-        }
         return self::$ffi_blas->cblas_idamax($v->col, $v->data, 1);
     }
 
@@ -239,9 +203,6 @@ class blas {
      */
     public static function min(\Np\vector $v) {
         self::init();
-        if ($v->dtype == \Np\vector::FLOAT) {
-            return self::$ffi_blas->cblas_isamin($v->col, $v->data, 1);
-        }
         return self::$ffi_blas->cblas_idamin($v->col, $v->data, 1);
     }
 
@@ -256,10 +217,7 @@ class blas {
      */
     public static function swap(\Np\vector $v1, \Np\vector $v2, int $inv1 = 1, int $inv2 = 1) {
         self::init();
-        if ($v1->dtype == \Np\vector::DOUBLE) {
-            return self::$ffi_blas->cblas_dswap($v1->col, $v1->data, $inv1, $v2->data, $inv2);
-        }
-        return self::$ffi_blas->cblas_sswap($v1->col, $v1->data, $inv1, $v2->data, $inv2);
+        return self::$ffi_blas->cblas_dswap($v1->col, $v1->data, $inv1, $v2->data, $inv2);
     }
 
     /**
@@ -273,12 +231,8 @@ class blas {
      */
     public static function copy(\Np\vector $vect_X, \Np\vector $vect_Y, int $invX = 1, int $invY = 1) {
         self::init();
-        if ($vect_X->dtype == \Np\vector::DOUBLE) {
-            return self::$ffi_blas->cblas_dcopy($vect_X->col, $vect_X->data, $invX,
-                            $vect_Y->data, $invY);
-        }
-        return self::$ffi_blas->cblas_scopy($vect_X->col, $vect_X->data, 1,
-                        $vect_Y->data, 1);
+        return self::$ffi_blas->cblas_dcopy($vect_X->col, $vect_X->data, $invX,
+                        $vect_Y->data, $invY);
     }
 
     /**
@@ -289,10 +243,7 @@ class blas {
      */
     public static function nrm2(\Np\vector $v): float {
         self::init();
-        if ($v->dtype == \Np\vector::DOUBLE) {
-            return self::$ffi_blas->cblas_dnrme($v->col, $v->data, 1);
-        }
-        return self::$ffi_blas->cblas_snrme($v->col, $v->data, 1);
+        return self::$ffi_blas->cblas_dnrme($v->col, $v->data, 1);
     }
 
     /**
@@ -305,11 +256,7 @@ class blas {
      */
     public static function axpy(float $alpha, \Np\vector $vect_X, \Np\vector $vect_Y) {
         self::init();
-        if ($vect_X->dtype == \Np\vector::DOUBLE) {
-            return self::$ffi_blas->cblas_daxpy($vect_X->col, $alpha, $vect_X->data,
-                            1, $vect_Y->data, 1);
-        }
-        return self::$ffi_blas->cblas_saxpy($vect_X->col, $alpha, $vect_X->data,
+        return self::$ffi_blas->cblas_daxpy($vect_X->col, $alpha, $vect_X->data,
                         1, $vect_Y->data, 1);
     }
 
@@ -321,10 +268,7 @@ class blas {
      */
     public static function asum(\Np\vector $v): float {
         self::init();
-        if ($v->dtype == \Np\vector::DOUBLE) {
-            return self::$ffi_blas->cblas_dasum($v->col, $v->data, 1);
-        }
-        return self::$ffi_blas->cblas_sasum($v->col, $v->data, 1);
+        return self::$ffi_blas->cblas_dasum($v->col, $v->data, 1);
     }
 
     /**
@@ -339,12 +283,7 @@ class blas {
      */
     public static function rotate(\Np\vector $v1, \Np\vector $v2, float $c, float $s) {
         self::init();
-        if ($v1->dtype == \Np\vector::DOUBLE) {
-            return self::$ffi_blas->cblas_drot($v1->col, $v1->data, 1,
-                            $v2->data, 1, $c, $s);
-        }
-        return self::$ffi_blas->cblas_srot($v1->col, $v1->data, 1,
-                        $v2->data, 1, $c, $s);
+        return self::$ffi_blas->cblas_drot($v1->col, $v1->data, 1, $v2->data, 1, $c, $s);
     }
 
     /**
@@ -367,14 +306,9 @@ class blas {
      *  @param float $s     Stores the calculated value of s
      *  @return void
      */
-    public static function drotg(float $a, float $b, float $c, float $s) {
+    public static function rotg(float $a, float $b, float $c, float $s) {
         self::init();
         return self::$ffi_blas->cblas_drotg($a, $b, $c, $s);
-    }
-
-    public static function srotg(float $a, float $b, float $c, float $s) {
-        self::init();
-        return self::$ffi_blas->cblas_srotg($a, $b, $c, $s);
     }
 
     /**
@@ -386,10 +320,7 @@ class blas {
      */
     public static function scale(float $alpha, \Np\vector|\Np\matrix $v) {
         self::init();
-        if ($v->dtype == \Np\vector::DOUBLE) {
-            return self::$ffi_blas->cblas_dscal($v->ndim, $alpha, $v->data, 1);
-        }
-        return self::$ffi_blas->cblas_sscal($v->ndim, $alpha, $v->data, 1);
+        return self::$ffi_blas->cblas_dscal($v->ndim, $alpha, $v->data, 1);
     }
 
 }

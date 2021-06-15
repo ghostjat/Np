@@ -2,7 +2,7 @@
 
 declare (strict_types=1);
 
-namespace Np\decompositions;
+namespace Np\linAlgb\decompositions;
 
 use Np\matrix;
 use Np\vector;
@@ -29,9 +29,9 @@ class svd {
     public static function factory(\Np\matrix $m): self {
         $k = min($m->row, $m->col);
         $ar = $m->copy();
-        $s = vector::factory($k, $m->dtype);
-        $u = matrix::factory($m->row, $m->row, $m->dtype);
-        $v = matrix::factory($m->col, $m->col, $m->dtype);
+        $s = vector::factory($k);
+        $u = matrix::factory($m->row, $m->row);
+        $v = matrix::factory($m->col, $m->col);
         $lp = lapack::gesdd($ar, $s, $u, $v);
         if ($lp != 0) {
             return null;

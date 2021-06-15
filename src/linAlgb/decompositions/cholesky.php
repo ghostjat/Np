@@ -2,7 +2,7 @@
 
 declare (strict_types=1);
 
-namespace Np\decompositions;
+namespace Np\linAlgb\decompositions;
 
 use Np\matrix;
 use Np\core\lapack;

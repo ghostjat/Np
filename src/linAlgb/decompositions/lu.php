@@ -2,7 +2,7 @@
 
 declare (strict_types=1);
 
-namespace Np\decompositions;
+namespace Np\linAlgb\decompositions;
 
 use Np\matrix;
 use Np\vector;
@@ -39,9 +39,9 @@ class lu {
         if ($lp != 0) {
             return null;
         }
-        $l = matrix::factory($m->col, $m->col, $m->dtype);
-        $u = matrix::factory($m->col, $m->col, $m->dtype);
-        $p = matrix::factory($m->col, $m->col, $m->dtype);
+        $l = matrix::factory($m->col, $m->col);
+        $u = matrix::factory($m->col, $m->col);
+        $p = matrix::factory($m->col, $m->col);
         for ($i = 0; $i < $m->col; ++$i) {
             for ($j = 0; $j < $i; ++$j) {
                 $l->data[$i * $m->col + $j] = $ar->data[$i * $m->col + $j];

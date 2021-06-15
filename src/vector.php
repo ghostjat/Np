@@ -4,20 +4,13 @@ declare(strict_types=1);
 
 namespace Np;
 
-use Np\core\{
-    nd,
-    blas,
-    lapack
-};
-use Np\exceptions\{
-    invalidArgumentException,
-};
+use Np\core\{nd,blas,lapack};
+use Np\exceptions\invalidArgumentException;
 
-/** A fast lite memory efficient Scientific Computing in php
+/** 
  * Vector (rank-1)
  * 
  * @package Np
- * @version V0.0.1
  * @category Scientific Library for PHP
  * @author ghost (Shubham Chaudhary)
  * @email ghost.jat@gmail.com
@@ -25,7 +18,7 @@ use Np\exceptions\{
  * 
  */
  class vector extends nd {
-     use ops, linAlg;
+     use ops,linAlgb\linAlg;
 
     /**
      * Factory method to build a new vector.
@@ -34,7 +27,7 @@ use Np\exceptions\{
      * @param int $dtype
      * @return vector
      */
-    public static function factory(int $col, int $dtype = self::FLOAT): vector {
+    public static function factory(int $col, int $dtype = self::DOUBLE): vector {
         return new self($col, $dtype);
     }
 
@@ -42,12 +35,11 @@ use Np\exceptions\{
      * Build a new vector from a php array.
      * 
      * @param array $data
-     * @param int $dtype
      * @return vector
      */
-    public static function ar(array $data, int $dtype = self::FLOAT): vector {
+    public static function ar(array $data): vector {
         if (is_array($data) && !is_array($data[0])) {
-            $ar = self::factory(count($data), $dtype);
+            $ar = self::factory(count($data));
             $ar->setData($data);
             return $ar;
         } else {
@@ -58,11 +50,10 @@ use Np\exceptions\{
     /**
      * Return vector with random values
      * @param int $col
-     * @param int $dtype
      * @return vector
      */
-    public static function randn(int $col, int $dtype = self::FLOAT): vector {
-        $ar = self::factory($col, $dtype);
+    public static function randn(int $col): vector {
+        $ar = self::factory($col);
         $max = getrandmax();
         for ($i = 0; $i < $ar->col; ++$i) {
             $ar->data[$i] = rand() / $max;
@@ -73,11 +64,10 @@ use Np\exceptions\{
     /**
      * Return vector with uniform values
      * @param int $col
-     * @param int $dtype
      * @return vector
      */
-    public static function uniform(int $col, int $dtype = self::FLOAT): vector {
-        $ar = self::factory($col, $dtype);
+    public static function uniform(int $col): vector {
+        $ar = self::factory($col);
         $max = getrandmax();
         for ($i = 0; $i < $col; ++$i) {
             $ar->data[$i] = rand(-$max, $max) / $max;
@@ -89,11 +79,10 @@ use Np\exceptions\{
      * Build a vector of zeros with n elements.
      * 
      * @param int $col
-     * @param int $dtype
      * @return vector
      */
-    public static function zeros(int $col, int $dtype = self::FLOAT): vector {
-        $ar = self::factory($col, $dtype);
+    public static function zeros(int $col): vector {
+        $ar = self::factory($col);
         for ($i = 0; $i < $col; ++$i) {
             $ar->data[$i] = 0;
         }
@@ -106,8 +95,8 @@ use Np\exceptions\{
      * @param int $col
      * @return vector
      */
-    public static function ones(int $col, int $dtype = self::FLOAT): vector {
-        $ar = self::factory($col, $dtype);
+    public static function ones(int $col): vector {
+        $ar = self::factory($col);
         for ($i = 0; $i < $col; ++$i) {
             $ar->data[$i] = 1;
         }
@@ -119,8 +108,8 @@ use Np\exceptions\{
      * @param int $col
      * @return vector
      */
-    public static function null(int $col, int $dtype = self::FLOAT): vector {
-        $ar = self::factory($col, $dtype);
+    public static function null(int $col): vector {
+        $ar = self::factory($col);
         for ($i = 0; $i < $col; ++$i) {
             $ar->data[$i] = null;
         }
@@ -131,11 +120,10 @@ use Np\exceptions\{
      * create a vector with given scalar value
      * @param int $col
      * @param int|float|double $val
-     * @param int $dtype
      * @return vector
      */
-    public static function full(int $col, int|float $val, int $dtype = self::FLOAT): vector {
-        $ar = self::factory($col, $dtype);
+    public static function full(int $col, int|float $val): vector {
+        $ar = self::factory($col);
         for ($i = 0; $i < $col; ++$i) {
             $ar->data[$i] = $val;
         }
@@ -148,11 +136,10 @@ use Np\exceptions\{
      * @param int|float $start
      * @param int|float $end
      * @param int|float $interval
-     * @param int $dtype 
      * @return vector
      */
-    public static function range(int|float $start, int|float $end, int|float $interval = 1, int $dtype = self::FLOAT): vector {
-        return self::ar(range($start, $end, $interval), $dtype);
+    public static function range(int|float $start, int|float $end, int|float $interval = 1): vector {
+        return self::ar(range($start, $end, $interval));
     }
 
     /**
@@ -160,10 +147,9 @@ use Np\exceptions\{
      * and unit variance.
      *
      * @param int $n
-     * @param int $dtype
      * @return self
      */
-    public static function gaussian(int $n, int $dtype = self::FLOAT): vector {
+    public static function gaussian(int $n): vector {
         $max = getrandmax();
         $a = [];
         while (count($a) < $n) {
@@ -175,7 +161,7 @@ use Np\exceptions\{
         if (count($a) > $n) {
             $a = array_slice($a, 0, $n);
         }
-        return self::ar($a, $dtype);
+        return self::ar($a);
     }
 
     /**
@@ -183,13 +169,12 @@ use Np\exceptions\{
      *
      * @param int $n
      * @param float $lambda
-     * @param int $dtype 
      * @return vector
      */
-    public static function poisson(int $n, float $lambda = 1.0, int $dtype = self::FLOAT): vector {
+    public static function poisson(int $n, float $lambda = 1.0): vector {
         $max = getrandmax();
         $l = exp(-$lambda);
-        $a = new self($n, $dtype);
+        $a = new self($n);
         for ($i = 0; $i < $n; ++$i) {
             $k = 0;
             $p = 1.0;
@@ -208,11 +193,10 @@ use Np\exceptions\{
      * @param float $min
      * @param float $max
      * @param int $n
-     * @param int $dtype
      * @throws invalidArgumentException
      * @return vector
      */
-    public static function linspace(float $min, float $max, int $n, int $dtype = self::FLOAT): vector {
+    public static function linspace(float $min, float $max, int $n): vector {
         if ($min > $max) {
             throw new invalidArgumentException('Minimum must be less than maximum.');
         }
@@ -226,7 +210,7 @@ use Np\exceptions\{
             $a[] = end($a) + $interval;
         }
         $a[] = $max;
-        return self::ar($a, $dtype);
+        return self::ar($a);
     }
     
     /**
@@ -274,7 +258,7 @@ use Np\exceptions\{
      */
     public function dotMatrix(\Np\matrix $m): vector {
         if ($this->checkDtype($this, $m)) {
-            $mvr = self::factory($this->col, $this->dtype);
+            $mvr = self::factory($this->col);
             core\blas::gemv($m, $this, $mvr);
             return $mvr;
         }
@@ -288,11 +272,11 @@ use Np\exceptions\{
     public function divide(int|float|matrix|vector $d): matrix|vector {
         if ($d instanceof matrix) {
             return $this->divideMatrix($d);
-        } elseif ($d instanceof self) {
-            return $this->divideVector($d);
-        } else {
-            return $this->divideScalar($d);
         }
+        if ($d instanceof self) {
+            return $this->divideVector($d);
+        }
+        return $this->divideScalar($d);
     }
 
     /**
@@ -301,8 +285,8 @@ use Np\exceptions\{
      * @return matrix
      */
     protected function divideMatrix(\Np\matrix $m): matrix {
-        if ($this->checkShape($this, $m) && $this->checkDtype($this, $m)) {
-            $vr = matrix::factory($m->row, $m->col, $m->dtype);
+        if ($this->checkShape($this, $m)) {
+            $vr = matrix::factory($m->row, $m->col);
             for ($i = 0; $i < $m->row; ++$i) {
                 for ($j = 0; $j < $m->col; ++$j) {
                     $vr->data[$i * $m->col + $j] = $this->data[$j] / $m->data[$i * $m->col + $j];
@@ -318,8 +302,8 @@ use Np\exceptions\{
      * @return vector
      */
     protected function divideVector(vector $v): vector {
-        if ($this->checkShape($this, $v) && $this->checkDtype($this, $v)) {
-            $vr = self::factory($this->col, $this->dtype);
+        if ($this->checkShape($this, $v)) {
+            $vr = self::factory($this->col);
             for ($i = 0; $i < $this->col; ++$i) {
                 $vr->data[$i] = $this->data[$i] / $v->data[$i];
             }
@@ -333,7 +317,7 @@ use Np\exceptions\{
      * @return vector
      */
     protected function divideScalar(int|float $s): vector {
-        $vr = self::factory($this->col, $this->dtype);
+        $vr = self::factory($this->col);
         for ($i = 0; $i < $this->col; ++$i) {
             $vr->data[$i] = $this->data[$i] / $s;
         }
@@ -348,11 +332,11 @@ use Np\exceptions\{
     public function multiply(int|float|matrix|vector $d): matrix|vector {
         if ($d instanceof matrix) {
             return $this->multiplyMatrix($d);
-        } elseif ($d instanceof self) {
-            return $this->multiplyVector($d);
-        } else {
-            return $this->multiplyScalar($d);
         }
+        if ($d instanceof self) {
+            return $this->multiplyVector($d);
+        }
+        return $this->multiplyScalar($d);
     }
 
     /**
@@ -361,8 +345,8 @@ use Np\exceptions\{
      * @return matrix
      */
     protected function multiplyMatrix(\Np\matrix $m): matrix {
-        if ($this->checkShape($this, $m) && $this->checkDtype($this, $m)) {
-            $vr = matrix::factory($m->row, $m->col, $m->dtype);
+        if ($this->checkShape($this, $m)) {
+            $vr = matrix::factory($m->row, $m->col);
             for ($i = 0; $i < $m->row; ++$i) {
                 for ($j = 0; $j < $m->col; ++$j) {
                     $vr->data[$i * $m->col + $j] = $this->data[$j] * $m->data[$i * $m->col + $j];
@@ -378,8 +362,8 @@ use Np\exceptions\{
      * @return vector
      */
     protected function multiplyVector(\Np\vector $vector): vector {
-        if ($this->checkShape($this, $vector) && $this->checkDtype($this, $vector)) {
-            $vr = self::factory($this->col, $this->dtype);
+        if ($this->checkShape($this, $vector)) {
+            $vr = self::factory($this->col);
             for ($i = 0; $i < $this->col; ++$i) {
                 $vr->data[$i] = $this->data[$i] * $vector->data[$i];
             }
@@ -406,11 +390,11 @@ use Np\exceptions\{
     public function add(int|float|matrix|vector $d): matrix|vector {
         if ($d instanceof matrix) {
             return $this->addMatrix($d);
-        } elseif ($d instanceof self) {
-            return $this->addVector($d);
-        } else {
-            return $this->addScalar($d);
         }
+        if ($d instanceof self) {
+            return $this->addVector($d);
+        }
+        return $this->addScalar($d);
     }
 
     /**
@@ -419,8 +403,8 @@ use Np\exceptions\{
      * @return matrix
      */
     protected function addMatrix(\Np\matrix $m): matrix {
-        if ($this->checkShape($this, $m) && $this->checkDtype($this, $m)) {
-            $vr = matrix::factory($m->row, $m->col, $m->dtype);
+        if ($this->checkShape($this, $m)) {
+            $vr = matrix::factory($m->row, $m->col);
             for ($i = 0; $i < $m->row; ++$i) {
                 for ($j = 0; $j < $m->col; ++$j) {
                     $vr->data[$i * $m->col + $j] = $this->data[$j] + $m->data[$i * $m->col + $j];
@@ -436,8 +420,8 @@ use Np\exceptions\{
      * @return vector
      */
     protected function addVector(\Np\vector $vector): vector {
-        if ($this->checkShape($this, $vector) && $this->checkDtype($this, $vector)) {
-            $vr = self::factory($this->col, $this->dtype);
+        if ($this->checkShape($this, $vector)) {
+            $vr = self::factory($this->col);
             for ($i = 0; $i < $this->col; ++$i) {
                 $vr->data[$i] = $this->data[$i] + $vector->data[$i];
             }
@@ -466,11 +450,12 @@ use Np\exceptions\{
     public function pow(int|float|\Np\matrix|\Np\vector $d): matrix|vector {
         if ($d instanceof matrix) {
             return $this->powMatrix($d);
-        } elseif ($d instanceof vector) {
-            return $this->powVector($d);
-        } else {
-            return $this->powScalar($d);
         }
+        if ($d instanceof vector) {
+            return $this->powVector($d);
+        }
+        return $this->powScalar($d);
+        
     }
 
     /**
@@ -479,8 +464,8 @@ use Np\exceptions\{
      * @return matrix
      */
     protected function powMatrix(\Np\matrix $m): matrix {
-        if ($this->checkDimensions($this, $m) && $this->checkDtype($this, $m)) {
-            $ar = matrix::factory($m->row, $m->col, $this->dtype);
+        if ($this->checkDimensions($this, $m)) {
+            $ar = matrix::factory($m->row, $m->col);
             for ($i = 0; $i < $m->row; ++$i) {
                 for ($j = 0; $j < $m->col; ++$j) {
                     $ar->data[$i * $m->col + $j] = $m->data[$i * $m->col + $j] ** $this->data[$j];
@@ -496,8 +481,8 @@ use Np\exceptions\{
      * @return vector
      */
     protected function powVector(\Np\vector $vector): vector {
-        if ($this->checkShape($this, $vector) && $this->checkDtype($this, $vector)) {
-            $vr = self::factory($this->col, $this->dtype);
+        if ($this->checkShape($this, $vector)) {
+            $vr = self::factory($this->col);
             for ($i = 0; $i < $this->col; ++$i) {
                 $vr->data[$i] = $this->data[$i] ** $vector->data[$i];
             }
@@ -526,11 +511,11 @@ use Np\exceptions\{
     public function mod(int|float|\Np\matrix|\Np\vector $d): matrix|vector {
         if ($d instanceof matrix) {
             return $this->powMatrix($d);
-        } elseif ($d instanceof vector) {
-            return $this->powVector($d);
-        } else {
-            return $this->powScalar($d);
         }
+        if ($d instanceof vector) {
+            return $this->powVector($d);
+        }
+        return $this->powScalar($d);    
     }
 
     /**
@@ -539,8 +524,8 @@ use Np\exceptions\{
      * @return matrix
      */
     protected function modMatrix(\Np\matrix $m): matrix {
-        if ($this->checkDimensions($this, $m) && $this->checkDtype($this, $m)) {
-            $ar = matrix::factory($m->row, $m->col, $this->dtype);
+        if ($this->checkDimensions($this, $m)) {
+            $ar = matrix::factory($m->row, $m->col);
             for ($i = 0; $i < $m->row; ++$i) {
                 for ($j = 0; $j < $m->col; ++$j) {
                     $ar->data[$i * $m->col + $j] = $m->data[$i * $m->col + $j] % $this->data[$j];
@@ -556,8 +541,8 @@ use Np\exceptions\{
      * @return vector
      */
     protected function modVector(\Np\vector $vector): vector {
-        if ($this->checkShape($this, $vector) && $this->checkDtype($this, $vector)) {
-            $vr = self::factory($this->col, $this->dtype);
+        if ($this->checkShape($this, $vector)) {
+            $vr = self::factory($this->col);
             for ($i = 0; $i < $this->col; ++$i) {
                 $vr->data[$i] = $this->data[$i] % $vector->data[$i];
             }
@@ -584,11 +569,11 @@ use Np\exceptions\{
     public function subtract(int|float|matrix|vector $d): matrix|vector {
         if ($d instanceof matrix) {
             return $this->subtractMatrix($d);
-        } elseif ($d instanceof self) {
-            return $this->subtractVector($d);
-        } else {
-            return $this->substractScalar($d);
         }
+        if ($d instanceof self) {
+            return $this->subtractVector($d);
+        }
+        return $this->substractScalar($d);
     }
 
     /**
@@ -597,8 +582,8 @@ use Np\exceptions\{
      * @return matrix
      */
     protected function subtractMatrix(\Np\matrix $m): matrix {
-        if ($this->checkShape($this, $m) && $this->checkDtype($this, $m)) {
-            $vr = matrix::factory($m->row, $m->col, $m->dtype);
+        if ($this->checkShape($this, $m)) {
+            $vr = matrix::factory($m->row, $m->col);
             for ($i = 0; $i < $m->row; ++$i) {
                 for ($j = 0; $j < $m->col; ++$j) {
                     $vr->data[$i * $m->col + $j] = $this->data[$j] - $m->data[$i * $m->col + $j];
@@ -614,8 +599,8 @@ use Np\exceptions\{
      * @return vector
      */
     protected function subtractVector(\Np\vector $vector): vector {
-        if ($this->checkShape($this, $vector) && $this->checkDtype($this, $vector)) {
-            $vr = self::factory($this->col, $this->dtype);
+        if ($this->checkShape($this, $vector) ) {
+            $vr = self::factory($this->col);
             for ($i = 0; $i < $this->col; ++$i) {
                 $vr->data[$i] = $this->data[$i] - $vector->data[$i];
             }
@@ -629,7 +614,7 @@ use Np\exceptions\{
      * @return \Np\vector
      */
     protected function substractScalar(int|float $scalar): vector {
-        $vr = self::factory($this->col, $this->dtype);
+        $vr = self::factory($this->col);
         for ($i = 0; $i < $this->col; ++$i) {
             $vr->data[$i] = $this->data[$i] - $scalar;
         }
@@ -693,8 +678,7 @@ use Np\exceptions\{
      * @return self
      */
     public function reciprocal(): vector {
-        return self::ones($this->col, $this->dtype)
-                        ->divideVector($this);
+        return self::ones($this->col)->divideVector($this);
     }
     
     /**
@@ -727,9 +711,7 @@ use Np\exceptions\{
             $mean = $this->mean();
         }
 
-        $sd = $this->substractScalar($mean)
-            ->square()
-            ->sum();
+        $sd = $this->substractScalar($mean)->square()->sum();
 
         return $sd / $this->col;
     }
@@ -740,19 +722,6 @@ use Np\exceptions\{
      */
     public function square(): vector {
         return $this->multiplyVector($this);
-    }
-    
-    public function pop(): mixed {
-        $ar = $this->asArray();
-        \FFI::free($this->data);
-        $val = array_shift($ar);
-        $v = self::ar($ar);
-        $this->col = $v->col;
-        $this->ndim = $v->ndim;
-        $this->data = $v->data;
-        unset($v);
-        unset($ar);
-        return $val;
     }
 
     /**
@@ -774,7 +743,8 @@ use Np\exceptions\{
             for ($i = 0; $i < $this->col; ++$i) {
                 $this->data[$i] = $data[$i];
             }
-        } elseif (is_numeric($data)) {
+        }
+        if (is_numeric($data)) {
             for ($i = 0; $i < $this->col; ++$i) {
                 $this->data[$i] = $data;
             }
@@ -813,7 +783,7 @@ use Np\exceptions\{
         return (string) $this->printVector();
     }
 
-    protected function __construct(public int $col, int $dtype = self::FLOAT) {
+    protected function __construct(public int $col, int $dtype = self::DOUBLE) {
         if ($this->col < 1) {
             throw new invalidArgumentException('* To create Numphp/Vector col must be greater than 0!, Op Failed! * ');
         }

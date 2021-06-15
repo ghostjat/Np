@@ -20,10 +20,10 @@ trait ops {
      * @return matrix|vector
      */
     public function max(matrix|vector $d): matrix|vector {
-        if ($this instanceof matrix && $d instanceof matrix && $this->checkShape($this, $d) && $this->checkDtype($this, $d)) {
-            $r = self::factory($this->row, $this->col, $this->dtype);
-        } elseif ($this instanceof vector && $d instanceof vector && $this->checkShape($this, $d) && $this->checkDtype($this, $d)) {
-            $r = self::factory($this->col, $this->dtype);
+        if ($this instanceof matrix && $d instanceof matrix && $this->checkShape($this, $d)) {
+            $r = self::factory($this->row, $this->col);
+        } elseif ($this instanceof vector && $d instanceof vector && $this->checkShape($this, $d)) {
+            $r = self::factory($this->col);
         }
         for ($i = 0; $i < $this->ndim; ++$i) {
             $r->data[$i] = max($this->data[$i], $d->data[$i]);
@@ -37,10 +37,10 @@ trait ops {
      * @return matrix|vector
      */
     public function min(matrix|vector $d): matrix|vector {
-        if ($this instanceof matrix && $d instanceof matrix && $this->checkShape($this, $d) && $this->checkDtype($this, $d)) {
-            $r = self::factory($this->row, $this->col, $this->dtype);
-        } elseif ($this instanceof vector && $d instanceof vector && $this->checkShape($this, $d) && $this->checkDtype($this, $d)) {
-            $r = self::factory($this->col, $this->dtype);
+        if ($this instanceof matrix && $d instanceof matrix && $this->checkShape($this, $d)) {
+            $r = self::factory($this->row, $this->col);
+        } elseif ($this instanceof vector && $d instanceof vector && $this->checkShape($this, $d)) {
+            $r = self::factory($this->col);
         }
         for ($i = 0; $i < $this->ndim; ++$i) {
             $r->data[$i] = max($this->data[$i], $d->data[$i]);
@@ -55,9 +55,9 @@ trait ops {
      */
     public function map(callable $func): matrix|vector {
         if ($this instanceof matrix) {
-            $r = self::factory($this->row, $this->col, $this->dtype);
+            $r = self::factory($this->row, $this->col);
         } else {
-            $r = self::factory($this->col, $this->dtype);
+            $r = self::factory($this->col);
         }
         for ($i = 0; $i < $this->ndim; ++$i) {
             $r->data[$i] = $func($this->data[$i]);
@@ -138,11 +138,13 @@ trait ops {
             unset($this->row);
             unset($this->col);
             unset($this->ndim);
+            unset($this->dtype);
             unset($this->data);
             return;
         }
         unset($this->col);
         unset($this->ndim);
+        unset($this->dtype);
         unset($this->data);
         return;
     }
@@ -165,9 +167,9 @@ trait ops {
      */
     public function clip(float $min, float $max): matrix|vector {
         if ($this instanceof matrix) {
-            $ar = self::factory($this->row, $this->col, $this->dtype);
+            $ar = self::factory($this->row, $this->col);
         } else {
-            $ar = self::factory($this->col, $this->dtype);
+            $ar = self::factory($this->col);
         }
         for ($i = 0; $i < $this->ndim; ++$i) {
             if ($this->data[$i] > $max) {
@@ -190,9 +192,9 @@ trait ops {
      */
     public function clipLower(float $min): matrix|vector {
         if ($this instanceof matrix) {
-            $ar = self::factory($this->row, $this->col, $this->dtype);
+            $ar = self::factory($this->row, $this->col);
         } else {
-            $ar = self::factory($this->col, $this->dtype);
+            $ar = self::factory($this->col);
         }
         for ($i = 0; $i < $this->ndim; ++$i) {
             if ($this->data[$i] < $min) {
@@ -212,9 +214,9 @@ trait ops {
      */
     public function clipUpper(float $max): matrix|vector {
         if ($this instanceof matrix) {
-            $ar = self::factory($this->row, $this->col, $this->dtype);
+            $ar = self::factory($this->row, $this->col);
         } else {
-            $ar = self::factory($this->col, $this->dtype);
+            $ar = self::factory($this->col);
         }
         for ($i = 0; $i < $this->ndim; ++$i) {
             if ($this->data[$i] > $max) {
@@ -237,7 +239,7 @@ trait ops {
             self::_dimensionaMisMatchErr('given dimenssion is not valid for current bufferData');
         }
         if ($this instanceof vector) {
-            $ar = matrix::factory($row, $col, $this->dtype);
+            $ar = matrix::factory($row, $col);
             $ar->data = $this->data;
             return $ar;
         }
@@ -245,5 +247,4 @@ trait ops {
         $this->col = $col;
         return $this;
     }
-
 }

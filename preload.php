@@ -14,8 +14,8 @@ if (!opcache_is_script_cached(__DIR__ . '/src/core/lapack.php')) {
 if (!opcache_is_script_cached(__DIR__ . '/src/ops.php')) {
     opcache_compile_file(__DIR__ . '/src/ops.php');
 }
-if (!opcache_is_script_cached(__DIR__ . '/src/linAlg.php')) {
-    opcache_compile_file(__DIR__ . '/src/linAlg.php');
+if (!opcache_is_script_cached(__DIR__ . '/src/linAlgb/linAlg.php')) {
+    opcache_compile_file(__DIR__ . '/src/linAlgb/linAlg.php');
 }
 if (!opcache_is_script_cached(__DIR__ . '/src/matrix.php')) {
     opcache_compile_file(__DIR__ . '/src/matrix.php');
@@ -23,8 +23,8 @@ if (!opcache_is_script_cached(__DIR__ . '/src/matrix.php')) {
 if (!opcache_is_script_cached(__DIR__ . '/src/vector.php')) {
     opcache_compile_file(__DIR__ . '/src/vector.php');
 }
-if (!opcache_is_script_cached(__DIR__ . '/src/reductions/rref.php')) {
-    opcache_compile_file(__DIR__ . '/src/reductions/rref.php');
+if (!opcache_is_script_cached(__DIR__ . '/src/linAlgb/reductions/rref.php')) {
+    opcache_compile_file(__DIR__ . '/src/linAlgb/reductions/rref.php');
 }
 if (!opcache_is_script_cached(__DIR__ . '/src/convolve.php')) {
     opcache_compile_file(__DIR__ . '/src/convolve.php');

@@ -28,7 +28,6 @@ class nd {
 
     const TWO_PI = 2. * M_PI, EPSILON = 1e-8;
     const FLOAT = 1, DOUBLE = 2, INT = 3;
-
     public $data;
     protected $_time = null, $_mem = null;
     
@@ -64,10 +63,28 @@ class nd {
             self::_dimensionaMisMatchErr('mismatch Dimensions of given matrix!');
         }
     }
+    
+    public function asType(int $dtype){
+        switch ($dtype){
+            case self::FLOAT:
+                \FFI::cast('float *', $this->data);
+                break;
+            case self::DOUBLE:
+                \FFI::cast('double *', $this->data);
+                break;
+            case self::INT:
+                \FFI::cast('int *', $this->data);
+                break;
+        }
+    }
 
-    protected function __construct(public int $ndim, public int $dtype = self::FLOAT) {
+    protected function __construct(public int $ndim, public int $dtype = self::DOUBLE) {
         $this->getMemory();
         $this->time();
+        $this->_nd();
+    }
+    
+    protected function _nd() {
         switch ($this->dtype) {
             case self::FLOAT:
                 $this->data = self::_ndFloat($this->ndim);

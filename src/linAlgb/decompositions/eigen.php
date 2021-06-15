@@ -2,7 +2,7 @@
 
 declare (strict_types=1);
 
-namespace Np\decompositions;
+namespace Np\linAlgb\decompositions;
 
 use Np\matrix;
 use Np\vector;
@@ -30,7 +30,7 @@ class eigen {
         if (!$m->isSquare()) {
             throw new invalidArgumentException('A Non Square Matrix is given!');
         }
-        $wr = vector::factory($m->col, $m->dtype);
+        $wr = vector::factory($m->col);
         $ar = $m->copy();
         if ($symmetric) {
             $lp = lapack::syev($ar, $wr);
@@ -40,8 +40,8 @@ class eigen {
 
             return new self($wr, $ar);
         } else {
-            $wi = vector::factory($m->col, $m->dtype);
-            $vr = matrix::factory($m->col, $m->col, $m->dtype);
+            $wi = vector::factory($m->col);
+            $vr = matrix::factory($m->col, $m->col);
 
             $lp = lapack::geev($ar, $wr, $wi, $vr);
             if ($lp != 0) {
