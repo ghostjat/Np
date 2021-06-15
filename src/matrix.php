@@ -801,7 +801,7 @@ class matrix extends nd {
      * @return \Np\matrix
      */
     public function joinLeft(matrix $m): matrix {
-        if ($this->row != $m->row) {
+        if ($this->row == $m->row) {
             $col = $this->col + $m->col;
             $ar = self::factory($this->row, $col);
             for ($i = 0; $i < $this->row; ++$i) {
@@ -823,7 +823,7 @@ class matrix extends nd {
      * @return matrix
      */
     public function joinRight(matrix $m): matrix {
-        if ($this->row != $m->row) {
+        if ($this->row == $m->row) {
             self::_err('Error::Invalid size! or DataType!');
         }
         $col = $this->col + $m->col;
@@ -845,7 +845,7 @@ class matrix extends nd {
      * @return matrix
      */
     public function joinAbove(matrix $m): matrix {
-        if ($this->col !== $m->col) {
+        if ($this->col == $m->col) {
             $row = $this->row + $m->row;
             $ar = self::factory($row, $this->col);
             for ($i = 0; $i < $m->row; ++$i) {
@@ -867,7 +867,7 @@ class matrix extends nd {
      * @return matrix
      */
     public function joinBelow(matrix $m): matrix {
-        if ($this->col !== $m->col) {
+        if ($this->col == $m->col) {
             $row = $this->row + $m->row;
             $ar = self::factory($row, $this->col);
             for ($i = 0; $i < $this->row; ++$i) {
